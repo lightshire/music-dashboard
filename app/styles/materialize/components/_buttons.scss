@@ -1,0 +1,22 @@
+@import "../../vendor/materialize/sass/components/buttons";
+
+
+.btn-default {
+  @extend .btn, .btn-flat;
+  // @extend .btn, .btn-floating, .btn-large, .btn-flat;
+  @extend .btn;
+  color: $button-color-raised-default;
+  background-color: $button-color-default;
+  i {
+    font-size: $button-font-size-shared;
+    line-height: inherit;
+  }
+  &:hover {
+    color: $button-color-raised-default;
+    background-color: lighten($button-color-default, 5%);
+  }
+}
+
+.btn, .btn-flat, .btn-default {
+  @include border-radius($button-line-height/2);
+}

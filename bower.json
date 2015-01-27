@@ -1,0 +1,21 @@
+{
+  "name": "react-materializecss",
+  "version": "0.0.0",
+  "authors": [
+    "AnyTV"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "app/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "materialize": "~0.95.0"
+  }
+}
