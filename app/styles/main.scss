@@ -63,3 +63,106 @@
     opacity: 1;
     margin-left: 0;
 }
+.container{
+    position: relative;
+}
+.c_links {
+    margin-top: 45px;
+}
+.c_header {
+    padding-top: 80px;
+    border-bottom: 1px solid $div-border;
+    background-color: #90caf9;
+}
+.c_first_button {
+    width: 100%;
+}
+.c_tabs {
+    margin-right: 20px;
+}
+.c_tabs.active {
+    border-bottom: 1px solid $btn-border;
+}
+.c_header .container h4 {
+    margin-top: 0;
+}
+.c_main_container {
+    margin-top: -1px;
+    border: 1px solid $div-border;
+}
+.c_my_account_settings {
+    margin-top: 20px;
+}
+.c_my_account_settings_header .s2 img{
+    border-radius: 100%;
+}
+.c_my_account_settings_header .s10 h5 {
+    margin-top: 35px;
+}
+
+
+.search-btn {
+    width: 200px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.search-btn label, .search-btn .input-field {
+    display: inline-block;
+    vertical-align: middle;
+}
+.search-btn label{
+    font-size: 2rem;
+}
+.search-btn .input-field {
+    margin: 0;
+    // display: none;
+}
+.upload-btn {
+    position: absolute;
+    top: 110px;
+    right: -25px;
+}
+.table {
+    padding-top: 15px;
+}
+.table thead {
+    border-bottom: none;
+    line-height: 0;
+    text-transform: uppercase;
+}
+.table tbody {
+    line-height: 0;
+}
+.songs div {
+    display: inline-block;
+    cursor: pointer;
+}
+.songs i {
+    font-size: 18px;
+}
+
+
+
+
+.search-box-enter {
+    opacity: 0.01;
+    width: 0;
+    transition: all .5s ease;
+}
+
+.search-box-enter.search-box-enter-active {
+    width: 160px;
+    opacity: 1;
+}
+
+.search-box-leave {
+    opacity: 1;
+    width: 160px;
+    transition: all .5s ease;
+}
+
+.search-box-leave.search-box-leave-active {
+    width: 0;
+    opacity: 0.01;
+}
