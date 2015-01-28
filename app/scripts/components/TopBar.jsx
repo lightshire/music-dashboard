@@ -17,9 +17,6 @@ var TopBar = React.createClass({
                             <img src="http://placehold.it/80x60"/>
                             <a href="#" onClick={this.toggleSidebar}><i className="mdi-navigation-menu"></i></a>
                         </div>
-                        <ul id="nav-mobile" className="right side-nav">
-                            <li><a href="#">Link 1</a></li>
-                        </ul>
                     </div>
                 </nav>
             </div>
