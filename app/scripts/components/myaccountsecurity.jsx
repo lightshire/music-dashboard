@@ -81,7 +81,7 @@ var  MyAccountSecurity = React.createClass({
 	    		<div className="c_i_agree">
 					<p>
     					<input type="checkbox" id="test5" />
-    					<label for="test5">I have read and agreed to the terms and conditions</label>
+    					<label htmlFor="test5">I have read and agreed to the terms and conditions</label>
   					</p>
 	    		</div>
 	    	</div>
