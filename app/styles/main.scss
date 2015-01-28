@@ -69,7 +69,6 @@
 }
 .c_header {
     padding-top: 80px;
-    border-bottom: 1px solid $div-border;
     background-color: #90caf9;
 }
 .c_first_button {
@@ -84,16 +83,41 @@
 .c_header .container h4 {
     margin-top: 0;
 }
-.c_main_container {
-    margin-top: -1px;
-    border: 1px solid $div-border;
-}
-.c_my_account_settings {
-    margin-top: 20px;
+.c_my_account_settings, .c_my_account_security, .c_my_account_updgrade {
+    margin-top: 0px;
+    padding: 20px;
 }
 .c_my_account_settings_header .s2 img{
     border-radius: 100%;
 }
 .c_my_account_settings_header .s10 h5 {
     margin-top: 35px;
+}
+.c_my_account_scrollup_button {
+    left: 289px;
+    top: 49px;
+}
+/*temporarily displays the modal for viewing*/
+.modal {
+    display: table!important;
+}
+.c_upload_music_file_modal, {
+    margin-top: 110px;
+    margin-bottom: 100px;
+}
+ .c_monetize_modal {
+    margin-top: 70px;
+    margin-bottom: 30px;
+ }
+.c_select_a_track_button {
+    margin-top: 10px;
+}
+.c_modal_buttons {
+    margin-right: 10px;
+}
+.c_track_terms {
+    text-align: justify;
+}
+.c_i_agree {
+    margin-top: 80px;
 }
