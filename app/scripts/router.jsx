@@ -9,6 +9,7 @@ var Home = require('./components/home');
 var MyAccount = require('./components/myaccount');
 var MyAccountSettings = require('./components/myaccountsettings');
 var MyAccountUpgrade = require('./components/myaccountupgrade');
+var MyAccountSecurity = require('./components/myaccountsecurity');
 
 var routes = (
     <Route path="/" handler={Layout}>
@@ -16,6 +17,7 @@ var routes = (
         <Route name="my.account" path="/my_account" handler={MyAccount}>
             <DefaultRoute name="my.account.settings" handler={MyAccountSettings} />
             <Route name="my.account.upgrade" path="/my_account/upgrade" handler={MyAccountUpgrade} />
+            <Route name="my.account.security" path="/my_account/security" handler={MyAccountSecurity} />
         </Route>
     </Route>
 );
