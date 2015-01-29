@@ -9,6 +9,7 @@ var Modal = React.createClass({
 			    <div>
 					{this.props.buttons.map(function(button){
 			    		return <a className={button.class_name} onClick={button.onclick}>{button.text}</a>;
+
 		            })}
 			    </div>
 			</div>

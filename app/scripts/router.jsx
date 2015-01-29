@@ -22,10 +22,12 @@ var routes = (
             <DefaultRoute name="my.account.settings" handler={MyAccountSettings} />
             <Route name="my.account.upgrade" path="/my_account/upgrade" handler={MyAccountUpgrade} />
             <Route name="my.account.security" path="/my_account/security" handler={MyAccountSecurity} />
+
         </Route>
         <Route name="music.manager" path="/manage_music" handler={MusicManager}>
             <Route name="music.manager.songs" path="/manage_music/songs" handler={MusicManagerSongs} />
             <Route name="music.manager.albums" path="/manage_music/albums" handler={MusicManagerAlbums} />
+
         </Route>
     </Route>
 );
