@@ -21,7 +21,7 @@ var MusicManager = React.createClass({
     showModal: function() {
         this.setState({selectmusic: !this.state.selectmusic});
     },
-    showModal2: function() {
+    uploadModal: function() {
         this.setState({selectmusic: !this.state.selectmusic});
         this.setState({upload: !this.state.upload});
     },
@@ -34,6 +34,8 @@ var MusicManager = React.createClass({
         var modal1 = '';
         var modal2 = '';
         var state = this.state;
+        var upload_modal = this.uploadModal;
+        var cancel = this.cancelHandler;
 
 
         var preloader_style = {
@@ -93,8 +95,8 @@ var MusicManager = React.createClass({
             </div>
         );
         var modal_buttons_1 = ([
-            { 'text' : 'Upload', 'onclick' : 'something', 'class_name' : 'c_modal_buttons waves-effect waves-light btn green lighten-2 modal-action' },
-            { 'text' : 'Cancel', 'onclick' : '', 'class_name' : 'c_modal_buttons black-text waves-effect waves-grey lighten-4 btn white lighten-5 modal-action modal-close' }
+            { 'text' : 'Upload', 'onclick' : upload_modal, 'class_name' : 'c_modal_buttons waves-effect waves-light btn green lighten-2 modal-action' },
+            { 'text' : 'Cancel', 'onclick' : cancel, 'class_name' : 'c_modal_buttons black-text waves-effect waves-grey lighten-4 btn white lighten-5 modal-action modal-close' }
         ]);
         var modal_buttons_2 = ([
             { 'text' : 'Done', 'onclick' : 'something', 'class_name' : 'c_modal_buttons waves-effect waves-light btn green lighten-2 modal-action' },
