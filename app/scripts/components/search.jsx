@@ -4,7 +4,7 @@ var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 var Search = React.createClass({
     getInitialState: function() {
         return {
-            expanded: true
+            expanded: false
         }
     },
     handleToggleSearch: function() {
