@@ -21,8 +21,7 @@ var MusicManager = React.createClass({
 
                             <input type="text" />
                         </div>
-                        <div className="search-btn right-align">
-                    <Search/>
+                        <Search />
                         <div onClick={this.handleAddTracks} className="upload-btn right-align">
                             <a className="btn-floating btn-large waves-effect waves-light red">
                                 <i className="mdi-file-file-upload"></i>
