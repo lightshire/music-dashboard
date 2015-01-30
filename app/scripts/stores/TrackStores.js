@@ -14,7 +14,6 @@ var _tracks = {
     }
 };
 
-
 var TracksStore = Reflux.createStore({
     listenables: [TracksActions],
     emitChange: function() {
