@@ -83,7 +83,7 @@
 .c_header .container h4 {
     margin-top: 0;
 }
-.c_my_account_settings, .c_my_account_security, .c_my_account_updgrade {
+.c_my_account_settings, .c_my_account_security, .c_my_account_upgrade {
     margin-top: 0px;
     padding: 20px;
 }
@@ -120,4 +120,27 @@
 }
 .c_i_agree {
     margin-top: 80px;
+}
+.c_create_album, .c_new_upload_album {
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+.c_new_upload, .c_new_album, .c_new_artist, .c_new_label {
+    padding-bottom: 20px;
+}
+.c_new_upload:hover {
+    background-color: white;
+    cursor: pointer;
+}
+.c_new_album:hover {
+    background-color: white;
+    cursor: pointer;
+}
+.c_new_artist:hover {
+    background-color: white;
+    cursor: pointer;
+}
+.c_new_label:hover {
+    background-color: white;
+    cursor: pointer;
 }
