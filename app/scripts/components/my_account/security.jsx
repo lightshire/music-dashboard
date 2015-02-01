@@ -1,13 +1,11 @@
 'use strict';
 var React = require('react/addons'),
-    Home = React.createClass({
+    MyAccountSecurity = React.createClass({
         render: function() {
             return (
-                <div>
-                    Hello
-                </div>
+                <div>no wireframe yet.</div>
             );
         }
     });
 
-module.exports = Home;
+module.exports =  MyAccountSecurity;

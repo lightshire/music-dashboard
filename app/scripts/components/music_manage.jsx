@@ -3,14 +3,14 @@ var React = require('react'),
     Router = require('react-router'),
     RouteHandler = Router.RouteHandler,
     Link = Router.Link,
-    TracksActions = require('../actions/TracksActions'),
-    Search = require('./search'),
-    Modal = require('./modal'),
-    InputField = require('./textfield'),
+    TrackActions = require('../actions/track_actions'),
+    Search = require('./helpers/search'),
+    Modal = require('./helpers/modal'),
+    InputField = require('./helpers/textfield'),
     ReactCSSTransitionGroup = React.addons.CSSTransitionGroup,
     MusicManager = React.createClass({
         handleAddTracks: function() {
-            TracksActions.addTracks();
+            TrackActions.addTracks();
             this.setState({
                 done: false
             });
@@ -235,7 +235,7 @@ var React = require('react'),
                             </div>
                         </div>
                     </div>
-                    <div className='container c_main_container'>
+                    <div className='container c_main_container z-depth-1'>
                         <RouteHandler />
                     </div>
                     <ReactCSSTransitionGroup transitionName='select_modal'>
