@@ -1,7 +1,8 @@
+'use strict';
 var React = require('react');
 
 var Slider = React.createClass({
-	componentDidMount: function() {
+    componentDidMount: function() {
        $('.slider').slider({full_width: true});
     },
     render: function() {

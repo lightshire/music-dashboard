@@ -1,6 +1,6 @@
+'use strict';
 var Reflux = require('reflux');
 var LayoutActions = require('../actions/LayoutActions');
-var _ = require('lodash');
 
 var _state = {
     sidebar: true

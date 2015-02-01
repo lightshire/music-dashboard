@@ -1,3 +1,4 @@
+'use strict';
 var React = require('react');
 
 var MyAccount = React.createClass({

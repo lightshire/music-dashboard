@@ -1,22 +1,23 @@
+'use strict';
 var React = require('react');
 
 var Tabs = React.createClass({
-	componentDidMount: function() {
+    componentDidMount: function() {
        $('ul.tabs').tabs();
     },
     render: function() {
         return (
-        	<div>
+            <div>
            <div className="row">
              <div className="col s12">
                <ul className="tabs">
-               		<li className={this.props.classes}>
-               			<a href={this.props.link}>{this.props.title}</a>
-               		</li>
+                    <li className={this.props.classes}>
+                        <a href={this.props.link}>{this.props.title}</a>
+                    </li>
                </ul>
              </div>
            </div>
-       			{this.props.children}
+                {this.props.children}
              <div id="test1" className="col s12">Test 1</div>
              <div id="test2" className="col s12">Test 2</div>
              <div id="test3" className="col s12">Test 3</div>

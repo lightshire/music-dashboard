@@ -1,6 +1,6 @@
+'use strict';
 var React = require('react/addons');
 var Router = require('react-router');
-var Link = Router.Link;
 var RouteHandler = Router.RouteHandler;
 var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 

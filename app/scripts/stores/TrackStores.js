@@ -1,6 +1,6 @@
+'use strict';
 var Reflux = require('reflux');
 var TracksActions = require('../actions/TracksActions');
-var _ = require('lodash');
 
 var _tracks = {
     1: {
@@ -17,7 +17,6 @@ var _tracks = {
 var TracksStore = Reflux.createStore({
     listenables: [TracksActions],
     emitChange: function() {
-        // this.trigger(this.getAll);
         this.trigger();
     },
     onAddTracks: function() {

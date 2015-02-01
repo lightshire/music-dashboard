@@ -1,7 +1,7 @@
+'use strict';
 var React = require('react');
 var Item = require('../Navigation/item');
 var Dropdown = require('../Navigation/dropdown');
-var SearchBar = require('../Navigation/searchbar');
 
 var NavBar = React.createClass({
     componentDidMount: function() {
@@ -11,7 +11,7 @@ var NavBar = React.createClass({
         }
     },
     render: function() {
-        nav = '';
+        var nav = '';
         if(this.props.mobile) {
             nav = (
                 <nav>
@@ -50,7 +50,7 @@ var NavBar = React.createClass({
                             </Dropdown>
                         </ul>
                       </div>
-                        
+
                     </div>
                 </nav>
             );

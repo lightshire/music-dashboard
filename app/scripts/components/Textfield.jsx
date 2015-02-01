@@ -1,14 +1,14 @@
+'use strict';
 var React = require('react');
 
 var InputField = React.createClass({
     render: function() {
-        console.log('TEXTFIELD PROPERTIES: ', this.props);
         var size = "input-field " + this.props.outerdiv_size;
         var input = '';
 
         switch (this.props.textfield_type) {
         	case 'textarea':
-        		input = (<textarea className="materialize-textarea"></textarea>)
+        		input = (<textarea className="materialize-textarea"></textarea>);
         		break;
         	default:
         		input = (<input id={this.props.textfield_id} type={this.props.textfield_type} className={this.props.textfield_state}/>);

@@ -1,3 +1,4 @@
+'use strict';
 var React = require('react/addons');
 var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 
@@ -5,7 +6,7 @@ var Search = React.createClass({
     getInitialState: function() {
         return {
             expanded: false
-        }
+        };
     },
     handleToggleSearch: function() {
         this.setState({expanded: !this.state.expanded});
@@ -13,7 +14,7 @@ var Search = React.createClass({
     render: function() {
         var search = '';
         if(this.state.expanded) {
-            search = (<input id="search" placeholder="Search" type="text" key="search-box" required />);
+            search = (<input id="search" placeholder="Search" onBlur={this.handleToggleSearch} type="text" key="search-box" required />);
         }
 
         return (

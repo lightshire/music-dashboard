@@ -1,5 +1,5 @@
+'use strict';
 var gulp        = require('gulp');
-
 var $           = require('gulp-load-plugins')();
 var del         = require('del');
 var source      = require('vinyl-source-stream');
@@ -21,7 +21,7 @@ gulp.task('clean:dist', function() {
 gulp.task('scripts', function() {
   var bundler = browserify('./app/scripts/app.js', {
     extensions: ['.jsx'],
-    debug: env == 'dev'
+    debug: env === 'dev'
   }).transform('reactify');
 
   return bundler.bundle()
@@ -57,7 +57,7 @@ gulp.task('copy', function() {
 
   return gulp.src(['app/*.txt', 'app/*.ico'])
     .pipe(gulp.dest('dist'));
-})
+});
 
 gulp.task('bundle', function () {
   var assets = $.useref.assets({searchPath: '{.tmp,app}'});
@@ -88,7 +88,7 @@ gulp.task('bundle', function () {
 });
 
 gulp.task('webserver', function(cb) {
-  return browserSync({
+  browserSync({
         server: {
             baseDir: ['.tmp', 'app'],
             middleware: [
@@ -99,7 +99,8 @@ gulp.task('webserver', function(cb) {
         },
         port: 9000
     });
-    cb();
+
+    return cb();
 });
 
 gulp.task('bs-reload', function() {

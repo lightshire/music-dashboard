@@ -1,10 +1,10 @@
+'use strict';
 var React = require('react/addons');
 
 var LayoutActions = require('../actions/LayoutActions');
 
 var TopBar = React.createClass({
     toggleSidebar: function() {
-        console.log(123);
         LayoutActions.toggleSidebar();
     },
     render: function() {

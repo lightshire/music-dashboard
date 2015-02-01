@@ -1,6 +1,6 @@
+'use strict';
 var Reflux = require('reflux');
 var TracksActions = require('../actions/TracksActions');
-var _ = require('lodash');
 
 var _albums = {
     1: {
