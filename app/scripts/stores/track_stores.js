@@ -1,11 +1,11 @@
 'use strict';
 var Reflux = require('reflux');
-var TracksActions = require('../actions/TracksActions');
+var TrackActions = require('../actions/track_actions');
 
-var _albums = {
+var _tracks = {
     1: {
         id: 1,
-        title: 'Potato Album',
+        title: 'Potato Song',
         artist: 'The Peelers',
         time: '20:00',
         label: 'Mashed Records',
@@ -14,17 +14,15 @@ var _albums = {
     }
 };
 
-
-var AlbumStore = Reflux.createStore({
-    listenables: [TracksActions],
+var TracksStore = Reflux.createStore({
+    listenables: [TrackActions],
     emitChange: function() {
-        // this.trigger(this.getAll);
         this.trigger();
     },
     onAddTracks: function() {
         var data = {
             id: Math.random()*1000,
-            title: 'Potato Album',
+            title: 'Potato Song',
             artist: 'The Peelers',
             time: '20:00',
             label: 'Mashed Records',
@@ -32,18 +30,18 @@ var AlbumStore = Reflux.createStore({
             date_uploaded: 'an hour ago'
         };
 
-        _albums[data.id] = data;
+        _tracks[data.id] = data;
         this.emitChange();
     },
     onDeleteTracks: function(id) {
-        if(typeof _albums[id] !== 'undefined') {
-            delete _albums[id];
+        if(typeof _tracks[id] !== 'undefined') {
+            delete _tracks[id];
         }
         this.emitChange();
     },
     getAll: function() {
-        return _albums;
+        return _tracks;
     }
 });
 
-module.exports = AlbumStore;
+module.exports = TracksStore;
