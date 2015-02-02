@@ -117,6 +117,22 @@
     .btn-show-playlist {
         position: relative;
     }
+    .btn-volume-control {
+        position: relative;
+    }
+    .volume-control {
+        background: #fff;
+        @extend .z-depth-1;
+        color: $font-color;
+        position: absolute;
+        top: 50px;
+        right: 20px;
+        width: 200px;
+        padding: 0 1em;
+        .row {
+            margin: 0;
+        }
+    }
     .playlist {
         background: #fff;
         @extend .z-depth-1;
@@ -210,7 +226,6 @@
         } 
     }
 }
-=======
 
 
 .search-btn {
