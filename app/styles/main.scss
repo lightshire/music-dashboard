@@ -23,7 +23,7 @@
     padding-left: 200px;
     position: relative;
     width: 100%;
-    transition: all .5s ease;
+    transition: all .2s ease;
 }
 
 .main-route-container.no-sidebar {
@@ -32,11 +32,13 @@
 
 .side-bar {
     float: left;
+    background: #fff;
     width: 200px;
     position: fixed;
     -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
     -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    z-index: 1000;
     height: 100%;
 }
 
@@ -44,52 +46,65 @@
 .sidebar-leave {
     opacity: 1;
     margin-left: 0;
-    transition: opacity .5s ease;
-    transition: margin .5s ease;
+    transition: opacity .1s ease;
+    transition: margin .1s ease;
 }
 
 .sidebar-leave.sidebar-leave-active {
-    margin-left: -190px;
+    margin-left: -200px;
     opacity: 0.01;
 }
 
 .sidebar-enter {
     opacity: 0.01;
-    margin-left: -190px;
-    transition: opacity .5s ease;
-    transition: margin .5s ease;
+    margin-left: -200px;
+    transition: opacity .1s ease;
+    transition: margin .1s ease;
 }
 
 .sidebar-enter.sidebar-enter-active {
     opacity: 1;
     margin-left: 0;
 }
+
+.container{
+    position: relative;
+}
+
 .c_links {
     margin-top: 45px;
 }
+
 .c_header {
     padding-top: 80px;
-    border-bottom: 1px solid $div-border;
+    // border-bottom: 1px solid $div-border;
     background-color: #90caf9;
 }
+
 .c_first_button {
     width: 100%;
 }
+
 .c_tabs {
     margin-right: 20px;
 }
+
 .c_tabs.active {
     border-bottom: 1px solid $btn-border;
 }
+
 .c_header .container h4 {
     margin-top: 0;
 }
+
 .c_main_container {
-    margin-top: -1px;
-    border: 1px solid $div-border;
+    // margin-top: -1px;
+    // border: 1px solid $div-border;
 }
-.c_my_account_settings {
-    margin-top: 20px;
+
+.c_my_account_settings, .c_my_account_security, .c_my_account_updgrade {
+    margin-top: 0px;
+    padding: 20px;
 }
 .c_my_account_settings_header .s2 img{
     border-radius: 100%;
@@ -195,3 +210,113 @@
         } 
     }
 }
+=======
+
+
+.search-btn {
+    width: 200px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.search-btn label, .search-btn .input-field {
+    display: inline-block;
+    vertical-align: middle;
+}
+.search-btn label{
+    font-size: 2rem;
+}
+.search-btn .input-field {
+    margin: 0;
+    // display: none;
+}
+.upload-btn {
+    position: absolute;
+    top: 110px;
+    right: -25px;
+}
+.table {
+    padding-top: 15px;
+}
+.table thead {
+    border-bottom: none;
+    line-height: 0;
+    text-transform: uppercase;
+}
+.table tbody {
+    line-height: 0;
+}
+.songs div {
+    display: inline-block;
+    cursor: pointer;
+}
+.songs i {
+    font-size: 18px;
+}
+#upload {
+    visibility: hidden;
+    width: 1px;
+    height: 1px;
+}
+
+
+
+.search-box-enter {
+    opacity: 0.01;
+    width: 0;
+    transition: all .5s ease;
+}
+
+.search-box-enter.search-box-enter-active {
+    width: 160px;
+    opacity: 1;
+}
+
+.search-box-leave {
+    opacity: 1;
+    width: 160px;
+    transition: all .5s ease;
+}
+
+.search-box-leave.search-box-leave-active {
+    width: 0;
+    opacity: 0.01;
+}
+
+
+.c_my_account_scrollup_button {
+    left: 289px;
+    top: 49px;
+}
+/*temporarily displays the modal for viewing*/
+.modal {
+    display: table!important;
+    top: 0;
+    bottom: 0;
+}
+.c_upload_music_file_modal, {
+    margin-top: 110px;
+    margin-bottom: 100px;
+}
+ .c_monetize_modal {
+    margin-top: 70px;
+    margin-bottom: 30px;
+ }
+.c_select_a_track_button {
+    margin-top: 10px;
+}
+.c_modal_buttons {
+    margin-right: 10px;
+}
+.c_track_terms {
+    text-align: justify;
+}
+.c_i_agree {
+    margin-top: 80px;
+
+}
+.c_table_buttons i {
+    cursor: pointer;
+}
+
+
