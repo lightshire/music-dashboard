@@ -115,6 +115,119 @@
     margin-top: 35px;
 }
 
+.player {
+    .btn-show-playlist {
+        position: relative;
+    }
+    .btn-volume-control {
+        position: relative;
+    }
+    .volume-control {
+        background: #fff;
+        @extend .z-depth-1;
+        color: $font-color;
+        position: absolute;
+        top: 50px;
+        right: 20px;
+        width: 200px;
+        padding: 0 1em;
+        .row {
+            margin: 0;
+        }
+    }
+    .playlist {
+        background: #fff;
+        @extend .z-depth-1;
+        color: $font-color;
+        position: absolute;
+        top: 50px;
+        right: 20px;
+        width: 300px;
+        .track-info {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 1em;
+            line-height: 1.2em;
+            z-index: 2000;
+            position: relative;
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16); 
+             .seek-container {
+                margin-top: 1em;
+                margin-bottom: 1em;
+                .time-current-container {
+                    text-align: left;
+                }
+                .time-end-container {
+                    text-align: right;
+                }
+                line-height: 1.2em;
+                .seeker-container {
+                    text-align: center;
+                    input.seeker {
+                        margin: 0;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .track-list {
+            display: block;
+            width: 100%;
+            padding: 0;
+            z-index: 1000;
+            position: relative;
+            ul {
+                li {
+                    height: 100%;
+                    &:hover {
+                        background-color: #ececec;
+                    }
+                }
+            } 
+            ul, li {
+                float: none;
+                font-size: 1em;
+                line-height: 1.2em;
+            }
+            .track-item {
+                margin: 0;
+            }
+            .track-thumb-container {
+                padding: 5px;
+                img.track-thumb {
+                    width: 100%;
+                    display: block;
+                }
+            }
+            .track-title-container {
+                display: table-cell;
+                vertical-align: middle;
+                .track-title {
+                    line-height: 43px;
+                }
+            }
+            .track-remove-container {
+                text-align: right;
+                a.track-remove {
+                    color: $font-color;
+                    padding: 0;
+                    width: 100%;
+                    text-align: center;
+                    transition: font-size .5s ease;
+                    &:hover {
+                        i {
+                            font-size: 1.6em;
+                        }
+                    }
+                }
+                i {
+                    font-size: 1.4em;
+                    line-height: 43px;
+                }
+            }
+        } 
+    }
+}
 
 
 .search-btn {
