@@ -1,0 +1,71 @@
+
+.zindex_supertop{
+    z-index: 9999999;
+}
+.side-bar{
+    overflow-y: auto;
+}
+.sidebar a{
+    width: 100%;
+    overflow-y: auto;
+}
+.sidebar a.active{
+    color:white;
+    background: #039be5;
+    width: 105%;
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+
+}
+.sidebar-li .active{ 
+    background:#eee;
+}
+.sidebar-li ul li a{
+    width: 100%;
+    padding: 0;
+    margin: 0px !important;
+}
+a.collapsible-header{
+    margin: 0px !important;
+}
+ul.collapsible{
+    margin-top: 0 !important;
+}
+.collapsible-body ul{
+    padding: 0 24px;
+}
+.collapsible-body ul li{
+   height: 42px;
+}
+.waves-effect.waves-blue .waves-ripple {
+  background-color: rgba(3, 169, 244, 0.65);
+}
+.collapse-link{
+    padding: 10px 0px 10px 25px !important;
+    width: 100%;
+    font-weight: bold;
+    color: #333;
+}
+.collapsible-body ul{
+    padding: 0;
+}
+.collapsed-link{
+    padding: 10px 0px 10px 45px !important;
+    width: 100%;
+    color: #333;
+}
+.collapsed-link.active{
+    padding: 10px 0px 10px 45px !important;
+    width: 100%;
+    color: #03a9f4 !important;
+    font-weight: 500;
+    background:none;
+}
+a.collapse-link.active{
+    background:#eee;
+}
+.no-margin{
+    margin: 0px;
+}
+

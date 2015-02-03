@@ -1,12 +1,7 @@
-'use strict';
-var React = require('react/addons'),
-    Router = require('react-router'),
-    RouteHandler = Router.RouteHandler,
-    ReactCSSTransitionGroup = React.addons.CSSTransitionGroup,
-    LayoutStore = require('../../stores/layout_stores'),
-    TopBar = require('../helpers/topbar'),
-    SideBar = require('../helpers/sidebar'),
-    Link = Router.Link;
+var React = require('react');
+var Router = require('react-router');
+var RouteHandler = Router.RouteHandler;
+var Link = Router.Link;
 
 var SideBar = React.createClass({
 	activeSidebarHome : function(x){
@@ -54,8 +49,9 @@ var SideBar = React.createClass({
 	      						<a className="waves-effect waves-blue collapsible-header collapse-link" onClick={this.revoidLink}>Music Manager</a>
 		      					<div className="collapsible-body">
 		      						<ul>
-		      							<li><Link to="music.manager.songs" className="waves-effect waves-blue collapsed-link">Songs</Link></li>
-				      					<li><Link to="music.manager.albums" className="waves-effect waves-blue collapsed-link">Album</Link></li>
+		      							<li><Link to="my.music.songs" className="waves-effect waves-blue collapsed-link">Songs</Link></li>
+				      					<li><Link to="my.music.albums" className="waves-effect waves-blue collapsed-link">Album</Link></li>
+				      					<li><Link to="my.music.artists" className="waves-effect waves-blue collapsed-link">Artists</Link></li>
 		      						</ul>
 		      					</div>
 			      			</li>
@@ -63,7 +59,9 @@ var SideBar = React.createClass({
 		      					<a className="waves-effect waves-blue collapsible-header collapse-link" onClick={this.revoidLink}>My Earnings</a>
 		      					<div className="collapsible-body">
 		      						<ul>
-		      							<li><a className="waves-effect waves-blue collapsed-link">Songs</a></li>
+		      							<li><Link to="my.earnings.songs" className="waves-effect waves-blue collapsed-link">Songs</Link></li>
+				      					<li><Link to="my.earnings.albums" className="waves-effect waves-blue collapsed-link">Albums</Link></li>
+				      					<li><Link to="my.earnings.artists" className="waves-effect waves-blue collapsed-link">Artists</Link></li>
 		      						</ul>
 		      					</div>
 			      			</li>
