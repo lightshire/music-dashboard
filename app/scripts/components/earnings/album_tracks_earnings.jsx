@@ -1,31 +1,31 @@
 'use strict';
 var React = require('react'),
-    Songs = require('./items/song'),
+    AlbumTracks = require('./items/album_tracks_earnings'),
     _ = require('lodash'),
-    TracksStore = require('../../stores/track_stores'),
+    AlbumStore = require('../../stores/album_stores'),
     getStateFromStore = function() {
         return {
-            tracks: TracksStore.getAll()
+            albums: AlbumStore.getAll()
         };
     },
-    MusicManagerSongs = React.createClass({
+    MusicManagerAlbums = React.createClass({
         getInitialState: function() {
             return getStateFromStore();
         },
         componentDidMount: function() {
-            this.unsubscribe = TracksStore.listen(this._onChange);
+            this.unsubscribe = AlbumStore.listen(this._onChange);
         },
         componentWillUnmount: function() {
             this.unsubscribe();
         },
         render: function() {
-            var data = this.state.tracks,
-                items;
 
-            items = _.map(data, function(item) {
-                return (<Songs
+            var data = this.state.albums;
+
+            var items = _.map(data, function(item) {
+                return (<AlbumTracks
                     id={item.id}
-                    songs={item.title}
+                    albums={item.title}
                     artists={item.artist}
                     time={item.time}
                     label={item.label}
@@ -39,9 +39,9 @@ var React = require('react'),
                         <thead>
                             <tr>
                                 <th></th>
-                                <th className="grey-text text-lighten-1">Song Title</th>
-                                <th className="grey-text text-lighten-1">Artists</th>
-                                <th className="grey-text text-lighten-1">Time</th>
+                                <th className="grey-text text-lighten-1">Title</th>
+                                <th className="grey-text text-lighten-1">Artist</th>
+                                <th className="grey-text text-lighten-1">Duration</th>
                                 <th className="grey-text text-lighten-1">Label</th>
                                 <th className="grey-text text-lighten-1">Genre</th>
                                 <th className="grey-text text-lighten-1">Uploaded</th>
@@ -49,7 +49,7 @@ var React = require('react'),
                             </tr>
                         </thead>
                         <tbody>
-                            {items}
+                        {items}
                         </tbody>
                     </table>
                 </div>
@@ -60,4 +60,4 @@ var React = require('react'),
         }
     });
 
-module.exports =  MusicManagerSongs;
+module.exports =  MusicManagerAlbums;
