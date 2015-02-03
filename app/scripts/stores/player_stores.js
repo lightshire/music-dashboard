@@ -109,6 +109,12 @@ var Reflux = require('reflux'),
         },
         onSeekTrack: function(value) {
             _status.current_time = value;
+
+            this.emitChange();
+        },
+        onUpdateCurrentTime: function(value) {
+            _status.current_time = value;
+
             this.emitChange();
         },
         onUpdateCurrentTrackLength: function(value) {

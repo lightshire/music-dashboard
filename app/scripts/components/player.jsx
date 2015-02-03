@@ -10,14 +10,39 @@ var React = require('react/addons'),
         }
     },
     _previous_track = null,
-    _previous_time = null,
+    _is_mouse_down_on_seeker = false,
     Player = React.createClass({
         getInitialState: function() {
-            return getStateFromStore();
+            return _.extend({}, getStateFromStore(), {
+                track_info: {
+                    title: 'Choose A Track',
+                    lenth: 0,
+                    current_time: 0
+                }
+            });
         },
         componentDidMount: function() {
+            var player = this.refs.audio_player.getDOMNode(),
+                seeker = this.refs.track_seek.getDOMNode();
+
             this.unsubscribe = PlayerStore.listen(this._onChange);
             this.updatePlayerStatus(this.refs.audio_player.getDOMNode());
+        
+            player.addEventListener('timeupdate', function(e) {
+                var new_track_info = _.extend({}, this.state.track_info);
+                new_track_info.current_time = player.currentTime;
+                new_track_info.length = player.duration;
+                this.setState({track_info: new_track_info});
+            }.bind(this), false);
+
+            seeker.addEventListener('mousedown', function(e) {
+                _is_mouse_down_on_seeker = true;
+            }.bind(this), false);
+
+            seeker.addEventListener('mouseup', function(e) {
+                _is_mouse_down_on_seeker = false;
+            }.bind(this), false);
+
         },
         componentWillUnmount: function() {
             this.unsubscribe();
@@ -38,24 +63,16 @@ var React = require('react/addons'),
         },
         handleTrackSeek: function() {
             var value = this.refs.track_seek.getDOMNode().value;
-            console.log('handleTrackSeek',value);
             PlayerActions.seekTrack(value);
         },
         updatePlayerStatus: function(player) {
             var current_track_id = this.state.status.current_track,
             track = PlayerStore.get(current_track_id),
-            current_time = this.state.status.current_time;
+            current_time = this.state.track_info.current_time;
 
-            if(track !== _previous_track) {
+            if(track.id !== _previous_track) {
                 player.src = track.audio_url;
-                _previus_track = track;
-            }
-            
-            console.log(current_time, _previous_time);
-            if(current_time !== _previous_time) {
-                console.log(current_time);
-                player.currentTime = current_time;
-                _previous_time = current_time;
+                _previous_track = track.id;
             }
 
             if(this.state.status.play) {
@@ -68,7 +85,6 @@ var React = require('react/addons'),
         },
         render: function() {
             var tracks, playlist, volume_control, audio;
-
             if(this.state.status.modal === 'playlist') {
                 tracks = _.map(this.state.tracks, function(item) {
                     return (<TrackItem id={item.id} title={item.title} thumbnail={item.thumbnail} />);
@@ -84,11 +100,11 @@ var React = require('react/addons'),
                                     </span>
                                 </div>
                                 <div className='col s8 seeker-container'>
-                                    <input ref="track_seek" onChange={this.handleTrackSeek} type='range' className='seeker' min='0' max='360' />
+                                    <input ref="track_seek" onChange={this.handleTrackSeek} type='range' className='seeker' min='0' max={this.state.track_info.length} value={this.state.track_info.current_time}/>
                                 </div>
                                 <div className='col s2 time-end-container'>
                                     <span className='time-end'>
-                                        {this.state.status.length}
+                                        {this.state.track_info.length}
                                     </span>
                                 </div>
                             </div>
