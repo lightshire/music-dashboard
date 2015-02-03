@@ -6,27 +6,28 @@ var Reflux = require('reflux'),
         1 : {
             id: 1,
             thumbnail: 'https://placeimg.com/80/80/music/1',
-            title: 'Song Title 123',
-            audio_url: 'https://cdn.somewhere.tld/path/to/mp3.mp3'
+            title: 'We are the champion',
+            audio_url: 'http://a.tumblr.com/tumblr_lsi0ziIh3M1qa6vv7o1_r1.mp3'
         },
         2 : {
             id: 2,
             thumbnail: 'https://placeimg.com/80/80/music/2',
-            title: 'Song Title 4',
-            audio_url: 'https://cdn.somewhere.tld/path/to/mp3.mp3'
+            title: 'All about the bass',
+            audio_url: 'http://trendingmp3.com/music/user_folder/All%20About%20That%20Bass%20Meghan%20Trainor%20-%201412662517.mp3'
         },
         3 : {
             id: 3,
             thumbnail: 'https://placeimg.com/80/80/music/3',
             title: 'Song Title 5',
-            audio_url: 'https://cdn.somewhere.tld/path/to/mp3.mp3'
+            audio_url: 'http://a.tumblr.com/tumblr_lsi0ziIh3M1qa6vv7o1_r1.mp3'
         }
     },
     _status = {
-        current: null,
+        current_track: 2,
         play:  false, // playing or paused
-        volume: .50,
+        volume: .80,
         modal: null, // playlist or volume or null
+        length: 0,
         current_time: 0
     },
     _removeTrack = function(id) {
@@ -98,6 +99,20 @@ var Reflux = require('reflux'),
         },
         onTogglePlay: function() {
             _status.play = !_status.play;
+
+            this.emitChange();
+        },
+        onChangeCurrentTrack: function(id) {
+            _status.current_track = id;
+            _status.current_time = 0;
+            this.emitChange();
+        },
+        onSeekTrack: function(value) {
+            _status.current_time = value;
+            this.emitChange();
+        },
+        onUpdateCurrentTrackLength: function(value) {
+            _status.length = value;
 
             this.emitChange();
         }
