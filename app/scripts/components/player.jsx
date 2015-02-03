@@ -22,31 +22,28 @@ var React = require('react/addons'),
             });
         },
         componentDidMount: function() {
-            var player = this.refs.audio_player.getDOMNode(),
-                seeker = this.refs.track_seek.getDOMNode();
+            var player = this.refs.audio_player.getDOMNode();
 
             this.unsubscribe = PlayerStore.listen(this._onChange);
             this.updatePlayerStatus(this.refs.audio_player.getDOMNode());
         
             player.addEventListener('timeupdate', function(e) {
-                console.log('x', _is_mouse_down_on_seeker);
-                if(!_is_mouse_down_on_seeker) {
-                    var new_track_info = _.extend({}, this.state.track_info);
-                    new_track_info.current_time = player.currentTime;
-                    new_track_info.length = player.duration;
-                    this.setState({track_info: new_track_info});
-                }
+                var new_track_info = _.extend({}, this.state.track_info);
+                new_track_info.current_time = player.currentTime;
+                new_track_info.length = player.duration;
+                this.setState({track_info: new_track_info});
+                this.refs.track_seek.getDOMNode().value = player.currentTime;
             }.bind(this), false);
 
-            seeker.addEventListener('mousedown', function(e) {
-                console.log('true');
-                _is_mouse_down_on_seeker = true;
-            }.bind(this), false);
-
-            seeker.addEventListener('mouseup', function(e) {
-                console.log('false');
-                _is_mouse_down_on_seeker = false;
-            }.bind(this), false);
+            // seeker.addEventListener('mousedown', function(e) {
+            //     console.log('true');
+            //     _is_mouse_down_on_seeker = true;
+            // }.bind(this), false);
+            //
+            // seeker.addEventListener('mouseup', function(e) {
+            //     console.log('false');
+            //     _is_mouse_down_on_seeker = false;
+            // }.bind(this), false);
 
         },
         componentWillUnmount: function() {
@@ -67,8 +64,9 @@ var React = require('react/addons'),
             PlayerActions.changeVolume(value);
         },
         handleTrackSeek: function() {
-            var value = this.refs.track_seek.getDOMNode().value;
-            PlayerActions.seekTrack(value);
+            var value = this.refs.track_seek.getDOMNode().value,
+                player = this.refs.audio_player.getDOMNode();
+                player.currentTime = value;
         },
         updatePlayerStatus: function(player) {
             var current_track_id = this.state.status.current_track,
@@ -90,6 +88,7 @@ var React = require('react/addons'),
         },
         render: function() {
             var tracks, playlist, volume_control, audio;
+            if(this.state.status.modal === 'playlist') {
                 tracks = _.map(this.state.tracks, function(item) {
                     return (<TrackItem id={item.id} title={item.title} thumbnail={item.thumbnail} />);
                 });
@@ -100,11 +99,11 @@ var React = require('react/addons'),
                             <div className='row seek-container'>
                                 <div className='col s2 time-current-container'>
                                     <span className='time-current'>
-                                        0:00
+                                        {this.state.track_info.current_time} 
                                     </span>
                                 </div>
                                 <div className='col s8 seeker-container'>
-                                    <input ref="track_seek" onChange={this.handleTrackSeek} type='range' className='seeker' min='0' max={this.state.track_info.length} value={this.state.track_info.current_time}/>
+                                    <input ref="track_seek" onChange={this.handleTrackSeek} type='range' className='seeker' min='0' max={this.state.track_info.length}  />
                                 </div>
                                 <div className='col s2 time-end-container'>
                                     <span className='time-end'>
@@ -120,6 +119,7 @@ var React = require('react/addons'),
                         </div>
                     </div>
                 );
+            }
             if(this.state.status.modal === 'volume') {
                 volume_control = (
                     <div className='volume-control'>
