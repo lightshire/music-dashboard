@@ -1,11 +1,9 @@
 'use strict';
-var React = require('react');
-var _ = require('lodash');
-
-var LabelData = React.createClass({
+var React = require('react'),
+_ = require('lodash'),
+label_data = React.createClass({
     render: function() {
-    	var x =  _.map(this.props.data, function(data, i){
-    		console.log(data);
+    	var label_data =  _.map(this.props.data, function(data, i){
     		return (
     				<tr className="c_row_admin_labels">
     					<td><img className={data.label_img_class} src={data.label_img} /></td>
@@ -25,10 +23,10 @@ var LabelData = React.createClass({
     	});
     	return (
     		<tbody>
-    			{x}
+    			{label_data}
     		</tbody>
     	);
     }
 });
 
-module.exports = LabelData;
+module.exports = label_data;

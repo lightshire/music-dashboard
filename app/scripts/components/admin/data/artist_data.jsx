@@ -1,13 +1,11 @@
 'use strict';
-var React = require('react');
-var _ = require('lodash');
-
-var LabelData = React.createClass({
+var React = require('react'),
+_ = require('lodash'),
+artist_data = React.createClass({
     render: function() {
-    	var x =  _.map(this.props.data, function(data, i){
-    		console.log(data);
+    	var artist_data =  _.map(this.props.data, function(data, i){
     		return (
-    				<tr className="c_row_admin_artists">
+    				<tr className='c_row_admin_artists'>
     					<td><img className={data.artist_img_class} src={data.artist_img} /></td>
     					<td>{data.artist_name}</td>
     					<td>{data.album_count}</td>
@@ -15,8 +13,8 @@ var LabelData = React.createClass({
     					<td>{data.added}</td>
     					<td>
     						<div>
-    							<i className="mdi-editor-mode-edit"></i>
-    							<i className="mdi-action-delete"></i>
+    							<i className='mdi-editor-mode-edit'></i>
+    							<i className='mdi-action-delete'></i>
     						</div>
     					</td>
     				</tr>
@@ -24,10 +22,10 @@ var LabelData = React.createClass({
     	});
     	return (
     		<tbody>
-    			{x}
+    			{artist_data}
     		</tbody>
     	);
     }
 });
 
-module.exports = LabelData;
+module.exports = artist_data;
