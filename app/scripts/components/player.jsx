@@ -29,17 +29,22 @@ var React = require('react/addons'),
             this.updatePlayerStatus(this.refs.audio_player.getDOMNode());
         
             player.addEventListener('timeupdate', function(e) {
-                var new_track_info = _.extend({}, this.state.track_info);
-                new_track_info.current_time = player.currentTime;
-                new_track_info.length = player.duration;
-                this.setState({track_info: new_track_info});
+                console.log('x', _is_mouse_down_on_seeker);
+                if(!_is_mouse_down_on_seeker) {
+                    var new_track_info = _.extend({}, this.state.track_info);
+                    new_track_info.current_time = player.currentTime;
+                    new_track_info.length = player.duration;
+                    this.setState({track_info: new_track_info});
+                }
             }.bind(this), false);
 
             seeker.addEventListener('mousedown', function(e) {
+                console.log('true');
                 _is_mouse_down_on_seeker = true;
             }.bind(this), false);
 
             seeker.addEventListener('mouseup', function(e) {
+                console.log('false');
                 _is_mouse_down_on_seeker = false;
             }.bind(this), false);
 
@@ -85,12 +90,11 @@ var React = require('react/addons'),
         },
         render: function() {
             var tracks, playlist, volume_control, audio;
-            if(this.state.status.modal === 'playlist') {
                 tracks = _.map(this.state.tracks, function(item) {
                     return (<TrackItem id={item.id} title={item.title} thumbnail={item.thumbnail} />);
                 });
                 playlist = (
-                    <div className='playlist'>
+                    <div className={this.state.status.modal === 'playlist' ? 'playlist' : 'playlist hide'}>
                         <div className='track-info'>
                             <div className='title'>Song Title</div>
                             <div className='row seek-container'>
@@ -116,7 +120,6 @@ var React = require('react/addons'),
                         </div>
                     </div>
                 );
-            };
             if(this.state.status.modal === 'volume') {
                 volume_control = (
                     <div className='volume-control'>
@@ -140,7 +143,7 @@ var React = require('react/addons'),
                     {audio}
                     <ul>
                         <li className='btn-volume-control'><a href='#' onClick={this.handleToggleVolumeControl}><i className='mdi-av-volume-up' /></a>
-                            {volume_control} 
+                            {volume_control}
                         </li>
                         <li><a href='#'><i className='mdi-av-skip-previous' /></a></li>
                         <li><a href='#' onClick={this.handleTogglePlay}><i className={this.state.status.play ? 'mdi-av-pause' : 'mdi-av-play-arrow'} /></a></li>
