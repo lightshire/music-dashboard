@@ -38,7 +38,7 @@ var React = require('react'),
                                 </div>
                             </div>
                             <div className='center-align'>
-                                <span>Don't have an account yet? <a href="#">Sign in</a></span>
+                                <span>Don't have an account yet? <a href='#'>Sign in</a></span>
                             </div>
                         </div>
                         <div className='col s2'>&nbsp;</div>
