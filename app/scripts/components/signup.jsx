@@ -19,7 +19,7 @@ var React = require('react'),
                                 <div className='c_signup'>
                                     <h5 className="c_create_account_header">Create Account</h5>
                                     <form action='#'>
-                                        <InputFiel
+                                        <InputField
                                             texdtfield_id='username_field'
                                             textfield_type='text'
                                             textfield_state='validate'
