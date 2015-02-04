@@ -4,7 +4,6 @@ var React = require('react/addons'),
         render: function() {
             return (
                 <div className='c_my_account_updgrade'>
-                    
                 	<div className='row'>
                 		<div className='col s8'>
                 			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
@@ -13,7 +12,6 @@ var React = require('react/addons'),
                 	</div>
                 	<div className='row'>
                 		<div className='col s6'>
-
 						    <div className='row'>
 						        <div className='col s12'>
 						          	<div className='card'>
@@ -32,9 +30,7 @@ var React = require('react/addons'),
 						          	</div>
 						        </div>
 						    </div>
-
                 		</div>
-
                 		<div className='col s6'>
                 			<div className='row'>
 						        <div className='col s12'>
@@ -55,12 +51,9 @@ var React = require('react/addons'),
 						        </div>
 						    </div>
                 		</div>
-
                 	</div>
-
                 </div>
             );
         }
     });
-
-module.exports = MyAccount;
+	module.exports = MyAccount;

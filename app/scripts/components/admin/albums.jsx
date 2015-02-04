@@ -7,5 +7,4 @@ Albums = React.createClass({
         );
     }
 });
-
 module.exports = Albums;

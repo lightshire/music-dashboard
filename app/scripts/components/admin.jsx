@@ -38,5 +38,4 @@ var React = require('react'),
             );
         }
     });
-
-module.exports = MusicManager;
+    module.exports = MusicManager;

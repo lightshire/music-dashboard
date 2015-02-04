@@ -27,5 +27,4 @@ var React = require('react'),
             );
         }
     });
-
-module.exports = TrackItem;
+    module.exports = TrackItem;

@@ -7,10 +7,10 @@ var React = require('react'),
         },
         render: function() {
             return (
-                <tr className="songs">
+                <tr className='songs'>
                     <td>
-                        <div><i className="mdi-av-play-arrow"></i></div>
-                        <div><i className="mdi-content-add"></i></div>
+                        <div><i className='mdi-av-play-arrow'></i></div>
+                        <div><i className='mdi-content-add'></i></div>
                     </td>
                     <td>{this.props.albums}</td>
                     <td>{this.props.artists}</td>
@@ -19,13 +19,12 @@ var React = require('react'),
                     <td>{this.props.genre}</td>
                     <td>{this.props.uploaded}</td>
                     <td>
-                        <div><i className="mdi-editor-attach-money"></i></div>
-                        <div><i className="mdi-editor-mode-edit"></i></div>
-                        <div onClick={this.handleDeleteTracks}><i className="mdi-action-delete"></i></div>
+                        <div><i className='mdi-editor-attach-money'></i></div>
+                        <div><i className='mdi-editor-mode-edit'></i></div>
+                        <div onClick={this.handleDeleteTracks}><i className='mdi-action-delete'></i></div>
                     </td>
                 </tr>
             );
         }
     });
-
-module.exports = Albums;
+    module.exports = Albums;

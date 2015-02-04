@@ -30,7 +30,6 @@ var React = require('react'),
                     genre={item.genre}
                     uploaded={item.date_uploaded} />);
             });
-
             return (
                 <div className='table'>
                     <table>
@@ -57,5 +56,4 @@ var React = require('react'),
             this.setState(getStateFromStore());
         }
     });
-
-module.exports =  MusicManagerAlbums;
+    module.exports =  MusicManagerAlbums;

@@ -23,12 +23,12 @@ var React = require('react/addons'),
         },
         render: function() {
             return (
-                <div className="App ">
+                <div className='App '>
                     <TopBar />
-                    <div className="contents">
-                        <ReactCSSTransitionGroup transitionName="sidebar">
+                    <div className='contents'>
+                        <ReactCSSTransitionGroup transitionName='sidebar'>
                             {this.state.layout.sidebar
-                                ? (<SideBar key="sidebar" />)
+                                ? (<SideBar key='sidebar' />)
                                 : ''}
                         </ReactCSSTransitionGroup>
                         <div className={this.state.layout.sidebar ? 'main-route-container' : 'main-route-container no-sidebar'}>
@@ -42,5 +42,4 @@ var React = require('react/addons'),
             this.setState(getStateFromStore());
         }
     });
-
-module.exports = Layout;
+    module.exports = Layout;

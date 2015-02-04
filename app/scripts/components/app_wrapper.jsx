@@ -6,5 +6,4 @@ var React = require('react'),
             return (<RouteHandler />);
         }
     });
-
-module.exports = AppWrapper;
+	module.exports = AppWrapper;

@@ -7,5 +7,4 @@ Tracks = React.createClass({
         );
     }
 });
-
-module.exports =  Tracks;
+module.exports = Tracks;

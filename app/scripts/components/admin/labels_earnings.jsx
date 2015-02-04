@@ -42,10 +42,9 @@ var React = require('react'),
                     rating : 3,
                     downloads : 1542
                 },
-            ]);
-
-            var label_earnings =  _.map(label_earnings_data, function(data, i){
-            return (
+            ]),
+            label_earnings =  _.map(label_earnings_data, function(data, i){
+                return (
                     <tr className='c_row_admin_artists'>
                         <td><img className="c_labels_image" src={data.image} /></td>
                         <td>{data.name}</td>
@@ -63,7 +62,6 @@ var React = require('react'),
                     </tr>
                 );
             });
-
             return (
                 <div>
                     <div className="row"><br/>
@@ -111,5 +109,4 @@ var React = require('react'),
             );
         }
     });
-
-module.exports =  MusicManagerAlbums;
+    module.exports =  MusicManagerAlbums;

@@ -30,7 +30,6 @@ var React = require('react/addons'),
         },
         render: function() {
             var tracks, playlist, volume_control;
-
             if(this.state.status.modal === 'playlist') {
                 tracks = _.map(this.state.tracks, function(item) {
                     return (<TrackItem id={item.id} title={item.title} thumbnail={item.thumbnail} />);
@@ -74,8 +73,6 @@ var React = require('react/addons'),
                     </div>
                 );
             }
-            
-
             return (
                 <div className='player'>
                     <ul>
@@ -97,5 +94,4 @@ var React = require('react/addons'),
             this.setState(getStateFromStore());
         }
     });
-
-module.exports = Player;
+    module.exports = Player;
