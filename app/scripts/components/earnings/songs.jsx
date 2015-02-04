@@ -30,8 +30,7 @@ var React = require('react'),
                     time={item.time}
                     label={item.label}
                     genre={item.genre}
-                    uploaded={item.date_uploaded}
-                    songstatus={item.status} />);
+                    uploaded={item.date_uploaded} />);
             });
 
             return (
@@ -40,12 +39,12 @@ var React = require('react'),
                         <thead>
                             <tr>
                                 <th></th>
-                                <th className="grey-text text-lighten-1">Song Title</th>
-                                <th className="grey-text text-lighten-1">Artists</th>
-                                <th className="grey-text text-lighten-1">Time</th>
-                                <th className="grey-text text-lighten-1">Label</th>
-                                <th className="grey-text text-lighten-1">Genre</th>
-                                <th className="grey-text text-lighten-1">Uploaded</th>
+                                <th className="grey-text text-lighten-1">Title</th>
+                                <th className="grey-text text-lighten-1">Duration</th>
+                                <th className="grey-text text-lighten-1">Earnings (Monthly) <i className="mdi-navigation-more-vert"></i></th>
+                                <th className="grey-text text-lighten-1">Monetized Since</th>
+                                <th className="grey-text text-lighten-1">Rating</th>
+                                <th className="grey-text text-lighten-1">Downloads</th>
                                 <th></th>
                             </tr>
                         </thead>
