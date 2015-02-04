@@ -20,16 +20,18 @@ var React = require('react'),
         },
         render: function() {
             var data = this.state.albums,
-            items = _.map(data, function(item) {
-                return (<AlbumTracks
-                    id={item.id}
-                    albums={item.title}
-                    artists={item.artist}
-                    time={item.time}
-                    label={item.label}
-                    genre={item.genre}
-                    uploaded={item.date_uploaded} />);
-            });
+                items = _.map(data, function(item) {
+                    return (
+                        <AlbumTracks
+                        id={item.id}
+                        albums={item.title}
+                        artists={item.artist}
+                        time={item.time}
+                        label={item.label}
+                        genre={item.genre}
+                        uploaded={item.date_uploaded} />
+                    );
+                });
             return (
                 <div className='table'>
                     <table>
