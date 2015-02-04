@@ -8,7 +8,13 @@ var Reflux = require('reflux'),
         'hideModal',
         'toggleVolumeControl',
         'changeVolume',
-        'togglePlay'
+        'togglePlay',
+        'changeCurrentTrack',
+        'updateCurrentTrackLength',
+        'seekTrack',
+        'updateCurrentTime',
+        'nextTrack',
+        'previousTrack'
     ]);
 
 module.exports = PlayerActions;
