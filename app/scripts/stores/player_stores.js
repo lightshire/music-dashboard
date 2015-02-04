@@ -63,6 +63,42 @@ var Reflux = require('reflux'),
         getStatus: function() {
             return _status;
         },
+        onNextTrack: function() {
+            var current_track = _status.current_track,
+                tracks_ids = Object.keys(_tracks),
+                track_index = tracks_ids.indexOf(current_track),
+                next_track_index;
+
+                if (track_index < tracks_ids.length - 1) {
+                    next_track_index = track_index + 1;
+                } else {
+                    next_track_index = 0;
+                }
+
+                if(typeof _tracks[tracks_ids[next_track_index]] === 'undefined') {
+                    return;
+                }
+
+                this.onChangeCurrentTrack(tracks_ids[next_track_index]);
+        },
+        onPreviousTrack: function() {
+            var current_track = _status.current_track,
+                tracks_ids = Object.keys(_tracks),
+                track_index = tracks_ids.indexOf(current_track),
+                previous_track_index;
+
+                if (track_index > 0) {
+                    previous_track_index = track_index - 1;
+                } else {
+                    previous_track_index = tracks_ids.length - 1;
+                }
+
+                if(typeof _tracks[tracks_ids[previous_track_index]] === 'undefined') {
+                    return;
+                }
+
+                this.onChangeCurrentTrack(tracks_ids[previous_track_index]);
+        },
         onTogglePlaylist: function() {
             if(_status.modal !== 'playlist') {
                 _status.modal = 'playlist';

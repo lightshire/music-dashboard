@@ -12,7 +12,9 @@ var Reflux = require('reflux'),
         'changeCurrentTrack',
         'updateCurrentTrackLength',
         'seekTrack',
-        'updateCurrentTime'
+        'updateCurrentTime',
+        'nextTrack',
+        'previousTrack'
     ]);
 
 module.exports = PlayerActions;
