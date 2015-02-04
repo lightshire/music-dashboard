@@ -14,21 +14,23 @@ var React = require('react'),
     MusicManager = require('./components/music_manage'),
     MusicManagerSongs = require('./components/music_manage/songs'),
     MusicManagerAlbums = require('./components/music_manage/albums'),
-
     MyEarnings = require('./components/earnings'),
     MyEarningsSongs = require('./components/earnings/songs'),
     MyEarningsAlbums = require('./components/earnings/albums'),
     MyEarningsAlbumTracksEarnings = require('./components/earnings/album_tracks_earnings'),
-
     Admin = require('./components/admin'),
     AdminTracks = require('./components/admin/tracks'),
     AdminAlbums = require('./components/admin/albums'),
     AdminArtists = require('./components/admin/artists'),
     AdminLabels = require('./components/admin/labels'),
-
     Signup = require('./components/signup'),
     Signin = require('./components/signin'),
-
+    MusicManagerAlbum = require('./components/music_manage_album'),
+    MusicManagerAlbumSongs = require('./components/music_manage_album/songs'),
+    MusicManagerAlbumAlbumInfo = require('./components/music_manage_album/albuminfo'),
+    MusicManagerArtist = require('./components/music_manage_artist'),
+    MusicManagerArtistSongs = require('./components/music_manage/songs'),
+    MusicManagerArtistAlbums = require('./components/music_manage/albums'),
     routes = (
         <Route path="/" handler={AppWrapper}>
             <Route path="/" handler={Layout}>
@@ -56,6 +58,14 @@ var React = require('react'),
             </Route>
             <Route name="signup" path="/signup" handler={Signup} />
             <Route name="signin" path="/signin" handler={Signin} />
+            <Route name="music.manager.album" path="/manage_music/album/:id" handler={MusicManagerAlbum}>
+                <Route name="music.manager.album.songs" path="songs" handler={MusicManagerAlbumSongs} />
+                <Route name="music.manager.album.albuminfo" path="albuminfo" handler={MusicManagerAlbumAlbumInfo} />
+            </Route>
+            <Route name="music.manager.artist" path="/manage_music/artist/:id" handler={MusicManagerArtist} >
+                <Route name="music.manager.artist.songs" path="songs" handler={MusicManagerArtistSongs} />
+                <Route name="music.manager.artist.albums" path="/manage_music/artist/:id/albums" handler={MusicManagerArtistAlbums} />
+            </Route>
         </Route>
     );
 

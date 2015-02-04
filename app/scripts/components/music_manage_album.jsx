@@ -8,7 +8,7 @@ var React = require('react'),
     Modal = require('./helpers/modal'),
     InputField = require('./helpers/textfield'),
     ReactCSSTransitionGroup = React.addons.CSSTransitionGroup,
-    MusicManager = React.createClass({
+    MusicManagerArtist = React.createClass({
         handleAddTracks: function() {
             TrackActions.addTracks();
             this.setState({
@@ -46,8 +46,10 @@ var React = require('react'),
                 done: false
             });
         },
+        mixins: [Router.State],
         render: function() {
-            var upload_modal = this.uploadModal,
+            var id = this.getParams().id,
+                upload_modal = this.uploadModal,
                 uploading_modal = this.uploadingModal,
                 sample_add = this.handleAddTracks,
                 cancel = this.cancelHandler,
@@ -222,14 +224,19 @@ var React = require('react'),
                 <div className='c_body'>
                     <div className='c_header'>
                         <div className='container'>
-                            <h4 className='white-text'>Music Manager</h4>
+                            <h4 className='white-text'>
+                                <Link to='music.manager.albums'>
+                                    <i className='mdi-hardware-keyboard-backspace black-text'></i>
+                                </Link>
+                                Potato Album
+                            </h4>
                             <div className='c_links'>
-                                <Link to='music.manager.songs' className='waves-effect waves-white btn-flat white-text c_tabs'>Tracks</Link>
-                                <Link to='music.manager.albums' className='waves-effect waves-white btn-flat white-text c_tabs'>Albums</Link>
+                                <Link to='music.manager.album.songs' params={{id: id}} className='waves-effect waves-white btn-flat white-text c_tabs'>Tracks</Link>
+                                <Link to='music.manager.album.albuminfo' params={{id: id}} className='waves-effect waves-white btn-flat white-text c_tabs'>Album Info</Link>
                             </div>
                             <Search />
                             <div onClick={this.showModal} className='upload-btn right-align'>
-                                <a className='btn-floating btn-large waves-effect waves-light red lighten-2'>
+                                <a className='btn-floating btn-large waves-effect waves-light red'>
                                     <i className='mdi-file-file-upload'></i>
                                 </a>
                             </div>
@@ -255,4 +262,4 @@ var React = require('react'),
         }
     });
 
-module.exports = MusicManager;
+module.exports = MusicManagerArtist;

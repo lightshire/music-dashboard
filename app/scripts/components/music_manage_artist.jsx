@@ -8,7 +8,7 @@ var React = require('react'),
     Modal = require('./helpers/modal'),
     InputField = require('./helpers/textfield'),
     ReactCSSTransitionGroup = React.addons.CSSTransitionGroup,
-    MusicManager = React.createClass({
+    MusicManagerArtist = React.createClass({
         handleAddTracks: function() {
             TrackActions.addTracks();
             this.setState({
@@ -17,13 +17,23 @@ var React = require('react'),
         },
         getInitialState: function() {
             return {
+                create: false,
+                createalbum: false,
                 selectmusic: false,
                 upload: false,
                 uploading: false,
                 done: false
             };
         },
+        createModal: function() {
+            this.setState({create: !this.state.create});
+        },
+        createAlbumModal: function() {
+            this.setState({create: false});
+            this.setState({createalbum: !this.state.createalbum});
+        },
         showModal: function() {
+            this.setState({create: false});
             this.setState({selectmusic: !this.state.selectmusic});
         },
         uploadModal: function() {
@@ -40,27 +50,35 @@ var React = require('react'),
         },
         cancelHandler: function() {
             this.setState({
+                createalbum: false,
                 selectmusic: false,
                 upload: false,
                 uploading: false,
                 done: false
             });
         },
+        mixins: [Router.State],
         render: function() {
-            var upload_modal = this.uploadModal,
+            var id = this.getParams().id,
+                upload_modal = this.uploadModal,
                 uploading_modal = this.uploadingModal,
                 sample_add = this.handleAddTracks,
                 cancel = this.cancelHandler,
+                create = '',
+                createalbum='',
                 select = '',
                 upload = '',
                 uploading = '',
                 done = '',
+                modal_content_new,
                 modal_content_1,
                 modal_content_2,
                 modal_content_3,
                 modal_content_4,
+                modal_content_5,
                 modal_buttons_1,
                 modal_buttons_2,
+                modal_buttons_3,
                 modal_buttons_uploading,
                 modal_buttons_disabled,
                 preloader_style = {};
@@ -68,6 +86,18 @@ var React = require('react'),
             preloader_style = {
                 width: '70%'
             };
+
+            modal_content_new = (
+                <div key='create_modal'
+                    className='container center-align c_upload_music_file_modal'>
+                    <p>
+                        <i onClick={this.showModal} className='mdi-file-file-upload large'></i>
+                        <h5 onClick={this.showModal}>Upload</h5>
+                        <i onClick={this.createAlbumModal} className='mdi-file-folder-open large'></i>
+                        <h5 onClick={this.createAlbumModal}>Album</h5>
+                    </p>
+                </div>
+            );
 
             modal_content_1 = (
                 <div key='select_modal'
@@ -133,6 +163,31 @@ var React = require('react'),
                     </p>
                 </div>
             );
+            
+            modal_content_5 = (
+                <div key='createalbum_modal' className='container center-align c_upload_music_file_modal'>
+                    <p>
+                        <InputField
+                            textfield_type='text'
+                            textfield_label='Title'
+                            outerdiv_size='s12'
+                            textfield_state='validate'
+                            textfield_id='title'
+                            textfield_label_for='title' />
+                        <InputField
+                            textfield_type='textarea'
+                            textfield_label='Description'
+                            outerdiv_size='s12'
+                            textfield_state='validate'
+                            textfield_id='description'
+                            textfield_label_for='description' />
+                        <h5>Upload an album art</h5>
+                        <img src='http://placehold.it/85x85&text=avatar' />
+                        <h6>At least 1600 x 1600 pixels in size</h6>
+                        <a className='c_modal_buttons waves-effect waves-light btn green lighten-2 modal-action' >Choose from File</a>
+                    </p>
+                </div>
+            );
 
             modal_buttons_1 = ([
                 {
@@ -186,6 +241,26 @@ var React = require('react'),
                 }
             ]);
 
+            modal_buttons_3 = ([
+                {
+                    text : 'Create Album',
+                    onclick : cancel,
+                    class_name : 'c_modal_buttons waves-effect waves-light btn green lighten-2 modal-action'
+                },
+                {
+                    text : 'Cancel',
+                    onclick : cancel,
+                    class_name : 'c_modal_buttons black-text waves-effect waves-grey lighten-4 btn white lighten-5 modal-action modal-close'
+                }
+            ]);
+
+            if (this.state.create === true) {
+                create = (<Modal
+                            id='modal12'
+                            title='New'
+                            content={modal_content_new} />);
+            }
+
             if (this.state.selectmusic === true) {
                 select = (<Modal
                             id='modal1'
@@ -218,6 +293,14 @@ var React = require('react'),
                             buttons={modal_buttons_2} />);
             }
 
+            if (this.state.createalbum === true) {
+                createalbum = (<Modal
+                            id='modal5'
+                            title='Create Album'
+                            content={modal_content_5}
+                            buttons={modal_buttons_3} />);
+            }
+
             return (
                 <div className='c_body'>
                     <div className='c_header'>
@@ -228,9 +311,9 @@ var React = require('react'),
                                 <Link to='music.manager.albums' className='waves-effect waves-white btn-flat white-text c_tabs'>Albums</Link>
                             </div>
                             <Search />
-                            <div onClick={this.showModal} className='upload-btn right-align'>
-                                <a className='btn-floating btn-large waves-effect waves-light red lighten-2'>
-                                    <i className='mdi-file-file-upload'></i>
+                            <div onClick={this.createModal} className='upload-btn right-align'>
+                                <a className='btn-floating btn-large waves-effect waves-light red'>
+                                    <i className='mdi-content-add'></i>
                                 </a>
                             </div>
                         </div>
@@ -238,6 +321,9 @@ var React = require('react'),
                     <div className='container c_main_container z-depth-1'>
                         <RouteHandler />
                     </div>
+                    <ReactCSSTransitionGroup transitionName='create_modal'>
+                        {create}
+                    </ReactCSSTransitionGroup>
                     <ReactCSSTransitionGroup transitionName='select_modal'>
                         {select}
                     </ReactCSSTransitionGroup>
@@ -250,9 +336,12 @@ var React = require('react'),
                     <ReactCSSTransitionGroup transitionName='done_modal'>
                         {done}
                     </ReactCSSTransitionGroup>
+                    <ReactCSSTransitionGroup transitionName='createalbum_modal'>
+                        {createalbum}
+                    </ReactCSSTransitionGroup>
                 </div>
             );
         }
     });
 
-module.exports = MusicManager;
+module.exports = MusicManagerArtist;
