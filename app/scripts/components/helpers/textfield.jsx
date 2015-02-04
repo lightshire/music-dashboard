@@ -3,16 +3,17 @@ var React = require('react');
 
 var InputField = React.createClass({
     render: function() {
-        var size = 'input-field ' + this.props.outerdiv_size;
-        var input = '';
-        console.log('aksjdhkajshdajkshdasjkdh', this.props);
+        var size = 'input-field ' + this.props.outerdiv_size,
+            input = '';
+
         switch (this.props.textfield_type) {
-        	case 'textarea':
-        		input = (<textarea className='materialize-textarea'></textarea>);
-        		break;
-        	default:
-        		input = (<input id={this.props.textfield_id} type={this.props.textfield_type} className={this.props.textfield_state}/>);
+            case 'textarea':
+                input = (<textarea className='materialize-textarea'></textarea>);
+                break;
+            default:
+                input = (<input id={this.props.textfield_id} type={this.props.textfield_type} className={this.props.textfield_state}/>);
         }
+
         if (this.props.textfield_icon) {
             return (
                 <div className={size}>
@@ -21,15 +22,15 @@ var InputField = React.createClass({
                     <label for={this.props.textfield_label_for}>{this.props.textfield_label}</label>
                 </div>
             );
-        }else {
-            return (
-                <div className={size}>
-                    {input}
-                    <label for={this.props.textfield_label_for}>{this.props.textfield_label}</label>
-                </div>
-            );
         }
-    }   
+
+        return (
+            <div className={size}>
+                {input}
+                <label for={this.props.textfield_label_for}>{this.props.textfield_label}</label>
+            </div>
+        );
+    }
 });
 
 module.exports = InputField;
