@@ -6,11 +6,11 @@ var React = require('react'),
     AlbumTracks = React.createClass({
         render: function() {
             return (
-                <tr className="songs">
+                <tr className='songs'>
                     <td>
                         <div>
-                            <i className="mdi-av-play-arrow"></i>
-                            <i className="mdi-content-add"></i>
+                            <i className='mdi-av-play-arrow'></i>
+                            <i className='mdi-content-add'></i>
                         </div>
                     </td>
                     <td>Track 1</td>
@@ -21,9 +21,9 @@ var React = require('react'),
                     <td>an hour ago</td>
                     <td>
                         <div>
-                            <i className="red-text mdi-editor-attach-money"></i>
-                            <i className="mdi-editor-mode-edit"></i>
-                            <i className="mdi-action-delete"></i>
+                            <i className='red-text mdi-editor-attach-money'></i>
+                            <i className='mdi-editor-mode-edit'></i>
+                            <i className='mdi-action-delete'></i>
                         </div>
                     </td>
                 </tr>

@@ -1,8 +1,7 @@
 'use strict';
-var React = require('react');
-var LabelData = require('./data/label_data');
-
-var Labels = React.createClass({
+var React = require('react'),
+LabelData = require('./data/label_data'),
+Labels = React.createClass({
     render: function() {
     	var label_data = ([
     		{

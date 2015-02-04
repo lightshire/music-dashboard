@@ -1,7 +1,6 @@
 'use strict';
-var React = require('react');
-
-var Tracks = React.createClass({
+var React = require('react'),
+Tracks = React.createClass({
     render: function() {
         return (
         	<div>Tracks</div>

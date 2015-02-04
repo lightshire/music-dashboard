@@ -1,8 +1,7 @@
 'use strict';
-var React = require('react');
-var ArtistData = require('./data/artist_data');
-
-var Artists = React.createClass({
+var React = require('react'),
+ArtistData = require('./data/artist_data'),
+Artists = React.createClass({
     render: function() {
     	var artist_data = ([
     		{
@@ -25,15 +24,15 @@ var Artists = React.createClass({
     		} 
     	]);
         return (
-        	<div className="table">
+        	<div className='table'>
 	            <table>
 	                <thead>
 	                    <tr>
 	                        <th></th>
-	                        <th className="grey-text text-lighten-1">Artist</th>
-	                        <th className="grey-text text-lighten-1">Albums</th>
-	                        <th className="grey-text text-lighten-1">Tracks</th>
-	                        <th className="grey-text text-lighten-1">Added</th>
+	                        <th className='grey-text text-lighten-1'>Artist</th>
+	                        <th className='grey-text text-lighten-1'>Albums</th>
+	                        <th className='grey-text text-lighten-1'>Tracks</th>
+	                        <th className='grey-text text-lighten-1'>Added</th>
 	                        <th></th>
 	                    </tr>
 	                </thead>

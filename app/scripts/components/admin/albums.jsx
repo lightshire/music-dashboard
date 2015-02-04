@@ -1,7 +1,6 @@
 'use strict';
-var React = require('react');
-
-var Albums = React.createClass({
+var React = require('react'),
+Albums = React.createClass({
     render: function() {
         return (
         	<div>Albums</div>
