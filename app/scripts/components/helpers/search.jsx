@@ -27,4 +27,4 @@ var React = require('react/addons'),
             );
         }
     });
-    module.exports = Search;
+module.exports = Search;

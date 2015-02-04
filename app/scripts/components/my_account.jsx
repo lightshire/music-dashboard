@@ -29,4 +29,4 @@ var React = require('react'),
             );
         }
     });
-    module.exports = MyAccount;
+module.exports = MyAccount;

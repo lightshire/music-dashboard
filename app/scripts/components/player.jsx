@@ -94,4 +94,4 @@ var React = require('react/addons'),
             this.setState(getStateFromStore());
         }
     });
-    module.exports = Player;
+module.exports = Player;

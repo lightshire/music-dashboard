@@ -9,4 +9,4 @@ var React = require('react/addons'),
             );
         }
     });
-	module.exports = Home;
+module.exports = Home;

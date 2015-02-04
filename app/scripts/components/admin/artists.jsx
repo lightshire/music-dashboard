@@ -42,4 +42,4 @@ var React = require('react'),
             );
         }
     });
-    module.exports = Artists;
+module.exports = Artists;

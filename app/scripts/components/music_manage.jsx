@@ -220,6 +220,7 @@ var React = require('react'),
                             <div className='c_links'>
                                 <Link to='music.manager.songs' className='waves-effect waves-white btn-flat white-text c_tabs'>Songs</Link>
                                 <Link to='music.manager.albums' className='waves-effect waves-white btn-flat white-text c_tabs'>Albums</Link>
+                                <Link to='music.manager.album_songs' className='waves-effect waves-white btn-flat white-text c_tabs'>Album Tracks</Link>
                             </div>
                             <Search />
                             <div onClick={this.showModal} className='upload-btn right-align'>
@@ -248,4 +249,4 @@ var React = require('react'),
             );
         }
     });
-    module.exports = MusicManager;
+module.exports = MusicManager;

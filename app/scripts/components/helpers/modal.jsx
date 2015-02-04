@@ -15,4 +15,4 @@ var React = require('react'),
             );
         }
     });
-    module.exports =  Modal;
+module.exports =  Modal;

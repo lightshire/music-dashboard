@@ -30,4 +30,4 @@ var React = require('react'),
             );
         }
     });
-    module.exports = AlbumTracks;
+module.exports = AlbumTracks;

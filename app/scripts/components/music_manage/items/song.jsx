@@ -145,4 +145,4 @@ var React = require('react'),
             );
         }
     });
-    module.exports = Songs;
+module.exports = Songs;

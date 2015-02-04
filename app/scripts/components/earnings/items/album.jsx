@@ -28,4 +28,4 @@ var React = require('react'),
             );
         }
     });
-    module.exports = Albums;
+module.exports = Albums;

@@ -53,8 +53,9 @@ var React = require('react/addons'),
 		      						<a className='waves-effect waves-blue collapsible-header collapse-link' onClick={this.revoidLink}>Music Manager</a>
 			      					<div className='collapsible-body'>
 			      						<ul>
-			      							<li><Link to='music.manager.songs' className='waves-effect waves-blue collapsed-link'>Songs</Link></li>
+			      							<li><Link to='music.manager.songs' className='waves-effect waves-blue collapsed-link'>Tracks</Link></li>
 					      					<li><Link to='music.manager.albums' className='waves-effect waves-blue collapsed-link'>Album</Link></li>
+					      					<li><Link to='music.manager.album_songs' className='waves-effect waves-blue collapsed-link'>Album Tracks</Link></li>
 			      						</ul>
 			      					</div>
 				      			</li>
@@ -62,7 +63,22 @@ var React = require('react/addons'),
 			      					<a className='waves-effect waves-blue collapsible-header collapse-link' onClick={this.revoidLink}>My Earnings</a>
 			      					<div className='collapsible-body'>
 			      						<ul>
-			      							<li><a className='waves-effect waves-blue collapsed-link'>Songs</a></li>
+			      							<li><Link to='my.earnings.songs' className='waves-effect waves-blue collapsed-link'>Tracks</Link></li>
+			      							<li><Link to='my.earnings.albums' className='waves-effect waves-blue collapsed-link'>Albums</Link></li>
+			      							<li><Link to='my.earnings.album_tracks_earnings' className='waves-effect waves-blue collapsed-link'>Album Tracks</Link></li>
+			      						</ul>
+			      					</div>
+				      			</li>
+				      			<li className='sidebar-li'>
+			      					<a className='waves-effect waves-blue collapsible-header collapse-link' onClick={this.revoidLink}>Admin</a>
+			      					<div className='collapsible-body'>
+			      						<ul>
+			      							<li><Link to='admin.tracks' className='waves-effect waves-blue collapsed-link'>Tracks</Link></li>
+					      					<li><Link to='admin.albums' className='waves-effect waves-blue collapsed-link'>Albums</Link></li>
+					      					<li><Link to='admin.artists' className='waves-effect waves-blue collapsed-link'>Artists</Link></li>
+											<li><Link to='admin.labels' className='waves-effect waves-blue collapsed-link'>Labels</Link></li>
+					      					<li><Link to='admin.labels_earnings' className='waves-effect waves-blue collapsed-link'>Label Earnings</Link></li>
+					      					<li><Link to='admin.artists_earnings' className='waves-effect waves-blue collapsed-link'>Artist Earnings</Link></li>
 			      						</ul>
 			      					</div>
 				      			</li>
@@ -73,4 +89,4 @@ var React = require('react/addons'),
 	        );
 	    }
 	});
-	module.exports = SideBar;
+module.exports = SideBar;

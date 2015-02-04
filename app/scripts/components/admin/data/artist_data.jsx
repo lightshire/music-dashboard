@@ -27,4 +27,4 @@ var React = require('react'),
             );
         }
     });
-    module.exports = artist_data;
+module.exports = artist_data;

@@ -14,6 +14,7 @@ var React = require('react'),
     MusicManager = require('./components/music_manage'),
     MusicManagerSongs = require('./components/music_manage/songs'),
     MusicManagerAlbums = require('./components/music_manage/albums'),
+    MusicManagerAlbumTracks = require('./components/music_manage/album_tracks'),
 
     MyEarnings = require('./components/earnings'),
     MyEarningsSongs = require('./components/earnings/songs'),
@@ -43,6 +44,7 @@ var React = require('react'),
                 <Route name='music.manager' path='/manage_music' handler={MusicManager}>
                     <Route name='music.manager.songs' path='/manage_music/songs' handler={MusicManagerSongs} />
                     <Route name='music.manager.albums' path='/manage_music/albums' handler={MusicManagerAlbums} />
+                    <Route name='music.manager.album_songs' path='/manage_music/albums/album1' handler={MusicManagerAlbumTracks} />
                 </Route>
                 <Route name='my.earnings' path='/earnings' handler={MyEarnings}>
                     <Route name='my.earnings.songs' path='/earnings/songs' handler={MyEarningsSongs} />

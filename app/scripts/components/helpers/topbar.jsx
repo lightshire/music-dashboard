@@ -28,4 +28,4 @@ var React = require('react/addons'),
             );
         }
     });
-    module.exports = TopBar;
+module.exports = TopBar;

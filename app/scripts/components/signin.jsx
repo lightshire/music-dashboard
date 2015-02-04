@@ -47,4 +47,4 @@ var React = require('react'),
             );
         }
     });
-    module.exports = Signup;
+module.exports = Signup;

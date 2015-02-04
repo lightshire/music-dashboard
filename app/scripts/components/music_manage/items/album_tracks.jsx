@@ -12,7 +12,7 @@ var React = require('react'),
                         <div><i className='mdi-av-play-arrow'></i></div>
                         <div><i className='mdi-content-add'></i></div>
                     </td>
-                    <td>{this.props.albums}</td>
+                    <td>{this.props.title}</td>
                     <td>{this.props.artists}</td>
                     <td>{this.props.time}</td>
                     <td>{this.props.label}</td>

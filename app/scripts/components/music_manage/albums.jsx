@@ -58,4 +58,4 @@ var React = require('react'),
             this.setState(getStateFromStore());
         }
     });
-    module.exports =  MusicManagerAlbums;
+module.exports =  MusicManagerAlbums;

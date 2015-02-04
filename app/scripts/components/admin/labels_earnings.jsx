@@ -109,4 +109,4 @@ var React = require('react'),
             );
         }
     });
-    module.exports =  MusicManagerAlbums;
+module.exports =  MusicManagerAlbums;

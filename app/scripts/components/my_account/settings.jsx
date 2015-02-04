@@ -28,4 +28,4 @@ var React = require('react/addons'),
             );
         }
     });
-    module.exports = MyAccountSettings;
+module.exports = MyAccountSettings;

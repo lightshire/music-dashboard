@@ -28,4 +28,4 @@ var React = require('react'),
             );
         }
     });
-    module.exports = InputField;
+module.exports = InputField;

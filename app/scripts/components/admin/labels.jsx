@@ -45,4 +45,4 @@ var React = require('react'),
             );
         }
     });
-    module.exports = Labels;
+module.exports = Labels;
