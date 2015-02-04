@@ -25,12 +25,14 @@ var React = require('react'),
             var items = _.map(data, function(item) {
                 return (<Albums
                     id={item.id}
+                    key={item.id}
                     albums={item.title}
                     artists={item.artist}
                     time={item.time}
                     label={item.label}
                     genre={item.genre}
-                    uploaded={item.date_uploaded} />);
+                    uploaded={item.date_uploaded} 
+                    albumstatus={item.status} />);
             });
 
             return (

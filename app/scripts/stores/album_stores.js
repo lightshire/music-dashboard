@@ -10,8 +10,39 @@ var _albums = {
         time: '20:00',
         label: 'Mashed Records',
         genre: 'Psychedelic',
-        date_uploaded: 'an hour ago'
-    }
+        date_uploaded: 'an hour ago',
+        status: 'green-text mdi-editor-attach-money'
+    },
+    2: {
+        id: 2,
+        title: 'Potato Album',
+        artist: 'The Peelers',
+        time: '20:00',
+        label: 'Mashed Records',
+        genre: 'Psychedelic',
+        date_uploaded: 'an hour ago',
+        status: 'grey-text mdi-editor-attach-money'
+    },
+    3: {
+        id: 3,
+        title: 'Potato Album',
+        artist: 'The Peelers',
+        time: '20:00',
+        label: 'Mashed Records',
+        genre: 'Psychedelic',
+        date_uploaded: 'an hour ago',
+        status: 'red-text mdi-editor-attach-money'
+    },
+    4: {
+        id: 4,
+        title: 'Potato Album',
+        artist: 'The Peelers',
+        time: '20:00',
+        label: 'Mashed Records',
+        genre: 'Psychedelic',
+        date_uploaded: 'an hour ago',
+        status: 'orange-text mdi-editor-attach-money'
+    },
 };
 
 

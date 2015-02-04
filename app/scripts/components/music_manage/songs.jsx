@@ -30,7 +30,8 @@ var React = require('react'),
                     time={item.time}
                     label={item.label}
                     genre={item.genre}
-                    uploaded={item.date_uploaded} />);
+                    uploaded={item.date_uploaded}
+                    songstatus={item.status} />);
             });
 
             return (
