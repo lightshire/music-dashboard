@@ -5,9 +5,12 @@ var React = require('react'),
         handleRemoveTrack: function() {
             PlayerActions.removeTrackFromPlaylist(this.props.id);
         },
+        handleChangeCurrentTrack: function() {
+            PlayerActions.changeCurrentTrack(this.props.id);
+        },
         render: function() {
             return (
-                <li>
+                <li onClick={this.handleChangeCurrentTrack}>
                     <div className='row track-item'>
                         <div className='col s2 track-thumb-container'>
                             <img className='track-thumb' src={this.props.thumbnail} />
