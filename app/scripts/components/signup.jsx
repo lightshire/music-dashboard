@@ -17,7 +17,7 @@ var React = require('react'),
                         <div className='col s8'>
                             <div className='card'>
                                 <div className='c_signup'>
-                                    <h5 className="c_create_account_header">Create Account</h5>
+                                    <h5 className='c_create_account_header'>Create Account</h5>
                                     <form action='#'>
                                         <InputField
                                             texdtfield_id='username_field'
@@ -42,13 +42,13 @@ var React = require('react'),
                                             textfield_label_for='email_field' />
                                         <div className='c_checkbox_terms'>
                                             <p>
-                                                <input type="checkbox" id="terms" />
-                                                <label htmlFor="terms"><small>I have read and agreed to the Terms of Use and Privacy Policy</small></label>
+                                                <input type='checkbox' id='terms' />
+                                                <label htmlFor='terms'><small>I have read and agreed to the Terms of Use and Privacy Policy</small></label>
                                             </p>
                                         </div>
-                                        <a className="c_create_account_button white-text waves-effect waves-light btn green lighten-2">Create Account</a>
+                                        <a className='c_create_account_button white-text waves-effect waves-light btn green lighten-2'>Create Account</a>
                                         <div className='center-align'><small>or</small></div>
-                                        <a className="c_create_account_button white-text waves-effect waves-light btn red lighten-2">Sign in with Google+</a>
+                                        <a className='c_create_account_button white-text waves-effect waves-light btn red lighten-2'>Sign in with Google+</a>
                                     </form>
                                 </div>
                             </div>
@@ -62,5 +62,4 @@ var React = require('react'),
             );
         }
     });
-
 module.exports = Signup;

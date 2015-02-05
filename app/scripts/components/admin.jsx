@@ -20,6 +20,8 @@ var React = require('react'),
                                 <Link to='admin.albums' className='waves-effect waves-white btn-flat white-text c_tabs'>Albums</Link>
                                 <Link to='admin.artists' className='waves-effect waves-white btn-flat white-text c_tabs'>Artists</Link>
                                 <Link to='admin.labels' className='waves-effect waves-white btn-flat white-text c_tabs'>Labels</Link>
+                                <Link to='admin.labels_earnings' className='waves-effect waves-white btn-flat white-text c_tabs'>Label Earnings</Link>
+                                <Link to='admin.artists_earnings' className='waves-effect waves-white btn-flat white-text c_tabs'>Artist Earnings</Link>
                             </div>
                             <Search />
                             <div className='upload-btn right-align'>
@@ -36,5 +38,4 @@ var React = require('react'),
             );
         }
     });
-
 module.exports = MusicManager;

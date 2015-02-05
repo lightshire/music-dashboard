@@ -21,18 +21,16 @@ var React = require('react'),
         render: function() {
             var data = this.state.tracks,
                 items;
-
-            items = _.map(data, function(item) {
-                return (<Songs
-                    id={item.id}
-                    songs={item.title}
-                    artists={item.artist}
-                    time={item.time}
-                    label={item.label}
-                    genre={item.genre}
-                    uploaded={item.date_uploaded} />);
-            });
-
+                items = _.map(data, function(item) {
+                    return (<Songs
+                        id={item.id}
+                        songs={item.title}
+                        artists={item.artist}
+                        time={item.time}
+                        label={item.label}
+                        genre={item.genre}
+                        uploaded={item.date_uploaded} />);
+                });
             return (
                 <div className="table">
                     <table>
@@ -59,5 +57,4 @@ var React = require('react'),
             this.setState(getStateFromStore());
         }
     });
-
 module.exports =  MusicManagerSongs;

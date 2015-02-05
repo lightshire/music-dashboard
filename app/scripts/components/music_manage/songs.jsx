@@ -21,30 +21,30 @@ var React = require('react'),
         render: function() {
             var data = this.state.tracks,
                 items;
-
             items = _.map(data, function(item) {
-                return (<Songs
+                return (
+                    <Songs
                     id={item.id}
                     songs={item.title}
                     artists={item.artist}
                     time={item.time}
                     label={item.label}
                     genre={item.genre}
-                    uploaded={item.date_uploaded} />);
+                    uploaded={item.date_uploaded} />
+                );
             });
-
             return (
-                <div className="table">
+                <div className='table'>
                     <table>
                         <thead>
                             <tr>
                                 <th></th>
-                                <th className="grey-text text-lighten-1">Song Title</th>
-                                <th className="grey-text text-lighten-1">Artists</th>
-                                <th className="grey-text text-lighten-1">Time</th>
-                                <th className="grey-text text-lighten-1">Label</th>
-                                <th className="grey-text text-lighten-1">Genre</th>
-                                <th className="grey-text text-lighten-1">Uploaded</th>
+                                <th className='grey-text text-lighten-1'>Song Title</th>
+                                <th className='grey-text text-lighten-1'>Artists</th>
+                                <th className='grey-text text-lighten-1'>Time</th>
+                                <th className='grey-text text-lighten-1'>Label</th>
+                                <th className='grey-text text-lighten-1'>Genre</th>
+                                <th className='grey-text text-lighten-1'>Uploaded</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -59,5 +59,4 @@ var React = require('react'),
             this.setState(getStateFromStore());
         }
     });
-
 module.exports =  MusicManagerSongs;
