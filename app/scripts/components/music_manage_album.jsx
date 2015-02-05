@@ -8,7 +8,8 @@ var React = require('react'),
     Modal = require('./helpers/modal'),
     InputField = require('./helpers/textfield'),
     ReactCSSTransitionGroup = React.addons.CSSTransitionGroup,
-    MusicManager = React.createClass({
+    MusicManagerArtist = React.createClass({
+        mixins: [Router.State],
         handleAddTracks: function() {
             TrackActions.addTracks();
             this.setState({
@@ -47,7 +48,8 @@ var React = require('react'),
             });
         },
         render: function() {
-            var upload_modal = this.uploadModal,
+            var id = this.getParams().id,
+                upload_modal = this.uploadModal,
                 uploading_modal = this.uploadingModal,
                 sample_add = this.handleAddTracks,
                 cancel = this.cancelHandler,
@@ -64,9 +66,11 @@ var React = require('react'),
                 modal_buttons_uploading,
                 modal_buttons_disabled,
                 preloader_style = {};
+
             preloader_style = {
                 width: '70%'
             };
+
             modal_content_1 = (
                 <div key='select_modal'
                     className='container center-align c_upload_music_file_modal'>
@@ -79,7 +83,8 @@ var React = require('react'),
                         </a>
                     </p>
                 </div>
-            ),
+            );
+
             modal_content_2 = (
                 <div key='upload_modal' className='container center-align c_upload_music_file_modal'>
                     <p>
@@ -88,7 +93,8 @@ var React = require('react'),
                         <h6>Ready for upload</h6>
                     </p>
                 </div>
-            ),
+            );
+
             modal_content_3 = (
                 <div key='uploading_modal' onClick={this.doneModal}
                     className='container center-align c_upload_music_file_modal'>
@@ -102,7 +108,8 @@ var React = require('react'),
                         <h6>70%</h6>
                     </p>
                 </div>
-            ),
+            );
+
             modal_content_4 = (
                 <div key='done_modal' className='container center-align c_upload_music_file_modal'>
                     <p>
@@ -127,7 +134,8 @@ var React = require('react'),
                             textfield_label_for='description' />
                     </p>
                 </div>
-            ),
+            );
+
             modal_buttons_1 = ([
                 {
                     text : 'Upload',
@@ -139,7 +147,8 @@ var React = require('react'),
                     onclick : cancel,
                     class_name : 'c_modal_buttons black-text waves-effect waves-grey lighten-4 btn white lighten-5 modal-action modal-close'
                 }
-            ]),
+            ]);
+
             modal_buttons_uploading = ([
                 {
                     text : 'Upload',
@@ -151,7 +160,8 @@ var React = require('react'),
                     onclick : cancel,
                     class_name : 'c_modal_buttons black-text waves-effect waves-grey lighten-4 btn white lighten-5 modal-action modal-close'
                 }
-            ]),
+            ]);
+
             modal_buttons_disabled = ([
                 {
                     text : 'Upload',
@@ -163,7 +173,8 @@ var React = require('react'),
                     onclick : '',
                     class_name : 'c_modal_buttons waves-effect waves-light btn grey lighten-2 modal-action modal-close'
                 }
-            ]),
+            ]);
+
             modal_buttons_2 = ([
                 {
                     text : 'Done',
@@ -176,54 +187,56 @@ var React = require('react'),
                     class_name : 'c_modal_buttons black-text waves-effect waves-grey lighten-4 btn white lighten-5 modal-action modal-close'
                 }
             ]);
+
             if (this.state.selectmusic === true) {
-                select = (
-                    <Modal
-                        id='modal1'
-                        title='Upload'
-                        content={modal_content_1}
-                        buttons={modal_buttons_1} />
-                );
+                select = (<Modal
+                            id='modal1'
+                            title='Upload'
+                            content={modal_content_1}
+                            buttons={modal_buttons_1} />);
             }
+
             if (this.state.upload === true) {
-                upload = (
-                    <Modal
-                        id='modal2'
-                        title='Upload'
-                        content={modal_content_2}
-                        buttons={modal_buttons_uploading} />
-                );
+                upload = (<Modal
+                            id='modal2'
+                            title='Upload'
+                            content={modal_content_2}
+                            buttons={modal_buttons_uploading} />);
             }
+
             if (this.state.uploading === true) {
-                uploading = (
-                    <Modal
-                        id='modal3'
-                        title='Upload'
-                        content={modal_content_3}
-                        buttons={modal_buttons_disabled} />
-                );
+                uploading = (<Modal
+                            id='modal3'
+                            title='Upload'
+                            content={modal_content_3}
+                            buttons={modal_buttons_disabled} />);
             }
+
             if (this.state.done === true) {
-                done = (
-                    <Modal
-                        id='modal4'
-                        title='Upload'
-                        content={modal_content_4}
-                        buttons={modal_buttons_2} />
-                );
+                done = (<Modal
+                            id='modal4'
+                            title='Upload'
+                            content={modal_content_4}
+                            buttons={modal_buttons_2} />);
             }
+
             return (
                 <div className='c_body'>
                     <div className='c_header'>
                         <div className='container'>
-                            <h4 className='white-text'>Music Manager</h4>
+                            <h4 className='white-text'>
+                                <Link to='music.manager.albums'>
+                                    <i className='mdi-hardware-keyboard-backspace black-text'></i>
+                                </Link>
+                                Potato Album
+                            </h4>
                             <div className='c_links'>
-                                <Link to='music.manager.songs' className='waves-effect waves-white btn-flat white-text c_tabs'>Tracks</Link>
-                                <Link to='music.manager.albums' className='waves-effect waves-white btn-flat white-text c_tabs'>Albums</Link>
+                                <Link to='music.manager.album.songs' params={{id: id}} className='waves-effect waves-white btn-flat white-text c_tabs'>Tracks</Link>
+                                <Link to='music.manager.album.albuminfo' params={{id: id}} className='waves-effect waves-white btn-flat white-text c_tabs'>Album Info</Link>
                             </div>
                             <Search />
                             <div onClick={this.showModal} className='upload-btn right-align'>
-                                <a className='btn-floating btn-large waves-effect waves-light red lighten-2'>
+                                <a className='btn-floating btn-large waves-effect waves-light red'>
                                     <i className='mdi-file-file-upload'></i>
                                 </a>
                             </div>
@@ -248,4 +261,5 @@ var React = require('react'),
             );
         }
     });
-module.exports = MusicManager;
+
+module.exports = MusicManagerArtist;
