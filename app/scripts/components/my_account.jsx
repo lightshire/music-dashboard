@@ -7,7 +7,9 @@ var React = require('react/addons'),
     MyAccount = React.createClass({
         mixins: [Constrainable],
         statics: {
-            redirectTo: 'layout'
+            redirectTo: 'signin',
+            required_login: true,
+            user_types: ['admin', 'general_user', 'artist', 'record_label']
         },
         render: function() {
             return (

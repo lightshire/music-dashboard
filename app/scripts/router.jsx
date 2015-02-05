@@ -54,7 +54,7 @@ var React = require('react'),
                     <Route name="music.manager.album.songs" path="songs" handler={MusicManagerAlbumSongs} />
                     <Route name="music.manager.album.albuminfo" path="albuminfo" handler={MusicManagerAlbumAlbumInfo} />
                 </Route>
-                
+
                 <Route name="music.manager.artist" path="/manage_music/artist/:id" handler={MusicManagerArtist} >
                     <Route name="music.manager.artist.songs" path="songs" handler={MusicManagerArtistSongs} />
                     <Route name="music.manager.artist.albums" path="albums" handler={MusicManagerArtistAlbums} />
