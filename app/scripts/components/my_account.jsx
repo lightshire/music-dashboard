@@ -1,9 +1,14 @@
 'use strict';
-var React = require('react'),
+var React = require('react/addons'),
     Router = require('react-router'),
     RouteHandler = Router.RouteHandler,
     Link = Router.Link,
+    Constrainable = require('./mixins/constrainable'),
     MyAccount = React.createClass({
+        mixins: [Constrainable],
+        statics: {
+            redirectTo: 'layout'
+        },
         render: function() {
             return (
                 <div className='c_body'>
