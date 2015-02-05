@@ -9,10 +9,10 @@ var React = require('react'),
 
             switch (this.props.textfield_type) {
                 case 'textarea':
-                    input = (<textarea className={c_class}>{this.props.textfield_value}</textarea>);
+                    input = (<textarea ref='input' className={c_class}>{this.props.textfield_value}</textarea>);
                     break;
                 default:
-                    input = (<input id={this.props.textfield_id} type={this.props.textfield_type} defaultValue={this.props.textfield_value} className={this.props.textfield_state}/>);
+                    input = (<input ref='input' id={this.props.textfield_id} type={this.props.textfield_type} defaultValue={this.props.textfield_value} className={this.props.textfield_state}/>);
             }
           
             if(this.props.textfield_icon){
@@ -23,7 +23,7 @@ var React = require('react'),
                 <div className={size}>
                     {icon}
                     {input}
-                    <label for={this.props.textfield_label_for}>{this.props.textfield_label}</label>
+                    <label htmlFor={this.props.textfield_label_for}>{this.props.textfield_label}</label>
                 </div>
             );
         }
