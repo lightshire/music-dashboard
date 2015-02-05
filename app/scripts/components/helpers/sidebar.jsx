@@ -55,7 +55,6 @@ var React = require('react/addons'),
 			      						<ul>
 			      							<li><Link to='music.manager.songs' className='waves-effect waves-blue collapsed-link'>Tracks</Link></li>
 					      					<li><Link to='music.manager.albums' className='waves-effect waves-blue collapsed-link'>Album</Link></li>
-					      					<li><Link to='music.manager.album_songs' className='waves-effect waves-blue collapsed-link'>Album Tracks</Link></li>
 			      						</ul>
 			      					</div>
 				      			</li>
