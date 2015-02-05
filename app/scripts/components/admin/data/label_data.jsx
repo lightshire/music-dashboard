@@ -4,7 +4,6 @@ var React = require('react'),
     label_data = React.createClass({
         render: function() {
             var label_data =  _.map(this.props.data, function(data, i){
-
                 return (
                     <tr className="c_row_admin_labels">
                         <td><img className={data.label_img_class} src={data.label_img} /></td>
@@ -22,7 +21,6 @@ var React = require('react'),
                     </tr>
                 );
             });
-
             return (
                 <tbody>
                     {label_data}
@@ -30,5 +28,4 @@ var React = require('react'),
             );
         }
     });
-
 module.exports = label_data;

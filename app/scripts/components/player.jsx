@@ -94,11 +94,9 @@ var React = require('react/addons'),
                 tracks = _.map(this.state.tracks, function(item) {
                     return (<TrackItem id={item.id} title={item.title} thumbnail={item.thumbnail} />);
                 });
-
                 track_title = typeof this.state.tracks[this.state.status.current_track] !== 'undefined' 
                     ? this.state.tracks[this.state.status.current_track].title
                     : 'Choose a track';
-
                 playlist = (
                     <div className={this.state.status.modal === 'playlist' ? 'playlist' : 'playlist hide'}>
                         <div className='track-info'>
@@ -138,13 +136,11 @@ var React = require('react/addons'),
                     </div>
                 );
             }
-
             audio = (
                 <audio ref="audio_player">
                     <source type='audio/mpeg' />
                 </audio>
             );
-
             return (
                 <div className='player'>
                     {audio}
@@ -168,5 +164,4 @@ var React = require('react/addons'),
             this.updatePlayerStatus(this.refs.audio_player.getDOMNode());
         }
     });
-
 module.exports = Player;

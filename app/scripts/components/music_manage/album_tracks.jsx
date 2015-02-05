@@ -1,6 +1,6 @@
 'use strict';
 var React = require('react'),
-    AlbumTracks = require('./items/album_tracks_earnings'),
+    AlbumTracks = require('./items/album_tracks'),
     _ = require('lodash'),
     AlbumStore = require('../../stores/album_stores'),
     getStateFromStore = function() {
@@ -8,7 +8,7 @@ var React = require('react'),
             albums: AlbumStore.getAll()
         };
     },
-    MusicManagerAlbums = React.createClass({
+    MusicManagerAlbumTracks = React.createClass({
         getInitialState: function() {
             return getStateFromStore();
         },
@@ -24,6 +24,7 @@ var React = require('react'),
                     return (
                         <AlbumTracks
                         id={item.id}
+                        title={item.title}
                         albums={item.title}
                         artists={item.artist}
                         time={item.time}
@@ -39,7 +40,7 @@ var React = require('react'),
                             <tr>
                                 <th></th>
                                 <th className='grey-text text-lighten-1'>Title</th>
-                                <th className='grey-text text-lighten-1'>Artist</th>
+                                <th className='grey-text text-lighten-1'>Artists</th>
                                 <th className='grey-text text-lighten-1'>Duration</th>
                                 <th className='grey-text text-lighten-1'>Label</th>
                                 <th className='grey-text text-lighten-1'>Genre</th>
@@ -48,7 +49,7 @@ var React = require('react'),
                             </tr>
                         </thead>
                         <tbody>
-                        {items}
+                            {items}
                         </tbody>
                     </table>
                 </div>
@@ -58,4 +59,4 @@ var React = require('react'),
             this.setState(getStateFromStore());
         }
     });
-module.exports =  MusicManagerAlbums;
+module.exports =  MusicManagerAlbumTracks;
