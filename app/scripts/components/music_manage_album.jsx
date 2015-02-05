@@ -9,6 +9,7 @@ var React = require('react'),
     InputField = require('./helpers/textfield'),
     ReactCSSTransitionGroup = React.addons.CSSTransitionGroup,
     MusicManagerArtist = React.createClass({
+        mixins: [Router.State],
         handleAddTracks: function() {
             TrackActions.addTracks();
             this.setState({
@@ -46,7 +47,6 @@ var React = require('react'),
                 done: false
             });
         },
-        mixins: [Router.State],
         render: function() {
             var id = this.getParams().id,
                 upload_modal = this.uploadModal,

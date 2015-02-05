@@ -1,7 +1,5 @@
 'use strict';
 var React = require('react'),
-    Router = require('react-router'),
-    Link = Router.Link,
     TrackActions = require('../../../actions/track_actions'),
     Albums = React.createClass({
         handleDeleteTracks: function() {
@@ -14,11 +12,7 @@ var React = require('react'),
                         <div><i className='mdi-av-play-arrow'></i></div>
                         <div><i className='mdi-content-add'></i></div>
                     </td>
-                    <td>
-                        <Link to='music.manager.album.songs' params={{id: this.props.id}} >
-                            {this.props.albums}
-                        </Link>
-                    </td>
+                    <td>{this.props.title}</td>
                     <td>{this.props.artists}</td>
                     <td>{this.props.time}</td>
                     <td>{this.props.label}</td>

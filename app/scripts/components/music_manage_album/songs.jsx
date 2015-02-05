@@ -32,9 +32,8 @@ var React = require('react'),
                     genre={item.genre}
                     uploaded={item.date_uploaded} />);
             });
-
             return (
-                <div className="table">
+                <div className='table'>
                     <table>
                         <thead>
                             <tr>
@@ -49,7 +48,7 @@ var React = require('react'),
                             </tr>
                         </thead>
                         <tbody>
-                        {items}
+                            {items}
                         </tbody>
                     </table>
                 </div>
