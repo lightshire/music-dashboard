@@ -34,6 +34,10 @@ var React = require('react'),
     MusicManagerArtist = require('./components/music_manage_artist'),
     MusicManagerArtistSongs = require('./components/music_manage/songs'),
     MusicManagerArtistAlbums = require('./components/music_manage/albums'),
+    MusicManagerRecordLabel = require('./components/music_manage_record_label'),
+    MusicManagerRecordLabelSongs = require('./components/music_manage/songs'),
+    MusicManagerRecordLabelAlbums = require('./components/music_manage/albums'),
+    MusicManagerRecordLabelArtists = require('./components/music_manage_record_label/artists'),
     routes = (
         <Route path='/' handler={AppWrapper}>
             <Route path='/' handler={Layout}>
@@ -58,6 +62,12 @@ var React = require('react'),
                 <Route name="music.manager.artist" path="/manage_music/artist/:id" handler={MusicManagerArtist} >
                     <Route name="music.manager.artist.songs" path="songs" handler={MusicManagerArtistSongs} />
                     <Route name="music.manager.artist.albums" path="albums" handler={MusicManagerArtistAlbums} />
+                </Route>
+
+                <Route name="music.manager.record.label" path="/manage_music/record_label/:id" handler={MusicManagerRecordLabel} >
+                    <Route name="music.manager.record.label.songs" path="songs" handler={MusicManagerRecordLabelSongs} />
+                    <Route name="music.manager.record.label.albums" path="albums" handler={MusicManagerRecordLabelAlbums} />
+                    <Route name="music.manager.record.label.artists" path="artists" handler={MusicManagerRecordLabelArtists} />
                 </Route>
 
                 <Route name='my.earnings' path='/earnings' handler={MyEarnings}>
