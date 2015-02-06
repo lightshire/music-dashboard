@@ -106,13 +106,25 @@
     // border: 1px solid $div-border;
 }
 
-.c_my_account_settings, .c_my_account_security, .c_my_account_updgrade {
+.c_my_account_settings, .c_my_account_security, .c_my_account_updgrade, .c_album_info {
     margin-top: 0px;
     padding: 20px;
 }
+
+.c_album_info_divider {
+    margin-left: -43px;
+    margin-right: -43px;
+}
+
+.c_album_info_buttons {
+    margin-top: 13px;
+    margin-bottom: 0px;
+}
+
 .c_my_account_settings_header .s2 img{
     border-radius: 100%;
 }
+
 .c_my_account_settings_header .s10 h5 {
     margin-top: 35px;
 }
