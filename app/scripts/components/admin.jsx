@@ -10,12 +10,11 @@ var React = require('react'),
     ReactCSSTransitionGroup = React.addons.CSSTransitionGroup,
     MusicManager = React.createClass({
         componentDidMount: function(){
-                      
             $('.modal-trigger').leanModal();
             $('#lean-overlay').click(function(){
                 console.log('a');
                 });
-            $('#modal1').closeModal();                                         
+            $('#modal1').closeModal();
         },
         getInitialState: function() {
             return {
@@ -53,27 +52,7 @@ var React = require('react'),
         uploadingProgress :function () {
             this.setState({uploadReady : false});
             this.setState({uploadProgress : true});
-            setTimeout(function(){ 
-                document.getElementById('percentProgress').style.width= '10%';
-                document.getElementById('percentText').innerHTML= '10%';
-                setTimeout(function(){ 
-                    document.getElementById('percentProgress').style.width= '50%';
-                    document.getElementById('percentText').innerHTML= '50%';
-                }, 1000);
-                    setTimeout(function(){ 
-                        document.getElementById('percentProgress').style.width= '80%';
-                        document.getElementById('percentText').innerHTML= '80%';
-                        setTimeout(function(){ 
-                            document.getElementById('percentProgress').style.width= '100%';
-                            document.getElementById('percentText').innerHTML= '100%';
-                            setTimeout(function(){ 
-                                $('.close_now').click();
-                            }, 1000);                            
-                        }, 1000);
-                    }, 3000);
-            }, 1000);            
         },
-        
         cancelHandler: function() {
             this.setState({
                 createRLabel: false,
@@ -320,12 +299,12 @@ var React = require('react'),
                         <div className='container'>
                             <h4 className='white-text'>Admin</h4>
                             <div className='c_links'>
-                                <Link to='admin.tracks' className='waves-effect waves-white btn-flat white-text c_tabs'>Songs</Link>
-                                <Link to='admin.albums' className='waves-effect waves-white btn-flat white-text c_tabs'>Albums</Link>
-                                <Link to='admin.artists' className='waves-effect waves-white btn-flat white-text c_tabs'>Artists</Link>
-                                <Link to='admin.labels' className='waves-effect waves-white btn-flat white-text c_tabs'>Labels</Link>
-                                <Link to='admin.labels_earnings' className='waves-effect waves-white btn-flat white-text c_tabs'>Label Earnings</Link>
-                                <Link to='admin.artists_earnings' className='waves-effect waves-white btn-flat white-text c_tabs'>Artist Earnings</Link>
+                                <Link to='home' className='waves-effect waves-white btn-flat white-text c_tabs'>Songs</Link>
+                                <Link to='home' className='waves-effect waves-white btn-flat white-text c_tabs'>Albums</Link>
+                                <Link to='home' className='waves-effect waves-white btn-flat white-text c_tabs'>Artists</Link>
+                                <Link to='home' className='waves-effect waves-white btn-flat white-text c_tabs'>Labels</Link>
+                                <Link to='home' className='waves-effect waves-white btn-flat white-text c_tabs'>Label Earnings</Link>
+                                <Link to='home' className='waves-effect waves-white btn-flat white-text c_tabs'>Artist Earnings</Link>
                             </div>
                             <Search />
                             <div className='upload-btn right-align modal-trigger' onClick={this.selectAlbumOrMusic}>

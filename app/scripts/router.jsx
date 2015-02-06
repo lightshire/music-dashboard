@@ -42,12 +42,16 @@ var React = require('react'),
     MusicManagerRecordLabelSongs = require('./components/music_manage/songs'),
     MusicManagerRecordLabelAlbums = require('./components/music_manage/albums'),
     MusicManagerRecordLabelArtists = require('./components/music_manage_record_label/artists'),
+    
+    // To be deleted    
+    TempAdmin = require('./components/admin'),
 
     routes = (
         <Route path='/' handler={AppWrapper}>
             <Route path='/' handler={Layout}>
                 <DefaultRoute name='home' handler={Home} />
-
+                
+                    <Route name='temp.admin' path='tempadmin' handler={TempAdmin} />
                 <Route name='my.account' path='/my_account' handler={MyAccount}>
                     <DefaultRoute name='my.account.settings' handler={MyAccountSettings} />
                     <Route name='my.account.upgrade' path='upgrade' handler={MyAccountUpgrade} />
