@@ -1,0 +1,20 @@
+.toCenter {
+	text-align: center;
+}
+.toLeft {
+	text-align: left;
+}
+.toRight {
+	text-align: right;
+}
+.createHover {
+	color: #212121;
+}
+.createHover:hover {
+	cursor: pointer;
+	color: #424242;
+}
+.modalCreate {
+	display: block;
+	height: 105px;
+}
