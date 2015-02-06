@@ -3,12 +3,19 @@ var React = require('react'),
     Router = require('react-router'),
     RouteHandler = Router.RouteHandler,
     Link = Router.Link,
+    Constrainable = require('./mixins/constrainable'),
     TrackActions = require('../actions/track_actions'),
     Search = require('./helpers/search'),
     Modal = require('./helpers/modal'),
     InputField = require('./helpers/textfield'),
     ReactCSSTransitionGroup = React.addons.CSSTransitionGroup,
     MusicManager = React.createClass({
+        mixins: [Constrainable],
+        statics: {
+            redirectTo: 'signin',
+            required_login: true,
+            user_types: ['admin', 'general_user', 'artist', 'record_label']
+        },
         handleAddTracks: function() {
             TrackActions.addTracks();
             this.setState({
@@ -63,7 +70,9 @@ var React = require('react'),
                 modal_buttons_2,
                 modal_buttons_uploading,
                 modal_buttons_disabled,
-                preloader_style = {};
+                preloader_style = {},
+                music_manager_songs = (<Link to='music.manager.songs' className='waves-effect waves-white btn-flat white-text c_tabs'>Tracks</Link>),
+                music_manager_albums = (<Link to='music.manager.albums' className='waves-effect waves-white btn-flat white-text c_tabs'>Albums</Link>),
             preloader_style = {
                 width: '70%'
             };
@@ -176,6 +185,9 @@ var React = require('react'),
                     class_name : 'c_modal_buttons black-text waves-effect waves-grey lighten-4 btn white lighten-5 modal-action modal-close'
                 }
             ]);
+            if (this.hasAccess(['general_user'])) {
+                music_manager_albums = '';
+            }
             if (this.state.selectmusic === true) {
                 select = (
                     <Modal
@@ -218,8 +230,8 @@ var React = require('react'),
                         <div className='container'>
                             <h4 className='white-text'>Music Manager</h4>
                             <div className='c_links'>
-                                <Link to='music.manager.songs' className='waves-effect waves-white btn-flat white-text c_tabs'>Tracks</Link>
-                                <Link to='music.manager.albums' className='waves-effect waves-white btn-flat white-text c_tabs'>Albums</Link>
+                               {music_manager_songs}
+                               {music_manager_albums}
                             </div>
                             <Search />
                             <div onClick={this.showModal} className='upload-btn right-align'>
