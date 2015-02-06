@@ -292,7 +292,8 @@ var React = require('react'),
                                 content = {modal_uploaded_save}
                                 buttons = {done_cancel_button}
                             />);
-            }                
+            }
+
             return (
                 <div className='c_body'>
                     <div className='c_header'>

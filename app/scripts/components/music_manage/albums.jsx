@@ -19,19 +19,21 @@ var React = require('react'),
             this.unsubscribe();
         },
         render: function() {
-            var data = this.state.albums,
-                items = _.map(data, function(item) {
-                    return (
-                        <Albums
-                        id={item.id}
-                        albums={item.title}
-                        artists={item.artist}
-                        time={item.time}
-                        label={item.label}
-                        genre={item.genre}
-                        uploaded={item.date_uploaded} />
-                    );
-                });
+            var data = this.state.albums;
+
+            var items = _.map(data, function(item) {
+                return (<Albums
+                    id={item.id}
+                    key={item.id}
+                    albums={item.title}
+                    artists={item.artist}
+                    time={item.time}
+                    label={item.label}
+                    genre={item.genre}
+                    uploaded={item.date_uploaded}
+                    albumstatus={item.status} />);
+            });
+
             return (
                 <div className='table'>
                     <table>
@@ -58,4 +60,5 @@ var React = require('react'),
             this.setState(getStateFromStore());
         }
     });
+
 module.exports =  MusicManagerAlbums;
