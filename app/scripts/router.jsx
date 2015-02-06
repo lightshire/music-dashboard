@@ -28,8 +28,6 @@ var React = require('react'),
     AdminMyEarningsArtists = require('./components/earnings/admin/artists'),
     AdminMyEarningsLabels = require('./components/earnings/admin/labels'),
 
-    MyEarningsAlbumTracksEarnings = require('./components/earnings/album_tracks_earnings'),
-
     Signup = require('./components/signup'),
     Signin = require('./components/signin'),
 
@@ -40,11 +38,20 @@ var React = require('react'),
     MusicManagerArtistSongs = require('./components/music_manage/songs'),
     MusicManagerArtistAlbums = require('./components/music_manage/albums'),
 
+    MusicManagerRecordLabel = require('./components/music_manage_record_label'),
+    MusicManagerRecordLabelSongs = require('./components/music_manage/songs'),
+    MusicManagerRecordLabelAlbums = require('./components/music_manage/albums'),
+    MusicManagerRecordLabelArtists = require('./components/music_manage_record_label/artists'),
+    
+    // To be deleted    
+    TempAdmin = require('./components/admin'),
+
     routes = (
         <Route path='/' handler={AppWrapper}>
             <Route path='/' handler={Layout}>
                 <DefaultRoute name='home' handler={Home} />
-
+                
+                    <Route name='temp.admin' path='tempadmin' handler={TempAdmin} />
                 <Route name='my.account' path='/my_account' handler={MyAccount}>
                     <DefaultRoute name='my.account.settings' handler={MyAccountSettings} />
                     <Route name='my.account.upgrade' path='upgrade' handler={MyAccountUpgrade} />
@@ -64,6 +71,12 @@ var React = require('react'),
                 <Route name="music.manager.artist" path="/manage_music/artist/:id" handler={MusicManagerArtist} >
                     <Route name="music.manager.artist.songs" path="songs" handler={MusicManagerArtistSongs} />
                     <Route name="music.manager.artist.albums" path="albums" handler={MusicManagerArtistAlbums} />
+                </Route>
+
+                <Route name="music.manager.record.label" path="/manage_music/record_label/:id" handler={MusicManagerRecordLabel} >
+                    <Route name="music.manager.record.label.songs" path="songs" handler={MusicManagerRecordLabelSongs} />
+                    <Route name="music.manager.record.label.albums" path="albums" handler={MusicManagerRecordLabelAlbums} />
+                    <Route name="music.manager.record.label.artists" path="artists" handler={MusicManagerRecordLabelArtists} />
                 </Route>
 
                 <Route name='my.earnings' path='/earnings' handler={MyEarnings}>
