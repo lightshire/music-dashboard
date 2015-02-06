@@ -12,7 +12,7 @@ var React = require('react'),
             };
 
             content = (
-                <div key='uploading_modal' onClick={this.props.doneModal}
+                <div onClick={this.props.uploadSaveModal}
                     className='container center-align c_upload_music_file_modal'>
                     <p>
                         <div className='progress'>
