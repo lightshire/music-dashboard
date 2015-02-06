@@ -1,7 +1,7 @@
 'use strict';
 var React = require('react'),
     _ = require('lodash'),
-    MusicManagerAlbums = React.createClass({
+    MyEarningsArtists = React.createClass({
         componentDidMount: function () {
             $(document).ready(function() {
                 $('select').material_select();
@@ -106,4 +106,4 @@ var React = require('react'),
             );
         }
     });
-module.exports =  MusicManagerAlbums;
+module.exports =  MyEarningsArtists;
