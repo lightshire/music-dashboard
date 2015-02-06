@@ -19,7 +19,6 @@ var React = require('react'),
             this.unsubscribe();
         },
         render: function() {
-
             var data = this.state.albums;
 
             var items = _.map(data, function(item) {
@@ -31,27 +30,27 @@ var React = require('react'),
                     time={item.time}
                     label={item.label}
                     genre={item.genre}
-                    uploaded={item.date_uploaded} 
+                    uploaded={item.date_uploaded}
                     albumstatus={item.status} />);
             });
 
             return (
-                <div className="table">
+                <div className='table'>
                     <table>
                         <thead>
                             <tr>
                                 <th></th>
-                                <th className="grey-text text-lighten-1">Album Title</th>
-                                <th className="grey-text text-lighten-1">Artists</th>
-                                <th className="grey-text text-lighten-1">Time</th>
-                                <th className="grey-text text-lighten-1">Label</th>
-                                <th className="grey-text text-lighten-1">Genre</th>
-                                <th className="grey-text text-lighten-1">Uploaded</th>
+                                <th className='grey-text text-lighten-1'>Album Title</th>
+                                <th className='grey-text text-lighten-1'>Artists</th>
+                                <th className='grey-text text-lighten-1'>Time</th>
+                                <th className='grey-text text-lighten-1'>Label</th>
+                                <th className='grey-text text-lighten-1'>Genre</th>
+                                <th className='grey-text text-lighten-1'>Uploaded</th>
                                 <th></th>
                             </tr>
                         </thead>
                         <tbody>
-                        {items}
+                            {items}
                         </tbody>
                     </table>
                 </div>

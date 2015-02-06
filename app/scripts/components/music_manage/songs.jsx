@@ -21,9 +21,9 @@ var React = require('react'),
         render: function() {
             var data = this.state.tracks,
                 items;
-
             items = _.map(data, function(item) {
-                return (<Songs
+                return (
+                    <Songs
                     id={item.id}
                     songs={item.title}
                     artists={item.artist}
@@ -33,19 +33,18 @@ var React = require('react'),
                     uploaded={item.date_uploaded}
                     songstatus={item.status} />);
             });
-
             return (
-                <div className="table">
+                <div className='table'>
                     <table>
                         <thead>
                             <tr>
                                 <th></th>
-                                <th className="grey-text text-lighten-1">Song Title</th>
-                                <th className="grey-text text-lighten-1">Artists</th>
-                                <th className="grey-text text-lighten-1">Time</th>
-                                <th className="grey-text text-lighten-1">Label</th>
-                                <th className="grey-text text-lighten-1">Genre</th>
-                                <th className="grey-text text-lighten-1">Uploaded</th>
+                                <th className='grey-text text-lighten-1'>Song Title</th>
+                                <th className='grey-text text-lighten-1'>Artists</th>
+                                <th className='grey-text text-lighten-1'>Time</th>
+                                <th className='grey-text text-lighten-1'>Label</th>
+                                <th className='grey-text text-lighten-1'>Genre</th>
+                                <th className='grey-text text-lighten-1'>Uploaded</th>
                                 <th></th>
                             </tr>
                         </thead>

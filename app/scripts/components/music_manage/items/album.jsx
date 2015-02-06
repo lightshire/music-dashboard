@@ -3,6 +3,9 @@ var React = require('react'),
     TracksActions = require('../../../actions/track_actions'),
     Modal = require('../../helpers/modal'),
     ReactCSSTransitionGroup = React.addons.CSSTransitionGroup,
+    Router = require('react-router'),
+    Link = Router.Link,
+    TrackActions = require('../../../actions/track_actions'),
     Albums = React.createClass({
         handleDeleteTracks: function() {
             TracksActions.deleteTracks(this.props.id);
@@ -36,12 +39,11 @@ var React = require('react'),
             if(this.state.earnings_grey === true){
                 this.setState({earnings_grey: false});
                 this.setState({earnings_orange: true});
-            }
-            else{
+            } else {
                 this.setState({earnings_green: false});
                 this.setState({earnings_orange: false});
                 this.setState({earnings_red: false});
-            }           
+            }
         },
         cancelModal: function(){
             this.setState({earnings_green: false});
@@ -130,7 +132,6 @@ var React = require('react'),
                         </p>
                     </div>
                 </div>
-                
             );
             var modal_buttons_4 = ([
                 { 'text' : 'Got it!', 'onclick' : hide_modal, 'class_name' : 'c_modal_buttons black-text waves-effect waves-grey lighten-4 btn white lighten-5' }
@@ -167,12 +168,14 @@ var React = require('react'),
             return (
                 <tr className='songs'>
                     <td>
-                        <div>
-                            <i className='mdi-av-play-arrow'></i>
-                            <i className='mdi-content-add'></i>
-                        </div>
+                        <div><i className='mdi-av-play-arrow'></i></div>
+                        <div><i className='mdi-content-add'></i></div>
                     </td>
-                    <td>{this.props.albums}</td>
+                    <td>
+                        <Link to='music.manager.album.songs' params={{id: this.props.id}} >
+                            {this.props.albums}
+                        </Link>
+                    </td>
                     <td>{this.props.artists}</td>
                     <td>{this.props.time}</td>
                     <td>{this.props.label}</td>

@@ -4,7 +4,7 @@
 @import "./signup.scss";
 @import "./sidebar.scss";
 @import "./monetize_modal.scss";
-
+@import "./modals.scss";
 
 .card .card-reveal {
     width: 100%;
@@ -43,7 +43,7 @@
     -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
     -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-    z-index: 1000;
+    z-index: 990;
     height: 100%;
 }
 
@@ -253,7 +253,7 @@
 .upload-btn {
     position: absolute;
     top: 110px;
-    right: -25px;
+    right: -29px;
 }
 .table {
     padding-top: 15px;
@@ -339,3 +339,20 @@
     cursor: pointer;
 }
 
+.modal-enter {
+    opacity: 0.01;
+    transition: all .1s ease;
+}
+
+.modal-enter.modal-enter-active {
+    opacity: 1;
+}
+
+.modal-leave {
+    opacity: 1;
+    transition: all .1s ease;
+}
+
+.modal-leave.modal-leave-active {
+    opacity: 0.01;
+}
