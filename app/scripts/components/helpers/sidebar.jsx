@@ -49,6 +49,7 @@ var React = require('react/addons'),
                 music_manager_songs = (<li><Link to='music.manager.songs' className='waves-effect waves-blue collapsed-link'>Tracks</Link></li>),
                 music_manager_albums = (<li><Link to='music.manager.albums' className='waves-effect waves-blue collapsed-link'>Album</Link></li>),
                 music_manager_artists = (<li><Link to='music.manager.artists' className='waves-effect waves-blue collapsed-link'>Artists</Link></li>),
+                music_manager_labels = (<li><Link to='music.manager.labels' className='waves-effect waves-blue collapsed-link'>Record Labels</Link></li>),
 
                 my_earnings_songs = (<li><Link to='my.earnings.songs' className='waves-effect waves-blue collapsed-link'>Tracks</Link></li>),
                 my_earnings_albums = (<li><Link to='my.earnings.albums' className='waves-effect waves-blue collapsed-link'>Albums</Link></li>),
@@ -75,15 +76,18 @@ var React = require('react/addons'),
                 my_earnings_labels = (<li><Link to='admin.my.earnings.labels' className='waves-effect waves-blue collapsed-link'>Record Labels</Link></li>);
             } else if (this.hasAccess(['artist'])) {
                 music_manager_artists = '';
+                music_manager_labels = '';
                 my_earnings_artists = '';
                 my_earnings_labels = '';
             } else if (this.hasAccess(['general_user'])) {
                 music_manager_albums = '';
                 music_manager_artists = '';
+                music_manager_labels = '';
                 my_earnings_artists = '';
                 my_earnings_labels = '';
                 my_earnings_albums = '';
             } else if (this.hasAccess(['record_label'])) {
+                music_manager_labels = '';
                 my_account_upgrade = '';
                 my_earnings_labels = '';
             }
@@ -113,6 +117,7 @@ var React = require('react/addons'),
                                             {music_manager_songs}
                                             {music_manager_albums}
                                             {music_manager_artists}
+                                            {music_manager_labels}
                                         </ul>
                                     </div>
                                 </li>
