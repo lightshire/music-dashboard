@@ -1,49 +1,46 @@
 'use strict';
 var React = require('react'),
-    Albums = require('./items/album'),
+    Artists = require('./items/artists'),
     _ = require('lodash'),
-    AlbumStore = require('../../stores/album_stores'),
+    ArtistsStore = require('../../stores/artist_stores'),
     getStateFromStore = function() {
         return {
-            albums: AlbumStore.getAll()
+            artists: ArtistsStore.getAll()
         };
     },
-    MusicManagerAlbums = React.createClass({
+    MusicManagerArtists = React.createClass({
         getInitialState: function() {
             return getStateFromStore();
         },
         componentDidMount: function() {
-            this.unsubscribe = AlbumStore.listen(this._onChange);
+            this.unsubscribe = ArtistsStore.listen(this._onChange);
         },
         componentWillUnmount: function() {
             this.unsubscribe();
         },
         render: function() {
-            var data = this.state.albums,
-                items = _.map(data, function(item) {
-                    return (
-                        <Albums
-                        id={item.id}
-                        albums={item.title}
-                        artists={item.artist}
-                        time={item.time}
-                        label={item.label}
-                        genre={item.genre}
-                        uploaded={item.date_uploaded} />
-                    );
-                });
+            var data = this.state.artists,
+            items;
+
+            items = _.map(data, function(item) {
+                return (<Artists
+                    id={item.id}
+                    avatar={item.avatar}
+                    artist={item.artist}
+                    albums={item.albums}
+                    tracks={item.tracks}
+                    added={item.added} />);
+            });
             return (
                 <div className='table'>
                     <table>
                         <thead>
                             <tr>
                                 <th></th>
-                                <th className='grey-text text-lighten-1'>Album Title</th>
-                                <th className='grey-text text-lighten-1'>Artists</th>
-                                <th className='grey-text text-lighten-1'>Time</th>
-                                <th className='grey-text text-lighten-1'>Label</th>
-                                <th className='grey-text text-lighten-1'>Genre</th>
-                                <th className='grey-text text-lighten-1'>Uploaded</th>
+                                <th className="grey-text text-lighten-1">Artists</th>
+                                <th className="grey-text text-lighten-1">Albums</th>
+                                <th className="grey-text text-lighten-1">Tracks</th>
+                                <th className="grey-text text-lighten-1">Added</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -58,4 +55,5 @@ var React = require('react'),
             this.setState(getStateFromStore());
         }
     });
-module.exports =  MusicManagerAlbums;
+
+module.exports =  MusicManagerArtists;

@@ -141,6 +141,13 @@ var React = require('react'),
                         className='waves-effect waves-white btn-flat white-text c_tabs'>
                         Artists
                     </Link>
+                ),
+                music_manager_labels = (
+                    <Link 
+                        to='music.manager.labels'
+                        className='waves-effect waves-white btn-flat white-text c_tabs'>
+                        Record Labels
+                    </Link>
                 );
 
 
@@ -213,6 +220,7 @@ var React = require('react'),
 
             if (this.hasAccess(['record_label'])) {
                 modal_trigger = this.actionRLModal;
+                music_manager_labels = '';
             }
 
 
@@ -225,6 +233,7 @@ var React = require('react'),
                                {music_manager_songs}
                                {music_manager_albums}
                                {music_manager_artists}
+                               {music_manager_labels}
                             </div>
                             <Search />
                             <div onClick={modal_trigger} className='upload-btn right-align'>
