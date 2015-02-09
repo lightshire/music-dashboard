@@ -1,0 +1,18 @@
+.table {
+    padding-top: 15px;
+}
+.table thead {
+    border-bottom: none;
+    line-height: 0;
+    text-transform: uppercase;
+}
+.table tbody {
+    line-height: 0;
+}
+.songs div {
+    display: inline-block;
+    cursor: pointer;
+}
+.songs i {
+    font-size: 18px;
+}

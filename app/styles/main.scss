@@ -1,27 +1,27 @@
 @import "./materialize.scss";
 @import "./variables.scss";
+
 @import "./admin.scss";
+@import "./common.scss";
+@import "./album_info.scss";
+@import "./my_account.scss";
 @import "./signup.scss";
 @import "./sidebar.scss";
+@import "./table.scss";
+@import "./search.scss";
+@import "./player.scss";
 @import "./monetize_modal.scss";
 @import "./modals.scss";
 
 .card .card-reveal {
     width: 100%;
 }
-
-/* i.right {
-    position: absolute;
-    right: 15px;
-} */
-
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;
     color: #000;
     padding: 0.2em 0;
 }
-
 .main-route-container {
     float: left;
     box-sizing: border-box;
@@ -30,342 +30,9 @@
     width: 100%;
     transition: all .2s ease;
 }
-
 .main-route-container.no-sidebar {
     padding-left: 0;
 }
 
-.side-bar {
-    float: left;
-    background: #fff;
-    width: 200px;
-    position: fixed;
-    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-    -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-    z-index: 990;
-    height: 100%;
-}
 
-
-.sidebar-leave {
-    opacity: 1;
-    margin-left: 0;
-    transition: opacity .1s ease;
-    transition: margin .1s ease;
-}
-
-.sidebar-leave.sidebar-leave-active {
-    margin-left: -200px;
-    opacity: 0.01;
-}
-
-.sidebar-enter {
-    opacity: 0.01;
-    margin-left: -200px;
-    transition: opacity .1s ease;
-    transition: margin .1s ease;
-}
-
-.sidebar-enter.sidebar-enter-active {
-    opacity: 1;
-    margin-left: 0;
-}
-
-.container{
-    position: relative;
-}
-
-.c_links {
-    margin-top: 45px;
-}
-
-.c_header {
-    padding-top: 80px;
-    // border-bottom: 1px solid $div-border;
-    background-color: #90caf9;
-}
-
-.c_first_button {
-    width: 100%;
-}
-
-.c_tabs {
-    margin-right: 20px;
-}
-
-.c_tabs.active {
-    border-bottom: 1px solid $btn-border;
-}
-
-.c_header .container h4 {
-    margin-top: 0;
-}
-
-.c_main_container {
-    // margin-top: -1px;
-    // border: 1px solid $div-border;
-}
-
-.c_my_account_settings, .c_my_account_security, .c_my_account_updgrade, .c_album_info {
-    margin-top: 0px;
-    padding: 20px;
-}
-
-.c_album_info_divider {
-    margin-left: -43px;
-    margin-right: -43px;
-}
-
-.c_album_info_buttons {
-    margin-top: 13px;
-    margin-bottom: 0px;
-}
-
-.c_my_account_settings_header .s2 img{
-    border-radius: 100%;
-}
-
-.c_my_account_settings_header .s10 h5 {
-    margin-top: 35px;
-}
-
-.player {
-    .btn-show-playlist {
-        position: relative;
-    }
-    .btn-volume-control {
-        position: relative;
-    }
-    .volume-control {
-        background: #fff;
-        @extend .z-depth-1;
-        color: $font-color;
-        position: absolute;
-        top: 50px;
-        right: 20px;
-        width: 200px;
-        padding: 0 1em;
-        .row {
-            margin: 0;
-        }
-    }
-    .playlist {
-        background: #fff;
-        @extend .z-depth-1;
-        color: $font-color;
-        position: absolute;
-        top: 50px;
-        right: 20px;
-        width: 300px;
-        .track-info {
-            width: 100%;
-            box-sizing: border-box;
-            padding: 1em;
-            line-height: 1.2em;
-            z-index: 2000;
-            position: relative;
-            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16); 
-             .seek-container {
-                margin-top: 1em;
-                margin-bottom: 1em;
-                .time-current-container {
-                    text-align: left;
-                }
-                .time-end-container {
-                    text-align: right;
-                }
-                line-height: 1.2em;
-                .seeker-container {
-                    text-align: center;
-                    input.seeker {
-                        margin: 0;
-                        width: 100%;
-                    }
-                }
-            }
-        }
-        .track-list {
-            display: block;
-            width: 100%;
-            padding: 0;
-            z-index: 1000;
-            position: relative;
-            ul {
-                li {
-                    height: 100%;
-                    &:hover {
-                        background-color: #ececec;
-                    }
-                }
-            } 
-            ul, li {
-                float: none;
-                font-size: 1em;
-                line-height: 1.2em;
-            }
-            .track-item {
-                margin: 0;
-            }
-            .track-thumb-container {
-                padding: 5px;
-                img.track-thumb {
-                    width: 100%;
-                    display: block;
-                }
-            }
-            .track-title-container {
-                display: table-cell;
-                vertical-align: middle;
-                .track-title {
-                    line-height: 43px;
-                }
-            }
-            .track-remove-container {
-                text-align: right;
-                a.track-remove {
-                    color: $font-color;
-                    padding: 0;
-                    width: 100%;
-                    text-align: center;
-                    transition: font-size .5s ease;
-                    &:hover {
-                        i {
-                            font-size: 1.6em;
-                        }
-                    }
-                }
-                i {
-                    font-size: 1.4em;
-                    line-height: 43px;
-                }
-            }
-        } 
-    }
-}
-
-
-.search-btn {
-    width: 200px;
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-.search-btn label, .search-btn .input-field {
-    display: inline-block;
-    vertical-align: middle;
-}
-.search-btn label{
-    font-size: 2rem;
-}
-.search-btn .input-field {
-    margin: 0;
-    // display: none;
-}
-.upload-btn {
-    position: absolute;
-    top: 110px;
-    right: -29px;
-}
-.table {
-    padding-top: 15px;
-}
-.table thead {
-    border-bottom: none;
-    line-height: 0;
-    text-transform: uppercase;
-}
-.table tbody {
-    line-height: 0;
-}
-.songs div {
-    display: inline-block;
-    cursor: pointer;
-}
-.songs i {
-    font-size: 18px;
-}
-#upload {
-    visibility: hidden;
-    width: 1px;
-    height: 1px;
-}
-
-
-
-.search-box-enter {
-    opacity: 0.01;
-    width: 0;
-    transition: all .5s ease;
-}
-
-.search-box-enter.search-box-enter-active {
-    width: 160px;
-    opacity: 1;
-}
-
-.search-box-leave {
-    opacity: 1;
-    width: 160px;
-    transition: all .5s ease;
-}
-
-.search-box-leave.search-box-leave-active {
-    width: 0;
-    opacity: 0.01;
-}
-
-
-.c_my_account_scrollup_button {
-    left: 289px;
-    top: 49px;
-}
-/*temporarily displays the modal for viewing*/
-.modal {
-    display: table!important;
-    top: 0;
-    bottom: 0;
-}
-.c_upload_music_file_modal, {
-    margin-top: 110px;
-    margin-bottom: 100px;
-}
- .c_monetize_modal {
-    margin-top: 70px;
-    margin-bottom: 30px;
- }
-.c_select_a_track_button {
-    margin-top: 10px;
-}
-.c_modal_buttons {
-    margin-right: 10px;
-}
-.c_track_terms {
-    text-align: justify;
-}
-.c_i_agree {
-    margin-top: 80px;
-
-}
-.c_table_buttons i {
-    cursor: pointer;
-}
-
-.modal-enter {
-    opacity: 0.01;
-    transition: all .1s ease;
-}
-
-.modal-enter.modal-enter-active {
-    opacity: 1;
-}
-
-.modal-leave {
-    opacity: 1;
-    transition: all .1s ease;
-}
-
-.modal-leave.modal-leave-active {
-    opacity: 0.01;
-}
 
