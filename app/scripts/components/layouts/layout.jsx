@@ -6,6 +6,7 @@ var React = require('react/addons'),
     LayoutStore = require('../../stores/layout_stores'),
     TopBar = require('../helpers/topbar'),
     SideBar = require('../helpers/sidebar'),
+    Modal = require('../helpers/modal2.jsx'),
     getStateFromStore = function() {
         return {
             layout: LayoutStore.getAll()
@@ -35,6 +36,7 @@ var React = require('react/addons'),
                             <RouteHandler />
                         </div>
                     </div>
+                    <Modal />
                 </div>
             );
         },
