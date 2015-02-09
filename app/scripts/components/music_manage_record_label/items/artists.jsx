@@ -1,16 +1,45 @@
 'use strict';
 var React = require('react'),
-    TracksActions = require('../../../actions/track_actions'),
+    Delete = require('../../modals/delete_modal'),
+    TrackActions = require('../../../actions/track_actions'),
+    ReactCSSTransitionGroup = React.addons.CSSTransitionGroup,
     Artists = React.createClass({
+        getInitialState: function() {
+            return {
+                delete_modal: false
+            };
+        },
+        deleteModal: function() {
+            this.setState({
+                delete_modal: !this.delete_modal
+            });
+        },
         handleDeleteTracks: function() {
-            TracksActions.deleteTracks(this.props.id);
+            this.setState({
+                delete_modal: false
+            });
+            TrackActions.deleteTracks(this.props.id);
+        },
+        cancelHandler: function() {
+            this.setState({
+                delete_modal: false
+            });
         },
         render: function() {
-            
+            var modal = '';
+
+            console.log('abcd: ',this.state.delete_modal);
+            if (this.state.delete_modal) {
+                modal = <Delete
+                            key='delete'
+                            handleDeleteTracks={this.handleDeleteTracks}
+                            cancelHandler={this.cancelHandler} />;
+            }
+
             return (
                 <tr className='songs'>
                     <td>
-                        <img src={this.props.avatar} />
+                        <img className='circle' src={this.props.avatar} />
                     </td>
                     <td>{this.props.artist}</td>
                     <td>{this.props.albums}</td>
@@ -19,9 +48,12 @@ var React = require('react'),
                     <td>
                         <div className='right-align'>
                             <i className='mdi-editor-mode-edit'></i>
-                            <i onClick={this.handleDeleteTracks} className='mdi-action-delete'></i>
+                            <i onClick={this.deleteModal} className='mdi-action-delete'></i>
                         </div>
                     </td>
+                    <ReactCSSTransitionGroup transitionName='modalx'>
+                        {modal}
+                    </ReactCSSTransitionGroup>
                 </tr>
             );
         }

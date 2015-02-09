@@ -27,7 +27,7 @@ var React = require('react'),
                     </div>
                     <div className='row'>                        
                         <div className='col s12'>
-                            <p className='toLeft'>Upload an artist photo</p>
+                            <p className='toLeft'>Upload a photo</p>
                             <div className='row'>
                                 <div className='col s3 toLeft'>
                                     <img src='http://placehold.it/100x100' />
@@ -60,7 +60,7 @@ var React = require('react'),
             return (
                 <Modal
                     id='modal'
-                    title='New'
+                    title='New Record Label'
                     content={content}
                     buttons={button} />
             );

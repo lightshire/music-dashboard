@@ -7,6 +7,8 @@ var React = require('react'),
     Search = require('./helpers/search'),
     Actions = require('./modals/action_modal'),
     ActionsAdmin = require('./modals/action_admin_modal'),
+    ActionsRL = require('./modals/action_rl_modal'),
+    CreateArtist = require('./modals/create_artist_modal'),
     CreateRecordLabel = require('./modals/create_record_label_modal'),
     CreateAlbum = require('./modals/create_album_modal'),
     Upload = require('./modals/upload_modal'),
@@ -32,7 +34,10 @@ var React = require('react'),
             return {
                 action_modal: false,
                 action_admin_modal: false,
+                action_rl_modal: false,
                 create_album_modal: false,
+                create_artist_modal: false,
+                create_record_label_modal: false,
                 upload_modal: false,
                 upload_filename_modal: false,
                 upload_progress_modal: false,
@@ -40,38 +45,73 @@ var React = require('react'),
             };
         },
         actionModal: function() {
-            this.setState({action_modal: !this.state.action_modal});
+            this.setState({
+                action_modal: !this.state.action_modal
+            });
+        },
+        actionRLModal: function() {
+            this.setState({
+                action_rl_modal: !this.state.action_rl_modal
+            });
         },
         actionAdminModal: function() {
-            this.setState({action_admin_modal: !this.state.action_admin_modal});
-        },
-        createRecordLabelModal: function() {
-            this.setState({action_admin_modal: false});
-            this.setState({create_record_label_modal: !this.state.create_record_label_modal});
+            this.setState({
+                action_admin_modal: !this.state.action_admin_modal
+            });
         },
         createAlbumModal: function() {
-            this.setState({action_modal: false});
-            this.setState({create_album_modal: !this.state.create_album_modal});
+            this.setState({
+                action_modal: false,
+                action_rl_modal: false,
+                action_admin_modal: false,
+                create_album_modal: !this.state.create_album_modal
+            });
         },
+        createArtistModal: function() {
+            this.setState({
+                action_rl_modal: false,
+                action_admin_modal: false,
+                create_artist_modal: !this.state.create_artist_modal
+            });
+        },
+        createRecordLabelModal: function() {
+            this.setState({
+                action_admin_modal: false,
+                create_record_label_modal: !this.state.create_record_label_modal
+            });
+        },
+        
         showModal: function() {
-            this.setState({action_modal: false});
-            this.setState({upload_modal: !this.state.upload_modal});
+            this.setState({
+                action_modal: false,
+                action_rl_modal: false,
+                action_admin_modal: false,
+                upload_modal: !this.state.upload_modal
+            });
         },
         uploadFilenameModal: function() {
-            this.setState({upload_modal: false});
-            this.setState({upload_filename_modal: !this.state.upload_filename_modal});
+            this.setState({
+                upload_modal: false,
+                upload_filename_modal: !this.state.upload_filename_modal
+            });
         },
         uploadProgressModal: function() {
-            this.setState({upload_filename_modal: false});
-            this.setState({upload_progress_modal: !this.state.upload_progress_modal});
+            this.setState({
+                upload_filename_modal: false,
+                upload_progress_modal: !this.state.upload_progress_modal
+            });
         },
         uploadSaveModal: function() {
-            this.setState({upload_progress_modal: false});
-            this.setState({upload_save_modal: !this.state.upload_save_modal});
+            this.setState({
+                upload_progress_modal: false,
+                upload_save_modal: !this.state.upload_save_modal
+            });
         },
         cancelHandler: function() {
             this.setState({
                 create_album_modal: false,
+                create_artist_modal: false,
+                create_record_label_modal: false,
                 upload_modal: false,
                 upload_filename_modal: false,
                 upload_progress_modal: false,
@@ -80,8 +120,28 @@ var React = require('react'),
         },
         render: function() {
             var modal = '',
-                music_manager_songs = (<Link to='music.manager.songs' className='waves-effect waves-white btn-flat white-text c_tabs'>Tracks</Link>),
-                music_manager_albums = (<Link to='music.manager.albums' className='waves-effect waves-white btn-flat white-text c_tabs'>Albums</Link>);
+                modal_trigger = this.showModal,
+                music_manager_songs = (
+                    <Link 
+                        to='music.manager.songs' 
+                        className='waves-effect waves-white btn-flat white-text c_tabs'>
+                        Tracks
+                    </Link>
+                ),
+                music_manager_albums = (
+                    <Link 
+                        to='music.manager.albums' 
+                        className='waves-effect waves-white btn-flat white-text c_tabs'>
+                        Albums
+                    </Link>
+                ),
+                music_manager_artists = (
+                    <Link 
+                        to='music.manager.artists'
+                        className='waves-effect waves-white btn-flat white-text c_tabs'>
+                        Artists
+                    </Link>
+                );
 
 
             if (this.state.action_modal) {
@@ -94,7 +154,14 @@ var React = require('react'),
                             key='actionadmin'
                             showModal={this.showModal}
                             createAlbumModal={this.createAlbumModal}
+                            createArtistModal={this.createArtistModal}
                             createRecordLabelModal={this.createRecordLabelModal} />;
+            } else if (this.state.action_rl_modal) {
+                modal = <ActionsRL
+                            key='actionrl'
+                            showModal={this.showModal}
+                            createAlbumModal={this.createAlbumModal}
+                            createArtistModal={this.createArtistModal} />;
             } else if (this.state.create_record_label_modal) {
                 modal = <CreateRecordLabel
                             key='createrecordlabel'
@@ -102,6 +169,10 @@ var React = require('react'),
             } else if (this.state.create_album_modal) {
                 modal = <CreateAlbum
                             key='createalbum'
+                            cancelHandler={this.cancelHandler} />;
+            } else if (this.state.create_artist_modal) {
+                modal = <CreateArtist
+                            key='createartist'
                             cancelHandler={this.cancelHandler} />;
             } else if (this.state.upload_modal) {
                 modal = <Upload
@@ -124,19 +195,24 @@ var React = require('react'),
                             cancelHandler={this.cancelHandler} />;
             }
 
-            var modal_trigger = this.showModal;
 
             
-            if (this.hasAccess(['general_user'])) {
-                music_manager_albums = '';
+            if (this.hasAccess(['admin'])) {
+                modal_trigger = this.actionAdminModal;
             }
 
             if (this.hasAccess(['artist'])) {
                 modal_trigger = this.actionModal;
+                music_manager_artists = '';
             }
-            
-            if (this.hasAccess(['admin'])) {
-                modal_trigger = this.actionAdminModal;
+
+            if (this.hasAccess(['general_user'])) {
+                music_manager_albums = '';
+                music_manager_artists = '';
+            }
+
+            if (this.hasAccess(['record_label'])) {
+                modal_trigger = this.actionRLModal;
             }
 
 
@@ -148,6 +224,7 @@ var React = require('react'),
                             <div className='c_links'>
                                {music_manager_songs}
                                {music_manager_albums}
+                               {music_manager_artists}
                             </div>
                             <Search />
                             <div onClick={modal_trigger} className='upload-btn right-align'>
