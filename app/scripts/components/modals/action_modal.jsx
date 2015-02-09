@@ -6,15 +6,11 @@ var React = require('react'),
             var content = '';
 
             content = (
-                <div className='container center-align c_upload_music_file_modal'>
-                    <p onClick={this.props.showModal}>
-                        <i className='mdi-file-file-upload large'></i>
-                        <h5>Upload</h5>
-                    </p>
-                    <p onClick={this.props.createAlbumModal}>
-                        <i className='mdi-file-folder-open large'></i>
-                        <h5>Album</h5>
-                    </p>
+                <div>
+                    <div className='row col s12'>
+                        <div className='col s6 m6 toCenter'><a className='createHover' onClick={this.props.showModal}><span className='modalCreate'><i className='large mdi-file-file-upload'></i></span><span>Upload</span></a></div>
+                        <div className='col s6 m6 toCenter'><a className='createHover' onClick={this.props.createAlbumModal}><span className='modalCreate'><i className='large mdi-file-folder-open'></i></span><span>Album</span></a></div>
+                    </div>
                 </div>
             );
 

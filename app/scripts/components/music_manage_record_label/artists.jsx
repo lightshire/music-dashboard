@@ -8,7 +8,7 @@ var React = require('react'),
             artists: ArtistsStore.getAll()
         };
     },
-    MusicManagerRecordLabelArtists = React.createClass({
+    MusicManagerArtists = React.createClass({
         getInitialState: function() {
             return getStateFromStore();
         },
@@ -20,7 +20,7 @@ var React = require('react'),
         },
         render: function() {
             var data = this.state.artists,
-                items;
+            items;
 
             items = _.map(data, function(item) {
                 return (<Artists
@@ -56,4 +56,4 @@ var React = require('react'),
         }
     });
 
-module.exports =  MusicManagerRecordLabelArtists;
+module.exports =  MusicManagerArtists;
