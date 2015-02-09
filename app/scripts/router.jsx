@@ -16,6 +16,7 @@ var React = require('react'),
     MusicManager = require('./components/music_manage'),
     MusicManagerSongs = require('./components/music_manage/songs'),
     MusicManagerAlbums = require('./components/music_manage/albums'),
+    MusicManagerArtists = require('./components/music_manage_record_label/artists'),
 
     MyEarnings = require('./components/earnings'),
     MyEarningsSongs = require('./components/earnings/songs'),
@@ -34,14 +35,7 @@ var React = require('react'),
     MusicManagerAlbum = require('./components/music_manage_album'),
     MusicManagerAlbumSongs = require('./components/music_manage_album/songs'),
     MusicManagerAlbumAlbumInfo = require('./components/music_manage_album/albuminfo'),
-    MusicManagerArtist = require('./components/music_manage_artist'),
-    MusicManagerArtistSongs = require('./components/music_manage/songs'),
-    MusicManagerArtistAlbums = require('./components/music_manage/albums'),
-
-    MusicManagerRecordLabel = require('./components/music_manage_record_label'),
-    MusicManagerRecordLabelSongs = require('./components/music_manage/songs'),
-    MusicManagerRecordLabelAlbums = require('./components/music_manage/albums'),
-    MusicManagerRecordLabelArtists = require('./components/music_manage_record_label/artists'),
+    
     
     // To be deleted    
     TempAdmin = require('./components/admin'),
@@ -61,22 +55,12 @@ var React = require('react'),
                 <Route name='music.manager' path='/manage_music' handler={MusicManager}>
                     <Route name='music.manager.songs' path='songs' handler={MusicManagerSongs} />
                     <Route name='music.manager.albums' path='albums' handler={MusicManagerAlbums} />
+                    <Route name='music.manager.artists' path='artists' handler={MusicManagerArtists} />
                 </Route>
 
-                <Route name="music.manager.album" path="/manage_music/album/:id" handler={MusicManagerAlbum}>
-                    <Route name="music.manager.album.songs" path="songs" handler={MusicManagerAlbumSongs} />
-                    <Route name="music.manager.album.albuminfo" path="albuminfo" handler={MusicManagerAlbumAlbumInfo} />
-                </Route>
-
-                <Route name="music.manager.artist" path="/manage_music/artist/:id" handler={MusicManagerArtist} >
-                    <Route name="music.manager.artist.songs" path="songs" handler={MusicManagerArtistSongs} />
-                    <Route name="music.manager.artist.albums" path="albums" handler={MusicManagerArtistAlbums} />
-                </Route>
-
-                <Route name="music.manager.record.label" path="/manage_music/record_label/:id" handler={MusicManagerRecordLabel} >
-                    <Route name="music.manager.record.label.songs" path="songs" handler={MusicManagerRecordLabelSongs} />
-                    <Route name="music.manager.record.label.albums" path="albums" handler={MusicManagerRecordLabelAlbums} />
-                    <Route name="music.manager.record.label.artists" path="artists" handler={MusicManagerRecordLabelArtists} />
+                <Route name='music.manager.album' path='/manage_music/album/:id' handler={MusicManagerAlbum}>
+                    <Route name='music.manager.album.songs' path='songs' handler={MusicManagerAlbumSongs} />
+                    <Route name='music.manager.album.albuminfo' path='albuminfo' handler={MusicManagerAlbumAlbumInfo} />
                 </Route>
 
                 <Route name='my.earnings' path='/earnings' handler={MyEarnings}>
