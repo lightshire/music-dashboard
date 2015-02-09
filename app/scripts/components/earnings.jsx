@@ -38,7 +38,7 @@ var React = require('react'),
             }
             return (
                 <div className='c_body'>
-                    <div className='c_header'>
+                    <div className='c_header z-depth-1'>
                         <div className='container'>
                             <h4 className='white-text'>My Earnings</h4>
                             <div className='c_links'>

@@ -1,58 +1,54 @@
 'use strict';
 var React = require('react'),
     _ = require('lodash'),
-    MyEarningsLabels = React.createClass({
+    MyEarningsTracks = React.createClass({
         componentDidMount: function () {
             $(document).ready(function() {
                 $('select').material_select();
             });
         },
         render: function() {
-            var label_earnings_data = ([
+            var track_earnings_data = ([
                 {
                     image : 'http://placehold.it/50x50',
-                    name : 'Label 1',
-                    artist_count : 8,
-                    album_count : 12,
-                    track_count : 144,
+                    title : 'Track 1',
+                    artist : 'Artist 1',
+                    album : 'Album 1',
                     total_earnings : '$80.00',
-                    artist_since : 'JAN. 15, 2015',
+                    added : 'JAN. 15, 2015',
                     rating : 3,
                     downloads : 1542
                 },
                 {
                     image : 'http://placehold.it/50x50',
-                    name : 'Label 2',
-                    artist_count : 8,
-                    album_count : 12,
-                    track_count : 144,
+                    title : 'Track 2',
+                    artist : 'Artist 2',
+                    album : 'Album 2',
                     total_earnings : '$80.00',
-                    artist_since : 'JAN. 15, 2015',
+                    added : 'JAN. 15, 2015',
                     rating : 3,
                     downloads : 1542
                 },
                 {
                     image : 'http://placehold.it/50x50',
-                    name : 'Label 3',
-                    artist_count : 8,
-                    album_count : 12,
-                    track_count : 144,
+                    title : 'Track 3',
+                    artist : 'Artist 3',
+                    album : 'Album 3',
                     total_earnings : '$80.00',
-                    artist_since : 'JAN. 15, 2015',
+                    added : 'JAN. 15, 2015',
                     rating : 3,
                     downloads : 1542
                 },
             ]),
-            label_earnings =  _.map(label_earnings_data, function(data, i){
+            label_earnings =  _.map(track_earnings_data, function(data, i){
                 return (
                     <tr className='c_row_admin_artists'>
                         <td><img className="c_labels_image" src={data.image} /></td>
-                        <td>{data.name}</td>
-                        <td>{data.artist_count}</td>
-                        <td>{data.album_count}</td>
-                        <td>{data.track_count}</td>
+                        <td>{data.title}</td>
+                        <td>{data.artist}</td>
+                        <td>{data.album}</td>
                         <td>{data.total_earnings}</td>
-                        <td>{data.artist_since}</td>
+                        <td>{data.added}</td>
                         <td>
                             <i className='mdi-action-stars'></i>
                             <i className='mdi-action-stars'></i>
@@ -89,15 +85,13 @@ var React = require('react'),
                             <thead>
                                 <tr>
                                     <th></th>
-                                    <th className='grey-text text-lighten-1'>Record Label</th>
-                                    <th className='grey-text text-lighten-1'>Artists</th>
-                                    <th className='grey-text text-lighten-1'>Albums</th>
-                                    <th className='grey-text text-lighten-1'>Tracks</th>
-                                    <th className='grey-text text-lighten-1'>Earnings</th>
-                                    <th className='grey-text text-lighten-1'>Artist Since</th>
+                                    <th className='grey-text text-lighten-1'>Title</th>
+                                    <th className='grey-text text-lighten-1'>Artist</th>
+                                    <th className='grey-text text-lighten-1'>Album</th>
+                                    <th className='grey-text text-lighten-1'>Total Earnings</th>
+                                    <th className='grey-text text-lighten-1'>Added</th>
                                     <th className='grey-text text-lighten-1'>Rating</th>
                                     <th className='grey-text text-lighten-1'>Downloads</th>
-                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -109,4 +103,4 @@ var React = require('react'),
             );
         }
     });
-module.exports =  MyEarningsLabels;
+module.exports =  MyEarningsTracks;

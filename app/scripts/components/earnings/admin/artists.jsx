@@ -8,7 +8,7 @@ var React = require('react'),
             });
         },
         render: function() {
-            var label_earnings_data = ([
+            var artist_earnings_data = ([
                 {
                     image : 'http://placehold.it/50x50',
                     name : 'Label 1',
@@ -43,7 +43,7 @@ var React = require('react'),
                     downloads : 1542
                 },
             ]),
-            label_earnings =  _.map(label_earnings_data, function(data, i){
+            label_earnings =  _.map(artist_earnings_data, function(data, i){
                 return (
                     <tr className='c_row_admin_artists'>
                         <td><img className="c_labels_image" src={data.image} /></td>
