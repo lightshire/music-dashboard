@@ -1,7 +1,6 @@
 'use strict';
 var React = require('react/addons'),
     ReactCSSTransitionGroup = React.addons.CSSTransitionGroup,
-    Modal = require('./modal'),
     ModalStore = require('../../stores/modal_stores'),
     ModalActions = require('../../actions/modal_actions'),
     getStateFromStore = function() {
@@ -26,8 +25,10 @@ var React = require('react/addons'),
 
             if (this.state.show) {
                 modal = (
-                    <div className='modal-overlay' onClick={this.handleDismissModal}>
+                    <div>
                         {this.state.content}
+                        <div className='modal-overlay' onClick={this.handleDismissModal}>    
+                        </div>
                     </div>
                 );
             }

@@ -6,8 +6,6 @@ var React = require('react'),
     TrackActions = require('../actions/track_actions'),
     Search = require('./helpers/search'),
     Actions = require('./modals/action_modal'),
-    ActionsAdmin = require('./modals/action_admin_modal'),
-    ActionsRL = require('./modals/action_rl_modal'),
     CreateArtist = require('./modals/create_artist_modal'),
     CreateRecordLabel = require('./modals/create_record_label_modal'),
     CreateAlbum = require('./modals/create_album_modal'),
@@ -17,7 +15,6 @@ var React = require('react'),
     UploadSave = require('./modals/upload_save_modal'),
     Constrainable = require('./mixins/constrainable'),
     ModalActions = require('../actions/modal_actions'),
-    ReactCSSTransitionGroup = React.addons.CSSTransitionGroup,
     MusicManager = React.createClass({
         mixins: [Constrainable],
         statics: {
@@ -27,93 +24,59 @@ var React = require('react'),
         },
         handleAddTracks: function() {
             TrackActions.addTracks();
-            this.setState({
-                upload_save_modal: false
-            });
-        },
-        getInitialState: function() {
-            return {
-                action_modal: false,
-                action_admin_modal: false,
-                action_rl_modal: false,
-                create_album_modal: false,
-                create_artist_modal: false,
-                create_record_label_modal: false,
-                upload_modal: false,
-                upload_filename_modal: false,
-                upload_progress_modal: false,
-                upload_save_modal: false
-            };
+            ModalActions.dismiss();
         },
         actionModal: function() {
             ModalActions.show(<Actions
                             key='action'
                             showModal={this.showModal}
-                            createAlbumModal={this.createAlbumModal} />, 'action_modal' );
-        },
-        actionRLModal: function() {
-            this.setState({
-                action_rl_modal: !this.state.action_rl_modal
-            });
-        },
-        actionAdminModal: function() {
-            this.setState({
-                action_admin_modal: !this.state.action_admin_modal
-            });
+                            createAlbumModal={this.createAlbumModal}
+                            createArtistModal={this.createArtistModal}
+                            createRecordLabelModal={this.createRecordLabelModal} />, 'action_modal' );
         },
         createAlbumModal: function() {
-            this.setState({
-                action_modal: false,
-                action_rl_modal: false,
-                action_admin_modal: false,
-                create_album_modal: !this.state.create_album_modal
-            });
+            ModalActions.show(<CreateAlbum
+                            key='createalbum'
+                            cancelHandler={this.cancelHandler} />, 'createalbum_modal' );
         },
         createArtistModal: function() {
-            this.setState({
-                action_rl_modal: false,
-                action_admin_modal: false,
-                create_artist_modal: !this.state.create_artist_modal
-            });
+            ModalActions.show(<CreateArtist
+                            key='createartist'
+                            cancelHandler={this.cancelHandler} />, 'createartist_modal' );
         },
         createRecordLabelModal: function() {
-            this.setState({
-                action_admin_modal: false,
-                create_record_label_modal: !this.state.create_record_label_modal
-            });
+            ModalActions.show(<CreateRecordLabel
+                            key='createrecordlabel'
+                            cancelHandler={this.cancelHandler} />, 'createrecordlabel_modal' );
         },
         showModal: function() {
-            this.setState({
-                action_modal: false,
-                action_rl_modal: false,
-                action_admin_modal: false,
-                upload_modal: !this.state.upload_modal
-            });
+            ModalActions.show(<Upload
+                            key='upload'
+                            uploadFilenameModal={this.uploadFilenameModal}
+                            cancelHandler={this.cancelHandler} />, 'upload_modal' );
         },
         uploadFilenameModal: function() {
-            this.setState({
-                upload_modal: false,
-                upload_filename_modal: !this.state.upload_filename_modal
-            });
+            ModalActions.show(<UploadFilename
+                            key='uploadfilename'
+                            uploadProgressModal={this.uploadProgressModal}
+                            cancelHandler={this.cancelHandler} />, 'upload_modal' );
         },
         uploadProgressModal: function() {
-            this.setState({
-                upload_filename_modal: false,
-                upload_progress_modal: !this.state.upload_progress_modal
-            });
+            ModalActions.show(<UploadProgress
+                            key='uploadprogress'
+                            uploadSaveModal={this.uploadSaveModal}/>, 'uploadprogress_modal' );
         },
         uploadSaveModal: function() {
-            this.setState({
-                upload_progress_modal: false,
-                upload_save_modal: !this.state.upload_save_modal
-            });
+            ModalActions.show(<UploadSave
+                            key='uploadsave'
+                            handleAddTracks={this.handleAddTracks}
+                            cancelHandler={this.cancelHandler} />, 'uploadsave_modal' );
         },
         cancelHandler: function() {
             ModalActions.dismiss();
         },
         render: function() {
-            var modal = '',
-                modal_trigger = this.showModal,
+            var modal_trigger = this.showModal,
                 music_manager_songs = (
                     <Link 
                         to='music.manager.songs' 
@@ -143,84 +106,21 @@ var React = require('react'),
                     </Link>
                 );
 
-            // this.state.modal = 'action_modal';
-                // switch(this.state.modal) {
-                //  case 'action_modal':
-                //      break;
-                //  case 'action_admin_modal':
-                //      break;
-                // }
-                
-            if (this.state.action_modal) {
-                modal = <Actions
-                            key='action'
-                            showModal={this.showModal}
-                            createAlbumModal={this.createAlbumModal} />;
-            } else if (this.state.action_admin_modal) {
-                modal = <ActionsAdmin
-                            key='actionadmin'
-                            showModal={this.showModal}
-                            createAlbumModal={this.createAlbumModal}
-                            createArtistModal={this.createArtistModal}
-                            createRecordLabelModal={this.createRecordLabelModal} />;
-            } else if (this.state.action_rl_modal) {
-                modal = <ActionsRL
-                            key='actionrl'
-                            showModal={this.showModal}
-                            createAlbumModal={this.createAlbumModal}
-                            createArtistModal={this.createArtistModal} />;
-            } else if (this.state.create_record_label_modal) {
-                modal = <CreateRecordLabel
-                            key='createrecordlabel'
-                            cancelHandler={this.cancelHandler} />;
-            } else if (this.state.create_album_modal) {
-                modal = <CreateAlbum
-                            key='createalbum'
-                            cancelHandler={this.cancelHandler} />;
-            } else if (this.state.create_artist_modal) {
-                modal = <CreateArtist
-                            key='createartist'
-                            cancelHandler={this.cancelHandler} />;
-            } else if (this.state.upload_modal) {
-                modal = <Upload
-                            key='upload'
-                            uploadFilenameModal={this.uploadFilenameModal}
-                            cancelHandler={this.cancelHandler} />;
-            } else if (this.state.upload_filename_modal) {
-                modal = <UploadFilename
-                            key='uploadfilename'
-                            uploadProgressModal={this.uploadProgressModal}
-                            cancelHandler={this.cancelHandler} />;
-            } else if (this.state.upload_progress_modal) {
-                modal = <UploadProgress
-                            key='uploadprogress'
-                            uploadSaveModal={this.uploadSaveModal}/>;
-            } else if (this.state.upload_save_modal) {
-                modal = <UploadSave
-                            key='uploadsave'
-                            handleAddTracks={this.handleAddTracks}
-                            cancelHandler={this.cancelHandler} />;
-            }
-
-            if (this.hasAccess(['admin'])) {
-                modal_trigger = this.actionAdminModal;
-            }
-
-            if (this.hasAccess(['artist'])) {
-                modal_trigger = this.actionModal;
-                music_manager_artists = '';
-            }
-
             if (this.hasAccess(['general_user'])) {
                 music_manager_albums = '';
                 music_manager_artists = '';
             }
-
+            if (this.hasAccess(['artist'])) {
+                modal_trigger = this.actionModal;
+                music_manager_artists = '';
+            }
             if (this.hasAccess(['record_label'])) {
-                modal_trigger = this.actionRLModal;
+                modal_trigger = this.actionModal;
                 music_manager_labels = '';
             }
-
+            if (this.hasAccess(['admin'])) {
+                modal_trigger = this.actionModal;
+            }
 
             return (
                 <div className='c_body'>
@@ -244,9 +144,6 @@ var React = require('react'),
                     <div className='container c_main_container z-depth-1'>
                         <RouteHandler />
                     </div>
-                    <ReactCSSTransitionGroup className='21321' transitionName='modal'>
-                        {modal}
-                    </ReactCSSTransitionGroup>
                 </div>
             );
         }

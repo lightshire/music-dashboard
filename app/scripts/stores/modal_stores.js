@@ -23,6 +23,8 @@ var React = require('react/addons'),
             _modal.content = '';
             _modal.key = '';
 
+            console.log('asdfghjklsdf');
+
             this.emitChange();
         },
         get: function() {
