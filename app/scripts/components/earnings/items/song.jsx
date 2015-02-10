@@ -13,7 +13,7 @@ var React = require('react'),
                             <i className="mdi-content-add"></i>
                         </div>
                     </td>
-                    <td className="c_earnings_tracks_body" href="/track1">Track 1</td>
+                    <td href="/track1">Track 1</td>
                     <td>04:00</td>
                     <td>$20.00</td>
                     <td>JAN. 1, 2015</td>
