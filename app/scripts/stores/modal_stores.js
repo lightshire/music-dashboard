@@ -1,30 +1,33 @@
 'use strict';
-var Reflux = reqeuire('reflux'),
-    ModalActions = requi('../actions/track_actions'),
+var React = require('react/addons'),
+    Reflux = require('reflux'),
+    ModalActions = require('../actions/modal_actions'),
     _modal = {
         show: false,
         content: '',
-        buttons: ''
+        key: '',
     },
     ModalStore = Reflux.createStore({
         listenables: [ModalActions],
         emitChange: function() {
             this.trigger();
         },
-        onShow: function(content, buttons) {
+        onShow: function(content, key) {
             _modal.show = true;
             _modal.content = content;
-            _modal.buttons = buttons;
 
             this.emitChange();
         },
         onDismiss: function() {
             _modal.show = false;
             _modal.content = '';
-            _modal.buttons = '';
+            _modal.key = '';
 
             this.emitChange();
+        },
+        get: function() {
+            return _modal;
         }
     });
 
-module.exports = ModalActions;
+module.exports = ModalStore;

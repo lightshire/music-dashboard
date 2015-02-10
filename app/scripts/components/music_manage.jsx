@@ -16,6 +16,7 @@ var React = require('react'),
     UploadProgress = require('./modals/upload_progress_modal'),
     UploadSave = require('./modals/upload_save_modal'),
     Constrainable = require('./mixins/constrainable'),
+    ModalActions = require('../actions/modal_actions'),
     ReactCSSTransitionGroup = React.addons.CSSTransitionGroup,
     MusicManager = React.createClass({
         mixins: [Constrainable],
@@ -45,9 +46,10 @@ var React = require('react'),
             };
         },
         actionModal: function() {
-            this.setState({
-                action_modal: !this.state.action_modal
-            });
+            ModalActions.show(<Actions
+                            key='action'
+                            showModal={this.showModal}
+                            createAlbumModal={this.createAlbumModal} />, 'action_modal' );
         },
         actionRLModal: function() {
             this.setState({
@@ -80,7 +82,6 @@ var React = require('react'),
                 create_record_label_modal: !this.state.create_record_label_modal
             });
         },
-        
         showModal: function() {
             this.setState({
                 action_modal: false,
@@ -108,15 +109,7 @@ var React = require('react'),
             });
         },
         cancelHandler: function() {
-            this.setState({
-                create_album_modal: false,
-                create_artist_modal: false,
-                create_record_label_modal: false,
-                upload_modal: false,
-                upload_filename_modal: false,
-                upload_progress_modal: false,
-                upload_save_modal: false
-            });
+            ModalActions.dismiss();
         },
         render: function() {
             var modal = '',
@@ -143,7 +136,14 @@ var React = require('react'),
                     </Link>
                 );
 
-
+            // this.state.modal = 'action_modal';
+                // switch(this.state.modal) {
+                //  case 'action_modal':
+                //      break;
+                //  case 'action_admin_modal':
+                //      break;
+                // }
+                
             if (this.state.action_modal) {
                 modal = <Actions
                             key='action'
@@ -195,8 +195,6 @@ var React = require('react'),
                             cancelHandler={this.cancelHandler} />;
             }
 
-
-            
             if (this.hasAccess(['admin'])) {
                 modal_trigger = this.actionAdminModal;
             }

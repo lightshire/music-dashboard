@@ -5,4 +5,4 @@ var Reflux = require('reflux'),
         'dismiss'
     ]);
 
-module.exports ModalActions;
+module.exports = ModalActions;
