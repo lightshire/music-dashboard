@@ -106,18 +106,24 @@ var React = require('react'),
                     </Link>
                 );
 
-            if (this.hasAccess(['general_user'])) {
-                music_manager_albums = '';
-                music_manager_artists = '';
-            }
+
             if (this.hasAccess(['artist'])) {
                 modal_trigger = this.actionModal;
                 music_manager_artists = '';
+                music_manager_labels = '';
             }
+
+            if (this.hasAccess(['general_user'])) {
+                music_manager_albums = '';
+                music_manager_artists = '';
+                music_manager_labels = '';
+            }
+
             if (this.hasAccess(['record_label'])) {
                 modal_trigger = this.actionModal;
                 music_manager_labels = '';
             }
+
             if (this.hasAccess(['admin'])) {
                 modal_trigger = this.actionModal;
             }

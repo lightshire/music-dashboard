@@ -1,59 +1,48 @@
 'use strict';
 var React = require('react'),
-    RecordLabel = require('./items/labels'),
     _ = require('lodash'),
-    ArtistsStore = require('../../stores/artist_stores'),
-    getStateFromStore = function() {
-        return {
-            artists: ArtistsStore.getAll()
-        };
-    },
-    MusicManagerRecordLabel = React.createClass({
-        getInitialState: function() {
-            return getStateFromStore();
-        },
-        componentDidMount: function() {
-            this.unsubscribe = ArtistsStore.listen(this._onChange);
-        },
-        componentWillUnmount: function() {
-            this.unsubscribe();
-        },
+    MusicManagerLabels = React.createClass({
         render: function() {
-            var data = this.state.artists,
-            items;
-
-            items = _.map(data, function(item) {
-                return (<RecordLabel
-                    id={item.id}
-                    avatar={item.avatar}
-                    artist={item.artist}
-                    albums={item.albums}
-                    tracks={item.tracks}
-                    added={item.added} />);
-            });
             return (
                 <div className='table'>
                     <table>
                         <thead>
                             <tr>
                                 <th></th>
-                                <th className="grey-text text-lighten-1">Record Label</th>
-                                <th className="grey-text text-lighten-1">Albums</th>
-                                <th className="grey-text text-lighten-1">Tracks</th>
-                                <th className="grey-text text-lighten-1">Added</th>
+                                <th className='grey-text text-lighten-1'>Label</th>
+                                <th className='grey-text text-lighten-1'>Artists</th>
+                                <th className='grey-text text-lighten-1'>Albums</th>
+                                <th className='grey-text text-lighten-1'>Tracks</th>
+                                <th className='grey-text text-lighten-1'>Added</th>
                                 <th></th>
                             </tr>
                         </thead>
                         <tbody>
-                            {items}
+                            <tr>
+                                <td>
+                                    <div>
+                                        <i className='mdi-av-play-arrow'></i>
+                                        <i className='mdi-content-add'></i>
+                                    </div>
+                                </td>
+                                <td>Record Label 1</td>
+                                <td>8</td>
+                                <td>16</td>
+                                <td>252</td>
+                                <td>JAN. 1, 2015</td>
+                                <td>
+                                    <div className='right-align'>
+                                        <i className='mdi-editor-attach-money'></i>
+                                        <i className='mdi-editor-mode-edit'></i>
+                                        <i className='mdi-action-delete'></i>
+                                    </div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
             );
-        },
-        _onChange: function() {
-            this.setState(getStateFromStore());
         }
     });
 
-module.exports =  MusicManagerRecordLabel;
+module.exports =  MusicManagerLabels;

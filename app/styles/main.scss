@@ -9,8 +9,10 @@
 @import "./sidebar.scss";
 @import "./table.scss";
 @import "./search.scss";
-@import "./player.scss";
+/*@import "./player.scss";*/
 @import "./modals.scss";
+
+@import "./player_responsive.scss";
 
 .card .card-reveal {
     width: 100%;
