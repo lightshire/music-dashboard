@@ -76,9 +76,7 @@ var React = require('react'),
             ModalActions.dismiss();
         },
         render: function() {
-            var modal = '',
-                modal_trigger = this.showModal,
-                admin_sign = '',
+            var modal_trigger = this.showModal,
                 music_manager_songs = (
                     <Link 
                         to='music.manager.songs' 
@@ -108,81 +106,22 @@ var React = require('react'),
                     </Link>
                 );
 
-            if (this.state.action_modal) {
-                modal = <Actions
-                            key='action'
-                            showModal={this.showModal}
-                            createAlbumModal={this.createAlbumModal} />;
-            } else if (this.state.action_admin_modal) {
-                modal = <ActionsAdmin
-                            key='actionadmin'
-                            showModal={this.showModal}
-                            createAlbumModal={this.createAlbumModal}
-                            createArtistModal={this.createArtistModal}
-                            createRecordLabelModal={this.createRecordLabelModal} />;
-            } else if (this.state.action_rl_modal) {
-                modal = <ActionsRL
-                            key='actionrl'
-                            showModal={this.showModal}
-                            createAlbumModal={this.createAlbumModal}
-                            createArtistModal={this.createArtistModal} />;
-            } else if (this.state.create_record_label_modal) {
-                modal = <CreateRecordLabel
-                            key='createrecordlabel'
-                            cancelHandler={this.cancelHandler} />;
-            } else if (this.state.create_album_modal) {
-                modal = <CreateAlbum
-                            key='createalbum'
-                            cancelHandler={this.cancelHandler} />;
-            } else if (this.state.create_artist_modal) {
-                modal = <CreateArtist
-                            key='createartist'
-                            cancelHandler={this.cancelHandler} />;
-            } else if (this.state.upload_modal) {
-                modal = <Upload
-                            key='upload'
-                            uploadFilenameModal={this.uploadFilenameModal}
-                            cancelHandler={this.cancelHandler} />;
-            } else if (this.state.upload_filename_modal) {
-                modal = <UploadFilename
-                            key='uploadfilename'
-                            uploadProgressModal={this.uploadProgressModal}
-                            cancelHandler={this.cancelHandler} />;
-            } else if (this.state.upload_progress_modal) {
-                modal = <UploadProgress
-                            key='uploadprogress'
-                            uploadSaveModal={this.uploadSaveModal}/>;
-            } else if (this.state.upload_save_modal) {
-                modal = <UploadSave
-                            key='uploadsave'
-                            handleAddTracks={this.handleAddTracks}
-                            cancelHandler={this.cancelHandler} />;
-            }
-
-
-            
-            if (this.hasAccess(['admin'])) {
-                modal_trigger = this.actionAdminModal;
-                admin_sign = 'mdi-content-add';
-            }
 
             if (this.hasAccess(['artist'])) {
                 modal_trigger = this.actionModal;
                 music_manager_artists = '';
-                admin_sign = 'mdi-file-file-upload';
+                music_manager_labels = '';
             }
 
             if (this.hasAccess(['general_user'])) {
                 music_manager_albums = '';
                 music_manager_artists = '';
-                admin_sign = 'mdi-file-file-upload';
                 music_manager_labels = '';
             }
 
             if (this.hasAccess(['record_label'])) {
                 modal_trigger = this.actionModal;
                 music_manager_labels = '';
-                admin_sign = 'mdi-file-file-upload';
             }
 
             if (this.hasAccess(['admin'])) {
@@ -203,7 +142,7 @@ var React = require('react'),
                             <Search />
                             <div onClick={modal_trigger} className='upload-btn right-align'>
                                 <a className='btn-floating btn-large waves-effect waves-light red lighten-2'>
-                                    <i className={admin_sign}></i>
+                                    <i className='mdi-file-file-upload'></i>
                                 </a>
                             </div>
                         </div>
