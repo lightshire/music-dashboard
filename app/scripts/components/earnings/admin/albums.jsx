@@ -85,7 +85,7 @@ var React = require('react'),
                             <thead>
                                 <tr>
                                     <th></th>
-                                    <th className='grey-text text-lighten-1'>Title</th>
+                                    <th className='grey-text text-lighten-1'>Album</th>
                                     <th className='grey-text text-lighten-1'>Artist</th>
                                     <th className='grey-text text-lighten-1'>Tracks</th>
                                     <th className='grey-text text-lighten-1'>Total Earnings</th>

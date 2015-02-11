@@ -211,11 +211,13 @@ var React = require('react'),
             if (this.hasAccess(['artist'])) {
                 modal_trigger = this.actionModal;
                 music_manager_artists = '';
+                music_manager_labels = '';
             }
 
             if (this.hasAccess(['general_user'])) {
                 music_manager_albums = '';
                 music_manager_artists = '';
+                music_manager_labels = '';
             }
 
             if (this.hasAccess(['record_label'])) {

@@ -26,6 +26,9 @@ var React = require('react'),
         render: function() {
             return (
                 <div className='container'>
+
+                    <div className='hello'></div>
+
                     <form action='#' onSubmit={this.handleSignIn}>
                         <div className='row'>
                             <div className='col s2'>&nbsp;</div>

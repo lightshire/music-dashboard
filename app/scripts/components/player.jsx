@@ -100,7 +100,7 @@ var React = require('react/addons'),
                 playlist = (
                     <div className={this.state.status.modal === 'playlist' ? 'playlist' : 'playlist hide'}>
                         <div className='track-info'>
-                            <div className='title'>{track_title}</div>
+                            <div className='title'><i>Now Playing: <b>{track_title}</b></i></div><br/>
                             <div className='row seek-container'>
                                 <div className='col s2 time-current-container'>
                                     <span className='time-current'>
@@ -148,9 +148,9 @@ var React = require('react/addons'),
                         <li className='btn-volume-control'><a href='#' onClick={this.handleToggleVolumeControl}><i className='mdi-av-volume-up' /></a>
                             {volume_control}
                         </li>
-                        <li><a href='#' onClick={this.handlePreviousTrack}><i className='mdi-av-skip-previous' /></a></li>
-                        <li><a href='#' onClick={this.handleTogglePlay}><i className={this.state.status.play ? 'mdi-av-pause' : 'mdi-av-play-arrow'} /></a></li>
-                        <li><a href='#' onClick={this.handleNextTrack}><i className='mdi-av-skip-next' /></a></li>
+                        <li className='btn-previous-track'><a href='#' onClick={this.handlePreviousTrack}><i className='mdi-av-skip-previous' /></a></li>
+                        <li className='btn-toggle-play'><a href='#' onClick={this.handleTogglePlay}><i className={this.state.status.play ? 'mdi-av-pause' : 'mdi-av-play-arrow'} /></a></li>
+                        <li className='btn-next-track'><a href='#' onClick={this.handleNextTrack}><i className='mdi-av-skip-next' /></a></li>
                         <li className="btn-show-playlist">
                             <a href='#' onClick={this.handleTogglePlaylist}><i className='mdi-navigation-more-vert' /></a>
                             {playlist}
