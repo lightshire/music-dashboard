@@ -133,9 +133,6 @@ var React = require('react/addons'),
                                 </li>
                             </ul>
                         </li>   
-                        <li className='side-nav'>
-                            <Link to='temp.admin' className='waves-effect waves-blue'> TempAdmin </Link>
-                        </li>
                     </ul>
                 </div>
             );

@@ -1,0 +1,431 @@
+@media #{$small-only} {
+  .top-nav {
+    height: 129px;
+  }
+  .c_nav_menu_div {
+    margin-left: 100px;
+    margin-top: -84px;
+    a {
+      i {
+        font-size: 2em;
+      }
+    }
+  }
+  .c_player {
+    margin-top: -3px;
+  }
+  .player {
+    margin-right: 20px;
+    ul {
+      li {
+        a {
+          i {
+            font-size: 2em;
+          }
+        }
+      }
+    }
+    .btn-show-playlist {
+        position: relative;
+    }
+    .btn-volume-control {
+        position: relative;
+    }
+    .volume-control {
+        left: 15px;
+        background: #fff;
+        -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        color: $font-color;
+        position: absolute;
+        top: 50px;
+        right: 20px;
+        width: 200px;
+        padding: 0 1em;
+        .row {
+            margin: 0;
+        }
+    }
+    .playlist {
+        right: -4px;
+        background: #fff;
+        -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        color: $font-color;
+        position: absolute;
+        top: 50px;
+        width: 300px;
+        .track-info {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 1em;
+            line-height: 1.2em;
+            z-index: 2000;
+            position: relative;
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16); 
+             .seek-container {
+                margin-top: 1em;
+                margin-bottom: 1em;
+                .time-current-container {
+                    text-align: left;
+                }
+                .time-end-container {
+                    text-align: right;
+                }
+                line-height: 1.2em;
+                .seeker-container {
+                    text-align: center;
+                    input.seeker {
+                        margin: 0;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .track-list {
+            display: block;
+            width: 100%;
+            padding: 0;
+            z-index: 1000;
+            position: relative;
+            ul {
+                li {
+                    height: 100%;
+                    &:hover {
+                        background-color: #ececec;
+                    }
+                }
+            } 
+            ul, li {
+                float: none;
+                font-size: 1em;
+                line-height: 1.2em;
+            }
+            .track-item {
+                margin: 0;
+            }
+            .track-thumb-container {
+                padding: 5px;
+                img.track-thumb {
+                    width: 100%;
+                    display: block;
+                }
+            }
+            .track-title-container {
+                display: table-cell;
+                vertical-align: middle;
+                .track-title {
+                    line-height: 43px;
+                }
+            }
+            .track-remove-container {
+                text-align: right;
+                a.track-remove {
+                    color: $font-color;
+                    padding: 0;
+                    width: 100%;
+                    text-align: center;
+                    transition: font-size .5s ease;
+                    &:hover {
+                        i {
+                            font-size: 1.6em;
+                        }
+                    }
+                }
+                i {
+                    font-size: 1.4em;
+                    line-height: 43px;
+                }
+            }
+        } 
+    }
+  }
+
+
+}
+@media #{$medium-only} {
+  .c_nav_menu_div {
+    margin-top: -92px;
+    margin-left: 100px;
+    a {
+      i {
+        font-size: 2em;
+      }
+    }
+  }
+  .c_player {
+    margin-top: -72px;
+    line-height: 57px;
+  }
+  .player {
+    ul {
+      li {
+        a {
+          i {
+            font-size: 2em;
+          }
+        }
+      }
+    }
+    .btn-show-playlist {
+        position: relative;
+    }
+    .btn-volume-control {
+        position: relative;
+    }
+    .volume-control {
+        background: #fff;
+        -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        color: $font-color;
+        position: absolute;
+        top: 50px;
+        right: 20px;
+        width: 200px;
+        padding: 0 1em;
+        .row {
+            margin: 0;
+        }
+    }
+    .playlist {
+        background: #fff;
+        -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        color: $font-color;
+        position: absolute;
+        top: 50px;
+        right: 20px;
+        width: 300px;
+        .track-info {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 1em;
+            line-height: 1.2em;
+            z-index: 2000;
+            position: relative;
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16); 
+             .seek-container {
+                margin-top: 1em;
+                margin-bottom: 1em;
+                .time-current-container {
+                    text-align: left;
+                }
+                .time-end-container {
+                    text-align: right;
+                }
+                line-height: 1.2em;
+                .seeker-container {
+                    text-align: center;
+                    input.seeker {
+                        margin: 0;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .track-list {
+            display: block;
+            width: 100%;
+            padding: 0;
+            z-index: 1000;
+            position: relative;
+            ul {
+                li {
+                    height: 100%;
+                    &:hover {
+                        background-color: #ececec;
+                    }
+                }
+            } 
+            ul, li {
+                float: none;
+                font-size: 1em;
+                line-height: 1.2em;
+            }
+            .track-item {
+                margin: 0;
+            }
+            .track-thumb-container {
+                padding: 5px;
+                img.track-thumb {
+                    width: 100%;
+                    display: block;
+                }
+            }
+            .track-title-container {
+                display: table-cell;
+                vertical-align: middle;
+                .track-title {
+                    line-height: 43px;
+                }
+            }
+            .track-remove-container {
+                text-align: right;
+                a.track-remove {
+                    color: $font-color;
+                    padding: 0;
+                    width: 100%;
+                    text-align: center;
+                    transition: font-size .5s ease;
+                    &:hover {
+                        i {
+                            font-size: 1.6em;
+                        }
+                    }
+                }
+                i {
+                    font-size: 1.4em;
+                    line-height: 43px;
+                }
+            }
+        } 
+    }
+  }
+}
+@media #{$large-and-up} {
+  .c_nav_menu_div {
+    margin-top: -90px;
+    margin-left: 100px;
+    a {
+      i {
+        font-size: 2em;
+      }
+    }
+  }
+  .c_player {
+    margin-top: -72px;
+    line-height: 54px;
+  }
+  .player {
+    ul {
+      li {
+        a {
+          i {
+            font-size: 2em;
+          }
+        }
+      }
+    }
+    .btn-show-playlist {
+        position: relative;
+    }
+    .btn-volume-control {
+        position: relative;
+    }
+    .volume-control {
+        background: #fff;
+        -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        color: $font-color;
+        position: absolute;
+        top: 50px;
+        right: 20px;
+        width: 200px;
+        padding: 0 1em;
+        .row {
+            margin: 0;
+        }
+    }
+    .playlist {
+        background: #fff;
+        -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        color: $font-color;
+        position: absolute;
+        top: 50px;
+        right: 20px;
+        width: 300px;
+        .track-info {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 1em;
+            line-height: 1.2em;
+            z-index: 2000;
+            position: relative;
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16); 
+             .seek-container {
+                margin-top: 1em;
+                margin-bottom: 1em;
+                .time-current-container {
+                    text-align: left;
+                }
+                .time-end-container {
+                    text-align: right;
+                }
+                line-height: 1.2em;
+                .seeker-container {
+                    text-align: center;
+                    input.seeker {
+                        margin: 0;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .track-list {
+            display: block;
+            width: 100%;
+            padding: 0;
+            z-index: 1000;
+            position: relative;
+            ul {
+                li {
+                    height: 100%;
+                    &:hover {
+                        background-color: #ececec;
+                    }
+                }
+            } 
+            ul, li {
+                float: none;
+                font-size: 1em;
+                line-height: 1.2em;
+            }
+            .track-item {
+                margin: 0;
+            }
+            .track-thumb-container {
+                padding: 5px;
+                img.track-thumb {
+                    width: 100%;
+                    display: block;
+                }
+            }
+            .track-title-container {
+                display: table-cell;
+                vertical-align: middle;
+                .track-title {
+                    line-height: 43px;
+                }
+            }
+            .track-remove-container {
+                text-align: right;
+                a.track-remove {
+                    color: $font-color;
+                    padding: 0;
+                    width: 100%;
+                    text-align: center;
+                    transition: font-size .5s ease;
+                    &:hover {
+                        i {
+                            font-size: 1.6em;
+                        }
+                    }
+                }
+                i {
+                    font-size: 1.4em;
+                    line-height: 43px;
+                }
+            }
+        } 
+    }
+  }
+
+
+}
