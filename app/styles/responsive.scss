@@ -1,0 +1,36 @@
+@import "./variables.scss";
+
+@media #{$small-and-down} {
+    // styles for small screens and down
+    ul.side-nav.fixed {
+		left : -250px;
+	}
+	.main-route-container {
+		padding-left: 0px !important;
+	}
+	#burger-button {display: block !important; }
+}
+@media #{$medium-and-up} {
+  // styles for medium screens and larger
+    ul.side-nav.fixed {	
+		left : 0px;
+	}
+}
+@media #{$medium-only}{
+  // styles for medium screens and down
+	ul.side-nav.fixed {
+		left : -250px;
+	}
+	.main-route-container{
+		padding-left: 0px !important;
+	}
+	#burger-button{display: block !important;}
+}
+
+
+@media #{$large-and-up} {
+  // styles for large screens and up
+  ul.side-nav.fixed {	
+		left : 0px !important;
+	}
+}

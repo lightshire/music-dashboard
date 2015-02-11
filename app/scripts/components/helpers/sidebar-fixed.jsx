@@ -5,7 +5,7 @@ var React = require('react/addons'),
     ReactCSSTransitionGroup = React.addons.CSSTransitionGroup,
     LayoutStore = require('../../stores/layout_stores'),
     TopBar = require('../helpers/topbar'),
-    SideBar = require('../helpers/sidebar'),
+    SideBar = require('../helpers/sidebar-fixed'),
     Link = Router.Link,
     Constrainable = require('../mixins/constrainable'),
     SideBar = React.createClass({
@@ -14,8 +14,12 @@ var React = require('react/addons'),
             $('.side-bar .collapsible').collapsible({
               accordion : false
             });
-            $(".button-collapse").sideNav({edge: 'left'});
-             $('.button-collapse').sideNav({menuWidth: 240, activationWidth: 70});
+            $('.button-collapse').sideNav({
+                menuWidth: 240, 
+                edge: 'left', 
+                closeOnClick: true 
+                }
+            );
         },
         activeSidebarHome : function(x){
             var a = x.target.parentNode.nextSibling.childNodes[0].childNodes;
@@ -58,7 +62,7 @@ var React = require('react/addons'),
             if (!this.hasAccess(['admin', 'artist', 'general_user', 'record_label'])) {
                 return (
                     <div className='side-bar zindex_supertop'>
-                        <ul className='side-nav'>  
+                        <ul id='nav-mobile' className='side-nav fixed'>  
                             <li className='sidebar-li'>
                                 <Link to='signin' className='waves-effect waves-blue collapsible-header collapse-link' onClick={this.activeSidebarHome}>Sign in</Link>
                             </li>
@@ -93,7 +97,11 @@ var React = require('react/addons'),
 
             return (
                 <div className='side-bar zindex_supertop'>
-                    <ul className='side-nav'>  
+                    
+                    <ul id='nav-mobile' className='side-nav fixed'>
+                    <div className='logo-container col l2'>
+                        <img src='http://placehold.it/80x60'/>       
+                    </div>  
                         <li className='sidebar-li'>
                             <Link to='home' className='waves-effect waves-blue collapsible-header collapse-link' onClick={this.activeSidebarHome}>Home</Link>
                         </li>                   
@@ -137,6 +145,7 @@ var React = require('react/addons'),
                             <Link to='temp.admin' className='waves-effect waves-blue'> TempAdmin </Link>
                         </li>
                     </ul>
+                    <a id='burger-button' href='#' data-activates="nav-mobile" className="button-collapse"><i className='mdi-navigation-menu'></i></a>
                 </div>
             );
         }

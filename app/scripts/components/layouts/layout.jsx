@@ -5,7 +5,7 @@ var React = require('react/addons'),
     ReactCSSTransitionGroup = React.addons.CSSTransitionGroup,
     LayoutStore = require('../../stores/layout_stores'),
     TopBar = require('../helpers/topbar'),
-    SideBar = require('../helpers/sidebar'),
+    SideBar = require('../helpers/sidebar-fixed'),
     getStateFromStore = function() {
         return {
             layout: LayoutStore.getAll()

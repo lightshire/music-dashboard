@@ -1,5 +1,6 @@
-@import "./materialize.scss";
 @import "./variables.scss";
+@import "./materialize.scss";
+
 
 @import "./admin.scss";
 @import "./common.scss";
@@ -11,6 +12,8 @@
 @import "./search.scss";
 @import "./player.scss";
 @import "./modals.scss";
+@import "./responsive.scss";
+
 
 .card .card-reveal {
     width: 100%;

@@ -121,6 +121,7 @@ var React = require('react'),
         render: function() {
             var modal = '',
                 modal_trigger = this.showModal,
+                admin_sign = '',
                 music_manager_songs = (
                     <Link 
                         to='music.manager.songs' 
@@ -206,21 +207,25 @@ var React = require('react'),
             
             if (this.hasAccess(['admin'])) {
                 modal_trigger = this.actionAdminModal;
+                admin_sign = 'mdi-content-add';
             }
 
             if (this.hasAccess(['artist'])) {
                 modal_trigger = this.actionModal;
                 music_manager_artists = '';
+                admin_sign = 'mdi-file-file-upload';
             }
 
             if (this.hasAccess(['general_user'])) {
                 music_manager_albums = '';
                 music_manager_artists = '';
+                admin_sign = 'mdi-file-file-upload';
             }
 
             if (this.hasAccess(['record_label'])) {
                 modal_trigger = this.actionRLModal;
                 music_manager_labels = '';
+                admin_sign = 'mdi-file-file-upload';
             }
 
 
@@ -238,7 +243,7 @@ var React = require('react'),
                             <Search />
                             <div onClick={modal_trigger} className='upload-btn right-align'>
                                 <a className='btn-floating btn-large waves-effect waves-light red lighten-2'>
-                                    <i className='mdi-file-file-upload'></i>
+                                    <i className={admin_sign}></i>
                                 </a>
                             </div>
                         </div>
