@@ -6,6 +6,7 @@ var React = require('react/addons'),
     LayoutStore = require('../../stores/layout_stores'),
     TopBar = require('../helpers/topbar'),
     SideBar = require('../helpers/sidebar'),
+    ModalWrapper = require('../helpers/modal_wrapper'),
     getStateFromStore = function() {
         return {
             layout: LayoutStore.getAll()
@@ -35,6 +36,8 @@ var React = require('react/addons'),
                             <RouteHandler />
                         </div>
                     </div>
+
+                    <ModalWrapper />
                 </div>
             );
         },
@@ -42,4 +45,5 @@ var React = require('react/addons'),
             this.setState(getStateFromStore());
         }
     });
-    module.exports = Layout;
+
+module.exports = Layout;

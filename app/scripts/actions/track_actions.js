@@ -1,8 +1,8 @@
 'use strict';
 var Reflux = require('reflux'),
     TracksActions = Reflux.createActions([
-        "addTracks",
-        "deleteTracks"
+        'addTracks',
+        'deleteTracks'
     ]);
 
 module.exports = TracksActions;
