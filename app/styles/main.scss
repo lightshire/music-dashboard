@@ -1,21 +1,23 @@
-@import "./variables.scss";
-@import "./materialize.scss";
+@import './variables.scss';
+@import './materialize.scss';
 
 
-@import "./admin.scss";
-@import "./common.scss";
-@import "./album_info.scss";
-@import "./my_account.scss";
-@import "./signup.scss";
-@import "./sidebar.scss";
-@import "./table.scss";
-@import "./search.scss";
-/*@import "./player.scss";*/
-@import "./modals.scss";
-@import "./responsive.scss";
+@import './admin.scss';
+@import './common.scss';
+@import './album_info.scss';
+@import './my_account.scss';
+@import './signup.scss';
+@import './sidebar.scss';
+@import './table.scss';
+@import './search.scss';
+/*@import './player.scss';*/
+@import './modals.scss';
+@import './responsive.scss';
 
 
-@import "./player_responsive.scss";
+@import './responsives/small.scss';
+@import './responsives/medium.scss';
+@import './responsives/large.scss';
 
 .card .card-reveal {
     width: 100%;
