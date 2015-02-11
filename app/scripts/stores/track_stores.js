@@ -61,12 +61,21 @@ var Reflux = require('reflux'),
             };
 
             _tracks[data.id] = data;
+
             this.emitChange();
         },
         onDeleteTracks: function(id) {
-            if(typeof _tracks[id] !== 'undefined') {
+            if (typeof _tracks[id] !== 'undefined') {
                 delete _tracks[id];
             }
+
+            this.emitChange();
+        },
+        onUpdateStatus: function(id, status) {
+            if(typeof _tracks[id] !== 'undefined') {
+                _tracks[id].status = status;
+            }
+
             this.emitChange();
         },
         getAll: function() {

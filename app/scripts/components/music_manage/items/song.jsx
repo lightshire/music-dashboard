@@ -18,7 +18,7 @@ var React = require('react'),
                 <Delete
                     key='delete'
                     handleDeleteTracks={this.handleDeleteTracks}
-                    cancelHandler={this.cancelHandler} />, 'delete_modal' 
+                    cancelHandler={this.cancelHandler} />, 'delete_modal'
             );
         },
         showModal: function() {
@@ -28,14 +28,14 @@ var React = require('react'),
                 case 'accepted':
                     modal = (
                         <Accepted
-                            key = 'rejected'
+                            key = 'accepted'
                             confirmModal = {this.confirmModal} />
                     );
                     break;
                 case 'pending':
                     modal = (
                         <Pending
-                            key = 'rejected'
+                            key = 'pending'
                             confirmModal = {this.confirmModal} />
                     );
                     break;
@@ -58,10 +58,11 @@ var React = require('react'),
             ModalActions.show(modal, this.props.songstatus);
         },
         monetizeModal: function() {
-            this.props.songstatus = 'pending';
+            TracksActions.updateStatus(this.props.id, 'pending');
+
             ModalActions.show(
                 <Pending
-                    key = 'rejected'
+                    key = 'pending'
                     confirmModal = {this.confirmModal} />, this.props.songstatus
             );
         },

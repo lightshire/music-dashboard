@@ -2,7 +2,8 @@
 var Reflux = require('reflux'),
     TracksActions = Reflux.createActions([
         'addTracks',
-        'deleteTracks'
+        'deleteTracks',
+        'updateStatus'
     ]);
 
 module.exports = TracksActions;
