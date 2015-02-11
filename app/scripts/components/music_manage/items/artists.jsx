@@ -1,10 +1,10 @@
-'use strict';
+'use strict'
 var React = require('react'),
     Delete = require('../../modals/delete_modal'),
     ModalActions = require('../../../actions/modal_actions'),
-    LabelActions = require('../../../actions/label_actions'),
+    ArtistActions = require('../../../actions/artist_actions'),
     ReactCSSTransitionGroup = React.addons.CSSTransitionGroup,
-    RecordLabel = React.createClass({
+    Artists = React.createClass({
         deleteModal: function() {
             ModalActions.show(
                 <Delete
@@ -14,7 +14,7 @@ var React = require('react'),
             );
         },
         handleDeleteTracks: function() {
-            LabelActions.deleteTracks(this.props.id);
+            ArtistActions.deleteTracks(this.props.id);
             ModalActions.dismiss();
         },
         cancelHandler: function() {
@@ -31,6 +31,7 @@ var React = require('react'),
                     <td>{this.props.artist}</td>
                     <td>{this.props.albums}</td>
                     <td>{this.props.tracks}</td>
+                    <td>{this.props.genre}</td>
                     <td>{this.props.added}</td>
                     <td>
                         <div className='right-align'>
@@ -45,4 +46,5 @@ var React = require('react'),
             );
         }
     });
-module.exports = RecordLabel;
+
+module.exports = Artists;

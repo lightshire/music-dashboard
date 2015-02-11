@@ -1,22 +1,7 @@
 'use strict';
 var React = require('react'),
-    AlbumStore = require('../../stores/album_stores'),
     InputField = require('../helpers/textfield'),
-    getStateFromStore = function() {
-        return {
-            albums: AlbumStore.getAll()
-        };
-    },
     MusicManagerArtistAlbumInfo = React.createClass({
-        getInitialState: function() {
-            return getStateFromStore();
-        },
-        componentDidMount: function() {
-            this.unsubscribe = AlbumStore.listen(this._onChange);
-        },
-        componentWillUnmount: function() {
-            this.unsubscribe();
-        },
         render: function() {
 
             return (
@@ -59,9 +44,6 @@ var React = require('react'),
                     </div>
                 </div>
             );
-        },
-        _onChange: function() {
-            this.setState(getStateFromStore());
         }
     });
 
