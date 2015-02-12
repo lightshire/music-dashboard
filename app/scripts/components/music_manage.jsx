@@ -4,6 +4,9 @@ var React = require('react'),
     RouteHandler = Router.RouteHandler,
     Link = Router.Link,
     TrackActions = require('../actions/track_actions'),
+    AlbumActions = require('../actions/album_actions'),
+    ArtistActions = require('../actions/artist_actions'),
+    LabelActions = require('../actions/label_actions'),
     Search = require('./helpers/search'),
     Actions = require('./modals/action_modal'),
     CreateArtist = require('./modals/create_artist_modal'),
@@ -16,7 +19,7 @@ var React = require('react'),
     Constrainable = require('./mixins/constrainable'),
     ModalActions = require('../actions/modal_actions'),
     MusicManager = React.createClass({
-        mixins: [Constrainable],
+        mixins: [Constrainable, Router.Navigation],
         statics: {
             redirectTo: 'signin',
             required_login: true,
@@ -37,6 +40,22 @@ var React = require('react'),
         handleAddTracks: function() {
             TrackActions.addTracks();
             ModalActions.dismiss();
+            this.transitionTo('music.manager.songs');
+        },
+        handleAddAlbum: function() {
+            AlbumActions.addTracks();
+            ModalActions.dismiss();
+            this.transitionTo('music.manager.albums');
+        },
+        handleAddArtist: function() {
+            ArtistActions.addTracks();
+            ModalActions.dismiss();
+            this.transitionTo('music.manager.artists');
+        },
+        handleAddLabel: function() {
+            LabelActions.addTracks();
+            ModalActions.dismiss();
+            this.transitionTo('music.manager.labels');
         },
         actionModal: function() {
             ModalActions.show(<Actions
@@ -49,16 +68,19 @@ var React = require('react'),
         createAlbumModal: function() {
             ModalActions.show(<CreateAlbum
                             key='createalbum'
+                            handleAddAlbum={this.handleAddAlbum}
                             cancelHandler={this.cancelHandler} />, 'createalbum_modal' );
         },
         createArtistModal: function() {
             ModalActions.show(<CreateArtist
                             key='createartist'
+                            handleAddArtist={this.handleAddArtist}
                             cancelHandler={this.cancelHandler} />, 'createartist_modal' );
         },
         createRecordLabelModal: function() {
             ModalActions.show(<CreateRecordLabel
                             key='createrecordlabel'
+                            handleAddLabel={this.handleAddLabel}
                             cancelHandler={this.cancelHandler} />, 'createrecordlabel_modal' );
         },
         showModal: function() {
@@ -89,88 +111,80 @@ var React = require('react'),
         },
         render: function() {
             var modal_trigger = this.showModal,
+                music_manager_songs, 
+                music_manager_albums, 
+                music_manager_artists,
+                music_manager_labels, 
+                music_manage_list;
+
                 music_manager_songs = (
-                    <Link 
-                        to='music.manager.songs' 
-                        className='waves-effect waves-white btn-flat white-text c_tabs'>
-                        Tracks
-                    </Link>
-                ),
+                    <li className='tab col s3'>
+                        <Link 
+                            to='music.manager.songs' 
+                            className='waves-effect waves-white btn-flat white-text c_tabs'>
+                            Tracks
+                        </Link>
+                    </li>
+                );
+
                 music_manager_albums = (
-                    <Link 
-                        to='music.manager.albums' 
-                        className='waves-effect waves-white btn-flat white-text c_tabs'>
-                        Albums
-                    </Link>
-                ),
+                    <li className='tab col s3'>
+                        <Link 
+                            to='music.manager.albums' 
+                            className='waves-effect waves-white btn-flat white-text c_tabs'>
+                            Albums
+                        </Link>
+                    </li>
+                );
+
                 music_manager_artists = (
-                    <Link 
-                        to='music.manager.artists'
-                        className='waves-effect waves-white btn-flat white-text c_tabs'>
-                        Artists
-                    </Link>
-                ),
+                    <li className='tab col s3'>
+                        <Link 
+                            to='music.manager.artists'
+                            className='waves-effect waves-white btn-flat white-text c_tabs'>
+                            Artists
+                        </Link>
+                    </li>
+                );
+
                 music_manager_labels = (
-                    <Link 
-                        to='music.manager.labels'
-                        className='waves-effect waves-white btn-flat white-text c_tabs'>
-                        Record Labels
-                    </Link>
-                ),
-                music_manage_list = '';
-
-
-            if (this.hasAccess(['artist'])) {
-                modal_trigger = this.actionModal;
-                music_manager_artists = '';
-                music_manager_labels = '';
-                music_manage_list = (
-                    <div className="col s12">
-                        <ul className='tabs default-tab'>
-                            <li className='tab col s6'>{music_manager_songs}</li>
-                            <li className='tab col s6'>{music_manager_albums}</li>
-                        </ul>
-                    </div>
+                    <li className='tab col s3'>
+                        <Link 
+                            to='music.manager.labels'
+                            className='waves-effect waves-white btn-flat white-text c_tabs'>
+                            Record Labels
+                        </Link>
+                    </li>
                 );
 
-            }
+                if (this.hasAccess(['artist'])) {
+                    modal_trigger = this.actionModal;
+                    music_manager_artists = '';
+                    music_manager_labels = '';
+                }
 
-            if (this.hasAccess(['general_user'])) {
-                music_manager_albums = '';
-                music_manager_artists = '';
-                music_manager_labels = '';
+                if (this.hasAccess(['general_user'])) {
+                    music_manager_albums = '';
+                    music_manager_artists = '';
+                    music_manager_labels = '';
+                }
+
+                if (this.hasAccess(['record_label'])) {
+                    modal_trigger = this.actionModal;
+                    music_manager_labels = '';
+                }
+
+                if (this.hasAccess(['admin'])) {
+                    modal_trigger = this.actionModal;
+                }
+
                 music_manage_list = (
                     <div className="col s12">
                         <ul className='tabs default-tab'>
-                            <li className='tab col l12 s12'>{music_manager_songs}</li>
-                        </ul>
-                    </div>
-                );
-            }
-
-            if (this.hasAccess(['record_label'])) {
-                modal_trigger = this.actionModal;
-                music_manager_labels = '';
-                music_manage_list = (
-                    <div className="col s12">
-                        <ul className='tabs default-tab'>
-                            <li className='tab col s4'>{music_manager_songs}</li>
-                            <li className='tab col s4'>{music_manager_albums}</li>
-                            <li className='tab col s4'>{music_manager_artists}</li>
-                        </ul>
-                    </div>
-                );
-            }
-
-            if (this.hasAccess(['admin'])) {
-                modal_trigger = this.actionModal;
-                music_manage_list = (
-                    <div className="col s12">
-                        <ul className='tabs default-tab'>
-                            <li className='tab col s3'>{music_manager_songs}</li>
-                            <li className='tab col s3'>{music_manager_albums}</li>
-                            <li className='tab col s3'>{music_manager_artists}</li>
-                            <li className='tab col s3'>{music_manager_labels}</li>
+                            {music_manager_songs}
+                            {music_manager_albums}
+                            {music_manager_artists}
+                            {music_manager_labels}
                         </ul>
                         <ul className='tabs mobile-tab'>
                             <li className='tab col s4'>{music_manager_songs}</li>
@@ -183,7 +197,6 @@ var React = require('react'),
                         </ul>
                     </div>
                 );
-            }
 
             return (
                 <div className='c_body'>

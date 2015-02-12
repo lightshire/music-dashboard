@@ -1,6 +1,6 @@
 'use strict';
 var React = require('react'),
-    TracksActions = require('../../../actions/track_actions'),
+    AlbumActions = require('../../../actions/album_actions'),
     Delete = require('../../modals/delete_modal'),
     Accepted = require('../../modals/accepted_modal'),
     Pending = require('../../modals/pending_modal'),
@@ -12,7 +12,7 @@ var React = require('react'),
     Link = Router.Link,
     Albums = React.createClass({
         handleDeleteTracks: function() {
-            TracksActions.deleteTracks(this.props.id);
+            AlbumActions.deleteTracks(this.props.id);
             ModalActions.dismiss();
         },
         deleteModal: function() {
@@ -112,7 +112,7 @@ var React = require('react'),
                         <div className='right-align'>
                             <i onClick={this.showModal} id='earn' className={monetize_class}></i>
                             <i className='mdi-editor-mode-edit'></i>
-                            <i onClick={this.handleDeleteTracks} className='mdi-action-delete'></i>
+                            <i onClick={this.deleteModal} className='mdi-action-delete'></i>
                         </div>
                     </td>
                     <ReactCSSTransitionGroup transitionName='modal_earnings'>

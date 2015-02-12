@@ -5,6 +5,7 @@ var React = require('react'),
         render: function() {
             var content = '',
                 button = '',
+                add = this.props.handleAddArtist,
                 cancel = this.props.cancelHandler;
 
             content = (
@@ -47,7 +48,7 @@ var React = require('react'),
             button = ([
                 {
                     text : 'Done',
-                    onclick : cancel,
+                    onclick : add,
                     class_name : 'c_modal_buttons waves-effect waves-light btn green lighten-2 modal-action modal-trigger modal-close'
                 },
                 {

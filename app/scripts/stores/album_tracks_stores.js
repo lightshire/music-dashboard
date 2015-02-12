@@ -1,20 +1,10 @@
 'use strict';
 var Reflux = require('reflux'),
-    AlbumActions = require('../actions/album_actions'),
-    _albums = {
+    AlbumTracksActions = require('../actions/album_tracks_actions'),
+    _albumtracks = {
         1: {
             id: 1,
-            title: 'Potato Album',
-            artist: 'The Peelers',
-            time: '20:00',
-            label: 'Mashed Records',
-            genre: 'Psychedelic',
-            date_uploaded: 'an hour ago',
-            status: 'rejected'
-        },
-        2: {
-            id: 2,
-            title: 'Potato Album',
+            title: 'French Fries',
             artist: 'The Peelers',
             time: '20:00',
             label: 'Mashed Records',
@@ -22,9 +12,9 @@ var Reflux = require('reflux'),
             date_uploaded: 'an hour ago',
             status: 'not_monetize'
         },
-        3: {
-            id: 3,
-            title: 'Potato Album',
+        2: {
+            id: 2,
+            title: 'French Fries',
             artist: 'The Peelers',
             time: '20:00',
             label: 'Mashed Records',
@@ -32,9 +22,19 @@ var Reflux = require('reflux'),
             date_uploaded: 'an hour ago',
             status: 'accepted'
         },
+        3: {
+            id: 3,
+            title: 'French Fries',
+            artist: 'The Peelers',
+            time: '20:00',
+            label: 'Mashed Records',
+            genre: 'Psychedelic',
+            date_uploaded: 'an hour ago',
+            status: 'rejected'
+        },
         4: {
             id: 4,
-            title: 'Potato Album',
+            title: 'French Fries',
             artist: 'The Peelers',
             time: '20:00',
             label: 'Mashed Records',
@@ -43,16 +43,15 @@ var Reflux = require('reflux'),
             status: 'pending'
         }
     },
-    AlbumStore = Reflux.createStore({
-        listenables: [AlbumActions],
+    AlbumTracksStore = Reflux.createStore({
+        listenables: [AlbumTracksActions],
         emitChange: function() {
-            // this.trigger(this.getAll);
             this.trigger();
         },
         onAddTracks: function() {
             var data = {
                 id: Math.random()*1000,
-                title: 'Potato Album',
+                title: 'French Fries',
                 artist: 'The Peelers',
                 time: '20:00',
                 label: 'Mashed Records',
@@ -61,18 +60,18 @@ var Reflux = require('reflux'),
                 status: 'not_monetize'
             };
 
-            _albums[data.id] = data;
+            _albumtracks[data.id] = data;
             this.emitChange();
         },
         onDeleteTracks: function(id) {
-            if(typeof _albums[id] !== 'undefined') {
-                delete _albums[id];
+            if(typeof _albumtracks[id] !== 'undefined') {
+                delete _albumtracks[id];
             }
             this.emitChange();
         },
         getAll: function() {
-            return _albums;
+            return _albumtracks;
         }
     });
 
-module.exports = AlbumStore;
+module.exports = AlbumTracksStore;

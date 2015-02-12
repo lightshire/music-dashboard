@@ -41,6 +41,7 @@ var React = require('react/addons'),
                     <div className='c_header z-depth-1'>
                         <div className='container'>
                             <h4 className='white-text'>My Account</h4>
+
                             <div className='c_links'>
                                 <div className="row">
                                     <div className="col s12">
@@ -48,14 +49,16 @@ var React = require('react/addons'),
                                     </div>
                                 </div>     
                             </div>
-                            <div className='upload-btn right-align'>
-                                <a className='btn-floating btn-large waves-effect waves-light red lighten-2'>
-                                    <i className='mdi-hardware-keyboard-arrow-up'></i>
-                                </a>
-                            </div>
+
+
                         </div>
                     </div>
                     <div className='container c_main_container z-depth-1'>
+                        <div className='upload-btn right-align'>
+                            <a className='btn-floating btn-large waves-effect waves-light red lighten-2'>
+                                <i className='mdi-hardware-keyboard-arrow-up'></i>
+                            </a>
+                        </div>
                         <RouteHandler />
                     </div>
                 </div>

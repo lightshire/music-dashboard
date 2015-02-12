@@ -4,25 +4,21 @@ var React = require('react/addons'),
         render: function() {
             return (
                 <div className='c_my_account_settings'>
-                    <div className='c_my_account_settings_header row'>
-                        <div className='col s2'>
-                            <img src='http://placehold.it/100x100'/>
-                        </div>
-                        <div className='col s10'>
-                            <h5>George Vanous</h5>
-                        </div>
+                    <div className='thumb'>
+                        <div><img className='circle' src='http://placehold.it/100x100'/></div>
+                        <div className='t_name'><h5>George Vanous</h5></div>
                     </div>
-                    <div className='c_my_account_settings_username row'>
-                        <div className='col s3'><span><b>Username</b></span></div>
-                        <div className='col s9'><span>george.vanous</span></div>
+                    <div className='username'>
+                        <div><b>Username</b></div>
+                        <div className='u_username'>george.vanous</div>
                     </div>
-                    <div className='c_my_account_settings_password row'>
-                        <div className='col s3'><span><b>Password</b></span></div>
-                        <div className='col s9'><span><a href='#'>Change Password</a></span></div>
+                    <div className='password'>
+                        <div><b>Password</b></div>
+                        <div className='p_password'><a href='#'>Change Password</a></div>
                     </div>
-                    <div className='c_my_account_settings_email row'>
-                        <div className='col s3'><span><b>Email</b></span></div>
-                        <div className='col s9'><span>george@freedom.tm</span></div>
+                    <div className='email'>
+                        <div><b>Email</b></div>
+                        <div className='e_email'>george@freedom.tm</div>
                     </div>
                 </div>
             );
