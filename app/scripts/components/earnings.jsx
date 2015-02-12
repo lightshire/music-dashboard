@@ -49,7 +49,7 @@ var React = require('react'),
                             </div>
                             <Search />
                             <div className='upload-btn right-align'>
-                                <a className='btn-floating btn-large waves-effect waves-light red lighten-2'>
+                                <a className='btn-floating btn-large waves-effect waves-light'>
                                     <i className='mdi-content-add'></i>
                                 </a>
                             </div>

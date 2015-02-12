@@ -100,7 +100,7 @@ var React = require('react/addons'),
                     
                     <ul id='nav-mobile' className='side-nav fixed'>
                     <div className='logo-container col l2'>
-                        <img src='http://placehold.it/80x60'/>       
+                        <img src='images/def-logo.svg'/>       
                     </div>  
                         <li className='sidebar-li'>
                             <Link to='home' className='waves-effect waves-blue collapsible-header collapse-link' onClick={this.activeSidebarHome}>Home</Link>

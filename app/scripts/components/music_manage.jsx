@@ -163,7 +163,7 @@ var React = require('react'),
                             </div>
                             <Search />
                             <div onClick={modal_trigger} className='upload-btn right-align'>
-                                <a className='btn-floating btn-large waves-effect waves-light red lighten-2'>
+                                <a className='btn-floating btn-large waves-effect waves-light'>
                                     <i className='mdi-file-file-upload'></i>
                                 </a>
                             </div>

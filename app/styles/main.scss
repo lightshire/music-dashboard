@@ -13,6 +13,7 @@
 /*@import './player.scss';*/
 @import './modals.scss';
 @import './responsive.scss';
+@import './header.scss';
 
 
 @import './responsives/small.scss';
@@ -39,9 +40,6 @@
 .main-route-container.no-sidebar {
     padding-left: 0;
 }
-
-
-
 .modal-overlay {
     position: absolute;
     top: 0;

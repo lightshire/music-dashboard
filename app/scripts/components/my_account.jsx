@@ -32,7 +32,7 @@ var React = require('react/addons'),
                     </div>
                     <div className='container c_main_container z-depth-1'>
                         <div className='upload-btn right-align'>
-                            <a className='btn-floating btn-large waves-effect waves-light red lighten-2'>
+                            <a className='btn-floating btn-large waves-effect waves-light'>
                                 <i className='mdi-hardware-keyboard-arrow-up'></i>
                             </a>
                         </div>
