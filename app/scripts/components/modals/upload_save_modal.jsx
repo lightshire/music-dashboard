@@ -2,17 +2,62 @@
 var React = require('react'),
     Modal = require('../helpers/modal'),
     InputField = require('../helpers/textfield'),
+    Constrainable = require('../mixins/constrainable'),
     UploadSave = React.createClass({
+        mixins: [Constrainable],
+        statics: {
+            redirectTo: 'signin',
+            required_login: true,
+            user_types: ['admin', 'general_user', 'artist', 'record_label']
+        },
+        componentDidMount: function () {
+            $(document).ready(function() {
+                $('select').material_select();
+            });
+        },
         render: function() {
             var content = '',
                 button = '',
                 add = this.props.handleAddTracks,
                 cancel = this.props.cancelHandler,
-                preloader_style = {};
+                album = (
+                    <span>
+                        <label>Choose Artist</label>
+                        <select>
+                            <option value='' disabled selected>Choose your option</option>
+                            <option value='1'>Potato Album</option>
+                        </select>
+                    </span>
+                ),
 
-            preloader_style = {
-                width: '70%'
-            };
+                artist = (
+                    <span>
+                        <label>Choose Artist</label>
+                        <select>
+                            <option value='' disabled selected>Choose your option</option>
+                            <option value='1'>The Peelers</option>
+                        </select>
+                    </span>
+                ),
+
+                label = (
+                    <span>
+                        <label>Choose Record Label</label>
+                        <select>
+                            <option value='' disabled selected>Choose your option</option>
+                            <option value='1'>The Peelers</option>
+                        </select>
+                    </span>
+                );
+
+            if (this.hasAccess(['artist'])) {
+                artist = '';
+                label = '';
+            }
+
+            if (this.hasAccess(['record_label'])) {
+                label = '';
+            }
 
             content = (
                 <div className='container center-align c_upload_music_file_modal'>
@@ -36,6 +81,9 @@ var React = require('react'),
                             textfield_state='validate'
                             textfield_id='description'
                             textfield_label_for='description' />
+                        {album}
+                        {artist}
+                        {label}
                     </p>
                 </div>
             );

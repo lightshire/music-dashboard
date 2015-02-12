@@ -28,14 +28,14 @@
 }
 .modal-enter {
     opacity: 0.01;
-    transition: all .1s ease;
+    transition: .3s ease-out;
 }
 .modal-enter.modal-enter-active {
     opacity: 1;
 }
 .modal-leave {
     opacity: 1;
-    transition: all .1s ease;
+    transition: .2s ease-out;
 }
 .modal-leave.modal-leave-active {
     opacity: 0.01;
@@ -48,22 +48,22 @@
     margin-top: 70px;
     margin-bottom: 30px;
 }
-.modal_monetize_h4{
+.modal_monetize_h4 {
     padding: 10px 0 10px 15px;
     border-bottom: 3px solid rgb(107, 107, 107);
 }
-.modal_monetize_content{
+.modal_monetize_content {
     margin-top: 25px;
     margin-left: 18px;
 }
-.modal_monetize_context{
+.modal_monetize_context {
     background: #eeeeee;
     padding: 15px 20px;
     text-align: justify;
 }
-.modal_monetize_checkbox{
+.modal_monetize_checkbox {
     margin: 40px 20px;
 }
-.modal_monetize_button{
+.modal_monetize_button {
     margin: 10px 20px;
 }   
