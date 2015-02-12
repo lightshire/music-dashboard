@@ -26,6 +26,7 @@ var React = require('react'),
             user_types: ['admin', 'general_user', 'artist', 'record_label']
         },
         componentDidMount : function() {
+            /*
             $('.dropdown-button').dropdown({
                   inDuration: 300,
                   outDuration: 225,
@@ -36,6 +37,7 @@ var React = require('react'),
                   belowOrigin: false
                 }
             );
+            */
         },
         handleAddTracks: function() {
             TrackActions.addTracks();
@@ -111,16 +113,22 @@ var React = require('react'),
         },
         render: function() {
             var modal_trigger = this.showModal,
-                music_manager_songs, 
-                music_manager_albums, 
+                music_manager_songs,
+                music_manager_albums,
                 music_manager_artists,
-                music_manager_labels, 
-                music_manage_list;
+                music_manager_labels,
+                music_manage_list,
+                floating_btn_up = (
+                    <i className='mdi-file-file-upload'></i>
+                ),
+                floating_btn_add = (
+                    <i className='mdi-content-add'></i>
+                );
 
                 music_manager_songs = (
                     <li className='tab col s3'>
-                        <Link 
-                            to='music.manager.songs' 
+                        <Link
+                            to='music.manager.songs'
                             className='waves-effect waves-white btn-flat white-text c_tabs'>
                             Tracks
                         </Link>
@@ -129,8 +137,8 @@ var React = require('react'),
 
                 music_manager_albums = (
                     <li className='tab col s3'>
-                        <Link 
-                            to='music.manager.albums' 
+                        <Link
+                            to='music.manager.albums'
                             className='waves-effect waves-white btn-flat white-text c_tabs'>
                             Albums
                         </Link>
@@ -139,7 +147,7 @@ var React = require('react'),
 
                 music_manager_artists = (
                     <li className='tab col s3'>
-                        <Link 
+                        <Link
                             to='music.manager.artists'
                             className='waves-effect waves-white btn-flat white-text c_tabs'>
                             Artists
@@ -149,7 +157,7 @@ var React = require('react'),
 
                 music_manager_labels = (
                     <li className='tab col s3'>
-                        <Link 
+                        <Link
                             to='music.manager.labels'
                             className='waves-effect waves-white btn-flat white-text c_tabs'>
                             Record Labels
@@ -157,25 +165,30 @@ var React = require('react'),
                     </li>
                 );
 
+
                 if (this.hasAccess(['artist'])) {
                     modal_trigger = this.actionModal;
                     music_manager_artists = '';
                     music_manager_labels = '';
+                    floating_btn_up = '';
                 }
 
                 if (this.hasAccess(['general_user'])) {
                     music_manager_albums = '';
                     music_manager_artists = '';
                     music_manager_labels = '';
+                    floating_btn_add = '';
                 }
 
                 if (this.hasAccess(['record_label'])) {
                     modal_trigger = this.actionModal;
                     music_manager_labels = '';
+                    floating_btn_up = '';
                 }
 
                 if (this.hasAccess(['admin'])) {
                     modal_trigger = this.actionModal;
+                    floating_btn_up = '';
                 }
 
                 music_manage_list = (
@@ -187,13 +200,17 @@ var React = require('react'),
                             {music_manager_labels}
                         </ul>
                         <ul className='tabs mobile-tab'>
-                            <li className='tab col s4'>{music_manager_songs}</li>
-                            <li className='tab col s4'>{music_manager_albums}</li>
-                            <li className='tab col s4'><a href='#' className='dropdown-button more' data-activates='moreTab'>More<i className="mdi-navigation-arrow-drop-down right"></i></a></li>
+                            {music_manager_songs}
+                            {music_manager_albums}
+                            <li className='tab col s4'>
+                                <a href='#' className='dropdown-button more' data-activates='moreTab'>
+                                    More <i className="mdi-navigation-arrow-drop-down right"></i>
+                                </a>
+                            </li>
                         </ul>
                         <ul id='moreTab' className='dropdown-content'>
-                            <li className='tab col s6'>{music_manager_artists}</li>
-                            <li className='tab col s6'>{music_manager_labels}</li>
+                            {music_manager_artists}
+                            {music_manager_labels}
                         </ul>
                     </div>
                 );
@@ -204,14 +221,15 @@ var React = require('react'),
                         <div className='container'>
                             <h4 className='white-text'>Music Manager</h4>
                             <div className='c_links'>
-                                <div className="row">                                    
-                                    {music_manage_list}                                    
+                                <div className="row">
+                                    {music_manage_list}
                                 </div>
                             </div>
                             <Search />
-                            <div onClick={modal_trigger} className='upload-btn right-align'>
+                            <div onClick={modal_trigger} className='manage-upload-btn right-align'>
                                 <a className='btn-floating btn-large waves-effect waves-light red lighten-2'>
-                                    <i className='mdi-file-file-upload'></i>
+                                    {floating_btn_up}
+                                    {floating_btn_add}
                                 </a>
                             </div>
                         </div>
@@ -223,4 +241,5 @@ var React = require('react'),
             );
         }
     });
+
 module.exports = MusicManager;
