@@ -11,14 +11,13 @@ var React = require('react/addons'),
                 <header>
                     <div className='navbar-fixed'>
                         <nav className='top-nav'>
-
-                            <div className='c_main_logo'><img src='http://placehold.it/80x64' /></div>
-                            <div className='c_nav_menu_div'><a className='c_nav_icon' href='#' onClick={this.toggleSidebar}><i className='mdi-navigation-menu'></i></a></div>
-
-                            <div className='c_player'>
-                                <Player />
+                            <div className='nav-wrapper row'>
+                                <div className='col l10'>
+                                    <div className='right'>
+                                        <Player />
+                                    </div>
+                                </div>
                             </div>
-
                         </nav>
                     </div>
                 </header>
@@ -26,3 +25,4 @@ var React = require('react/addons'),
         }
     });
 module.exports = TopBar;
+//onClick={this.toggleSidebar} 
