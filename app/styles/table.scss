@@ -20,3 +20,34 @@
 .songs img {
 	width: 50px;
 }
+
+@media #{$medium-only} {
+    table.c_responsive_table {
+        thead {
+            display: none;
+        }
+        tbody tr {
+            display: block;
+            padding-left: 220px;
+            padding: 1em 1em 1em 220px;
+            margin: 0 -1.5em;
+            &:nth-child(even) {
+                background: rgba(0,0,0,.1);
+            }
+            &:last-child {
+                border-bottom: none;
+            }
+            td {
+                display: block;
+                &:before {
+                    content: attr(data-column-title);
+                    display: block;
+                    position: relative;
+                    margin-left: -200px;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+

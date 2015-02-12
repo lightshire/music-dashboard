@@ -7,7 +7,6 @@ var React = require('react'),
     Rejected = require('../../modals/rejected_modal'),
     Monetize = require('../../modals/monetize_modal'),
     ModalActions = require('../../../actions/modal_actions'),
-    ReactCSSTransitionGroup = React.addons.CSSTransitionGroup,
     Songs = React.createClass({
         handleDeleteTracks: function() {
             TracksActions.deleteTracks(this.props.id);
@@ -73,48 +72,44 @@ var React = require('react'),
             ModalActions.dismiss();
         },
         render: function() {
-            var modal_earnings = '',
-                monetize_class = 'mdi-editor-attach-money';
+            var monetize_class = 'mdi-editor-attach-money';
 
             switch (this.props.songstatus) {
                 case 'accepted':
-                    monetize_class += ' green-text'; 
+                    monetize_class += ' green-text';
                     break;
                 case 'pending':
-                    monetize_class += ' orange-text'; 
+                    monetize_class += ' orange-text';
                     break;
                 case 'rejected':
-                    monetize_class += ' red-text'; 
+                    monetize_class += ' red-text';
                     break;
                 case 'not_monetize':
-                    monetize_class += ' grey-text'; 
+                    monetize_class += ' grey-text';
                     break;
             }
 
             return (
                 <tr className='songs'>
-                    <td>
+                    <td data-column-title=''>
                         <div>
                             <i className='mdi-av-play-arrow'></i>
                             <i className='mdi-content-add'></i>
                         </div>
                     </td>
-                    <td>{this.props.songs}</td>
-                    <td>{this.props.artists}</td>
-                    <td>{this.props.time}</td>
-                    <td>{this.props.label}</td>
-                    <td>{this.props.genre}</td>
-                    <td>{this.props.uploaded}</td>
-                    <td>
+                    <td data-column-title='Title'>{this.props.songs}</td>
+                    <td data-column-title='Artist'>{this.props.artists}</td>
+                    <td data-column-title='Item'>{this.props.time}</td>
+                    <td data-column-title='Label'>{this.props.label}</td>
+                    <td data-column-title='Genre'>{this.props.genre}</td>
+                    <td data-column-title='Uploaded'>{this.props.uploaded}</td>
+                    <td data-column-title=''>
                         <div className="right-align">
                             <i onClick={this.showModal} id="earn" className={monetize_class}></i>
                             <i className="mdi-editor-mode-edit"></i>
                             <i onClick={this.deleteModal} className="mdi-action-delete"></i>
                         </div>
                     </td>
-                    <ReactCSSTransitionGroup transitionName='modal_earnings'>
-                        {modal_earnings}
-                    </ReactCSSTransitionGroup>
                 </tr>
             );
         }
