@@ -25,6 +25,7 @@ var React = require('react'),
             items = _.map(data, function(item) {
                 return (<Artists
                     id={item.id}
+                    key={item.id}
                     avatar={item.avatar}
                     artist={item.artist}
                     albums={item.albums}
@@ -35,7 +36,7 @@ var React = require('react'),
 
             return (
                 <div className='table'>
-                    <table>
+                    <table  className='responsive-table'>
                         <thead>
                             <tr>
                                 <th></th>
