@@ -1,0 +1,9 @@
+@import "../../vendor/materialize/sass/components/cards";
+
+.card {
+	a {
+		color: $primary-color;
+
+		&:hover {color: color("light-blue","darken-4")}
+	}
+}
