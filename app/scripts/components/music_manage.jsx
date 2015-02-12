@@ -172,7 +172,7 @@ var React = require('react'),
                                {music_manager_labels}
                             </div>
                             <Search />
-                            <div onClick={modal_trigger} className='upload-btn right-align'>
+                            <div onClick={modal_trigger} className='manage-upload-btn right-align'>
                                 <a className='btn-floating btn-large waves-effect waves-light red lighten-2'>
                                     {floating_btn_up}
                                     {floating_btn_add}
