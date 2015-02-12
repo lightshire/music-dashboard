@@ -22,6 +22,18 @@ var React = require('react'),
             required_login: true,
             user_types: ['admin', 'general_user', 'artist', 'record_label']
         },
+        componentDidMount : function() {
+            $('.dropdown-button').dropdown({
+                  inDuration: 300,
+                  outDuration: 225,
+                  constrain_width: false,
+                  hover: false,
+                  alignment: 'left',
+                  gutter: 0,
+                  belowOrigin: false
+                }
+            );
+        },
         handleAddTracks: function() {
             TrackActions.addTracks();
             ModalActions.dismiss();
@@ -104,28 +116,73 @@ var React = require('react'),
                         className='waves-effect waves-white btn-flat white-text c_tabs'>
                         Record Labels
                     </Link>
-                );
+                ),
+                music_manage_list = '';
 
 
             if (this.hasAccess(['artist'])) {
                 modal_trigger = this.actionModal;
                 music_manager_artists = '';
                 music_manager_labels = '';
+                music_manage_list = (
+                    <div className="col s12">
+                        <ul className='tabs default-tab'>
+                            <li className='tab col s6'>{music_manager_songs}</li>
+                            <li className='tab col s6'>{music_manager_albums}</li>
+                        </ul>
+                    </div>
+                );
+
             }
 
             if (this.hasAccess(['general_user'])) {
                 music_manager_albums = '';
                 music_manager_artists = '';
                 music_manager_labels = '';
+                music_manage_list = (
+                    <div className="col s12">
+                        <ul className='tabs default-tab'>
+                            <li className='tab col l12 s12'>{music_manager_songs}</li>
+                        </ul>
+                    </div>
+                );
             }
 
             if (this.hasAccess(['record_label'])) {
                 modal_trigger = this.actionModal;
                 music_manager_labels = '';
+                music_manage_list = (
+                    <div className="col s12">
+                        <ul className='tabs default-tab'>
+                            <li className='tab col s4'>{music_manager_songs}</li>
+                            <li className='tab col s4'>{music_manager_albums}</li>
+                            <li className='tab col s4'>{music_manager_artists}</li>
+                        </ul>
+                    </div>
+                );
             }
 
             if (this.hasAccess(['admin'])) {
                 modal_trigger = this.actionModal;
+                music_manage_list = (
+                    <div className="col s12">
+                        <ul className='tabs default-tab'>
+                            <li className='tab col s3'>{music_manager_songs}</li>
+                            <li className='tab col s3'>{music_manager_albums}</li>
+                            <li className='tab col s3'>{music_manager_artists}</li>
+                            <li className='tab col s3'>{music_manager_labels}</li>
+                        </ul>
+                        <ul className='tabs mobile-tab'>
+                            <li className='tab col s4'>{music_manager_songs}</li>
+                            <li className='tab col s4'>{music_manager_albums}</li>
+                            <li className='tab col s4'><a href='#' className='dropdown-button more' data-activates='moreTab'>More<i className="mdi-navigation-arrow-drop-down right"></i></a></li>
+                        </ul>
+                        <ul id='moreTab' className='dropdown-content'>
+                            <li className='tab col s6'>{music_manager_artists}</li>
+                            <li className='tab col s6'>{music_manager_labels}</li>
+                        </ul>
+                    </div>
+                );
             }
 
             return (
@@ -134,10 +191,9 @@ var React = require('react'),
                         <div className='container'>
                             <h4 className='white-text'>Music Manager</h4>
                             <div className='c_links'>
-                               {music_manager_songs}
-                               {music_manager_albums}
-                               {music_manager_artists}
-                               {music_manager_labels}
+                                <div className="row">                                    
+                                    {music_manage_list}                                    
+                                </div>
                             </div>
                             <Search />
                             <div onClick={modal_trigger} className='upload-btn right-align'>
