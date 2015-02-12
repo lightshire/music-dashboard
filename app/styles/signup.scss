@@ -10,10 +10,26 @@
 .c_checkbox_terms {
 	margin-left: 11px;
 }
-.c_create_account_button {
+
+
+
+.c_sign_in_button_div {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.c_sign_in_button {
+	margin-top: 20px;
+	width: 100%;
+	height: 50px;
+}
+
+.c_create_account_button_div {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.c_create_account_button, .c_sign_in_with_google {
 	margin-top: 30px;
-	margin-left: 11px;
-	width: 95.7%;
+	width: 100%;
 	height: 50px;
 	line-height: 50px;
 }

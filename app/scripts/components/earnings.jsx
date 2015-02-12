@@ -41,21 +41,14 @@ var React = require('react'),
                     <div className='c_header z-depth-1'>
                         <div className='container'>
                             <h4 className='white-text'>My Earnings</h4>
-                            <div className='c_links'>
-                                {my_earnings_songs}
-                                {my_earnings_albums}
-                                {my_earnings_artists}
-                                {my_earnings_labels}
-                            </div>
-                            <Search />
-                            <div className='upload-btn right-align'>
-                                <a className='btn-floating btn-large waves-effect waves-light red lighten-2'>
-                                    <i className='mdi-content-add'></i>
-                                </a>
-                            </div>
                         </div>
                     </div>
                     <div className='container c_main_container z-depth-1'>
+                        <div className='upload-btn-earnings right-align'>
+                            <a className='btn-floating btn-large waves-effect waves-light red lighten-2'>
+                                <i className='mdi-content-add'></i>
+                            </a>
+                        </div>
                         <RouteHandler />
                     </div>
                 </div>
