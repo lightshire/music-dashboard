@@ -56,6 +56,11 @@ var React = require('react'),
                         </div>
                     </div>
                     <div className='container c_main_container z-depth-1'>
+                        <div className='upload-btn-earnings right-align'>
+                            <a className='btn-floating btn-large waves-effect waves-light red lighten-2'>
+                                <i className='mdi-content-add'></i>
+                            </a>
+                        </div>
                         <RouteHandler />
                     </div>
                 </div>

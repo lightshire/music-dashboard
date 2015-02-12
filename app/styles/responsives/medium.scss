@@ -46,8 +46,11 @@
         }
     }
 
-
-    .upload-btn {
+    .manage-upload-btn {
+        position: absolute;
+        right: -29px;
+    }
+    .upload-btn, .upload-btn-earnings {
         position: absolute;
         top: -28px;
         right: -29px;

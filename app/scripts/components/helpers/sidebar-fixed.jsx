@@ -20,6 +20,12 @@ var React = require('react/addons'),
                 closeOnClick: true 
                 }
             );
+            $('.collapsible-body a').click(function(){
+                $('.button-collapse').sideNav('hide');
+            });
+            $('.sidebarHome').click(function(){
+                $('.button-collapse').sideNav('hide');
+            });
         },
         activeSidebarHome : function(x){
             var a = x.target.parentNode.nextSibling.childNodes[0].childNodes;
@@ -103,7 +109,7 @@ var React = require('react/addons'),
                         <img src='images/def-logo.svg'/>       
                     </div>  
                         <li className='sidebar-li'>
-                            <Link to='home' className='waves-effect waves-blue collapsible-header collapse-link' onClick={this.activeSidebarHome}>Home</Link>
+                            <Link to='home' className='sidebarHome waves-effect waves-blue collapsible-header collapse-link' onClick={this.activeSidebarHome}>Home</Link>
                         </li>                   
                         <li className='sidebar-li'>
                             <ul className='collapsible collapsible-accordion'>
