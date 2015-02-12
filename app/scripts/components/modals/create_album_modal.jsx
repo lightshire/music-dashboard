@@ -6,6 +6,7 @@ var React = require('react'),
         render: function() {
             var content = '',
                 button = '',
+                add = this.props.handleAddAlbum,
                 cancel = this.props.cancelHandler;
 
             content = (
@@ -36,7 +37,7 @@ var React = require('react'),
             button = ([
                 {
                     text : 'Create Album',
-                    onclick : cancel,
+                    onclick : add,
                     class_name : 'c_modal_buttons waves-effect waves-light btn green lighten-2 modal-action'
                 },
                 {

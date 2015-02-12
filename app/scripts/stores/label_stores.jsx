@@ -1,7 +1,7 @@
 'use strict';
 var Reflux = require('reflux'),
-    ArtistActions = require('../actions/artist_actions'),
-    _artists = {
+    LabelActions = require('../actions/label_actions'),
+    _labels = {
         1: {
             id: 1,
             avatar: 'http://placehold.it/50x50',
@@ -10,11 +10,21 @@ var Reflux = require('reflux'),
             tracks: '144',
             genre: 'Psychedelic',
             added: 'Jan 15, 2015'
+        },
+        2: {
+            id: 2,
+            avatar: 'http://placehold.it/50x50',
+            artist: 'The Peelers',
+            albums: '12',
+            tracks: '144',
+            genre: 'Psychedelic',
+            added: 'Jan 15, 2015'
         }
     },
-    ArtistsStore = Reflux.createStore({
-        listenables: [ArtistActions],
+    LabelsStore = Reflux.createStore({
+        listenables: [LabelActions],
         emitChange: function() {
+            // this.trigger(this.getAll);
             this.trigger();
         },
         onAddTracks: function() {
@@ -28,20 +38,18 @@ var Reflux = require('reflux'),
                 added: 'Jan 15, 2015'
             };
 
-            _artists[data.id] = data;
-            
+            _labels[data.id] = data;
             this.emitChange();
         },
         onDeleteTracks: function(id) {
-            if(typeof _artists[id] !== 'undefined') {
-                delete _artists[id];
+            if(typeof _labels[id] !== 'undefined') {
+                delete _labels[id];
             }
-
             this.emitChange();
         },
         getAll: function() {
-            return _artists;
+            return _labels;
         }
     });
 
-module.exports = ArtistsStore;
+module.exports = LabelsStore;
