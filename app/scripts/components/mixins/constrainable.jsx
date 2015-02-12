@@ -1,7 +1,8 @@
+'use strict';
 var SessionStore = require('../../stores/session_stores'),
     Constrainable = {
         statics: {
-            willTransitionTo: function(transition, params) {
+            willTransitionTo: function(transition) {
                 if (typeof this.user_types === 'undefined' && this.required_login !== true) {
                     return;
                 }
@@ -18,6 +19,6 @@ var SessionStore = require('../../stores/session_stores'),
         hasAccess: function(user_types) {
             return SessionStore.hasAccess(user_types);
         }
-    }
+    };
 
 module.exports = Constrainable;

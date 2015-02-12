@@ -2,10 +2,10 @@
 var React = require('react'),
     Songs = require('./items/song'),
     _ = require('lodash'),
-    TracksForAlbumStore = require('../../stores/tracksforalbum_stores'),
+    AlbumTracksStore = require('../../stores/album_tracks_stores'),
     getStateFromStore = function() {
         return {
-            tracksforalbum: TracksForAlbumStore.getAll()
+            albumtracks: AlbumTracksStore.getAll()
         };
     },
     MusicManagerAlbumSongs = React.createClass({
@@ -13,13 +13,13 @@ var React = require('react'),
             return getStateFromStore();
         },
         componentDidMount: function() {
-            this.unsubscribe = TracksForAlbumStore.listen(this._onChange);
+            this.unsubscribe = AlbumTracksStore.listen(this._onChange);
         },
         componentWillUnmount: function() {
             this.unsubscribe();
         },
         render: function() {
-            var data = this.state.tracksforalbum,
+            var data = this.state.albumtracks,
                 items;
 
             items = _.map(data, function(item) {
@@ -30,7 +30,8 @@ var React = require('react'),
                     time={item.time}
                     label={item.label}
                     genre={item.genre}
-                    uploaded={item.date_uploaded} />);
+                    uploaded={item.date_uploaded}
+                    songstatus={item.status} />);
             });
             return (
                 <div className='table'>
