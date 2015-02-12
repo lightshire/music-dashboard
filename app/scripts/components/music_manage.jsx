@@ -126,6 +126,12 @@ var React = require('react'),
                         className='waves-effect waves-white btn-flat white-text c_tabs'>
                         Record Labels
                     </Link>
+                ),
+                floating_btn_up = (
+                    <i className='mdi-file-file-upload'></i>
+                ),
+                floating_btn_add = (
+                    <i className='mdi-content-add'></i>
                 );
 
 
@@ -133,21 +139,25 @@ var React = require('react'),
                 modal_trigger = this.actionModal;
                 music_manager_artists = '';
                 music_manager_labels = '';
+                floating_btn_up = '';
             }
 
             if (this.hasAccess(['general_user'])) {
                 music_manager_albums = '';
                 music_manager_artists = '';
                 music_manager_labels = '';
+                floating_btn_add = '';
             }
 
             if (this.hasAccess(['record_label'])) {
                 modal_trigger = this.actionModal;
                 music_manager_labels = '';
+                floating_btn_up = '';
             }
 
             if (this.hasAccess(['admin'])) {
                 modal_trigger = this.actionModal;
+                floating_btn_up = '';
             }
 
             return (
@@ -162,9 +172,10 @@ var React = require('react'),
                                {music_manager_labels}
                             </div>
                             <Search />
-                            <div onClick={modal_trigger} className='upload-btn right-align'>
+                            <div onClick={modal_trigger} className='manage-upload-btn right-align'>
                                 <a className='btn-floating btn-large waves-effect waves-light red lighten-2'>
-                                    <i className='mdi-file-file-upload'></i>
+                                    {floating_btn_up}
+                                    {floating_btn_add}
                                 </a>
                             </div>
                         </div>
