@@ -5,3 +5,4 @@ $button-color-raised-default: color("grey", "darken-2") !default;
 $button-color-flat: color("red", "base");
 
 @import "../../../vendor/materialize/sass/components/variables";
+$small-only: "only screen and (max-width : #{$small-screen})" !default;

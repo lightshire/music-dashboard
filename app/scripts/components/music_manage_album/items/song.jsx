@@ -91,20 +91,20 @@ var React = require('react'),
             }
             
             return (
-                <tr className="songs">
-                    <td>
+                <tr className="songs col s12 m12">
+                    <td className='col s3 m3'>
                         <div>
                             <i className="mdi-av-play-arrow"></i>
                             <i className="mdi-content-add"></i>
                         </div>
                     </td>
-                    <td>{this.props.songs}</td>
-                    <td>{this.props.artists}</td>
-                    <td>{this.props.time}</td>
-                    <td>{this.props.label}</td>
-                    <td>{this.props.genre}</td>
-                    <td>{this.props.uploaded}</td>
-                    <td>
+                    <td className='col s1 m1'>a{this.props.songs}</td>
+                    <td className='col s1 m1'>{this.props.artists}</td>
+                    <td className='col s1 m1'>{this.props.time}</td>
+                    <td className='col s1 m1'>{this.props.label}</td>
+                    <td className='col s1 m1'>{this.props.genre}</td>
+                    <td className='col s1 m1'>{this.props.uploaded}</td>
+                    <td className='col s3 m3'>
                         <div className="right-align">
                             <i onClick={this.showModal} id="earn" className={monetize_class}></i>
                             <i className="mdi-editor-mode-edit"></i>
