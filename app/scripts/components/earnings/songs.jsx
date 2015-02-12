@@ -33,7 +33,7 @@ var React = require('react'),
                 });
             return (
                 <div className="table">
-                    <table>
+                    <table className='responsive-table'>
                         <thead>
                             <tr>
                                 <th></th>
