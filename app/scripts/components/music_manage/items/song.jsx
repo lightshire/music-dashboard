@@ -7,7 +7,6 @@ var React = require('react'),
     Rejected = require('../../modals/rejected_modal'),
     Monetize = require('../../modals/monetize_modal'),
     ModalActions = require('../../../actions/modal_actions'),
-    ReactCSSTransitionGroup = React.addons.CSSTransitionGroup,
     Songs = React.createClass({
         handleDeleteTracks: function() {
             TracksActions.deleteTracks(this.props.id);
@@ -73,21 +72,20 @@ var React = require('react'),
             ModalActions.dismiss();
         },
         render: function() {
-            var modal_earnings = '',
-                monetize_class = 'mdi-editor-attach-money';
+            var monetize_class = 'mdi-editor-attach-money';
 
             switch (this.props.songstatus) {
                 case 'accepted':
-                    monetize_class += ' green-text'; 
+                    monetize_class += ' green-text';
                     break;
                 case 'pending':
-                    monetize_class += ' orange-text'; 
+                    monetize_class += ' orange-text';
                     break;
                 case 'rejected':
-                    monetize_class += ' red-text'; 
+                    monetize_class += ' red-text';
                     break;
                 case 'not_monetize':
-                    monetize_class += ' grey-text'; 
+                    monetize_class += ' grey-text';
                     break;
             }
 
@@ -112,9 +110,6 @@ var React = require('react'),
                             <i onClick={this.deleteModal} className="mdi-action-delete"></i>
                         </div>
                     </td>
-                    <ReactCSSTransitionGroup transitionName='modal_earnings'>
-                        {modal_earnings}
-                    </ReactCSSTransitionGroup>
                 </tr>
             );
         }

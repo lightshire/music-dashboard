@@ -10,7 +10,7 @@ var React = require('react'),
                 <Delete
                     key='delete'
                     handleDeleteTracks={this.handleDeleteTracks}
-                    cancelHandler={this.cancelHandler} />, 'delete_modal' 
+                    cancelHandler={this.cancelHandler} />, 'delete_modal'
             );
         },
         handleDeleteTracks: function() {
@@ -21,8 +21,6 @@ var React = require('react'),
             ModalActions.dismiss();
         },
         render: function() {
-            var modal = '';
-
             return (
                 <tr className='songs'>
                     <td>
@@ -38,9 +36,6 @@ var React = require('react'),
                             <i onClick={this.deleteModal} className='mdi-action-delete'></i>
                         </div>
                     </td>
-                    <ReactCSSTransitionGroup transitionName='modalx'>
-                        {modal}
-                    </ReactCSSTransitionGroup>
                 </tr>
             );
         }
