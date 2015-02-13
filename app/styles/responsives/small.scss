@@ -300,6 +300,35 @@
     }
     /*Modal Responsive - end*/
 
+    /*Sign-in Responsive - start*/
+    .c_sign_in_outer, .c_sign_up_outer {
+        top: 0;
+        form {
+            div {
+                min-width: 100% !important;
+                margin: 0;
+                .s2 {
+                    display: none;
+                }
+                div {
+                    .card {
+                        .c_sign_up_inner {
+                            div {
+                                p {
+                                    label::before {
+                                        top: 2px;
+                                        left: 10px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /*Sign-in Responsive - end*/
+
     i.right {
         margin: 0px;
     }
