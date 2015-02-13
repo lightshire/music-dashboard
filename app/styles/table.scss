@@ -21,15 +21,15 @@
 	width: 50px;
 }
 
-@media #{$medium-only} {
+@media #{$medium-and-down} {
     table.c_responsive_table {
         thead {
             display: none;
         }
         tbody tr {
             display: block;
-            padding-left: 220px;
-            padding: 1em 1em 1em 220px;
+            padding-left: 130px;
+            padding: 1em 1em 1em 130px;
             margin: 0 -1.5em;
             &:nth-child(even) {
                 background: rgba(0,0,0,.1);
@@ -43,7 +43,7 @@
                     content: attr(data-column-title);
                     display: block;
                     position: relative;
-                    margin-left: -200px;
+                    margin-left: -110px;
                     font-weight: bold;
                 }
             }
