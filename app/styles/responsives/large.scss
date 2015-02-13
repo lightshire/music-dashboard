@@ -1,7 +1,6 @@
 @media #{$large-and-up} {
     .c_header {
         padding-top: 50px;
-        padding-bottom: 40px;
         background-color: #90caf9;
     }
 
@@ -179,5 +178,14 @@
                 }
             } 
         }
+    }
+    ul.side-nav.fixed { 
+        left : 0px !important;
+    }
+    .mobile-tab {
+        display: none;
+    }
+    .default-tab {
+        display: block;
     }
 }

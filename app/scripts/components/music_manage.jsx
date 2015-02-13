@@ -26,7 +26,7 @@ var React = require('react'),
             user_types: ['admin', 'general_user', 'artist', 'record_label']
         },
         componentDidMount : function() {
-            $('.dropdown-button').dropdown({
+            /*$('.dropdown-button').dropdown({
                   inDuration: 300,
                   outDuration: 225,
                   constrain_width: false,
@@ -35,7 +35,7 @@ var React = require('react'),
                   gutter: 0,
                   belowOrigin: false
                 }
-            );
+            );*/
         },
         handleAddTracks: function() {
             TrackActions.addTracks();
@@ -187,13 +187,14 @@ var React = require('react'),
                             {music_manager_labels}
                         </ul>
                         <ul className='tabs mobile-tab'>
-                            <li className='tab col s4'>{music_manager_songs}</li>
-                            <li className='tab col s4'>{music_manager_albums}</li>
-                            <li className='tab col s4'><a href='#' className='dropdown-button more' data-activates='moreTab'>More<i className="mdi-navigation-arrow-drop-down right"></i></a></li>
-                        </ul>
-                        <ul id='moreTab' className='dropdown-content'>
-                            <li className='tab col s6'>{music_manager_artists}</li>
-                            <li className='tab col s6'>{music_manager_labels}</li>
+                            {music_manager_songs}
+                            {music_manager_albums}
+                            <li className='tab col s4 more'><a href='#' className='white-text c_tabs'>MORE<i className="mdi-navigation-arrow-drop-down right"></i></a>
+                                <ul>
+                                    {music_manager_artists}
+                                    {music_manager_labels}
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                 );

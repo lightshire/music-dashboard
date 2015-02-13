@@ -1,7 +1,6 @@
 @media #{$medium-only} {
     .c_header {
         padding-top: 50px;
-        padding-bottom: 40px;
         background-color: #90caf9;
     }
     .c_my_account_settings {
@@ -191,5 +190,20 @@
                 }
             } 
         }
+    }
+    ul.side-nav.fixed {
+        left : -250px;
+    }
+    .main-route-container {
+        padding-left: 0px !important;
+    }
+    #burger-button {
+        display: block;
+    }
+    .mobile-tab {
+        display: none;
+    }
+    .default-tab {
+        display: block;
     }
 }
