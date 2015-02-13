@@ -102,8 +102,8 @@ var React = require('react'),
                         <div className='container'>
                             <h4 className='white-text'>My Earnings</h4>
                             <div className='c_links'>
-                                <div className="row">
-                                {earnings_list}
+                                <div className='row'>
+                                    {earnings_list}
                                 </div>
                             </div>
                         </div>

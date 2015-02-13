@@ -17,6 +17,44 @@
   }
 }
 
+
+// Floating button
+.btn-floating {
+  display: inline-block;
+  color: $button-color-raised;
+  position: relative;
+  z-index: 1;
+  width: $button-floating-size;
+  height: $button-floating-size;
+  line-height: $button-floating-size;
+  padding: 0;
+  background-color: $button-color;
+  @include border-radius(50%);
+  @extend .z-depth-1;
+  @include transition(.3s);
+  cursor: pointer;
+
+  i {
+    width: inherit;
+    display: inline-block;
+    text-align: center;
+    color: $button-color-raised;
+    font-size: 1.6rem;
+    line-height: $button-floating-size;
+  }
+
+  &:hover {
+    @extend .z-depth-1-half;
+  }
+  &.btn-large {
+    width: $button-floating-size * 1.5;
+    height: $button-floating-size * 1.5;
+    i{
+      line-height: $button-floating-size * 1.5;
+    }
+  }
+}
+
 /*.btn, .btn-flat, .btn-default {
   @include border-radius($button-line-height/2);
 }*/

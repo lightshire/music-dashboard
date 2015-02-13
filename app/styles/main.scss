@@ -1,7 +1,6 @@
 @import './variables.scss';
 @import './materialize.scss';
 
-
 @import './admin.scss';
 @import './common.scss';
 @import './album_info.scss';
@@ -12,7 +11,12 @@
 @import './search.scss';
 /*@import './player.scss';*/
 @import './modals.scss';
+<<<<<<< HEAD
 /* @import './responsive.scss'; */
+=======
+@import './responsive.scss';
+@import './header.scss';
+>>>>>>> 3b6a28d946b3657d6ac678c4f67436e1685cb9f1
 
 
 @import './responsives/small.scss';
@@ -40,9 +44,6 @@
 .main-route-container.no-sidebar {
     padding-left: 0;
 }
-
-
-
 .modal-overlay {
     position: absolute;
     top: 0;
