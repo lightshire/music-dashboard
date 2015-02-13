@@ -11,9 +11,11 @@ ul.side-nav.fixed{
     }
 
 }
+
 .zindex_supertop {
     z-index: 9999999;
 }
+
 .side-bar {
     overflow-y: auto;
     background: $white;
@@ -32,6 +34,7 @@ ul.side-nav.fixed{
         width: 105%;
     }
 }
+
 .sidebar-li{
     line-height: 30px;
     padding: 0px;
@@ -50,12 +53,15 @@ ul.side-nav.fixed{
         background: none !important;
     }
 }
+
 a.collapsible-header{
     margin: 0px !important;
 }
+
 ul.collapsible{
     margin-top: 0 !important;
 }
+
 .collapsible-body{
     ul {
         padding: 0;
@@ -75,43 +81,52 @@ ul.collapsible{
         background: none !important;
     }
 } 
+
 .waves-effect.waves-blue .waves-ripple {
   background-color: rgba(3, 169, 244, 0.65);
 }
+
 .collapse-link{
     padding: 10px 0px 10px 25px !important;
     width: 100%;
     font-weight: bold;
     color: #333;
 }
+
 .collapsed-link{
     padding: 10px 0px 10px 45px !important;
     width: 100%;
     color: #333;
 }
+
 .no-margin{
     margin: 0px;
 }
+
 .sidebar-leave {
     opacity: 1;
     margin-left: 0;
     transition: opacity .1s ease;
     transition: margin .1s ease;
 }
+
 .sidebar-leave.sidebar-leave-active {
     margin-left: -200px;
     opacity: 0.01;
 }
+
 .sidebar-enter {
     opacity: 0.01;
     margin-left: -200px;
     transition: opacity .1s ease;
     transition: margin .1s ease;
 }
+
 .sidebar-enter.sidebar-enter-active {
     opacity: 1;
     margin-left: 0;
 }
+
 nav a.button-collapse {
     position: fixed !important;
     z-index: 1001 !important;
@@ -119,6 +134,7 @@ nav a.button-collapse {
     top: 0;
     left: 194px;
 }
+
 #burger-button {
     position: fixed;
     color: #000;
@@ -132,12 +148,16 @@ nav a.button-collapse {
         color: white;
     }
 }
+
 .logo-container {
     border-bottom: 1px solid #E0E0E0;
     height: 64px;
-    
     img {
         height: 64px;
         padding: 1px 5px;
     }
+}
+
+.side-bar ul li.no-hover:hover {
+    background-color: transparent;
 }
