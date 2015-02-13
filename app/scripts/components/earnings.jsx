@@ -4,11 +4,6 @@ var React = require('react'),
     RouteHandler = Router.RouteHandler,
     Link = Router.Link,
     Constrainable = require('./mixins/constrainable'),
-    TrackActions = require('../actions/track_actions'),
-    Search = require('./helpers/search'),
-    Modal = require('./helpers/modal'),
-    InputField = require('./helpers/textfield'),
-    ReactCSSTransitionGroup = React.addons.CSSTransitionGroup,
     MusicManager = React.createClass({
         mixins: [Constrainable],
         statics: {
