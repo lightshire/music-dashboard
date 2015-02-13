@@ -55,6 +55,9 @@ gulp.task('copy', function() {
   gulp.src(['app/font/**/*'])
     .pipe(gulp.dest('dist/font'));
 
+  gulp.src(['app/images/**/*'])
+    .pipe(gulp.dest('dist/images'));    
+
   return gulp.src(['app/*.txt', 'app/*.ico'])
     .pipe(gulp.dest('dist'));
 });

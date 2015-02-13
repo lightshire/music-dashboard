@@ -1,8 +1,22 @@
-$button-color: color("red", "base") !default;
+
+
+/*** Colors ***/
+$primary-color: color("blue-grey","darken-2") !default;
+$primary-color-dark: color("blue-grey", "darken-4") !default;
+$secondary-color: color("teal","lighten-1") !default;
+$accent-color: color("cyan","accent-3") !default;
+$body-color: color("grey","lighten-4") !default;
+$white: color("shades","white") !default;
+$black: color("shades","black") !default;
+
+
+
+$button-color: color("blue", "base") !default;
 $button-color-default: color("grey", "lighten-2") !default;
 $button-color-disabled: #9F9F9F;
 $button-color-raised-default: color("grey", "darken-2") !default;
 $button-color-flat: color("red", "base");
+// $button-color-raised: color("blue","base") !default;
 
 @import "../../../vendor/materialize/sass/components/variables";
 $small-only: "only screen and (max-width : #{$small-screen})" !default;
