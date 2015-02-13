@@ -17,42 +17,82 @@ var React = require('react'),
             user_types: ['admin', 'general_user', 'artist', 'record_label']
         },
         render: function() {
-            var my_earnings_songs = (<Link to='my.earnings.songs' className='waves-effect waves-white btn-flat white-text c_tabs'>Tracks</Link>),
-                my_earnings_albums = (<Link to='my.earnings.albums' className='waves-effect waves-white btn-flat white-text c_tabs'>Albums</Link>),
-                my_earnings_artists = (<Link to='my.earnings.artists' className='waves-effect waves-white btn-flat white-text c_tabs'>Artists</Link>),
-                my_earnings_labels = (<Link to='my.earnings.labels' className='waves-effect waves-white btn-flat white-text c_tabs'>Record Labels</Link>),
-                my_earnings_list = '';
+            var earnings_list,
+                more_tab,
+                my_earnings_songs,
+                my_earnings_albums,
+                my_earnings_artists,
+                my_earnings_labels;
+
+                my_earnings_songs = (
+                        <li className='tab col s3'>
+                            <Link 
+                                to='my.earnings.songs' 
+                                className='waves-effect waves-white btn-flat white-text c_tabs'>Tracks
+                            </Link>
+                        </li>
+                );
+                my_earnings_albums = (
+                        <li className='tab col s3'>
+                            <Link 
+                                to='my.earnings.albums' 
+                                className='waves-effect waves-white btn-flat white-text c_tabs'>Albums
+                            </Link>
+                        </li>
+                );
+                my_earnings_artists = (
+                        <li className='tab col s3'>
+                            <Link 
+                                to='my.earnings.artists' 
+                                className='waves-effect waves-white btn-flat white-text c_tabs'>Artists
+                            </Link>
+                        </li>
+                );
+                my_earnings_labels = (
+                        <li className='tab col s3'>
+                            <Link 
+                                to='my.earnings.labels' 
+                                className='waves-effect waves-white btn-flat white-text c_tabs'>Record Labels
+                            </Link>
+                        </li>
+                );
+
+                more_tab = (
+                    <li className='tab col s4 more'><a href='#' className='white-text c_tabs'>MORE<i className="mdi-navigation-arrow-drop-down right"></i></a>
+                        <ul>
+                            {my_earnings_artists}
+                            {my_earnings_labels}
+                        </ul>
+                    </li>
+                );
+
             if (this.hasAccess(['general_user'])) {
-                my_earnings_list = (
-                    <ul className='c_my_earnings_tabs tabs'>
-                        <li className='tab col s6'>{my_earnings_songs}</li>
-                    </ul>
-                );
+                my_earnings_albums = '';
+                my_earnings_artists = '';
+                my_earnings_labels = '';
             } else if (this.hasAccess(['artist'])) {
-                my_earnings_list = (
-                    <ul className='c_my_earnings_tabs tabs'>
-                        <li className='tab col s6'>{my_earnings_songs}</li>
-                        <li className='tab col s6'>{my_earnings_albums}</li>
-                    </ul>
-                );
+                my_earnings_artists = '';
+                my_earnings_labels = '';
             } else if (this.hasAccess(['record_label'])) {
-                my_earnings_list = (
-                    <ul className='c_my_earnings_tabs tabs'>
-                        <li className='tab col s4'>{my_earnings_songs}</li>
-                        <li className='tab col s4'>{my_earnings_albums}</li>
-                        <li className='tab col s4'>{my_earnings_artists}</li>
-                    </ul>
-                );
+                my_earnings_labels = '';
             } else if (this.hasAccess(['admin'])) {
-                my_earnings_list = (
-                    <ul className='c_my_earnings_tabs tabs'>
-                        <li className='tab col s3'>{my_earnings_songs}</li>
-                        <li className='tab col s3'>{my_earnings_albums}</li>
-                        <li className='tab col s3'>{my_earnings_artists}</li>
-                        <li className='tab col s3'>{my_earnings_labels}</li>
-                    </ul>
-                );
+                
             }
+            earnings_list = (
+                    <div className="col s12">
+                        <ul className='tabs default-tab'>
+                            {my_earnings_songs}
+                            {my_earnings_albums}
+                            {my_earnings_artists}
+                            {my_earnings_labels}
+                        </ul>
+                        <ul className='tabs mobile-tab'>
+                            {my_earnings_songs}
+                            {my_earnings_albums}
+                            {more_tab}
+                        </ul>
+                    </div>
+                );
             return (
                 <div className='c_body'>
                     <div className='c_header z-depth-1'>
@@ -60,10 +100,9 @@ var React = require('react'),
                             <h4 className='white-text'>My Earnings</h4>
                             <div className='c_links'>
                                 <div className="row">
-                                    {my_earnings_list}
+                                {earnings_list}
                                 </div>
                             </div>
-                            <Search />
                         </div>
                     </div>
                     <div className='container c_main_container z-depth-1'>
