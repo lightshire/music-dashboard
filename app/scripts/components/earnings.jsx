@@ -26,10 +26,7 @@ var React = require('react'),
 
                 my_earnings_songs = (
                         <li className='tab col s3'>
-                            <Link 
-                                to='my.earnings.songs' 
-                                className='waves-effect waves-white btn-flat white-text c_tabs'>Tracks
-                            </Link>
+                            <Link to='my.earnings.songs' className='waves-effect waves-white btn-flat white-text c_tabs'>Tracks</Link>
                         </li>
                 );
 
@@ -103,7 +100,7 @@ var React = require('react'),
                             <h4 className='white-text'>My Earnings</h4>
                             <div className='c_links'>
                                 <div className="row">
-                                {earnings_list}
+                                    {earnings_list}
                                 </div>
                             </div>
                         </div>
