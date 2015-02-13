@@ -10,7 +10,6 @@ var React = require('react'),
         render: function() {
             var album_earnings_data = ([
                 {
-                    image : 'http://placehold.it/50x50',
                     title : 'Album 1',
                     artist : 'Artist 1',
                     track_count : 144,
@@ -20,7 +19,6 @@ var React = require('react'),
                     downloads : 1542
                 },
                 {
-                    image : 'http://placehold.it/50x50',
                     title : 'Album 2',
                     artist : 'Artist 1',
                     track_count : 144,
@@ -30,7 +28,6 @@ var React = require('react'),
                     downloads : 1542
                 },
                 {
-                    image : 'http://placehold.it/50x50',
                     title : 'Album 3',
                     artist : 'Artist 1',
                     track_count : 144,
@@ -43,7 +40,12 @@ var React = require('react'),
             label_earnings =  _.map(album_earnings_data, function(data, i){
                 return (
                     <tr className='c_row_admin_artists'>
-                        <td><img className="c_labels_image" src={data.image} /></td>
+                        <td>
+                            <div>
+                                <i className="mdi-av-play-arrow"></i>
+                                <i className="mdi-content-add"></i>
+                            </div>                        
+                        </td>
                         <td>{data.title}</td>
                         <td>{data.artist}</td>
                         <td>{data.track_count}</td>
@@ -61,7 +63,7 @@ var React = require('react'),
             return (
                 <div>
                     <div className="row"><br/>
-                        <div className="col s6">
+                        <div className="col s12 m6 l6">
                             <label>Month</label>
                             <select>
                                 <option value="" disabled selected>Choose month</option>
@@ -70,7 +72,7 @@ var React = require('react'),
                                 <option value="3">March</option>
                             </select>
                         </div>
-                        <div className="col s6">
+                        <div className="col s12 m6 l6">
                             <label>Year</label>
                             <select>
                                 <option value="" disabled selected>Choose year</option>
@@ -81,10 +83,10 @@ var React = require('react'),
                         </div>
                     </div>
                     <div className='table'>
-                        <table>
+                        <table className='responsive-table'>
                             <thead>
                                 <tr>
-                                    <th></th>
+                                    <th ></th>
                                     <th className='grey-text text-lighten-1'>Album</th>
                                     <th className='grey-text text-lighten-1'>Artist</th>
                                     <th className='grey-text text-lighten-1'>Tracks</th>

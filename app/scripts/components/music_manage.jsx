@@ -4,6 +4,9 @@ var React = require('react'),
     RouteHandler = Router.RouteHandler,
     Link = Router.Link,
     TrackActions = require('../actions/track_actions'),
+    AlbumActions = require('../actions/album_actions'),
+    ArtistActions = require('../actions/artist_actions'),
+    LabelActions = require('../actions/label_actions'),
     Search = require('./helpers/search'),
     Actions = require('./modals/action_modal'),
     CreateArtist = require('./modals/create_artist_modal'),
@@ -16,7 +19,7 @@ var React = require('react'),
     Constrainable = require('./mixins/constrainable'),
     ModalActions = require('../actions/modal_actions'),
     MusicManager = React.createClass({
-        mixins: [Constrainable],
+        mixins: [Constrainable, Router.Navigation],
         statics: {
             redirectTo: 'signin',
             required_login: true,
@@ -25,6 +28,22 @@ var React = require('react'),
         handleAddTracks: function() {
             TrackActions.addTracks();
             ModalActions.dismiss();
+            this.transitionTo('music.manager.songs');
+        },
+        handleAddAlbum: function() {
+            AlbumActions.addTracks();
+            ModalActions.dismiss();
+            this.transitionTo('music.manager.albums');
+        },
+        handleAddArtist: function() {
+            ArtistActions.addTracks();
+            ModalActions.dismiss();
+            this.transitionTo('music.manager.artists');
+        },
+        handleAddLabel: function() {
+            LabelActions.addTracks();
+            ModalActions.dismiss();
+            this.transitionTo('music.manager.labels');
         },
         actionModal: function() {
             ModalActions.show(<Actions
@@ -37,16 +56,19 @@ var React = require('react'),
         createAlbumModal: function() {
             ModalActions.show(<CreateAlbum
                             key='createalbum'
+                            handleAddAlbum={this.handleAddAlbum}
                             cancelHandler={this.cancelHandler} />, 'createalbum_modal' );
         },
         createArtistModal: function() {
             ModalActions.show(<CreateArtist
                             key='createartist'
+                            handleAddArtist={this.handleAddArtist}
                             cancelHandler={this.cancelHandler} />, 'createartist_modal' );
         },
         createRecordLabelModal: function() {
             ModalActions.show(<CreateRecordLabel
                             key='createrecordlabel'
+                            handleAddLabel={this.handleAddLabel}
                             cancelHandler={this.cancelHandler} />, 'createrecordlabel_modal' );
         },
         showModal: function() {
