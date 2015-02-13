@@ -40,12 +40,14 @@
 
 .c_links .btn-flat {
     border-radius: 0;
+} 
 
 .c_body {
     .container {
         padding: 0;
     }
 }
+
 .c_links {
     margin-top: 45px;
     .tabs {
@@ -107,7 +109,7 @@
     border-bottom: 4px solid $accent-color;
 }
 .c_labels_image {
-	border-radius: 100%;
+    border-radius: 100%;
 }
 
 #upload {
