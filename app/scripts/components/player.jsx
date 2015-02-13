@@ -99,6 +99,30 @@ var React = require('react/addons'),
                     : 'Choose a track';
                 playlist = (
                     <div className={this.state.status.modal === 'playlist' ? 'playlist' : 'playlist hide'}>
+
+                        <div className='c_panel_inner hide-on-med-and-up'>
+                            <div className='row'>
+                                <div className='col s2 m2 l2'>&nbsp;</div>
+                                <div className='col s2 m3 l2'><a className='grey-text' href='#' onClick={this.handlePreviousTrack}><i className='mdi-av-skip-previous' /></a></div>
+                                <div className='col s2 m3 l2'><a className='grey-text' href='#' onClick={this.handleTogglePlay}><i className={this.state.status.play ? 'mdi-av-pause' : 'mdi-av-play-arrow'} /></a></div>
+                                <div className='col s2 m3 l2'><a className='grey-text' href='#' onClick={this.handleNextTrack}><i className='mdi-av-skip-next' /></a></div>
+                                <div className='col s2 m1 l2'>&nbsp;</div>
+                            </div>
+                        </div>
+                        <div className='c_control_div hide-on-med-and-up'>
+                            <div className='row'>
+                                <div className='volume-control-inner'>
+                                    <div className='row'>
+                                        <div className='col s2 down'><i className='mdi-av-volume-down' /></div>
+                                        <div className='col s8'>
+                                            <input type='range' ref='volume_control' onChange={this.handleVolumeChange} className='volume' min='0' max='100' value={this.state.status.volume * 100} />
+                                        </div>
+                                        <div className='col s2 up'><i className='mdi-av-volume-up' /></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div className='track-info'>
                             <div className='title'><i>Now Playing: <b>{track_title}</b></i></div><br/>
                             <div className='row seek-container'>
@@ -145,12 +169,12 @@ var React = require('react/addons'),
                 <div className='player'>
                     {audio}
                     <ul>
-                        <li className='btn-volume-control'><a href='#' onClick={this.handleToggleVolumeControl}><i className='mdi-av-volume-up' /></a>
+                        <li className='hide-on-small-and-down btn-volume-control'><a href='#' onClick={this.handleToggleVolumeControl}><i className='mdi-av-volume-up' /></a>
                             {volume_control}
                         </li>
-                        <li className='btn-previous-track'><a href='#' onClick={this.handlePreviousTrack}><i className='mdi-av-skip-previous' /></a></li>
-                        <li className='btn-toggle-play'><a href='#' onClick={this.handleTogglePlay}><i className={this.state.status.play ? 'mdi-av-pause' : 'mdi-av-play-arrow'} /></a></li>
-                        <li className='btn-next-track'><a href='#' onClick={this.handleNextTrack}><i className='mdi-av-skip-next' /></a></li>
+                        <li className='hide-on-small-and-down btn-previous-track'><a href='#' onClick={this.handlePreviousTrack}><i className='mdi-av-skip-previous' /></a></li>
+                        <li className='hide-on-small-and-down btn-toggle-play'><a href='#' onClick={this.handleTogglePlay}><i className={this.state.status.play ? 'mdi-av-pause' : 'mdi-av-play-arrow'} /></a></li>
+                        <li className='hide-on-small-and-down btn-next-track'><a href='#' onClick={this.handleNextTrack}><i className='mdi-av-skip-next' /></a></li>
                         <li className="btn-show-playlist">
                             <a href='#' onClick={this.handleTogglePlaylist}><i className='mdi-navigation-more-vert' /></a>
                             {playlist}
