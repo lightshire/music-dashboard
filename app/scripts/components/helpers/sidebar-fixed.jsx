@@ -68,7 +68,7 @@ var React = require('react/addons'),
             if (!this.hasAccess(['admin', 'artist', 'general_user', 'record_label'])) {
                 return (
                     <div className='side-bar zindex_supertop'>
-                        <ul id='nav-mobile' className='side-nav fixed'>  
+                        <ul id='nav-mobile' className='side-nav fixed'>
                             <li className='sidebar-li'>
                                 <Link to='signin' className='waves-effect waves-blue collapsible-header collapse-link' onClick={this.activeSidebarHome}>Sign in</Link>
                             </li>
@@ -79,10 +79,6 @@ var React = require('react/addons'),
 
             if (this.hasAccess(['admin'])) {
                 my_account_upgrade = '';
-                my_earnings_songs = (<li><Link to='admin.my.earnings.songs' className='waves-effect waves-blue collapsed-link'>Tracks</Link></li>),
-                my_earnings_albums = (<li><Link to='admin.my.earnings.albums' className='waves-effect waves-blue collapsed-link'>Albums</Link></li>),
-                my_earnings_artists = (<li><Link to='admin.my.earnings.artists' className='waves-effect waves-blue collapsed-link'>Artists</Link></li>),
-                my_earnings_labels = (<li><Link to='admin.my.earnings.labels' className='waves-effect waves-blue collapsed-link'>Record Labels</Link></li>);
             } else if (this.hasAccess(['artist'])) {
                 music_manager_artists = '';
                 music_manager_labels = '';
@@ -103,14 +99,15 @@ var React = require('react/addons'),
 
             return (
                 <div className='side-bar zindex_supertop'>
-                    
                     <ul id='nav-mobile' className='side-nav fixed'>
-                    <div className='logo-container col l2'>
-                        <img src='images/def-logo.svg'/>       
-                    </div>  
+                        <li className='no-hover'>
+                            <div className='logo-container col l2'>
+                                <img src='images/def-logo.svg'/>
+                            </div>
+                        </li>
                         <li className='sidebar-li'>
                             <Link to='home' className='sidebarHome waves-effect waves-blue collapsible-header collapse-link' onClick={this.activeSidebarHome}>Home</Link>
-                        </li>                   
+                        </li>
                         <li className='sidebar-li'>
                             <ul className='collapsible collapsible-accordion'>
                                 <li className='sidebar-li'>
@@ -146,9 +143,6 @@ var React = require('react/addons'),
                                     </div>
                                 </li>
                             </ul>
-                        </li>   
-                        <li className='side-nav'>
-                            <Link to='temp.admin' className='waves-effect waves-blue'> TempAdmin </Link>
                         </li>
                     </ul>
                     <a id='burger-button' href='#' data-activates="nav-mobile" className="button-collapse"><i className='mdi-navigation-menu'></i></a>

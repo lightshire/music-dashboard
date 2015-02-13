@@ -1,6 +1,4 @@
 .c_main_container {
-    // margin-top: -1px;
-    // border: 1px solid $div-border;
     background: $white;
 }
 .c_global_floating_button {
@@ -20,7 +18,6 @@
 .c_modal_buttons {
     margin-right: 10px;
 }
-
 .c_upload_music_file_modal, {
     margin-top: 110px;
     margin-bottom: 100px;
@@ -35,8 +32,10 @@
     border-radius: 0;
 } 
 .c_body {
-    .container {
-        padding: 0;
+    .c_header {
+        .container {
+            padding: 0;
+        }
     }
 }
 .c_links {
@@ -80,7 +79,6 @@
         background: #ffff;
         height: 40px;
     }
-
 }
 .more {
     background: none;
@@ -95,32 +93,26 @@
         background: none;
     }
 }
-
 .c_tabs {
     margin-right: 20px;
 }
-
 .c_tabs.active {
     border-bottom: 4px solid $accent-color;
 }
 .c_labels_image {
     border-radius: 100%;
 }
-
 #upload {
     visibility: hidden;
     width: 1px;
     height: 1px;
 }
-
 .c_table_buttons i {
     cursor: pointer;
 }
-
 .c_track_terms {
     text-align: justify;
 }
-
 .c_i_agree {
     margin-top: 80px;
 }

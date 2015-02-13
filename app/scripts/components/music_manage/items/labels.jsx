@@ -23,14 +23,14 @@ var React = require('react'),
         render: function() {
             return (
                 <tr className='songs'>
-                    <td>
+                    <td data-column-title='Avatar'>
                         <img className='circle' src={this.props.avatar} />
                     </td>
-                    <td>{this.props.artist}</td>
-                    <td>{this.props.albums}</td>
-                    <td>{this.props.tracks}</td>
+                    <td data-column-title='Artists'>{this.props.artist}</td>
+                    <td data-column-title='Albums'>{this.props.albums}</td>
+                    <td data-column-title='Tracks'>{this.props.tracks}</td>
                     <td>{this.props.added}</td>
-                    <td>
+                    <td data-column-title='Actions'>
                         <div className='right-align'>
                             <i className='mdi-editor-mode-edit'></i>
                             <i onClick={this.deleteModal} className='mdi-action-delete'></i>

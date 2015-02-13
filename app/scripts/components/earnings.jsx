@@ -28,10 +28,11 @@ var React = require('react'),
                         <li className='tab col s3'>
                             <Link 
                                 to='my.earnings.songs' 
-                                className='waves-effect waves-white btn-flat white-text c_tabs'>Tracks
+                                className='waves-effect waves-white btn-flat white-text c_tabs'>Songs
                             </Link>
                         </li>
                 );
+
                 my_earnings_albums = (
                         <li className='tab col s3'>
                             <Link 
@@ -40,6 +41,7 @@ var React = require('react'),
                             </Link>
                         </li>
                 );
+
                 my_earnings_artists = (
                         <li className='tab col s3'>
                             <Link 
@@ -48,6 +50,7 @@ var React = require('react'),
                             </Link>
                         </li>
                 );
+
                 my_earnings_labels = (
                         <li className='tab col s3'>
                             <Link 
@@ -106,6 +109,11 @@ var React = require('react'),
                         </div>
                     </div>
                     <div className='container c_main_container z-depth-1'>
+                        <div className='upload-btn-earnings right-align'>
+                            <a className='btn-floating btn-large waves-effect waves-light red lighten-2'>
+                                <i className='mdi-content-add'></i>
+                            </a>
+                        </div>
                         <RouteHandler />
                     </div>
                 </div>

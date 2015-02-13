@@ -221,7 +221,7 @@ var React = require('react'),
                         <div className='container'>
                             <h4 className='white-text'>Music Manager</h4>
                             <div className='c_links'>
-                                <div className="row">
+                                <div className='row'>
                                     {music_manage_list}
                                 </div>
                             </div>

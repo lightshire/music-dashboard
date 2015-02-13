@@ -69,10 +69,6 @@ var React = require('react/addons'),
 
             if (this.hasAccess(['admin'])) {
                 my_account_upgrade = '';
-                my_earnings_songs = (<li><Link to='admin.my.earnings.songs' className='waves-effect waves-blue collapsed-link'>Tracks</Link></li>),
-                my_earnings_albums = (<li><Link to='admin.my.earnings.albums' className='waves-effect waves-blue collapsed-link'>Albums</Link></li>),
-                my_earnings_artists = (<li><Link to='admin.my.earnings.artists' className='waves-effect waves-blue collapsed-link'>Artists</Link></li>),
-                my_earnings_labels = (<li><Link to='admin.my.earnings.labels' className='waves-effect waves-blue collapsed-link'>Record Labels</Link></li>);
             } else if (this.hasAccess(['artist'])) {
                 music_manager_artists = '';
                 music_manager_labels = '';
@@ -93,10 +89,10 @@ var React = require('react/addons'),
 
             return (
                 <div className='side-bar zindex_supertop'>
-                    <ul className='side-nav'>  
+                    <ul className='side-nav'>
                         <li className='sidebar-li'>
                             <Link to='home' className='waves-effect waves-blue collapsible-header collapse-link' onClick={this.activeSidebarHome}>Home</Link>
-                        </li>                   
+                        </li>
                         <li className='sidebar-li'>
                             <ul className='collapsible collapsible-accordion'>
                                 <li className='sidebar-li'>
@@ -132,7 +128,7 @@ var React = require('react/addons'),
                                     </div>
                                 </li>
                             </ul>
-                        </li>   
+                        </li>
                     </ul>
                 </div>
             );
