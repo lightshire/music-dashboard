@@ -11,7 +11,7 @@ var React = require('react'),
     Signup = React.createClass({
         render: function() {
             return (
-                <div className='container'>
+                <div className='c_sign_up_outer container'>
                     <form action='#'>
                         <div className='row'>
                             <div className='col s12 m12 l12'>
@@ -22,7 +22,7 @@ var React = require('react'),
                             <div className='col s2 m2 l2'>&nbsp;</div>
                             <div className='col s8 m8 l8'>
                                 <div className='card'>
-                                    <div className='c_signup'>
+                                    <div className='c_sign_up_inner'>
                                         <h5 className='c_signin_header'>Create Account</h5>
                                         <InputField
                                             ref='username'

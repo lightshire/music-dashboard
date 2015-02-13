@@ -1,5 +1,14 @@
-.c_signup {
-	margin-top: 40px;
+.c_sign_in_outer {
+	position: relative;
+	top: 200px;
+}
+.c_sign_up_outer {
+	position: relative;
+	top:110px;
+}
+.c_sign_in_inner, .c_sign_up_inner {
+	padding-top: 15px;
+	padding-bottom: 15px;
 	margin-left: 20px;
 	margin-right: 20px;
 	margin-bottom: 20px;
