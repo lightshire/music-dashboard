@@ -22,7 +22,6 @@
 @import "../vendor/materialize/sass/components/toast";
 @import "../vendor/materialize/sass/components/tabs";
 @import "../vendor/materialize/sass/components/tooltip";
-@import "./components/buttons";
 @import "../vendor/materialize/sass/components/dropdown";
 @import "../vendor/materialize/sass/components/waves";
 @import "../vendor/materialize/sass/components/modal";
@@ -36,3 +35,9 @@
 @import "../vendor/materialize/sass/components/date_picker/default.scss";
 @import "../vendor/materialize/sass/components/date_picker/default.date.scss";
 @import "../vendor/materialize/sass/components/date_picker/default.time.scss";
+
+//Override
+
+@import "./components/buttons";
+@import "./components/global";
+@import "./components/cards";
