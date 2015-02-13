@@ -181,6 +181,11 @@
             } 
         }
     }
+    .modal {
+        .close_modal {
+            display: none;
+        }
+    }
     ul.side-nav.fixed { 
         left : 0px !important;
     }

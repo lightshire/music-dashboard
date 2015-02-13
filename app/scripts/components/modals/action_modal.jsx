@@ -13,8 +13,8 @@ var React = require('react'),
             var content = '',
                 class_name = '',
                 class_space = '',
-                class_s2 = 'col s2 m2 toCenter',
-                class_s3 = 'col s3 m3 toCenter',
+                class_s2 = 'action_icons col s12 m2 l2 toCenter',
+                class_s3 = 'action_icons col s3 m3 l3 toCenter',
                 artist = (
                     <div className={class_s2}>
                         <a className='createHover' onClick={this.props.createArtistModal}>

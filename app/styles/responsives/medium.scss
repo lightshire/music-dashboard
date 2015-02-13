@@ -194,6 +194,70 @@
             } 
         }
     }
+    /*Modal Responsive - start*/
+    .modal {
+        min-height: 40%;
+        padding: 24px 0;
+        .close_modal {
+            display: none;
+        }
+        h4 {
+            font-size: 1.5rem;
+            padding-left: 25px;
+        }
+        div {
+            text-align: center;
+            margin-bottom: 0;
+           div {
+                .action_icons {
+                    width: 50% !important;
+                }
+                .action_icons:first-child, .action_icons:last-child {
+                    display: none;
+                }
+           } 
+        }
+        .c_upload_music_file_modal {
+            text-align: center;
+            margin: 0 auto 40px;
+            p {
+                margin: 0;
+            }
+            .c_upload_music_file_modal_h {
+                display: none;
+            }
+            .c_select_a_track_button {
+                font-size: .8rem;
+            }
+            h5 {
+                font-size: 1.3rem;
+            }
+            h6 {
+                font-size: .8rem;
+            }
+            .input-field, .selectfield {
+                margin-top: 0;
+                label {
+                    font-size: .8rem;
+                }
+                textarea {
+                    overflow-y: auto; 
+                }
+            }
+        }
+    }
+
+    .res_up_img div {
+        display: block;
+        width: 100% !important;
+        p {
+            font-size: .8rem;
+        }
+        div {
+            text-align: center;
+        }
+    }
+    /*Modal Responsive - end*/
     ul.side-nav.fixed {
         left : -250px;
     }
