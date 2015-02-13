@@ -226,12 +226,6 @@ var React = require('react'),
                                 </div>
                             </div>
                             <Search />
-                            <div onClick={modal_trigger} className='upload-btn right-align'>
-                                <a className='btn-floating btn-large waves-effect waves-light'>
-                                    {floating_btn_up}
-                                    {floating_btn_add}
-                                </a>
-                            </div>
                         </div>
                     </div>
                     <div className='container c_main_container z-depth-1'>

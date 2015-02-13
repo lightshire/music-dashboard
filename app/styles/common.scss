@@ -3,19 +3,20 @@
     // border: 1px solid $div-border;
     background: $white;
 }
-
+.c_global_floating_button {
+    position: absolute;
+    top: 225px;
+    right: 120px;
+}
 .c_first_button {
     width: 100%;
 }
-
 .c_header {
     background: $primary-color;
 }
-
 .c_header .container h4 {
     margin-top: 0;
 }
-
 .c_modal_buttons {
     margin-right: 10px;
 }
@@ -24,32 +25,23 @@
     margin-top: 110px;
     margin-bottom: 100px;
 }
-
 .c_select_a_track_button {
     margin-top: 10px;
 }
-
 .container{
     position: relative;
 }
-
-.c_links {
-    margin-top: 45px;
-    margin-bottom: -61px;
-}
-
 .c_links .btn-flat {
     border-radius: 0;
 } 
-
 .c_body {
     .container {
         padding: 0;
     }
 }
-
 .c_links {
-    margin-top: 45px;
+    position: relative;
+    top: 40px;
     .tabs {
         background: none;
         li {
@@ -67,6 +59,9 @@
     .row {
         margin-bottom: 0px;
     }
+}
+.c_my_earnings_tab {
+    width: 97%
 }
 #moreTab {
     height: 80px;
