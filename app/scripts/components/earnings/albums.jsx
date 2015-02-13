@@ -32,7 +32,7 @@ var React = require('react'),
             });
             return (
                 <div className="table">
-                    <table>
+                    <table className='c_responsive_table'>
                         <thead>
                             <tr>
                                 <th></th>
@@ -46,7 +46,7 @@ var React = require('react'),
                             </tr>
                         </thead>
                         <tbody>
-                        {items}
+                            {items}
                         </tbody>
                     </table>
                 </div>

@@ -40,7 +40,7 @@ var React = require('react'),
             label_earnings =  _.map(track_earnings_data, function(data, i){
                 return (
                     <tr className='c_row_admin_artists'>
-                        <td>            
+                        <td>
                             <div>
                                 <i className="mdi-av-play-arrow"></i>
                                 <i className="mdi-content-add"></i>

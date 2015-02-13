@@ -15,7 +15,7 @@ var React = require('react'),
         render: function() {
             var my_earnings_songs = (
                     <li className='tab col s3'>
-                        <Link to='my.earnings.songs' className='waves-effect waves-white btn-flat white-text c_tabs'>Songs</Link>
+                        <Link to='my.earnings.songs' className='waves-effect waves-white btn-flat white-text c_tabs'>Tracks</Link>
                     </li>
                 ),
                 my_earnings_albums = (
@@ -52,12 +52,14 @@ var React = require('react'),
                             <h4 className='white-text'>My Earnings</h4>
                             <div className='c_links'>
                                 <div className='row'>
-                                    <ul className='tabs default-tab'>
-                                        {my_earnings_songs}
-                                        {my_earnings_albums}
-                                        {my_earnings_artists}
-                                        {my_earnings_labels}
-                                    </ul>
+                                    <div className='col s12'>
+                                        <ul className='tabs default-tab'>
+                                            {my_earnings_songs}
+                                            {my_earnings_albums}
+                                            {my_earnings_artists}
+                                            {my_earnings_labels}
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                             <Search />

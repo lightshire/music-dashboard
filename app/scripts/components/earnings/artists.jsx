@@ -1,11 +1,10 @@
 'use strict';
 var React = require('react'),
-    _ = require('lodash'),
     MyEarningsArtists = React.createClass({
         render: function() {
             return (
                 <div className="table">
-                    <table>
+                    <table className='c_responsive_table'>
                         <thead>
                             <tr>
                                 <th></th>
