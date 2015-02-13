@@ -7,6 +7,7 @@ var React = require('react/addons'),
     TopBar = require('../helpers/topbar'),
     SideBar = require('../helpers/sidebar-fixed'),
     ModalWrapper = require('../helpers/modal_wrapper'),
+    GlobalFloatingButton = require('../helpers/global_floating_button'),
     getStateFromStore = function() {
         return {
             layout: LayoutStore.getAll()
@@ -35,8 +36,8 @@ var React = require('react/addons'),
                         <div className={this.state.layout.sidebar ? 'main-route-container' : 'main-route-container no-sidebar'}>
                             <RouteHandler />
                         </div>
+                        <GlobalFloatingButton />
                     </div>
-
                     <ModalWrapper />
                 </div>
             );

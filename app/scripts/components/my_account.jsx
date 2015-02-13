@@ -19,7 +19,6 @@ var React = require('react/addons'),
                 account_list = '';
 
             if (this.hasAccess(['admin'])) {
-                my_account_upgrade = '';
                 account_list = (
                     <ul className='tabs'>
                         <li className='tab col s6'>{my_account_settings}</li>
@@ -27,11 +26,26 @@ var React = require('react/addons'),
                     </ul>
                 );
             } else if (this.hasAccess(['record_label'])) {
-                my_account_upgrade = '';
                 account_list = (
                     <ul className='tabs'>
                         <li className='tab col s6'>{my_account_settings}</li>
                         <li className='tab col s6'>{my_account_security}</li>
+                    </ul>
+                );
+            } else if (this.hasAccess(['general_user'])) {
+                account_list = (
+                    <ul className='tabs'>
+                        <li className='tab col s4'>{my_account_settings}</li>
+                        <li className='tab col s4'>{my_account_security}</li>
+                        <li className='tab col s4'>{my_account_upgrade}</li>
+                    </ul>
+                );
+            } else if (this.hasAccess(['artist'])) {
+                account_list = (
+                    <ul className='tabs'>
+                        <li className='tab col s4'>{my_account_settings}</li>
+                        <li className='tab col s4'>{my_account_security}</li>
+                        <li className='tab col s4'>{my_account_upgrade}</li>
                     </ul>
                 );
             }
@@ -41,7 +55,6 @@ var React = require('react/addons'),
                     <div className='c_header z-depth-1'>
                         <div className='container'>
                             <h4 className='white-text'>My Account</h4>
-
                             <div className='c_links'>
                                 <div className="row">
                                     <div className="col s12">
@@ -49,16 +62,9 @@ var React = require('react/addons'),
                                     </div>
                                 </div>     
                             </div>
-
-
                         </div>
                     </div>
                     <div className='container c_main_container z-depth-1'>
-                        <div className='upload-btn right-align'>
-                            <a className='btn-floating btn-large waves-effect waves-light'>
-                                <i className='mdi-hardware-keyboard-arrow-up'></i>
-                            </a>
-                        </div>
                         <RouteHandler />
                     </div>
                 </div>
