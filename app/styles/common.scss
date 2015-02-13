@@ -1,6 +1,4 @@
 .c_main_container {
-    // margin-top: -1px;
-    // border: 1px solid $div-border;
     background: $white;
 }
 
@@ -43,8 +41,10 @@
 } 
 
 .c_body {
-    .container {
-        padding: 0;
+    .c_header {
+        .container {
+            padding: 0;
+        }
     }
 }
 

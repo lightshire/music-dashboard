@@ -143,9 +143,6 @@ var React = require('react/addons'),
                                     </div>
                                 </li>
                             </ul>
-                        </li>   
-                        <li className='side-nav'>
-                            <Link to='temp.admin' className='waves-effect waves-blue'> TempAdmin </Link>
                         </li>
                     </ul>
                     <a id='burger-button' href='#' data-activates="nav-mobile" className="button-collapse"><i className='mdi-navigation-menu'></i></a>

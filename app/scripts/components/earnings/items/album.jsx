@@ -1,29 +1,28 @@
 'use strict';
 var React = require('react'),
-    TrackActions = require('../../../actions/track_actions'),
     Albums = React.createClass({
         handleDeleteTracks: function() {
-            TrackActions.deleteTracks(this.props.id);
         },
         render: function() {
             return (
-                <tr className="albums">
+                <tr className='c_row_admin_artists'>
                     <td>
                         <div>
                             <i className="mdi-av-play-arrow"></i>
                             <i className="mdi-content-add"></i>
                         </div>
                     </td>
-                    <td data-column-table='Album' href="/album1">Album 1</td>
-                    <td data-column-table='Duration'>04:00</td>
-                    <td data-column-table='Earnings'>$20.00</td>
-                    <td data-column-table='Monetized Since'>JAN. 1, 2015</td>
-                    <td data-column-table='Actions'>
-                        <i className="mdi-action-stars"></i>
-                        <i className="mdi-action-stars"></i>
-                        <i className="mdi-action-stars"></i>
+                    <td data-column-title='Title'>{this.props.title}</td>
+                    <td data-column-title='Artist'>{this.props.artist}</td>
+                    <td data-column-title='Tracks'>{this.props.track_count}</td>
+                    <td data-column-title='Earnings'>{this.props.total_earnings}</td>
+                    <td data-column-title='Added'>{this.props.added}</td>
+                    <td>
+                        <i className='mdi-action-stars'></i>
+                        <i className='mdi-action-stars'></i>
+                        <i className='mdi-action-stars'></i>
                     </td>
-                    <td>2,500</td>
+                    <td data-column-title='Downloads'>{this.props.downloads}</td>
                 </tr>
             );
         }
