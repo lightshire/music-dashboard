@@ -1,7 +1,7 @@
 @media #{$small-only} {
     .c_header {
         padding-top: 60px;
-        padding-bottom: 40px;
+        background-color: #90caf9;
     }
     .c_my_account_settings {
         padding-top: 50px;
@@ -302,4 +302,25 @@
 
 
     /*Modal Responsive - end*/
+
+    i.right {
+        margin: 0px;
+    }
+    ul.side-nav.fixed {
+        left : -250px;
+    }
+    .main-route-container {
+        padding-left: 0px !important;
+    }
+    #burger-button {
+        display: block; 
+    }
+    .default-tab {
+        display: none;
+    }
+    .mobile-tab {
+        a {
+            padding: 0;
+        }
+    }
 }

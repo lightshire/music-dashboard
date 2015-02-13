@@ -26,18 +26,6 @@ var React = require('react'),
             user_types: ['admin', 'general_user', 'artist', 'record_label']
         },
         componentDidMount : function() {
-            /*
-            $('.dropdown-button').dropdown({
-                  inDuration: 300,
-                  outDuration: 225,
-                  constrain_width: false,
-                  hover: false,
-                  alignment: 'left',
-                  gutter: 0,
-                  belowOrigin: false
-                }
-            );
-            */
         },
         handleAddTracks: function() {
             TrackActions.addTracks();
@@ -118,6 +106,7 @@ var React = require('react'),
                 music_manager_artists,
                 music_manager_labels,
                 music_manage_list,
+                more_tab,
                 floating_btn_up = (
                     <i className='mdi-file-file-upload'></i>
                 ),
@@ -164,7 +153,15 @@ var React = require('react'),
                         </Link>
                     </li>
                 );
-
+                
+                more_tab = (
+                    <li className='tab col s4 more'><a href='#' className='white-text c_tabs'>MORE<i className="mdi-navigation-arrow-drop-down right"></i></a>
+                        <ul>
+                            {music_manager_artists}
+                            {music_manager_labels}
+                        </ul>
+                    </li>
+                );
 
                 if (this.hasAccess(['artist'])) {
                     modal_trigger = this.actionModal;
@@ -177,6 +174,7 @@ var React = require('react'),
                     music_manager_albums = '';
                     music_manager_artists = '';
                     music_manager_labels = '';
+                    more_tab = '';
                     floating_btn_add = '';
                 }
 
@@ -202,15 +200,7 @@ var React = require('react'),
                         <ul className='tabs mobile-tab'>
                             {music_manager_songs}
                             {music_manager_albums}
-                            <li className='tab col s4'>
-                                <a href='#' className='dropdown-button more' data-activates='moreTab'>
-                                    More <i className="mdi-navigation-arrow-drop-down right"></i>
-                                </a>
-                            </li>
-                        </ul>
-                        <ul id='moreTab' className='dropdown-content'>
-                            {music_manager_artists}
-                            {music_manager_labels}
+                            {more_tab}
                         </ul>
                     </div>
                 );
