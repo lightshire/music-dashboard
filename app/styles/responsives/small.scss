@@ -70,22 +70,21 @@
             }
         }
     }
-    .btn-show-playlist {
+        .btn-show-playlist {
             position: relative;
         }
         .btn-volume-control {
             position: relative;
         }
         .volume-control {
-            left: 17px;
             background: #fff;
             -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
             -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
             box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
             color: $font-color;
             position: absolute;
-            top: 50px;
-            right: 20px;
+            top: 800px;
+            right: -166px;
             width: 200px;
             padding: 0 1em;
             .row {
@@ -93,6 +92,35 @@
             }
         }
         .playlist {
+            .c_panel_inner {
+                border-bottom: 1px solid #ececec;
+                padding-left: 17px;
+                .row {
+                    margin: 0;
+                }
+            }
+            .c_control_div {
+                border-bottom: 1px solid #ececec;
+                .row {
+                    margin: 0;
+                    .down {
+                        i {
+                            position: relative;
+                            top: 2px;
+                            left: 30px;
+                            color: gray;
+                        }
+                    }
+                    .up {
+                        i {
+                            position: relative;
+                            top: 2px;
+                            right: 14px;
+                            color: gray;
+                        }
+                    }
+                }
+            }
             background: #fff;
             -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
             -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
@@ -100,7 +128,7 @@
             color: $font-color;
             position: absolute;
             top: 50px;
-            right: 15px;
+            right: -216px;
             width: 300px;
             .track-info {
                 .title {
