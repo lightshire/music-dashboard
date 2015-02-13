@@ -53,7 +53,7 @@ var React = require('react'),
             return (
                 <div>
                     <div className='row'><br/>
-                        <div className='selectfield col s12 m6 l6'>
+                        <div className='selectfield col s12 m6'>
                             <label>Month</label>
                             <select>
                                 <option value='' disabled selected>Choose month</option>
@@ -62,7 +62,7 @@ var React = require('react'),
                                 <option value='3'>March</option>
                             </select>
                         </div>
-                        <div className='selectfield col s12 m6 l6'>
+                        <div className='selectfield col s12 m6'>
                             <label>Year</label>
                             <select>
                                 <option value='' disabled selected>Choose year</option>
