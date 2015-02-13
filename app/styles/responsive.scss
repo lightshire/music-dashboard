@@ -8,29 +8,57 @@
 	.main-route-container {
 		padding-left: 0px !important;
 	}
-	#burger-button {display: block !important; }
+	#burger-button {
+		display: block; 
+	}
+	.default-tab {
+		display: none;
+	}
+	.mobile-tab {
+		a {
+			padding: 0;
+		}
+	}
 }
+
 @media #{$medium-and-up} {
   // styles for medium screens and larger
     ul.side-nav.fixed {	
 		left : 0px;
 	}
+	.mobile-tab {
+		display: block;
+	}
 }
+
 @media #{$medium-only}{
   // styles for medium screens and down
 	ul.side-nav.fixed {
 		left : -250px;
 	}
-	.main-route-container{
+	.main-route-container {
 		padding-left: 0px !important;
 	}
-	#burger-button{display: block !important;}
+	#burger-button {
+		display: block;
+	}
+	.mobile-tab {
+		display: none;
+	}
+	.default-tab {
+		display: block;
+	}
 }
-
 
 @media #{$large-and-up} {
   // styles for large screens and up
-  ul.side-nav.fixed {	
+	ul.side-nav.fixed {	
 		left : 0px !important;
+	}
+	.mobile-tab {
+		display: none;
+	}
+	.default-tab {
+		display: block;
 	}
 }
