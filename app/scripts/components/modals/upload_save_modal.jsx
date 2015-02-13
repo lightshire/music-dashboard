@@ -10,19 +10,14 @@ var React = require('react'),
             required_login: true,
             user_types: ['admin', 'general_user', 'artist', 'record_label']
         },
-        componentDidMount: function () {
-            $(document).ready(function() {
-                $('select').material_select();
-            });
-        },
         render: function() {
             var content = '',
                 button = '',
                 add = this.props.handleAddTracks,
                 cancel = this.props.cancelHandler,
                 album = (
-                    <span>
-                        <label>Choose Artist</label>
+                    <span className='selectfield'>
+                        <label>Choose Album</label>
                         <select>
                             <option value='' disabled selected>Choose your option</option>
                             <option value='1'>Potato Album</option>
@@ -31,7 +26,7 @@ var React = require('react'),
                 ),
 
                 artist = (
-                    <span>
+                    <span className='selectfield'>
                         <label>Choose Artist</label>
                         <select>
                             <option value='' disabled selected>Choose your option</option>
@@ -41,7 +36,7 @@ var React = require('react'),
                 ),
 
                 label = (
-                    <span>
+                    <span className='selectfield'>
                         <label>Choose Record Label</label>
                         <select>
                             <option value='' disabled selected>Choose your option</option>
@@ -49,6 +44,12 @@ var React = require('react'),
                         </select>
                     </span>
                 );
+
+            if (this.hasAccess(['general_user'])) {
+                album = '';
+                artist = '';
+                label = '';
+            }
 
             if (this.hasAccess(['artist'])) {
                 artist = '';
