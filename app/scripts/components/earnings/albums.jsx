@@ -1,59 +1,99 @@
 'use strict';
 var React = require('react'),
-    Albums = require('./items/album'),
     _ = require('lodash'),
-    AlbumStore = require('../../stores/album_stores'),
-    getStateFromStore = function() {
-        return {
-            albums: AlbumStore.getAll()
-        };
-    },
-    MusicManagerAlbums = React.createClass({
-        getInitialState: function() {
-            return getStateFromStore();
-        },
-        componentDidMount: function() {
-            this.unsubscribe = AlbumStore.listen(this._onChange);
-        },
-        componentWillUnmount: function() {
-            this.unsubscribe();
+    Album = require('./items/album'),
+    MyEarningsAlbums = React.createClass({
+        componentDidMount: function () {
         },
         render: function() {
-            var data = this.state.albums,
-            items = _.map(data, function(item) {
-                return (<Albums
-                    id={item.id}
-                    albums={item.title}
-                    artists={item.artist}
-                    time={item.time}
-                    label={item.label}
-                    genre={item.genre}
-                    uploaded={item.date_uploaded} />);
+            var album_earnings_data = ([
+                {
+                    id : 1,
+                    title : 'Album 1',
+                    artist : 'Artist 1',
+                    track_count : 144,
+                    total_earnings : '$80.00',
+                    added : 'JAN. 15, 2015',
+                    rating : 3,
+                    downloads : 1542
+                },
+                {
+                    id : 2,
+                    title : 'Album 2',
+                    artist : 'Artist 1',
+                    track_count : 144,
+                    total_earnings : '$80.00',
+                    added : 'JAN. 15, 2015',
+                    rating : 3,
+                    downloads : 1542
+                },
+                {
+                    id : 3,
+                    title : 'Album 3',
+                    artist : 'Artist 1',
+                    track_count : 144,
+                    total_earnings : '$80.00',
+                    added : 'JAN. 15, 2015',
+                    rating : 3,
+                    downloads : 1542
+                },
+            ]),
+            label_earnings =  _.map(album_earnings_data, function(data){
+                return (
+                    <Album id={data.id}
+                        title={data.title}
+                        artist={data.artist}
+                        track_count={data.track_count}
+                        total_earnings={data.total_earnings}
+                        added={data.added}
+                        downloads={data.downloads}/>
+                );
             });
+
             return (
-                <div className="table">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th className="grey-text text-lighten-1">Album</th>
-                                <th className="grey-text text-lighten-1">Duration</th>
-                                <th className="grey-text text-lighten-1">Earnings (Monthly) <i className="mdi-navigation-more-vert"></i></th>
-                                <th className="grey-text text-lighten-1">Monetized Since</th>
-                                <th className="grey-text text-lighten-1">Rating</th>
-                                <th className="grey-text text-lighten-1">Downloads</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        {items}
-                        </tbody>
-                    </table>
+                <div>
+                    <div className="row"><br/>
+                        <div className="col s12 m6 l6">
+                            <label>Month</label>
+                            <select>
+                                <option value="" disabled selected>Choose month</option>
+                                <option value="1">January</option>
+                                <option value="2">February</option>
+                                <option value="3">March</option>
+                            </select>
+                        </div>
+                        <div className="col s12 m6 l6">
+                            <label>Year</label>
+                            <select>
+                                <option value="" disabled selected>Choose year</option>
+                                <option value="1">2014</option>
+                                <option value="2">2013</option>
+                                <option value="3">2012</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div className='table'>
+                        <table className='c_responsive_table'>
+                            <thead>
+                                <tr>
+                                    <th ></th>
+                                    <th className='grey-text text-lighten-1'>Album</th>
+                                    <th className='grey-text text-lighten-1'>Artist</th>
+                                    <th className='grey-text text-lighten-1'>Tracks</th>
+                                    <th className='grey-text text-lighten-1'>Total Earnings</th>
+                                    <th className='grey-text text-lighten-1'>Added</th>
+                                    <th className='grey-text text-lighten-1'>Rating</th>
+                                    <th className='grey-text text-lighten-1'>Downloads</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {label_earnings}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             );
-        },
-        _onChange: function() {
-            this.setState(getStateFromStore());
         }
     });
-module.exports =  MusicManagerAlbums;
+
+module.exports =  MyEarningsAlbums;
