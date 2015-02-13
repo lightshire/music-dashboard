@@ -1,6 +1,10 @@
 'use strict';
 var React = require('react'),
+    ModalActions = require('../../actions/modal_actions'),
     Modal = React.createClass({
+        cancelHandler: function() {
+            ModalActions.dismiss();
+        },
         render: function() {
             var buttons = '';
 
@@ -16,6 +20,7 @@ var React = require('react'),
 
             return (
                 <div id={this.props.id} className='modal'>
+                    <i onClick={this.cancelHandler} className='close_modal small mdi-content-clear'></i>
                     <h4>{this.props.title}</h4>
                     {this.props.content}
                     {buttons}

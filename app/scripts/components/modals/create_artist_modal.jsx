@@ -29,7 +29,7 @@ var React = require('react'),
                     <div className='row'>                        
                         <div className='col s12'>
                             <p className='toLeft'>Upload an artist photo</p>
-                            <div className='row'>
+                            <div className='res_up_img row'>
                                 <div className='col s3 toLeft'>
                                     <img src='http://placehold.it/100x100' />
                                 </div>

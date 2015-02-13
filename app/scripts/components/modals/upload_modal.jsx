@@ -12,8 +12,8 @@ var React = require('react'),
                 <div className='container center-align c_upload_music_file_modal'>
                     <p>
                         <i className='mdi-file-file-upload large'></i>
-                        <h5>Drag a music file here</h5>
-                        <h6>- or -</h6>
+                        <h5 className='c_upload_music_file_modal_h'>Drag a music file here</h5>
+                        <h6 className='c_upload_music_file_modal_h'>- or -</h6>
                         <a className='waves-effect waves-light btn red lighten-2 c_select_a_track_button'>
                             Select a track from your computer
                         </a>

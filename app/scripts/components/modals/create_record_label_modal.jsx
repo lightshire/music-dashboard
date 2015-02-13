@@ -27,7 +27,7 @@ var React = require('react'),
                         </form>
                     </div>
                     <div className='row'>                        
-                        <div className='col s12'>
+                        <div className='res_up_img col s12'>
                             <p className='toLeft'>Upload a photo</p>
                             <div className='row'>
                                 <div className='col s3 toLeft'>
