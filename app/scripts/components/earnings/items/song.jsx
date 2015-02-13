@@ -1,9 +1,6 @@
 'use strict';
 var React = require('react'),
-    TracksActions = require('../../../actions/track_actions'),
-    Modal = require('../../helpers/modal'),
-    ReactCSSTransitionGroup = React.addons.CSSTransitionGroup,
-    Songs = React.createClass({
+    Song = React.createClass({
         render: function() {
             return (
                 <tr className="songs">
@@ -13,18 +10,19 @@ var React = require('react'),
                             <i className="mdi-content-add"></i>
                         </div>
                     </td>
-                    <td href="/track1">Track 1</td>
-                    <td>04:00</td>
-                    <td>$20.00</td>
-                    <td>JAN. 1, 2015</td>
-                    <td>
+                    <td data-column-title='Track'>{this.props.title}</td>
+                    <td data-column-title='Artist'>{this.props.artist}</td>
+                    <td data-column-title='Album'>{this.props.album}</td>
+                    <td data-column-title='Total Earnings'>{this.props.total_earnings}</td>
+                    <td data-column-title='Added'>{this.props.added}</td>
+                    <td data-column-title='Rating'>
                         <i className="mdi-action-stars"></i>
                         <i className="mdi-action-stars"></i>
                         <i className="mdi-action-stars"></i>
                     </td>
-                    <td>2,500</td>
+                    <td data-column-title='Downloads'>{this.props.downloads}</td>
                 </tr>
             );
         }
     });
-module.exports = Songs;
+module.exports = Song;

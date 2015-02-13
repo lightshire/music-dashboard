@@ -92,21 +92,21 @@ var React = require('react'),
 
             return (
                 <tr className='songs'>
-                    <td>
+                    <td data-column-title=''>
                         <div><i className='mdi-av-play-arrow'></i></div>
                         <div><i className='mdi-content-add'></i></div>
                     </td>
-                    <td>
+                    <td data-column-title='Title'>
                         <Link to='music.manager.album.songs' params={{id: this.props.id}} >
                             {this.props.albums}
                         </Link>
                     </td>
-                    <td>{this.props.artists}</td>
-                    <td>{this.props.time}</td>
-                    <td>{this.props.label}</td>
-                    <td>{this.props.genre}</td>
-                    <td>{this.props.uploaded}</td>
-                    <td>
+                    <td data-column-title='Artist'>{this.props.artists}</td>
+                    <td data-column-title='Time'>{this.props.time}</td>
+                    <td data-column-title='Label'>{this.props.label}</td>
+                    <td data-column-title='Genre'>{this.props.genre}</td>
+                    <td data-column-title='Uploaded'>{this.props.uploaded}</td>
+                    <td data-column-title='Action'>
                         <div className='right-align'>
                             <i onClick={this.showModal} id='earn' className={monetize_class}></i>
                             <i className='mdi-editor-mode-edit'></i>

@@ -1,11 +1,9 @@
 'use strict';
 var React = require('react'),
     _ = require('lodash'),
-    MusicManagerAlbums = React.createClass({
+    Label = require('./items/label'),
+    MyEarningsLabels = React.createClass({
         componentDidMount: function () {
-            $(document).ready(function() {
-                $('select').material_select();
-            });
         },
         render: function() {
             var label_earnings_data = ([
@@ -43,29 +41,23 @@ var React = require('react'),
                     downloads : 1542
                 },
             ]),
-            label_earnings =  _.map(label_earnings_data, function(data, i){
+            label_earnings =  _.map(label_earnings_data, function(data){
                 return (
-                    <tr className='c_row_admin_artists'>
-                        <td><img className="c_labels_image" src={data.image} /></td>
-                        <td>{data.name}</td>
-                        <td>{data.artist_count}</td>
-                        <td>{data.album_count}</td>
-                        <td>{data.track_count}</td>
-                        <td>{data.total_earnings}</td>
-                        <td>{data.artist_since}</td>
-                        <td>
-                            <i className='mdi-action-stars'></i>
-                            <i className='mdi-action-stars'></i>
-                            <i className='mdi-action-stars'></i>
-                        </td>
-                        <td>{data.downloads}</td>
-                    </tr>
+                    <Label image={data.image}
+                        name={data.name}
+                        artist_count={data.artist_count}
+                        album_count={data.album_count}
+                        track_count={data.track_count}
+                        total_earnings={data.total_earnings}
+                        artist_since={data.artist_since} 
+                        downloads={data.downloads}/>
                 );
             });
+
             return (
                 <div>
                     <div className="row"><br/>
-                        <div className="col s6">
+                        <div className="col s12 m6 l6">
                             <label>Month</label>
                             <select>
                                 <option value="" disabled selected>Choose month</option>
@@ -74,7 +66,7 @@ var React = require('react'),
                                 <option value="3">March</option>
                             </select>
                         </div>
-                        <div className="col s6">
+                        <div className="col s12 m6 l6">
                             <label>Year</label>
                             <select>
                                 <option value="" disabled selected>Choose year</option>
@@ -85,7 +77,7 @@ var React = require('react'),
                         </div>
                     </div>
                     <div className='table'>
-                        <table>
+                        <table className='c_responsive_table'>
                             <thead>
                                 <tr>
                                     <th></th>
@@ -109,4 +101,4 @@ var React = require('react'),
             );
         }
     });
-module.exports =  MusicManagerAlbums;
+module.exports =  MyEarningsLabels;

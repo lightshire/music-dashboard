@@ -25,27 +25,22 @@ var React = require('react'),
     MyEarningsArtists = require('./components/earnings/artists'),
     MyEarningsLabels = require('./components/earnings/labels'),
 
-    AdminMyEarningsSongs = require('./components/earnings/admin/songs'),
-    AdminMyEarningsAlbums = require('./components/earnings/admin/albums'),
-    AdminMyEarningsArtists = require('./components/earnings/admin/artists'),
-    AdminMyEarningsLabels = require('./components/earnings/admin/labels'),
-
     Signup = require('./components/signup'),
     Signin = require('./components/signin'),
 
     MusicManagerAlbum = require('./components/music_manage_album'),
     MusicManagerAlbumSongs = require('./components/music_manage_album/songs'),
     MusicManagerAlbumAlbumInfo = require('./components/music_manage_album/albuminfo'),
-    
-    
-    // To be deleted    
+
+
+    // To be deleted
     TempAdmin = require('./components/admin'),
 
     routes = (
         <Route path='/' handler={AppWrapper}>
             <Route path='/' handler={Layout}>
                 <DefaultRoute name='home' handler={Home} />
-                
+
                     <Route name='temp.admin' path='tempadmin' handler={TempAdmin} />
                 <Route name='my.account' path='/my_account' handler={MyAccount}>
                     <DefaultRoute name='my.account.settings' handler={MyAccountSettings} />
@@ -70,11 +65,6 @@ var React = require('react'),
                     <Route name='my.earnings.albums' path='albums' handler={MyEarningsAlbums} />
                     <Route name='my.earnings.artists' path='artists' handler={MyEarningsArtists} />
                     <Route name='my.earnings.labels' path='labels' handler={MyEarningsLabels} />
-
-                    <Route name='admin.my.earnings.songs' path='admin/songs' handler={AdminMyEarningsSongs} />
-                    <Route name='admin.my.earnings.albums' path='admin/albums' handler={AdminMyEarningsAlbums} />
-                    <Route name='admin.my.earnings.artists' path='admin/artists' handler={AdminMyEarningsArtists} />
-                    <Route name='admin.my.earnings.labels' path='admin/labels' handler={AdminMyEarningsLabels} />
                 </Route>
 
             </Route>

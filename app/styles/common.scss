@@ -1,6 +1,4 @@
 .c_main_container {
-    // margin-top: -1px;
-    // border: 1px solid $div-border;
     background: $white;
 }
 
@@ -35,7 +33,7 @@
 
 .c_links {
     margin-top: 45px;
-    margin-bottom: -61px;
+    line-height: 9px;
 }
 
 .c_links .btn-flat {
@@ -43,8 +41,10 @@
 } 
 
 .c_body {
-    .container {
-        padding: 0;
+    .c_header {
+        .container {
+            padding: 0;
+        }
     }
 }
 
