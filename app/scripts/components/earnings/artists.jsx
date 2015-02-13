@@ -56,23 +56,23 @@ var React = require('react'),
 
             return (
                 <div>
-                    <div className="row"><br/>
-                        <div className="col s12 m6 l6">
+                    <div className='row'><br/>
+                        <div className='col s12 m6 l6'>
                             <label>Month</label>
                             <select>
-                                <option value="" disabled selected>Choose month</option>
-                                <option value="1">January</option>
-                                <option value="2">February</option>
-                                <option value="3">March</option>
+                                <option value='' disabled selected>Choose month</option>
+                                <option value='1'>January</option>
+                                <option value='2'>February</option>
+                                <option value='3'>March</option>
                             </select>
                         </div>
-                        <div className="col s12 m6 l6">
+                        <div className='col s12 m6 l6'>
                             <label>Year</label>
                             <select>
-                                <option value="" disabled selected>Choose year</option>
-                                <option value="1">2014</option>
-                                <option value="2">2013</option>
-                                <option value="3">2012</option>
+                                <option value='' disabled selected>Choose year</option>
+                                <option value='1'>2014</option>
+                                <option value='2'>2013</option>
+                                <option value='3'>2012</option>
                             </select>
                         </div>
                     </div>
