@@ -1,13 +1,15 @@
 'use strict';
 var React = require('react'),
     InputField = require('../helpers/textfield'),
+    Router = require('react-router'),
+    Link = Router.Link,
     MusicManagerArtistAlbumInfo = React.createClass({
         render: function() {
 
             return (
                 <div className='c_album_info'>
                     <div className='row'>
-                        <div className='col s12 m12 l6'>
+                        <div className='col s12 m12 l9'>
                             <InputField
                                 textfield_type='text'
                                 textfield_label='Album Title'
@@ -17,6 +19,14 @@ var React = require('react'),
                                 textfield_label_for='title'
                                 textfield_value='Potato Album' />
                             <InputField
+                                textfield_type='text'
+                                textfield_label='Location'
+                                outerdiv_size='s12'
+                                textfield_state='validate'
+                                textfield_id='location'
+                                textfield_label_for='location'
+                                textfield_value='Portland, Oregon' />
+                            <InputField
                                 textfield_type='textarea'
                                 textfield_label='Description'
                                 outerdiv_size='s12'
@@ -25,16 +35,16 @@ var React = require('react'),
                                 textfield_label_for='description'
                                 textfield_value='Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat,' />
                         </div>
-                        <div className='col s12 m12 l6'>
-                            <h5>Upload an album art</h5><br/>
-                            <div className='row'>
-                                <div className='col l4 m4 s12'>
-                                    <img src='http://placehold.it/85x85&text=avatar' />
-                                </div>
-                                <div className='col l8 m8 s12'>
-                                    <small>At least 1600 x 1600 pixels in size</small><br/>
-                                    <a className='c_modal_buttons waves-effect waves-light btn modal-action' >Choose from File</a>
-                                </div>
+                        <div className='col s12 m12 l3'>
+                            <div>
+                                <p>Released Albums</p>
+                                <ul>
+                                    <li><Link to='music.manager.album.songs' params={{id: '1'}}>Album 1</Link></li>
+                                    <li><Link to='music.manager.album.songs' params={{id: '2'}}>Album 2</Link></li>
+                                    <li><Link to='music.manager.album.songs' params={{id: '3'}}>Album 3</Link></li>
+                                    <li><Link to='music.manager.album.songs' params={{id: '4'}}>Album 4</Link></li>
+                                    <li><Link to='music.manager.album.songs' params={{id: '5'}}>Album 5</Link></li>
+                                </ul>
                             </div>
                         </div>
                     </div><hr className='c_album_info_divider'/>

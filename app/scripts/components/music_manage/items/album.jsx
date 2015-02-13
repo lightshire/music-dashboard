@@ -101,7 +101,11 @@ var React = require('react'),
                             {this.props.albums}
                         </Link>
                     </td>
-                    <td data-column-title='Artist'>{this.props.artists}</td>
+                    <td data-column-title='Artist'>
+                        <Link to='music.manager.artist.songs'>
+                            {this.props.artists}
+                        </Link>
+                    </td>
                     <td data-column-title='Time'>{this.props.time}</td>
                     <td data-column-title='Label'>{this.props.label}</td>
                     <td data-column-title='Genre'>{this.props.genre}</td>
