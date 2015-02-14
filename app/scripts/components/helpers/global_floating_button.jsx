@@ -98,6 +98,26 @@ var React = require('react'),
             var modal_trigger = this.showModal,
                 floating_btn_up = (<i className='mdi-file-file-upload'></i>),
                 floating_btn_add = (<i className='mdi-content-add'></i>);
+            
+            if (this.hasAccess(['artist'])) {
+                modal_trigger = this.actionModal;
+                floating_btn_up = '';
+            }
+
+            if (this.hasAccess(['general_user'])) {
+                floating_btn_add = '';
+            }
+
+            if (this.hasAccess(['record_label'])) {
+                modal_trigger = this.actionModal;
+                floating_btn_up = '';
+            }
+
+            if (this.hasAccess(['admin'])) {
+                modal_trigger = this.actionModal;
+                floating_btn_up = '';
+            }
+
             return (
                 <div onClick={modal_trigger} className='c_global_floating_button'>
                     <a className='btn-floating btn-large waves-effect waves-light'>
