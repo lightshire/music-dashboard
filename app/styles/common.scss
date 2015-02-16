@@ -18,6 +18,17 @@
 .c_modal_buttons {
     margin-right: 10px;
 }
+.c_my_account_settings {
+    padding-top: 30px;
+    padding-bottom: 20px;
+    .row {
+        .c_name_div {
+            .c_name {
+                margin-top: 37px;
+            }
+        }
+    }
+}
 .c_upload_music_file_modal, {
     margin-top: 110px;
     margin-bottom: 100px;

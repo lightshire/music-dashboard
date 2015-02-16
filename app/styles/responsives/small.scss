@@ -2,21 +2,6 @@
     .c_header {
         padding-top: 60px;
     }
-    .c_my_account_settings {
-        padding-top: 50px;
-        padding-bottom: 40px;
-        .thumb, .username, .password {
-            margin-bottom: 40px;
-            div {
-                text-align: center;
-            }
-        }
-        .email {
-            div {
-                text-align: center;
-            }
-        }
-    }
     .c_my_account_upgrade {
         margin-top: 1px;
         .intro_text {
@@ -55,169 +40,6 @@
   .mdi-navigation-menu {
     font-size: 1.5em !important;
   }
-  .player {
-    margin-top: 0px;
-    margin-left: 47px;
-    line-height: 59px;
-    ul {
-        li {
-            a {
-                i {
-                    font-size: 1.5em;
-                }
-            }
-        }
-    }
-        .btn-show-playlist {
-            position: relative;
-        }
-        .btn-volume-control {
-            position: relative;
-        }
-        .volume-control {
-            background: #fff;
-            -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-            -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-            color: $font-color;
-            position: absolute;
-            top: 800px;
-            right: -166px;
-            width: 200px;
-            padding: 0 1em;
-            .row {
-                margin: 0;
-            }
-        }
-        .playlist {
-            .c_panel_inner {
-                border-bottom: 1px solid #ececec;
-                padding-left: 17px;
-                .row {
-                    margin: 0;
-                }
-            }
-            .c_control_div {
-                border-bottom: 1px solid #ececec;
-                .row {
-                    margin: 0;
-                    .down {
-                        i {
-                            position: relative;
-                            top: 2px;
-                            left: 30px;
-                            color: gray;
-                        }
-                    }
-                    .up {
-                        i {
-                            position: relative;
-                            top: 2px;
-                            right: 14px;
-                            color: gray;
-                        }
-                    }
-                }
-            }
-            background: #fff;
-            -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-            -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-            color: $font-color;
-            position: absolute;
-            top: 50px;
-            right: -216px;
-            width: 300px;
-            .track-info {
-                .title {
-                    i {
-                        font-size: 14px;
-                    }
-                }
-                width: 100%;
-                box-sizing: border-box;
-                padding: 1em;
-                line-height: 1.2em;
-                z-index: 2000;
-                position: relative;
-                box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16); 
-                 .seek-container {
-                    margin-top: 1em;
-                    margin-bottom: 1em;
-                    .time-current-container {
-                        text-align: left;
-                    }
-                    .time-end-container {
-                        text-align: right;
-                    }
-                    line-height: 1.2em;
-                    .seeker-container {
-                        text-align: center;
-                        input.seeker {
-                            margin: 0;
-                            width: 100%;
-                        }
-                    }
-                }
-            }
-            .track-list {
-                display: block;
-                width: 100%;
-                padding: 0;
-                z-index: 1000;
-                position: relative;
-                ul {
-                    li {
-                        height: 100%;
-                        &:hover {
-                            background-color: #ececec;
-                        }
-                    }
-                } 
-                ul, li {
-                    float: none;
-                    font-size: 1em;
-                    line-height: 1.2em;
-                }
-                .track-item {
-                    margin: 0;
-                }
-                .track-thumb-container {
-                    padding: 5px;
-                    img.track-thumb {
-                        width: 100%;
-                        display: block;
-                    }
-                }
-                .track-title-container {
-                    display: table-cell;
-                    vertical-align: middle;
-                    .track-title {
-                        line-height: 43px;
-                    }
-                }
-                .track-remove-container {
-                    text-align: right;
-                    a.track-remove {
-                        color: $font-color;
-                        padding: 0;
-                        width: 100%;
-                        text-align: center;
-                        transition: font-size .5s ease;
-                        &:hover {
-                            i {
-                                font-size: 1.6em;
-                            }
-                        }
-                    }
-                    i {
-                        font-size: 1.4em;
-                        line-height: 43px;
-                    }
-                }
-            } 
-        }
-    }
     /*Modal Responsive - start*/
     .modal {
         display: block !important;
@@ -319,4 +141,114 @@
             padding: 0;
         }
     }
+
+
+
+    .player {
+        margin-right: -77px;
+        line-height: 0px !important;
+        .btn-show-playlist {
+            position: relative;
+            top: 31px;
+            left: 30px;
+        }
+        .volume-control {
+            background: #fff;
+            -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+            -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+            color: $font-color;
+            position: absolute;
+            top: 57px;
+            right: -17px;
+            width: 200px;
+            padding: 0 1em;
+            .row {
+                margin: 0;
+            }
+        }
+        .playlist {
+            background: #fff;
+            -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+            -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+            color: $font-color;
+            position: absolute;
+            top: 25px;
+            right: -321px;
+            width: 370px;
+            .c_volume_ctrl {
+                padding-left: 40px;
+                padding-right: 40px;
+            }
+            .c_panel_inner {
+                position: relative;
+                left: 91px;
+                top: 11px;
+            }
+            .artwork {
+                height: 370px;
+                img {
+                    width: 100%;
+                }
+                .track-info {
+                    opacity: 0.5;
+                    height: 100%;
+                    background-color: black;
+                    top: -370px;
+                    color: white;
+                    position: relative;
+                    padding: 10px;
+                    h5, span {
+                        position: relative;
+                        top: 281px;
+                    }
+                }
+            }
+            .seeker {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            .track-list {
+                border-top: 1px solid #f1f1f1;
+                div {
+                    .row {
+                        border-bottom: 1px solid #f1f1f1;
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                        margin-bottom: 0px !important;
+                        .thumb {
+                            img {
+                                width: 40px;
+                            }
+                        }
+                        .s8 {
+                            .title {
+                                margin-top: 12px;
+                            }
+                            .artist {
+                                margin-top: 14px;
+                            }
+                        }
+                        .remove {
+                            div {
+                                text-align: right;
+                                position: relative;
+                                top: 11px;
+                                margin-top: -23px;
+                                .track-remove {
+                                    color: $font-color;
+                                }
+                            }
+                        }
+                    }
+                    .row:hover {
+                        cursor: pointer;
+                        background-color: #ececec;
+                    }
+                }
+            } 
+        }
+    }
+
 }
