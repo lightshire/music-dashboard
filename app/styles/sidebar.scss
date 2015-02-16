@@ -1,8 +1,9 @@
 ul.side-nav.fixed{
     top: 0;
-    width: 200px;
+    width: 240px;
+    overflow-y: auto;
     li {
-        width: 200px;
+        width: 240px;
         line-height: 30px;
         padding: 0px; 
     }
