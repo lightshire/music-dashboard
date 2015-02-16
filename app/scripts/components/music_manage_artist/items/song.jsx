@@ -99,7 +99,6 @@ var React = require('react'),
                         </div>
                     </td>
                     <td data-column-title='Track'>{this.props.songs}</td>
-                    <td data-column-title='Artist'>{this.props.artists}</td>
                     <td data-column-title='Duration'>{this.props.time}</td>
                     <td data-column-title='Label'>{this.props.label}</td>
                     <td data-column-title='Genre'>{this.props.genre}</td>

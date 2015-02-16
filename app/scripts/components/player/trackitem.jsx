@@ -9,24 +9,23 @@ var React = require('react'),
             PlayerActions.changeCurrentTrack(this.props.id);
         },
         render: function() {
-            return (
-                <li onClick={this.handleChangeCurrentTrack}>
-                    <div className='row track-item'>
-                        <div className='col s2 track-thumb-container'>
-                            <img className='track-thumb' src={this.props.thumbnail} />
-                        </div>
-                        <div className='col s8 track-title-container'>
-                            <span className='track-title'>
-                                {this.props.title}
-                            </span>
-                        </div>
-                        <div className='col s2 track-remove-container'>
+            return (    
+                <div className='row'>
+                    <div className='col s2 thumb'>
+                        <img src={this.props.thumbnail} />
+                    </div>
+                    <div className='col s8'>
+                        <div className='title'><span>{this.props.title}</span></div>
+                        <div className='artist'><small>{this.props.artist}</small></div>
+                    </div>
+                    <div className='col s2 remove'>
+                        <div>
                             <a href='#' onClick={this.handleRemoveTrack} className='track-remove'>
-                                <i className='mdi-navigation-cancel'></i>
+                                <i className='mdi-content-clear'></i>
                             </a>
                         </div>
                     </div>
-                </li>
+                </div>
             );
         }
     });

@@ -6,19 +6,22 @@ var Reflux = require('reflux'),
         1 : {
             id: 1,
             thumbnail: 'https://placeimg.com/80/80/music/1',
-            title: 'We are the champion',
+            title: 'We Are The Champions',
+            artist: 'Queen',
             audio_url: 'http://a.tumblr.com/tumblr_lsi0ziIh3M1qa6vv7o1_r1.mp3'
         },
         2 : {
             id: 2,
             thumbnail: 'https://placeimg.com/80/80/music/2',
-            title: 'All about the bass',
+            title: 'All About The Bass',
+            artist: 'Meaghan Trainor',
             audio_url: 'http://trendingmp3.com/music/user_folder/All%20About%20That%20Bass%20Meghan%20Trainor%20-%201412662517.mp3'
         },
         3 : {
             id: 3,
             thumbnail: 'https://placeimg.com/80/80/music/3',
             title: 'Song Title 5',
+            artist: 'Ano Nymous',
             audio_url: 'http://a.tumblr.com/tumblr_lsi0ziIh3M1qa6vv7o1_r1.mp3'
         }
     },

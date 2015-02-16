@@ -58,12 +58,6 @@
     .player {
         margin-right: -77px;
         line-height: 0px !important;
-        .btn-show-playlist {
-            position: relative;
-        }
-        .btn-volume-control {
-            position: relative;
-        }
         .volume-control {
             background: #fff;
             -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
@@ -71,8 +65,8 @@
             box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
             color: $font-color;
             position: absolute;
-            top: 50px;
-            right: 20px;
+            top: 57px;
+            right: 426px;
             width: 200px;
             padding: 0 1em;
             .row {
@@ -86,95 +80,68 @@
             box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
             color: $font-color;
             position: absolute;
-            top: 50px;
-            right: 20px;
-            width: 300px;
-            .track-info {
-                .title {
-                    margin-top: -21px;
-                    i {
-                        font-size: 14px;
-                    }
+            top: 59px;
+            right: 182px;
+            width: 370px;
+            .artwork {
+                height: 370px;
+                img {
+                    width: 100%;
                 }
-                width: 100%;
-                box-sizing: border-box;
-                padding: 1em;
-                line-height: 1.2em;
-                z-index: 2000;
-                position: relative;
-                box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16); 
-                 .seek-container {
-                    margin-top: 1em;
-                    margin-bottom: 1em;
-                    .time-current-container {
-                        text-align: left;
-                    }
-                    .time-end-container {
-                        text-align: right;
-                    }
-                    line-height: 1.2em;
-                    .seeker-container {
-                        text-align: center;
-                        input.seeker {
-                            margin: 0;
-                            width: 100%;
-                        }
+                .track-info {
+                    opacity: 0.5;
+                    height: 100%;
+                    background-color: black;
+                    top: -370px;
+                    color: white;
+                    position: relative;
+                    padding: 10px;
+                    h5, span {
+                        position: relative;
+                        top: 281px;
                     }
                 }
             }
+            .seeker {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
             .track-list {
-                display: block;
-                width: 100%;
-                padding: 0;
-                z-index: 1000;
-                position: relative;
-                ul {
-                    li {
-                        height: 100%;
-                        &:hover {
-                            background-color: #ececec;
+                border-top: 1px solid #f1f1f1;
+                div {
+                    .row {
+                        border-bottom: 1px solid #f1f1f1;
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                        margin-bottom: 0px !important;
+                        .thumb {
+                            img {
+                                width: 40px;
+                            }
                         }
-                    }
-                } 
-                ul, li {
-                    float: none;
-                    font-size: 1em;
-                    line-height: 1.2em;
-                }
-                .track-item {
-                    margin: 0;
-                }
-                .track-thumb-container {
-                    padding: 5px;
-                    img.track-thumb {
-                        width: 100%;
-                        display: block;
-                    }
-                }
-                .track-title-container {
-                    display: table-cell;
-                    vertical-align: middle;
-                    .track-title {
-                        line-height: 43px;
-                    }
-                }
-                .track-remove-container {
-                    text-align: right;
-                    a.track-remove {
-                        color: $font-color;
-                        padding: 0;
-                        width: 100%;
-                        text-align: center;
-                        transition: font-size .5s ease;
-                        &:hover {
-                            i {
-                                font-size: 1.6em;
+                        .s8 {
+                            .title {
+                                margin-top: 12px;
+                            }
+                            .artist {
+                                margin-top: 14px;
+                            }
+                        }
+                        .remove {
+                            div {
+                                text-align: right;
+                                position: relative;
+                                top: 11px;
+                                margin-top: -23px;
+                                .track-remove {
+                                    color: $font-color;
+                                }
                             }
                         }
                     }
-                    i {
-                        font-size: 1.4em;
-                        line-height: 43px;
+                    .row:hover {
+                        cursor: pointer;
+                        background-color: #ececec;
                     }
                 }
             } 
