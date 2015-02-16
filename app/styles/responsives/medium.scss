@@ -1,4 +1,7 @@
 @media #{$medium-only} {
+    .side-nav {
+        overflow-y: scroll; 
+    }
     .c_header {
         padding-top: 50px;
     }

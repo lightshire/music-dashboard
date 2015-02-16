@@ -7,7 +7,7 @@ var React = require('react'),
             return (
                 <div className='c_album_info'>
                     <div className='row'>
-                        <div className='col s6'>
+                        <div className='col s12 m6'>
                             <InputField
                                 textfield_type='text'
                                 textfield_label='Album Title'
@@ -25,13 +25,13 @@ var React = require('react'),
                                 textfield_label_for='description'
                                 textfield_value='Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat,' />
                         </div>
-                        <div className='col s6'>
+                        <div className='col s12 m6'>
                             <h5>Upload an album art</h5><br/>
                             <div className='row'>
-                                <div className='col s4'>
+                                <div className='col s12 m4'>
                                     <img src='http://placehold.it/85x85&text=avatar' />
                                 </div>
-                                <div className='col s8'>
+                                <div className='col s12 m8'>
                                     <small>At least 1600 x 1600 pixels in size</small><br/>
                                     <a className='c_modal_buttons waves-effect waves-light btn modal-action' >Choose from File</a>
                                 </div>

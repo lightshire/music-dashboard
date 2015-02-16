@@ -91,20 +91,20 @@ var React = require('react'),
             }
             
             return (
-                <tr className="songs col s12 m12">
-                    <td className='col s3 m3'>
+                <tr className="songs">
+                    <td data-column-title=''>
                         <div>
                             <i className="mdi-av-play-arrow"></i>
                             <i className="mdi-content-add"></i>
                         </div>
                     </td>
-                    <td className='col s1 m1'>a{this.props.songs}</td>
-                    <td className='col s1 m1'>{this.props.artists}</td>
-                    <td className='col s1 m1'>{this.props.time}</td>
-                    <td className='col s1 m1'>{this.props.label}</td>
-                    <td className='col s1 m1'>{this.props.genre}</td>
-                    <td className='col s1 m1'>{this.props.uploaded}</td>
-                    <td className='col s3 m3'>
+                    <td data-column-title='Title'>{this.props.songs}</td>
+                    <td data-column-title='Artist'>{this.props.artists}</td>
+                    <td data-column-title='Item'>{this.props.time}</td>
+                    <td data-column-title='Label'>{this.props.label}</td>
+                    <td data-column-title='Genre'>{this.props.genre}</td>
+                    <td data-column-title='Uploaded'>{this.props.uploaded}</td>
+                    <td data-column-title=''>
                         <div className="right-align">
                             <i onClick={this.showModal} id="earn" className={monetize_class}></i>
                             <i className="mdi-editor-mode-edit"></i>
