@@ -39,8 +39,18 @@ var React = require('react'),
                         </div>
                     </div><hr className='c_album_info_divider'/>
                     <div className='right-align'>
-                        <a className='c_album_info_buttons black-text waves-effect waves-grey lighten-4 btn white lighten-5'>Cancel</a> &nbsp; &nbsp;
-                        <a className='c_album_info_buttons waves-effect waves-light btn'>Done</a>
+                        <div className='row'>
+                            <div className='hidden-small-button'>
+                                <div className='col s6'><a className='c_album_info_buttons black-text waves-effect waves-grey lighten-4 btn white lighten-5'>Cancel</a></div>
+                                <div className='col s6'><a className='c_album_info_buttons waves-effect waves-light btn'>Done</a></div>
+                            </div>
+                            <div className='hidden-big-button right-align'>
+                                <div className='col l12 m12'>
+                                    <a className='c_album_info_buttons black-text waves-effect waves-grey lighten-4 btn white lighten-5'>Cancel</a>&nbsp; &nbsp;
+                                    <a className='c_album_info_buttons waves-effect waves-light btn'>Done</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             );

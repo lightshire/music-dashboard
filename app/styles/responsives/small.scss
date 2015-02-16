@@ -144,6 +144,7 @@
 
 
 
+
     .player {
         margin-right: -77px;
         line-height: 0px !important;
@@ -251,4 +252,15 @@
         }
     }
 
+    .hidden-small-button {
+        display: block;
+        a {
+            padding: 0px 15px;
+        }
+    }
+    .hidden-big-button {
+        display: none;
+    }
+
 }
+
