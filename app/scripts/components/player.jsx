@@ -69,6 +69,7 @@ var React = require('react/addons'),
                 player.currentTime = value;
         },
         updatePlayerStatus: function(player) {
+
             var current_track_id = this.state.status.current_track,
             track = PlayerStore.get(current_track_id),
             current_time = this.state.track_info.current_time;
@@ -93,14 +94,21 @@ var React = require('react/addons'),
             var tracks, playlist, volume_control, audio, track_title;
             if(this.state.status.modal === 'playlist') {
                 tracks = _.map(this.state.tracks, function(item) {
-                    return (<TrackItem id={item.id} title={item.title} thumbnail={item.thumbnail} />);
+                    return (<TrackItem id={item.id} title={item.title} artist={item.artist} thumbnail={item.thumbnail} />);
                 });
                 track_title = typeof this.state.tracks[this.state.status.current_track] !== 'undefined' 
                     ? this.state.tracks[this.state.status.current_track].title
                     : 'Choose a track';
+                track_artist = typeof this.state.tracks[this.state.status.current_track] !== 'undefined' 
+                    ? this.state.tracks[this.state.status.current_track].artist
+                    : 'Unknown Artist';
                 playlist = (
                     <div className={this.state.status.modal === 'playlist' ? 'playlist' : 'playlist hide'}>
 
+                      
+                        <div className='c_volume_ctrl'>
+                            <input type='range' ref='volume_control' onChange={this.handleVolumeChange} className='volume' min='0' max='100' value={this.state.status.volume * 100} />
+                        </div>
                         <div className='c_panel_inner hide-on-med-and-up'>
                             <div className='row'>
                                 <div className='col s2 m2 l2'>&nbsp;</div>
@@ -110,43 +118,22 @@ var React = require('react/addons'),
                                 <div className='col s2 m1 l2'>&nbsp;</div>
                             </div>
                         </div>
-                        <div className='c_control_div hide-on-med-and-up'>
-                            <div className='row'>
-                                <div className='volume-control-inner'>
-                                    <div className='row'>
-                                        <div className='col s2 down'><i className='mdi-av-volume-down' /></div>
-                                        <div className='col s8'>
-                                            <input type='range' ref='volume_control' onChange={this.handleVolumeChange} className='volume' min='0' max='100' value={this.state.status.volume * 100} />
-                                        </div>
-                                        <div className='col s2 up'><i className='mdi-av-volume-up' /></div>
-                                    </div>
-                                </div>
+
+                        <div className='artwork'>
+                            <img className='responsive-img' src={this.state.tracks[this.state.status.current_track].thumbnail} />
+                            <div className='track-info'>
+                                <h5>{track_title}</h5>
+                                <span>{track_artist}</span>
                             </div>
                         </div>
-
-                        <div className='track-info'>
-                            <div className='title'><i>Now Playing: <b>{track_title}</b></i></div><br/>
-                            <div className='row seek-container'>
-                                <div className='col s2 time-current-container'>
-                                    <span className='time-current'>
-                                        {this.formatSeconds(this.state.track_info.current_time)}
-                                    </span>
-                                </div>
-                                <div className='col s8 seeker-container'>
-                                    <input ref="track_seek" onChange={this.handleTrackSeek} type='range' className='seeker' min='0' max={this.state.track_info.length}  />
-                                </div>
-                                <div className='col s2 time-end-container'>
-                                    <span className='time-end'>
-                                        {this.formatSeconds(this.state.track_info.length)}
-                                    </span>
-                                </div>
-                            </div>
+                        <div className='seeker'>
+                            <input ref="track_seek" onChange={this.handleTrackSeek} type='range' className='seeker' min='0' max={this.state.track_info.length}  />
                         </div>
                         <div className='track-list'>
-                            <ul>
-                                {tracks}
-                            </ul>
+                            <div>{tracks}</div>
                         </div>
+
+
                     </div>
                 );
             }

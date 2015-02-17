@@ -1,17 +1,16 @@
 'use strict';
 var React = require('react'),
-    AlbumActions = require('../../../actions/album_actions'),
+    AlbumTracksActions = require('../../../actions/album_tracks_actions'),
     Delete = require('../../modals/delete_modal'),
     Accepted = require('../../modals/accepted_modal'),
     Pending = require('../../modals/pending_modal'),
     Rejected = require('../../modals/rejected_modal'),
     Monetize = require('../../modals/monetize_modal'),
     ModalActions = require('../../../actions/modal_actions'),
-    Router = require('react-router'),
-    Link = Router.Link,
-    Albums = React.createClass({
+    ReactCSSTransitionGroup = React.addons.CSSTransitionGroup,
+    Songs = React.createClass({
         handleDeleteTracks: function() {
-            AlbumActions.deleteTracks(this.props.id);
+            AlbumTracksActions.deleteTracks(this.props.id);
             ModalActions.dismiss();
         },
         deleteModal: function() {
@@ -19,13 +18,13 @@ var React = require('react'),
                 <Delete
                     key='delete'
                     handleDeleteTracks={this.handleDeleteTracks}
-                    cancelHandler={this.cancelHandler} />, 'delete_modal'
+                    cancelHandler={this.cancelHandler} />, 'delete_modal' 
             );
         },
         showModal: function() {
             var modal = '';
 
-            switch (this.props.albumstatus) {
+            switch (this.props.songstatus) {
                 case 'accepted':
                     modal = (
                         <Accepted
@@ -56,14 +55,14 @@ var React = require('react'),
                     );
                     break;
             }
-            ModalActions.show(modal, this.props.albumstatus);
+            ModalActions.show(modal, this.props.songstatus);
         },
         monetizeModal: function() {
-            this.props.albumstatus = 'pending';
+            this.props.songstatus = 'pending';
             ModalActions.show(
                 <Pending
                     key = 'rejected'
-                    confirmModal = {this.confirmModal} />, this.props.albumstatus
+                    confirmModal = {this.confirmModal} />, this.props.songstatus
             );
         },
         confirmModal: function () {
@@ -73,53 +72,50 @@ var React = require('react'),
             ModalActions.dismiss();
         },
         render: function() {
-            var monetize_class = 'mdi-editor-attach-money';
+            var modal_earnings = '',
+                monetize_class = 'mdi-editor-attach-money';
 
-            switch (this.props.albumstatus) {
+            switch (this.props.songstatus) {
                 case 'accepted':
-                    monetize_class += ' green-text';
+                    monetize_class += ' green-text'; 
                     break;
                 case 'pending':
-                    monetize_class += ' orange-text';
+                    monetize_class += ' orange-text'; 
                     break;
                 case 'rejected':
-                    monetize_class += ' red-text';
+                    monetize_class += ' red-text'; 
                     break;
                 case 'not_monetize':
-                    monetize_class += ' grey-text';
+                    monetize_class += ' grey-text'; 
                     break;
             }
-
+            
             return (
-                <tr className='songs'>
-                    <td data-column-title=''>
-                        <div><i className='mdi-av-play-arrow'></i></div>
-                        <div><i className='mdi-content-add'></i></div>
+                <tr className="songs col">
+                    <td>
+                        <div>
+                            <i className="mdi-av-play-arrow"></i>
+                            <i className="mdi-content-add"></i>
+                        </div>
                     </td>
-                    <td data-column-title='Title'>
-                        <Link to='music.manager.album.songs' params={{id: this.props.id}} >
-                            {this.props.albums}
-                        </Link>
-                    </td>
-                    <td data-column-title='Artist'>
-                        <Link to='music.manager.artist.songs'>
-                            {this.props.artists}
-                        </Link>
-                    </td>
-                    <td data-column-title='Time'>{this.props.time}</td>
+                    <td data-column-title='Track'>{this.props.songs}</td>
+                    <td data-column-title='Duration'>{this.props.time}</td>
                     <td data-column-title='Label'>{this.props.label}</td>
                     <td data-column-title='Genre'>{this.props.genre}</td>
                     <td data-column-title='Uploaded'>{this.props.uploaded}</td>
-                    <td data-column-title='Action'>
-                        <div className='right-align'>
-                            <i onClick={this.showModal} id='earn' className={monetize_class}></i>
-                            <i className='mdi-editor-mode-edit'></i>
-                            <i onClick={this.deleteModal} className='mdi-action-delete'></i>
+                    <td>
+                        <div className="right-align">
+                            <i onClick={this.showModal} id="earn" className={monetize_class}></i>
+                            <i className="mdi-editor-mode-edit"></i>
+                            <i onClick={this.deleteModal} className="mdi-action-delete"></i>
                         </div>
                     </td>
+                    <ReactCSSTransitionGroup transitionName="modal_earnings">
+                        {modal_earnings}
+                    </ReactCSSTransitionGroup>
                 </tr>
             );
         }
     });
 
-module.exports = Albums;
+module.exports = Songs;

@@ -98,9 +98,9 @@ var React = require('react'),
                             <i className="mdi-content-add"></i>
                         </div>
                     </td>
-                    <td data-column-title='Title'>{this.props.songs}</td>
+                    <td data-column-title='Track'>{this.props.songs}</td>
                     <td data-column-title='Artist'>{this.props.artists}</td>
-                    <td data-column-title='Item'>{this.props.time}</td>
+                    <td data-column-title='Duration'>{this.props.time}</td>
                     <td data-column-title='Label'>{this.props.label}</td>
                     <td data-column-title='Genre'>{this.props.genre}</td>
                     <td data-column-title='Uploaded'>{this.props.uploaded}</td>

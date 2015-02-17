@@ -14,26 +14,29 @@ var React = require('react'),
         },
         render: function() {
             var id = this.getParams().id,
-                music_manager_songs = (
-                    <li className='tab col s3'>
-                        <Link 
-                            to='music.manager.album.songs' 
-                            params={{id: id}} 
-                            className='waves-effect waves-white btn-flat white-text c_tabs'>
-                            Tracks
-                        </Link>
-                    </li>
-                ),
-                music_manager_albuminfo = (
-                    <li className='tab col s3'>
-                        <Link 
-                            to='music.manager.album.albuminfo' 
-                            params={{id: id}} 
-                            className='waves-effect waves-white btn-flat white-text c_tabs'>
-                            Album Info
-                        </Link>
-                    </li>
+                link_list ='';
+
+                link_list = (
+                    <ul className='tabs'>
+                        <li className='tab col s6'>
+                            <Link 
+                                to='music.manager.album.songs' 
+                                params={{id: id}} 
+                                className='waves-effect waves-white btn-flat white-text c_tabs'>
+                                Tracks
+                            </Link>
+                        </li>
+                        <li className='tab col s6'>
+                            <Link 
+                                to='music.manager.album.albuminfo' 
+                                params={{id: id}} 
+                                className='waves-effect waves-white btn-flat white-text c_tabs'>
+                                Album Info
+                            </Link>
+                        </li>
+                    </ul>
                 );
+
             return (
                 <div className='c_body'>
                     <div className='c_header'>
@@ -46,14 +49,9 @@ var React = require('react'),
                             </h4>
                             <div className='c_links'>
                                 <div className='row'>
-                                    <ul className='tabs default-tab'>
-                                        {music_manager_songs}
-                                        {music_manager_albuminfo}
-                                    </ul>
-                                    <ul className='tabs mobile-tab'>
-                                        {music_manager_songs}
-                                        {music_manager_albuminfo}
-                                    </ul>
+                                     <div className="col s12">                                        
+                                        {link_list}                                        
+                                    </div>
                                 </div>
                             </div>
                             <Search />

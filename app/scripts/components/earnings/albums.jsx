@@ -52,7 +52,7 @@ var React = require('react'),
 
             return (
                 <div>
-                    <div className='row'><br/>
+                    <div className='row'>
                         <div className='selectfield col s12 m6'>
                             <label>Month</label>
                             <select>

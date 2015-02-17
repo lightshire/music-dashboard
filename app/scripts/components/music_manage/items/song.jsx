@@ -7,6 +7,8 @@ var React = require('react'),
     Rejected = require('../../modals/rejected_modal'),
     Monetize = require('../../modals/monetize_modal'),
     ModalActions = require('../../../actions/modal_actions'),
+    Router = require('react-router'),
+    Link = Router.Link,
     Songs = React.createClass({
         handleDeleteTracks: function() {
             TracksActions.deleteTracks(this.props.id);
@@ -98,7 +100,11 @@ var React = require('react'),
                         </div>
                     </td>
                     <td data-column-title='Title'>{this.props.songs}</td>
-                    <td data-column-title='Artist'>{this.props.artists}</td>
+                    <td data-column-title='Artist'>
+                        <Link to='music.manager.artist.songs'>
+                            {this.props.artists}
+                        </Link>
+                    </td>
                     <td data-column-title='Item'>{this.props.time}</td>
                     <td data-column-title='Label'>{this.props.label}</td>
                     <td data-column-title='Genre'>{this.props.genre}</td>

@@ -4,21 +4,37 @@ var React = require('react/addons'),
         render: function() {
             return (
                 <div className='c_my_account_settings'>
-                    <div className='thumb'>
-                        <div><img className='circle' src='http://placehold.it/100x100'/></div>
-                        <div className='t_name'><h5>George Vanous</h5></div>
+                    <div className='row'>
+                        <div className='col l3 m5 s12'>
+                            <img className='circle' src='http://placehold.it/100x100'/>
+                        </div>
+                        <div className='c_name_div col l9 m7 s12'>
+                            <h5 className='c_name'>George Vanous</h5>
+                        </div>
                     </div>
-                    <div className='username'>
-                        <div><b>Username</b></div>
-                        <div className='u_username'>george.vanous</div>
+                    <div className='row'>
+                        <div className='col l3 m5 s12'>
+                            <b>Username</b>
+                        </div>
+                        <div className='col l9 m7 s12'>
+                            george.vanous
+                        </div>
                     </div>
-                    <div className='password'>
-                        <div><b>Password</b></div>
-                        <div className='p_password'><a href='#'>Change Password</a></div>
+                    <div className='row'>
+                        <div className='col l3 m5 s12'>
+                            <b>Password</b>
+                        </div>
+                        <div className='col l9 m7 s12'>
+                            <a href='#'>Change Password</a>
+                        </div>
                     </div>
-                    <div className='email'>
-                        <div><b>Email</b></div>
-                        <div className='e_email'>george@freedom.tm</div>
+                    <div className='row'>
+                        <div className='col l3 m5 s12'>
+                            <b>Email</b>
+                        </div>
+                        <div className='col l9 m7 s12'>
+                            george@freedom.tm
+                        </div>
                     </div>
                 </div>
             );

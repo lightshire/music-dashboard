@@ -40,7 +40,6 @@ var React = require('react'),
                             <tr>
                                 <th></th>
                                 <th className='grey-text text-lighten-1'>Track</th>
-                                <th className='grey-text text-lighten-1'>Artist</th>
                                 <th className='grey-text text-lighten-1'>Duration</th>
                                 <th className='grey-text text-lighten-1'>Label</th>
                                 <th className='grey-text text-lighten-1'>Genre</th>

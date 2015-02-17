@@ -3,6 +3,8 @@ var React = require('react'),
     Delete = require('../../modals/delete_modal'),
     ModalActions = require('../../../actions/modal_actions'),
     ArtistActions = require('../../../actions/artist_actions'),
+    Router = require('react-router'),
+    Link = Router.Link,
     Artists = React.createClass({
         deleteModal: function() {
             ModalActions.show(
@@ -25,7 +27,11 @@ var React = require('react'),
                     <td data-column-title='Avatar'>
                         <img className='circle' src={this.props.avatar} />
                     </td>
-                    <td data-column-title='Artist'>{this.props.artist}</td>
+                    <td data-column-title='Artist'>
+                        <Link to='music.manager.artist.songs'>
+                            {this.props.artist}
+                        </Link>
+                    </td>
                     <td data-column-title='Albums'>{this.props.albums}</td>
                     <td data-column-title='Tracks'>{this.props.tracks}</td>
                     <td data-column-title='Genre'>{this.props.genre}</td>

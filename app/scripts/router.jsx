@@ -32,6 +32,9 @@ var React = require('react'),
     MusicManagerAlbumSongs = require('./components/music_manage_album/songs'),
     MusicManagerAlbumAlbumInfo = require('./components/music_manage_album/albuminfo'),
 
+    MusicManagerArtist = require('./components/music_manage_artist'),
+    MusicManagerArtistSongs = require('./components/music_manage_artist/songs'),
+    MusicManagerArtistInfo = require('./components/music_manage_artist/artistinfo'),
 
     // To be deleted
     TempAdmin = require('./components/admin'),
@@ -58,6 +61,11 @@ var React = require('react'),
                 <Route name='music.manager.album' path='/manage_music/album/:id' handler={MusicManagerAlbum}>
                     <Route name='music.manager.album.songs' path='songs' handler={MusicManagerAlbumSongs} />
                     <Route name='music.manager.album.albuminfo' path='albuminfo' handler={MusicManagerAlbumAlbumInfo} />
+                </Route>
+
+                <Route name='music.manager.artist' path='/manage_music/artist' handler={MusicManagerArtist}>
+                    <Route name='music.manager.artist.songs' path='songs' handler={MusicManagerArtistSongs} />
+                    <Route name='music.manager.artist.info' path='artistinfo' handler={MusicManagerArtistInfo} />
                 </Route>
 
                 <Route name='my.earnings' path='/earnings' handler={MyEarnings}>
