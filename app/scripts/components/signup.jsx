@@ -3,11 +3,7 @@ var React = require('react'),
     Router = require('react-router'),
     RouteHandler = Router.RouteHandler,
     Link = Router.Link,
-    TrackActions = require('../actions/track_actions'),
-    Search = require('./helpers/search'),
-    Modal = require('./helpers/modal'),
     InputField = require('./helpers/textfield'),
-    ReactCSSTransitionGroup = React.addons.CSSTransitionGroup,
     Signup = React.createClass({
         render: function() {
             return (

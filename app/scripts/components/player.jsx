@@ -1,3 +1,4 @@
+'use strict';
 var React = require('react/addons'),
     _ = require('lodash'),
     moment = require('moment'),
@@ -8,7 +9,7 @@ var React = require('react/addons'),
         return {
             tracks: PlayerStore.getAll(),
             status: PlayerStore.getStatus()
-        }
+        };
     },
     _previous_track = null,
     _is_mouse_down_on_seeker = false,
@@ -81,7 +82,7 @@ var React = require('react/addons'),
                 player.play();
             } else {
                 player.pause();
-            };
+            }
 
             player.volume = this.state.status.volume;
         },
