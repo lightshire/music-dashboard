@@ -52,7 +52,29 @@ var React = require('react'),
             ModalActions.dismiss();
         },
         render: function() {
-            var id = this.getParams().id;
+            var id = this.getParams().id,
+                link_list ='';
+
+                link_list = (
+                    <ul className='tabs'>
+                        <li className='tab col s6'>
+                            <Link 
+                                to='music.manager.album.songs' 
+                                params={{id: id}} 
+                                className='waves-effect waves-white btn-flat white-text c_tabs'>
+                                Tracks
+                            </Link>
+                        </li>
+                        <li className='tab col s6'>
+                            <Link 
+                                to='music.manager.album.albuminfo' 
+                                params={{id: id}} 
+                                className='waves-effect waves-white btn-flat white-text c_tabs'>
+                                Album Info
+                            </Link>
+                        </li>
+                    </ul>
+                );
 
             return (
                 <div className='c_body'>
@@ -65,8 +87,13 @@ var React = require('react'),
                                 Potato Album
                             </h4>
                             <div className='c_links'>
-                                <Link to='music.manager.album.songs' params={{id: id}} className='waves-effect waves-white btn-flat white-text c_tabs'>Tracks</Link>
-                                <Link to='music.manager.album.albuminfo' params={{id: id}} className='waves-effect waves-white btn-flat white-text c_tabs'>Album Info</Link>
+                                <div className='row'>
+                                     <div className="col s12">                                        
+                                        {link_list}                                        
+                                    </div>
+                                </div>
+                                
+                                
                             </div>
                             <Search />
                             <div onClick={this.showModal} className='upload-btn right-align'>
