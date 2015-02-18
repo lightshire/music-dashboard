@@ -7,7 +7,7 @@ var React = require('react'),
         render: function() {
 
             return (
-                <div className='c_album_info'>
+                <div className='c-album-info'>
                     <div className='row'>
                         <div className='col s12 m12 l9'>
                             <InputField
@@ -47,10 +47,10 @@ var React = require('react'),
                                 </ul>
                             </div>
                         </div>
-                    </div><hr className='c_album_info_divider'/>
+                    </div><hr className='c-album-info-divider'/>
                     <div className='right-align'>
-                        <a className='c_album_info_buttons black-text waves-effect waves-grey lighten-4 btn white lighten-5'>Cancel</a> &nbsp; &nbsp;
-                        <a className='c_album_info_buttons waves-effect waves-light btn'>Done</a>
+                        <a className='c-album-info-buttons black-text waves-effect waves-grey lighten-4 btn white lighten-5'>Cancel</a> &nbsp; &nbsp;
+                        <a className='c-album-info-buttons waves-effect waves-light btn'>Done</a>
                     </div>
                 </div>
             );

@@ -3,13 +3,13 @@ var React = require('react/addons'),
     MyAccountSettings = React.createClass({
         render: function() {
             return (
-                <div className='c_my_account_settings'>
+                <div className='c-my-account-settings'>
                     <div className='row'>
                         <div className='col l3 m5 s12'>
                             <img className='circle' src='http://placehold.it/100x100'/>
                         </div>
-                        <div className='c_name_div col l9 m7 s12'>
-                            <h5 className='c_name'>George Vanous</h5>
+                        <div className='c-name-div col l9 m7 s12'>
+                            <h5 className='c-name'>George Vanous</h5>
                         </div>
                     </div>
                     <div className='row'>

@@ -45,7 +45,7 @@ var React = require('react'),
             }
             
             content = (
-                <div className='container center-align c_upload_music_file_modal'>
+                <div className='container center-align c-upload-music-file-modal'>
                     <p>
                         <InputField
                             textfield_type='text'
@@ -66,7 +66,7 @@ var React = require('react'),
                         <h5>Upload an album art</h5>
                         <img src='http://placehold.it/85x85&text=avatar' />
                         <h6>At least 1600 x 1600 pixels in size</h6>
-                        <a className='c_modal_buttons waves-effect waves-light btn green lighten-2 modal-action' >Choose from File</a>
+                        <a className='c-modal-buttons waves-effect waves-light btn green lighten-2 modal-action' >Choose from File</a>
                     </p>
                 </div>
             );
@@ -75,12 +75,12 @@ var React = require('react'),
                 {
                     text : 'Create Album',
                     onclick : add,
-                    class_name : 'c_modal_buttons waves-effect waves-light btn green lighten-2 modal-action'
+                    class_name : 'c-modal-buttons waves-effect waves-light btn green lighten-2 modal-action'
                 },
                 {
                     text : 'Cancel',
                     onclick : cancel,
-                    class_name : 'c_modal_buttons black-text waves-effect waves-grey lighten-4 btn white lighten-5 modal-action modal-close'
+                    class_name : 'c-modal-buttons black-text waves-effect waves-grey lighten-4 btn white lighten-5 modal-action modal-close'
                 }
             ]);
 

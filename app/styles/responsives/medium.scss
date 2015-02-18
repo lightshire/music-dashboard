@@ -5,9 +5,9 @@
     .c_header {
         padding-top: 50px;
     }
-    .c_my_account_upgrade {
+    .c-my-account-upgrade {
         margin-top: 1px;
-        .intro_text {
+        .intro-text {
             padding-top: 20px;
             padding-bottom: 20px;
         }
@@ -21,7 +21,7 @@
         top: -28px;
         right: -29px;
     }
-    .c_my_account_settings_table {
+    .c-my-account-settings-table {
         tbody {
             tr {
                 td {
@@ -37,7 +37,7 @@
     .modal {
         min-height: 40%;
         padding: 24px 0;
-        .close_modal {
+        .close-modal {
             display: none;
         }
         h4 {
@@ -48,24 +48,24 @@
             text-align: center;
             margin-bottom: 0;
            div {
-                .action_icons {
+                .action-icons {
                     width: 50% !important;
                 }
-                .action_icons:first-child, .action_icons:last-child {
+                .action-icons:first-child, .action-icons:last-child {
                     display: none;
                 }
            } 
         }
-        .c_upload_music_file_modal {
+        .c-upload-music-file-modal {
             text-align: center;
             margin: 0 auto 40px;
             p {
                 margin: 0;
             }
-            .c_upload_music_file_modal_h {
+            .c-upload-music-file-modal-h {
                 display: none;
             }
-            .c_select_a_track_button {
+            .c-select-a-track-button {
                 font-size: .8rem;
             }
             h5 {
@@ -85,7 +85,7 @@
             }
         }
     }
-    .res_up_img div {
+    .res-up-img div {
         display: block;
         width: 100% !important;
         p {

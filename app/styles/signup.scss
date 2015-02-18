@@ -1,42 +1,42 @@
-.c_sign_in_outer {
+.c-sign-in-outer {
 	position: relative;
 	top: 100px;
 }
-.c_sign_up_outer {
+.c-sign-up-outer {
 	position: relative;
 	top:20px;
 }
-.c_sign_in_inner, .c_sign_up_inner {
+.c-sign-in-inner, .c-sign-up-inner {
 	padding-top: 15px;
 	padding-bottom: 15px;
 	margin-left: 20px;
 	margin-right: 20px;
 	margin-bottom: 20px;
 }
-.c_create_account_header, .c_signin_header {
+.c-create-account-header, .c-signin-header {
 	margin-left: 10px;
 }
-.c_checkbox_terms {
+.c-checkbox-terms {
 	margin-left: 11px;
 }
 
 
 
-.c_sign_in_button_div {
+.c-sign-in-button-div {
 	padding-left: 10px;
 	padding-right: 10px;
 }
-.c_sign_in_button {
+.c-sign-in-button {
 	margin-top: 20px;
 	width: 100%;
 	height: 50px;
 }
 
-.c_create_account_button_div {
+.c-create-account-button-div {
 	padding-left: 10px;
 	padding-right: 10px;
 }
-.c_create_account_button, .c_sign_in_with_google {
+.c-create-account-button, .c-sign-in-with-google {
 	margin-top: 30px;
 	width: 100%;
 	height: 50px;

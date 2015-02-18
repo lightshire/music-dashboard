@@ -5,7 +5,7 @@ var React = require('react'),
         },
         render: function() {
             return (
-                <tr className='c_row_admin_artists'>
+                <tr className='c-row-admin-artists'>
                     <td>
                         <div>
                             <i className="mdi-av-play-arrow"></i>

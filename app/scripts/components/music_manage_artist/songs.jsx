@@ -35,7 +35,7 @@ var React = require('react'),
             });
             return (
                 <div className='table'>
-                    <table className='c_responsive_table'>
+                    <table className='c-responsive-table'>
                         <thead>
                             <tr>
                                 <th></th>

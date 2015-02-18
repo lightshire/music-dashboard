@@ -106,10 +106,10 @@ var React = require('react/addons'),
                     <div className={this.state.status.modal === 'playlist' ? 'playlist' : 'playlist hide'}>
 
                       
-                        <div className='c_volume_ctrl'>
+                        <div className='c-volume-ctrl'>
                             <input type='range' ref='volume_control' onChange={this.handleVolumeChange} className='volume' min='0' max='100' value={this.state.status.volume * 100} />
                         </div>
-                        <div className='c_panel_inner hide-on-med-and-up'>
+                        <div className='c-panel-inner hide-on-med-and-up'>
                             <div className='row'>
                                 <div className='col s2 m2 l2'>&nbsp;</div>
                                 <div className='col s2 m3 l2'><a className='grey-text' href='#' onClick={this.handlePreviousTrack}><i className='mdi-av-skip-previous' /></a></div>

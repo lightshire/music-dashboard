@@ -56,19 +56,19 @@ var React = require('react'),
                 artist_info_list = (
                     <div className="col s12">
                         <ul className='tabs default-tab'>
-                           <li className='tab col s6'><Link to='music.manager.artist.songs' params={{id: id}} className='waves-effect waves-white btn-flat white-text c_tabs'>Tracks</Link></li>
-                           <li className='tab col s6'><Link to='music.manager.artist.info' params={{id: id}} className='waves-effect waves-white btn-flat white-text c_tabs'>Artist Info</Link></li>
+                           <li className='tab col s6'><Link to='music.manager.artist.songs' params={{id: id}} className='waves-effect waves-white btn-flat white-text c-tabs'>Tracks</Link></li>
+                           <li className='tab col s6'><Link to='music.manager.artist.info' params={{id: id}} className='waves-effect waves-white btn-flat white-text c-tabs'>Artist Info</Link></li>
                         </ul>
                     </div>
                 );
             return (
-                <div className='c_body'>
-                    <div className='c_header z-depth-1'>
+                <div className='c-body'>
+                    <div className='c-header z-depth-1'>
                         <div className='container'>
                             <h4 className='white-text'>
                                 <Link to='music.manager.artist'><i className='white-text mdi-hardware-keyboard-backspace black-text'></i></Link> Artist 1
                             </h4>
-                            <div className='c_links'>
+                            <div className='c-links'>
                                 <div className='row'>
                                     {artist_info_list}
                                 </div>
@@ -76,7 +76,7 @@ var React = require('react'),
                             <Search />
                         </div>
                     </div>
-                    <div className='container c_main_container z-depth-1'>
+                    <div className='container c-main-container z-depth-1'>
                         <RouteHandler />
                     </div>
                 </div>
