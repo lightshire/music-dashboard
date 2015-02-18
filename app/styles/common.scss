@@ -2,9 +2,9 @@
     background: $white;
 }
 .c_global_floating_button {
-    position: absolute;
-    top: 186px;
-    right: 151px;
+    position: fixed;
+    bottom: 20px;
+    right: 50px;
 }
 .c_first_button {
     width: 100%;

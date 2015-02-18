@@ -4,7 +4,6 @@ var React = require('react'),
     RouteHandler = Router.RouteHandler,
     Link = Router.Link,
     InputField = require('./helpers/textfield'),
-    ReactCSSTransitionGroup = React.addons.CSSTransitionGroup,
     SessionStore = require('../stores/session_stores'),
     SessionActions = require('../actions/session_actions'),
     SignIn = React.createClass({

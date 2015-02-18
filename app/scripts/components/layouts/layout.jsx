@@ -36,8 +36,8 @@ var React = require('react/addons'),
                         <div className={this.state.layout.sidebar ? 'main-route-container' : 'main-route-container no-sidebar'}>
                             <RouteHandler />
                         </div>
-                        <GlobalFloatingButton />
                     </div>
+                    <GlobalFloatingButton />
                     <ModalWrapper />
                 </div>
             );
