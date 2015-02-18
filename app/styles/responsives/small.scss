@@ -1,10 +1,10 @@
 @media #{$small-only} {
-    .c_header {
+    .c-header {
         padding-top: 60px;
     }
-    .c_my_account_upgrade {
+    .c-my-account-upgrade {
         margin-top: 1px;
-        .intro_text {
+        .intro-text {
             padding-top: 20px;
             padding-bottom: 20px;
         }
@@ -25,7 +25,7 @@
         height: 64px;
     }
 
-  .c_my_account_settings_table {
+  .c-my-account-settings-table {
     tbody {
         tr {
             td {
@@ -47,7 +47,7 @@
         width: 100%;
         min-height: 100%;
         padding: 24px 0;
-        .close_modal {
+        .close-modal {
             display: block;
             cursor: pointer;
             position: absolute;
@@ -62,15 +62,15 @@
             text-align: center;
             margin-bottom: 0;
            div {
-                .action_icons {
+                .action-icons {
                     width: 50% !important;
                 }
-                .action_icons:first-child, .action_icons:last-child {
+                .action-icons:first-child, .action-icons:last-child {
                     display: none;
                 }
            } 
         }
-        .c_upload_music_file_modal {
+        .c-upload-music-file-modal {
             text-align: center;
             margin: 0 auto 40px;
             p {
@@ -79,7 +79,7 @@
                     font-size: 3rem;
                 }
             }
-            .c_upload_music_file_modal_h {
+            .c-upload-music-file-modal-h {
                 display: none;
             }
             h5 {
@@ -100,7 +100,7 @@
         }
     }
 
-    .res_up_img div {
+    .res-up-img div {
         display: block;
         width: 100% !important;
         p {
@@ -110,7 +110,7 @@
             text-align: center;
         }
     }
-    .c_track_info div {
+    .c-track-info div {
         display: block;
         width: 100% !important;
         h6 {
@@ -178,11 +178,11 @@
             top: 25px;
             right: -321px;
             width: 370px;
-            .c_volume_ctrl {
+            .c-volume-ctrl {
                 padding-left: 40px;
                 padding-right: 40px;
             }
-            .c_panel_inner {
+            .c-panel-inner {
                 position: relative;
                 left: 91px;
                 top: 11px;

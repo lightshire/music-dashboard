@@ -74,7 +74,7 @@ var React = require('react'),
                     </div>
 
                     <div className='table'>
-                        <table className='c_earnings_table c_responsive_table'>
+                        <table className='c-earnings-table c-responsive-table'>
                             <thead>
                                 <tr>
                                     <th></th>

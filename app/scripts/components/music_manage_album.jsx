@@ -61,7 +61,7 @@ var React = require('react'),
                             <Link 
                                 to='music.manager.album.songs' 
                                 params={{id: id}} 
-                                className='waves-effect waves-white btn-flat white-text c_tabs'>
+                                className='waves-effect waves-white btn-flat white-text c-tabs'>
                                 Tracks
                             </Link>
                         </li>
@@ -69,7 +69,7 @@ var React = require('react'),
                             <Link 
                                 to='music.manager.album.albuminfo' 
                                 params={{id: id}} 
-                                className='waves-effect waves-white btn-flat white-text c_tabs'>
+                                className='waves-effect waves-white btn-flat white-text c-tabs'>
                                 Album Info
                             </Link>
                         </li>
@@ -77,8 +77,8 @@ var React = require('react'),
                 );
 
             return (
-                <div className='c_body'>
-                    <div className='c_header'>
+                <div className='c-body'>
+                    <div className='c-header'>
                         <div className='container'>
                             <h4 className='white-text'>
                                 <Link to='music.manager.albums'>
@@ -86,7 +86,7 @@ var React = require('react'),
                                 </Link>
                                 Potato Album
                             </h4>
-                            <div className='c_links'>
+                            <div className='c-links'>
                                 <div className='row'>
                                      <div className="col s12">                                        
                                         {link_list}                                        
@@ -103,7 +103,7 @@ var React = require('react'),
                             </div>
                         </div>
                     </div>
-                    <div className='container c_main_container z-depth-1'>
+                    <div className='container c-main-container z-depth-1'>
                         <RouteHandler />
                     </div>
                 </div>

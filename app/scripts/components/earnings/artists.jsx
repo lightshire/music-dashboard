@@ -77,7 +77,7 @@ var React = require('react'),
                         </div>
                     </div>
                     <div className='table'>
-                        <table className='c_responsive_table'>
+                        <table className='c-responsive-table'>
                             <thead>
                                 <tr>
                                     <th></th>

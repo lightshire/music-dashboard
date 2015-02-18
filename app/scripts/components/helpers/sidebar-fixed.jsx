@@ -67,7 +67,7 @@ var React = require('react/addons'),
 
             if (!this.hasAccess(['admin', 'artist', 'general_user', 'record_label'])) {
                 return (
-                    <div className='side-bar zindex_supertop'>
+                    <div className='side-bar zindex-supertop'>
                         <ul id='nav-mobile' className='side-nav fixed'>
                             <li className='sidebar-li'>
                                 <Link to='signin' className='waves-effect waves-blue collapsible-header collapse-link' onClick={this.activeSidebarHome}>Sign in</Link>
@@ -98,7 +98,7 @@ var React = require('react/addons'),
             }
 
             return (
-                <div className='side-bar zindex_supertop'>
+                <div className='side-bar zindex-supertop'>
                     <ul id='nav-mobile' className='side-nav fixed'>
                         <li className='no-hover'>
                             <div className='logo-container col l2'>

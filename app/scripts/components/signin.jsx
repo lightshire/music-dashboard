@@ -22,7 +22,7 @@ var React = require('react'),
         },
         render: function() {
             return (
-                <div className='c_sign_in_outer container'>
+                <div className='c-sign-in-outer container'>
                     <form action='#' onSubmit={this.handleSignIn}>
                         <div className='row'>
                             <div className='col s12 m12 l12'>
@@ -33,8 +33,8 @@ var React = require('react'),
                             <div className='col s2 m2 l2'>&nbsp;</div>
                             <div className='col s8 m8 l8'>
                                 <div className='card'>
-                                    <div className='c_sign_in_inner'>
-                                        <h5 className='c_signin_header'>Sign in</h5>
+                                    <div className='c-sign-in-inner'>
+                                        <h5 className='c-signin-header'>Sign in</h5>
                                         <InputField
                                             ref='username'
                                             textfield_id='username_field'
@@ -51,8 +51,8 @@ var React = require('react'),
                                             outerdiv_size='col s12 m12 l12'
                                             textfield_label='Password'
                                             textfield_label_for='password_field' />
-                                        <div className='c_sign_in_button_div'>
-                                            <button className='c_sign_in_button white-text waves-effect waves-light btn green lighten-2'>Sign in</button>
+                                        <div className='c-sign-in-button-div'>
+                                            <button className='c-sign-in-button white-text waves-effect waves-light btn green lighten-2'>Sign in</button>
                                         </div>
                                     </div>
                                 </div>

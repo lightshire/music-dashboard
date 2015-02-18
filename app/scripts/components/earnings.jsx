@@ -21,7 +21,7 @@ var React = require('react'),
 
                 my_earnings_songs = (
                         <li className='tab col s3'>
-                            <Link to='my.earnings.songs' className='waves-effect waves-white btn-flat white-text c_tabs'>Tracks</Link>
+                            <Link to='my.earnings.songs' className='waves-effect waves-white btn-flat white-text c-tabs'>Tracks</Link>
                         </li>
                 );
 
@@ -29,7 +29,7 @@ var React = require('react'),
                         <li className='tab col s3'>
                             <Link 
                                 to='my.earnings.albums' 
-                                className='waves-effect waves-white btn-flat white-text c_tabs'>Albums
+                                className='waves-effect waves-white btn-flat white-text c-tabs'>Albums
                             </Link>
                         </li>
                 );
@@ -38,7 +38,7 @@ var React = require('react'),
                         <li className='tab col s3'>
                             <Link 
                                 to='my.earnings.artists' 
-                                className='waves-effect waves-white btn-flat white-text c_tabs'>Artists
+                                className='waves-effect waves-white btn-flat white-text c-tabs'>Artists
                             </Link>
                         </li>
                 );
@@ -47,13 +47,13 @@ var React = require('react'),
                         <li className='tab col s3'>
                             <Link 
                                 to='my.earnings.labels' 
-                                className='waves-effect waves-white btn-flat white-text c_tabs'>Record Labels
+                                className='waves-effect waves-white btn-flat white-text c-tabs'>Record Labels
                             </Link>
                         </li>
                 );
 
                 more_tab = (
-                    <li className='tab col s4 more'><a href='#' className='white-text c_tabs'>MORE<i className="mdi-navigation-arrow-drop-down right"></i></a>
+                    <li className='tab col s4 more'><a href='#' className='white-text c-tabs'>MORE<i className="mdi-navigation-arrow-drop-down right"></i></a>
                         <ul>
                             {my_earnings_artists}
                             {my_earnings_labels}
@@ -89,18 +89,18 @@ var React = require('react'),
                     </div>
                 );
             return (
-                <div className='c_body'>
-                    <div className='c_header z-depth-1'>
+                <div className='c-body'>
+                    <div className='c-header z-depth-1'>
                         <div className='container'>
                             <h4 className='white-text'>My Earnings</h4>
-                            <div className='c_links'>
+                            <div className='c-links'>
                                 <div className="row">
                                     {earnings_list}
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className='container c_main_container z-depth-1'>
+                    <div className='container c-main-container z-depth-1'>
                         <RouteHandler />
                     </div>
                 </div>

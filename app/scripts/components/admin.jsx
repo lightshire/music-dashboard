@@ -85,7 +85,7 @@ var React = require('react'),
                     ),
                 chooseButton = (
                     <div>
-                        <a className='c_modal_buttons waves-effect waves-light btn black white-text lighten-2'>Choose File</a>
+                        <a className='c-modal-buttons waves-effect waves-light btn black white-text lighten-2'>Choose File</a>
                     </div>
                 ),
                 modal_create_record_label = (
@@ -126,19 +126,19 @@ var React = require('react'),
                     ),
                 modal_select_upload = (
                     <div key='select_modal'
-                        className='container center-align c_upload_music_file_modal'>
+                        className='container center-align c-upload-music-file-modal'>
                         <p>
                             <i className='mdi-file-file-upload large'></i>
                             <h5>Drag a music file here</h5>
                             <h6>- or -</h6>
-                            <a className='waves-effect waves-light btn red lighten-2 c_select_a_track_button'>
+                            <a className='waves-effect waves-light btn red lighten-2 c-select-a-track-button'>
                                 Select a track from your computer
                             </a>
                         </p>
                     </div>
                 ),
                 modal_uploading_ready = (
-                    <div key='upload_modal_ready' className='container center-align c_upload_music_file_modal'>
+                    <div key='upload_modal_ready' className='container center-align c-upload-music-file-modal'>
                         <p>
                             <i className='mdi-av-my-library-music large'></i>
                             <h5>filename.mp3</h5>
@@ -147,7 +147,7 @@ var React = require('react'),
                     </div>
                 ),
                 modal_uploading_progress = (
-                    <div key='uploading_progress'className='container center-align c_upload_music_file_modal'>
+                    <div key='uploading_progress'className='container center-align c-upload-music-file-modal'>
                         <p>
                             <div className='progress'>
                                 <div id = 'percentProgress' className='determinate'
@@ -201,43 +201,43 @@ var React = require('react'),
                     {
                         text : 'Done',
                         onclick : this.cancelHandler,
-                        class_name : 'c_modal_buttons waves-effect waves-light btn green lighten-2 modal-action modal-trigger modal-close'
+                        class_name : 'c-modal-buttons waves-effect waves-light btn green lighten-2 modal-action modal-trigger modal-close'
                     },
                     {
                         text : 'Cancel',
                         onclick : this.cancelHandler,
-                        class_name : 'c_modal_buttons black-text waves-effect waves-grey lighten-4 btn white lighten-5 modal-action modal-close'
+                        class_name : 'c-modal-buttons black-text waves-effect waves-grey lighten-4 btn white lighten-5 modal-action modal-close'
                     }
                 ]),
                 done_cancel_button_upload = ([
                     {
                         text : 'Next',
                         onclick : this.uploadingReady,
-                        class_name : 'c_modal_buttons waves-effect waves-light btn green lighten-2 modal-action modal-trigger modal-close'
+                        class_name : 'c-modal-buttons waves-effect waves-light btn green lighten-2 modal-action modal-trigger modal-close'
                     },
                     {
                         text : 'Cancel',
                         onclick : this.cancelHandler,
-                        class_name : 'c_modal_buttons black-text waves-effect waves-grey lighten-4 btn white lighten-5 modal-action modal-close'
+                        class_name : 'c-modal-buttons black-text waves-effect waves-grey lighten-4 btn white lighten-5 modal-action modal-close'
                     }
                 ]),
                 done_cancel_button_uploading = ([
                     {
                         text : 'Upload',
                         onclick : this.uploadingProgress,
-                        class_name : 'c_modal_buttons waves-effect waves-light btn green lighten-2 modal-action modal-trigger modal-close'
+                        class_name : 'c-modal-buttons waves-effect waves-light btn green lighten-2 modal-action modal-trigger modal-close'
                     },
                     {
                         text : 'Cancel',
                         onclick : this.cancelHandler,
-                        class_name : 'c_modal_buttons black-text waves-effect waves-grey lighten-4 btn white lighten-5 modal-action modal-close'
+                        class_name : 'c-modal-buttons black-text waves-effect waves-grey lighten-4 btn white lighten-5 modal-action modal-close'
                     }
                 ]),
                 done_cancel_button_progress = ([
                     {
                         text : 'Cancel',
                         onclick : this.uploadSave,
-                        class_name : 'close_now c_modal_buttons black-text waves-effect waves-grey lighten-4 btn white lighten-5 modal-action modal-close'
+                        class_name : 'close-now c-modal-buttons black-text waves-effect waves-grey lighten-4 btn white lighten-5 modal-action modal-close'
                     }
                 ]);
 
@@ -295,17 +295,17 @@ var React = require('react'),
             }
 
             return (
-                <div className='c_body'>
-                    <div className='c_header'>
+                <div className='c-body'>
+                    <div className='c-header'>
                         <div className='container'>
                             <h4 className='white-text'>Admin</h4>
-                            <div className='c_links'>
-                                <Link to='home' className='waves-effect waves-white btn-flat white-text c_tabs'>Songs</Link>
-                                <Link to='home' className='waves-effect waves-white btn-flat white-text c_tabs'>Albums</Link>
-                                <Link to='home' className='waves-effect waves-white btn-flat white-text c_tabs'>Artists</Link>
-                                <Link to='home' className='waves-effect waves-white btn-flat white-text c_tabs'>Labels</Link>
-                                <Link to='home' className='waves-effect waves-white btn-flat white-text c_tabs'>Label Earnings</Link>
-                                <Link to='home' className='waves-effect waves-white btn-flat white-text c_tabs'>Artist Earnings</Link>
+                            <div className='c-links'>
+                                <Link to='home' className='waves-effect waves-white btn-flat white-text c-tabs'>Songs</Link>
+                                <Link to='home' className='waves-effect waves-white btn-flat white-text c-tabs'>Albums</Link>
+                                <Link to='home' className='waves-effect waves-white btn-flat white-text c-tabs'>Artists</Link>
+                                <Link to='home' className='waves-effect waves-white btn-flat white-text c-tabs'>Labels</Link>
+                                <Link to='home' className='waves-effect waves-white btn-flat white-text c-tabs'>Label Earnings</Link>
+                                <Link to='home' className='waves-effect waves-white btn-flat white-text c-tabs'>Artist Earnings</Link>
                             </div>
                             <Search />
                             <div className='upload-btn right-align modal-trigger' onClick={this.selectAlbumOrMusic}>
@@ -315,7 +315,7 @@ var React = require('react'),
                             </div>
                         </div>
                     </div>
-                    <div className='container c_main_container z-depth-1'>
+                    <div className='container c-main-container z-depth-1'>
                         <RouteHandler />
                     </div>
                     <ReactCSSTransitionGroup transitionName='showModal'>
