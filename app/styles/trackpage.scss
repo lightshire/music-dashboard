@@ -1,0 +1,18 @@
+.card {
+	background: none;
+	box-shadow: none;
+	border-radius: 0;
+	line-height: 0;
+}
+
+.card-content {
+	padding-top: 0 !important;
+	.card-title {
+		font-size: 1.25rem;
+	}
+	p {
+		a {
+			font-size: .75rem;
+		}
+	}
+}
