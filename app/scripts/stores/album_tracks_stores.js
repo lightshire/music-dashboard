@@ -10,7 +10,8 @@ var Reflux = require('reflux'),
             label: 'Mashed Records',
             genre: 'Psychedelic',
             date_uploaded: 'an hour ago',
-            status: 'not_monetize'
+            status: 'not_monetize',
+            image: 'http://placehold.it/400x400/cecece/333'
         },
         2: {
             id: 2,
@@ -20,7 +21,8 @@ var Reflux = require('reflux'),
             label: 'Mashed Records',
             genre: 'Psychedelic',
             date_uploaded: 'an hour ago',
-            status: 'accepted'
+            status: 'accepted',
+            image: 'http://placehold.it/400x400/cecece/333'
         },
         3: {
             id: 3,
@@ -30,7 +32,8 @@ var Reflux = require('reflux'),
             label: 'Mashed Records',
             genre: 'Psychedelic',
             date_uploaded: 'an hour ago',
-            status: 'rejected'
+            status: 'rejected',
+            image: 'http://placehold.it/400x400/cecece/333'
         },
         4: {
             id: 4,
@@ -40,7 +43,52 @@ var Reflux = require('reflux'),
             label: 'Mashed Records',
             genre: 'Psychedelic',
             date_uploaded: 'an hour ago',
-            status: 'pending'
+            status: 'pending',
+            image: 'http://placehold.it/400x400/cecece/333'
+        },
+        5: {
+            id: 5,
+            title: 'French Fries',
+            artist: 'The Peelers',
+            time: '20:00',
+            label: 'Mashed Records',
+            genre: 'Psychedelic',
+            date_uploaded: 'an hour ago',
+            status: 'pending',
+            image: 'http://placehold.it/400x400/cecece/333'
+        },
+        6: {
+            id: 6,
+            title: 'French Fries',
+            artist: 'The Peelers',
+            time: '20:00',
+            label: 'Mashed Records',
+            genre: 'Psychedelic',
+            date_uploaded: 'an hour ago',
+            status: 'pending',
+            image: 'http://placehold.it/400x400/cecece/333'
+        },
+        7: {
+            id: 7,
+            title: 'French Fries',
+            artist: 'The Peelers',
+            time: '20:00',
+            label: 'Mashed Records',
+            genre: 'Psychedelic',
+            date_uploaded: 'an hour ago',
+            status: 'pending',
+            image: 'http://placehold.it/400x400/cecece/333'
+        },
+        8: {
+            id: 8,
+            title: 'French Fries',
+            artist: 'The Peelers',
+            time: '20:00',
+            label: 'Mashed Records',
+            genre: 'Psychedelic',
+            date_uploaded: 'an hour ago',
+            status: 'pending',
+            image: 'http://placehold.it/400x400/cecece/333'
         }
     },
     AlbumTracksStore = Reflux.createStore({
@@ -57,7 +105,8 @@ var Reflux = require('reflux'),
                 label: 'Mashed Records',
                 genre: 'Psychedelic',
                 date_uploaded: 'an hour ago',
-                status: 'not_monetize'
+                status: 'not_monetize',
+                image: 'http://placehold.it/400x400/cecece/333'
             };
 
             _albumtracks[data.id] = data;

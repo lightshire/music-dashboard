@@ -63,7 +63,9 @@ var React = require('react/addons'),
                 my_earnings_songs = (<li><Link to='my.earnings.songs' className='waves-effect waves-blue collapsed-link'>Tracks</Link></li>),
                 my_earnings_albums = (<li><Link to='my.earnings.albums' className='waves-effect waves-blue collapsed-link'>Albums</Link></li>),
                 my_earnings_artists = (<li><Link to='my.earnings.artists' className='waves-effect waves-blue collapsed-link'>Artists</Link></li>),
-                my_earnings_labels = (<li><Link to='my.earnings.labels' className='waves-effect waves-blue collapsed-link'>Record Labels</Link></li>);
+                my_earnings_labels = (<li><Link to='my.earnings.labels' className='waves-effect waves-blue collapsed-link'>Record Labels</Link></li>),
+
+                music_trackpage = (<li><Link to='music.trackpage' className='waves-effect waves-blue collapsed-link'>Music Trackpage</Link></li>);
 
             if (!this.hasAccess(['admin', 'artist', 'general_user', 'record_label'])) {
                 return (
@@ -141,6 +143,9 @@ var React = require('react/addons'),
                                             {my_earnings_labels}
                                         </ul>
                                     </div>
+                                </li>
+                                <li className='sidebar-li'>
+                                    {music_trackpage}
                                 </li>
                             </ul>
                         </li>

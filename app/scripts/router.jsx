@@ -36,6 +36,11 @@ var React = require('react'),
     MusicManagerArtistSongs = require('./components/music_manage_artist/songs'),
     MusicManagerArtistInfo = require('./components/music_manage_artist/artistinfo'),
 
+    MusicTrackpage = require('./components/music_trackpage'),
+    MusicTrackpageLatestTracks = require('./components/music_trackpage/latest_tracks'),
+    MusicTrackpageMostDownloaded = require('./components/music_trackpage/most_downloaded'),
+    MusicTrackpageTabLink = require('./components/music_trackpage/tab_link'),
+
     // To be deleted
     TempAdmin = require('./components/admin'),
 
@@ -73,6 +78,12 @@ var React = require('react'),
                     <Route name='my.earnings.albums' path='albums' handler={MyEarningsAlbums} />
                     <Route name='my.earnings.artists' path='artists' handler={MyEarningsArtists} />
                     <Route name='my.earnings.labels' path='labels' handler={MyEarningsLabels} />
+                </Route>
+
+                <Route name='music.trackpage' path='/music_trackpage' handler={MusicTrackpage}>
+                    <Route name='music.trackpage.tracks' path='latest_tracks' handler={MusicTrackpageLatestTracks} />
+                    <Route name='music.trackpage.downloaded' path='most_downloaded' handler={MusicTrackpageMostDownloaded} />
+                    <Route name='music.trackpage.link' path='tab_link' handler={MusicTrackpageTabLink} />
                 </Route>
 
             </Route>
