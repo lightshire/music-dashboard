@@ -11,7 +11,8 @@ var Reflux = require('reflux'),
             genre: 'Psychedelic',
             date_uploaded: 'an hour ago',
             status: 'not_monetize',
-            image: 'http://placehold.it/400x400/cecece/333'
+            image: 'http://placehold.it/400x400/cecece/333',
+            price: 'free'
         },
         2: {
             id: 2,
@@ -22,7 +23,8 @@ var Reflux = require('reflux'),
             genre: 'Psychedelic',
             date_uploaded: 'an hour ago',
             status: 'accepted',
-            image: 'http://placehold.it/400x400/cecece/333'
+            image: 'http://placehold.it/400x400/cecece/333',
+            price: '$ 1.00'
         },
         3: {
             id: 3,
@@ -33,7 +35,8 @@ var Reflux = require('reflux'),
             genre: 'Psychedelic',
             date_uploaded: 'an hour ago',
             status: 'rejected',
-            image: 'http://placehold.it/400x400/cecece/333'
+            image: 'http://placehold.it/400x400/cecece/333',
+            price: 'free'
         },
         4: {
             id: 4,
@@ -44,7 +47,8 @@ var Reflux = require('reflux'),
             genre: 'Psychedelic',
             date_uploaded: 'an hour ago',
             status: 'pending',
-            image: 'http://placehold.it/400x400/cecece/333'
+            image: 'http://placehold.it/400x400/cecece/333',
+            price: 'free'
         },
         5: {
             id: 5,
@@ -55,7 +59,8 @@ var Reflux = require('reflux'),
             genre: 'Psychedelic',
             date_uploaded: 'an hour ago',
             status: 'pending',
-            image: 'http://placehold.it/400x400/cecece/333'
+            image: 'http://placehold.it/400x400/cecece/333',
+            price: 'free'
         },
         6: {
             id: 6,
@@ -66,7 +71,8 @@ var Reflux = require('reflux'),
             genre: 'Psychedelic',
             date_uploaded: 'an hour ago',
             status: 'pending',
-            image: 'http://placehold.it/400x400/cecece/333'
+            image: 'http://placehold.it/400x400/cecece/333',
+            price: 'free'
         },
         7: {
             id: 7,
@@ -77,7 +83,8 @@ var Reflux = require('reflux'),
             genre: 'Psychedelic',
             date_uploaded: 'an hour ago',
             status: 'pending',
-            image: 'http://placehold.it/400x400/cecece/333'
+            image: 'http://placehold.it/400x400/cecece/333',
+            price: '$ 1.00'
         },
         8: {
             id: 8,
@@ -88,7 +95,8 @@ var Reflux = require('reflux'),
             genre: 'Psychedelic',
             date_uploaded: 'an hour ago',
             status: 'pending',
-            image: 'http://placehold.it/400x400/cecece/333'
+            image: 'http://placehold.it/400x400/cecece/333',
+            price: 'free'
         }
     },
     AlbumTracksStore = Reflux.createStore({

@@ -1,3 +1,7 @@
+.row-aligned-tab {
+	margin-left: 22px;
+}
+
 .card {
 	background: none;
 	box-shadow: none;
@@ -6,13 +10,44 @@
 }
 
 .card-content {
-	padding-top: 0 !important;
+	padding-bottom: 10px !important;
 	.card-title {
+		line-height: 25px;
 		font-size: 1.25rem;
 	}
 	p {
+		line-height: 1;
 		a {
 			font-size: .75rem;
+		}
+		&:nth-child(3), 
+		&:nth-child(4) {
+			display: inline-block;
+			text-transform: uppercase;
+			padding-top: 15px;
+		}
+	}
+	.price {
+		position: absolute;
+		right: 25px;
+	}
+}
+
+.mdi-navigation-more-vert {
+	cursor: pointer;
+}
+
+.mdi-action-shopping-cart {
+	font-size: .8rem !important;
+	padding: 0 5px 0 0;
+}
+
+.dropdown-content {
+	height: 127px !important;
+	li {
+		a {
+			font-size: .8rem;
+			padding: .3rem .5rem;
 		}
 	}
 }
