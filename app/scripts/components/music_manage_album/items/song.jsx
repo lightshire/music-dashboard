@@ -91,8 +91,8 @@ var React = require('react'),
             }
             
             return (
-                <tr className="songs col">
-                    <td>
+                <tr className="songs">
+                    <td data-column-title=''>
                         <div>
                             <i className="mdi-av-play-arrow"></i>
                             <i className="mdi-content-add"></i>
@@ -104,7 +104,7 @@ var React = require('react'),
                     <td data-column-title='Label'>{this.props.label}</td>
                     <td data-column-title='Genre'>{this.props.genre}</td>
                     <td data-column-title='Uploaded'>{this.props.uploaded}</td>
-                    <td>
+                    <td data-column-title=''>
                         <div className="right-align">
                             <i onClick={this.showModal} id="earn" className={monetize_class}></i>
                             <i className="mdi-editor-mode-edit"></i>

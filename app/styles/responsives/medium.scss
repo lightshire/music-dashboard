@@ -1,5 +1,8 @@
 @media #{$medium-only} {
-    .c-header {
+    .side-nav {
+        overflow-y: scroll; 
+    }
+    .c_header {
         padding-top: 50px;
     }
     .c-my-account-upgrade {

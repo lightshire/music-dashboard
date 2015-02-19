@@ -1,10 +1,10 @@
 .c-main-container {
     background: $white;
 }
-.c-global-floating-button {
-    position: absolute;
-    top: 186px;
-    right: 151px;
+.c_global_floating_button {
+    position: fixed;
+    bottom: 20px;
+    right: 50px;
 }
 .c-first-button {
     width: 100%;
