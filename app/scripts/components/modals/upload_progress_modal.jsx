@@ -13,7 +13,7 @@ var React = require('react'),
 
             content = (
                 <div onClick={this.props.uploadSaveModal}
-                    className='container center-align c_upload_music_file_modal'>
+                    className='container center-align c-upload-music-file-modal'>
                     <p>
                         <div className='progress'>
                             <div className='determinate'
@@ -30,12 +30,12 @@ var React = require('react'),
                 {
                     text : 'Upload',
                     onclick : '',
-                    class_name : 'c_modal_buttons waves-effect waves-light btn grey lighten-2 modal-action'
+                    class_name : 'c-modal-buttons waves-effect waves-light btn grey lighten-2 modal-action'
                 },
                 {
                     text : 'Cancel',
                     onclick : '',
-                    class_name : 'c_modal_buttons waves-effect waves-light btn grey lighten-2 modal-action modal-close'
+                    class_name : 'c-modal-buttons waves-effect waves-light btn grey lighten-2 modal-action modal-close'
                 }
             ]);
 

@@ -2,8 +2,8 @@
 var React = require('react'),
     Artist = React.createClass({
         render: function () {
-            <tr className='c_row_admin_artists'>
-                <td><img className="c_labels_image" src={this.props.image} /></td>
+            <tr className='c-row-admin-artists'>
+                <td><img className="c-labels-image" src={this.props.image} /></td>
                 <td>{this.props.name}</td>
                 <td>{this.props.album_count}</td>
                 <td>{this.props.track_count}</td>

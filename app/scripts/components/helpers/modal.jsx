@@ -20,7 +20,7 @@ var React = require('react'),
 
             return (
                 <div id={this.props.id} className='modal'>
-                    <i onClick={this.cancelHandler} className='close_modal small mdi-content-clear'></i>
+                    <i onClick={this.cancelHandler} className='close-modal small mdi-content-clear'></i>
                     <h4>{this.props.title}</h4>
                     {this.props.content}
                     {buttons}

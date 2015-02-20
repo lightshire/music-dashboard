@@ -1,4 +1,4 @@
-.c_main_container {
+.c-main-container {
     background: $white;
 }
 .c_global_floating_button {
@@ -7,50 +7,50 @@
     right: 50px;
     z-index: 1;
 }
-.c_first_button {
+.c-first-button {
     width: 100%;
 }
-.c_header {
+.c-header {
     background: $primary-color;
 }
-.c_header .container h4 {
+.c-header .container h4 {
     margin-top: 0;
 }
-.c_modal_buttons {
+.c-modal-buttons {
     margin-right: 10px;
 }
-.c_my_account_settings {
+.c-my-account-settings {
     padding-top: 30px;
     padding-bottom: 20px;
     .row {
-        .c_name_div {
-            .c_name {
+        .c-name-div {
+            .c-name {
                 margin-top: 37px;
             }
         }
     }
 }
-.c_upload_music_file_modal, {
+.c-upload-music-file-modal, {
     margin-top: 110px;
     margin-bottom: 100px;
 }
-.c_select_a_track_button {
+.c-select-a-track-button {
     margin-top: 10px;
 }
 .container{
     position: relative;
 }
-.c_links .btn-flat {
+.c-links .btn-flat {
     border-radius: 0;
 } 
-.c_body {
-    .c_header {
+.c-body {
+    .c-header {
         .container {
             padding: 0;
         }
     }
 }
-.c_links {
+.c-links {
     .tabs {
         background: none;
         li {
@@ -151,13 +151,13 @@
         }
     }
 }
-.c_tabs {
+.c-tabs {
     margin-right: 20px;
 }
-.c_tabs.active {
+.c-tabs.active {
     border-bottom: 4px solid $accent-color;
 }
-.c_labels_image {
+.c-labels-image {
     border-radius: 100%;
 }
 #upload {
@@ -165,13 +165,13 @@
     width: 1px;
     height: 1px;
 }
-.c_table_buttons i {
+.c-table-buttons i {
     cursor: pointer;
 }
-.c_track_terms {
+.c-track-terms {
     text-align: justify;
 }
-.c_i_agree {
+.c-i-agree {
     margin-top: 80px;
 }
 

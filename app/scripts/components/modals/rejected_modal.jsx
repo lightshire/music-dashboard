@@ -8,8 +8,8 @@ var React = require('react'),
                 confirm_modal = this.props.confirmModal;
 
             content = (
-                <div className='c_monetize_modal'>
-                    <div className='c_track_info row'>
+                <div className='c-monetize-modal'>
+                    <div className='c-track-info row'>
                         <div className='col s12'>
                             <h6>Unfortunately, this song was rejected due to copyright issues.</h6><br/>
                         </div>
@@ -29,7 +29,7 @@ var React = require('react'),
                 {
                     text : 'Got it!',
                     onclick : confirm_modal,
-                    class_name : 'c_modal_buttons black-text waves-effect waves-grey lighten-4 btn white lighten-5'
+                    class_name : 'c-modal-buttons black-text waves-effect waves-grey lighten-4 btn white lighten-5'
                 }
             ]);
 

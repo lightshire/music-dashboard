@@ -5,7 +5,7 @@ var React = require('react'),
         render: function() {
 
             return (
-                <div className='c_album_info'>
+                <div className='c-album-info'>
                     <div className='row'>
                         <div className='col s12 m12 l6'>
                             <InputField
@@ -33,21 +33,21 @@ var React = require('react'),
                                 </div>
                                 <div className='col l8 m8 s12'>
                                     <small>At least 1600 x 1600 pixels in size</small><br/>
-                                    <a className='c_modal_buttons waves-effect waves-light btn modal-action' >Choose from File</a>
+                                    <a className='c-modal-buttons waves-effect waves-light btn modal-action' >Choose from File</a>
                                 </div>
                             </div>
                         </div>
-                    </div><hr className='c_album_info_divider'/>
+                    </div><hr className='c-album-info-divider'/>
                     <div className='right-align'>
                         <div className='row'>
                             <div className='hidden-small-button'>
-                                <div className='col s6'><a className='c_album_info_buttons black-text waves-effect waves-grey lighten-4 btn white lighten-5'>Cancel</a></div>
-                                <div className='col s6'><a className='c_album_info_buttons waves-effect waves-light btn'>Done</a></div>
+                                <div className='col s6'><a className='c-album-info-buttons black-text waves-effect waves-grey lighten-4 btn white lighten-5'>Cancel</a></div>
+                                <div className='col s6'><a className='c-album-info-buttons waves-effect waves-light btn'>Done</a></div>
                             </div>
                             <div className='hidden-big-button right-align'>
                                 <div className='col l12 m12'>
-                                    <a className='c_album_info_buttons black-text waves-effect waves-grey lighten-4 btn white lighten-5'>Cancel</a>&nbsp; &nbsp;
-                                    <a className='c_album_info_buttons waves-effect waves-light btn'>Done</a>
+                                    <a className='c-album-info-buttons black-text waves-effect waves-grey lighten-4 btn white lighten-5'>Cancel</a>&nbsp; &nbsp;
+                                    <a className='c-album-info-buttons waves-effect waves-light btn'>Done</a>
                                 </div>
                             </div>
                         </div>

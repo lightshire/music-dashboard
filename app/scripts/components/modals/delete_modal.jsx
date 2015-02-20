@@ -20,12 +20,12 @@ var React = require('react'),
                 {
                     text : 'Confirm',
                     onclick : delete_modal,
-                    class_name : 'c_modal_buttons waves-effect waves-light btn green lighten-2 modal-action'
+                    class_name : 'c-modal-buttons waves-effect waves-light btn green lighten-2 modal-action'
                 },
                 {
                     text : 'Cancel',
                     onclick : cancel,
-                    class_name : 'c_modal_buttons black-text waves-effect waves-grey lighten-4 btn white lighten-5 modal-action modal-close'
+                    class_name : 'c-modal-buttons black-text waves-effect waves-grey lighten-4 btn white lighten-5 modal-action modal-close'
                 }
             ]);
 

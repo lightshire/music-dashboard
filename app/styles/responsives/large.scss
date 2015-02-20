@@ -1,16 +1,16 @@
 @media #{$large-and-up} {
-    .c_header {
+    .c-header {
         padding-top: 50px;
     }
     .container {
         min-width: 700px;
     }
-    .c_my_account_settings {
+    .c-my-account-settings {
         padding-top: 50px;
         padding-bottom: 40px;
         .thumb {
             margin-bottom: 40px;
-            .t_name {
+            .t-name {
                 position: absolute;
                 top: 76px;
                 left: 154px;
@@ -18,7 +18,7 @@
         }
         .username {
             margin-bottom: 30px;
-            .u_username {
+            .u-username {
                 position: absolute;
                 left: 158px;
                 top: 194px;
@@ -26,23 +26,23 @@
         }
         .password {
             margin-bottom: 30px;
-            .p_password {
+            .p-password {
                 position: absolute;
                 top: 247px;
                 left: 158px;
             }
         }
         .email {
-            .e_email {
+            .e-email {
                 position: absolute;
                 top: 295px;
                 left: 158px;
             }
         }
     }
-    .c_my_account_upgrade {
+    .c-my-account-upgrade {
         margin-top: 1px;
-        .intro_text {
+        .intro-text {
             padding-top: 20px;
             padding-bottom: 20px;
         }
@@ -164,7 +164,7 @@
         }
     }
     .modal {
-        .close_modal {
+        .close-modal {
             display: none;
         }
     }
