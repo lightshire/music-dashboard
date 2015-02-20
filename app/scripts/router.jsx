@@ -39,7 +39,6 @@ var React = require('react'),
     MusicTrackpage = require('./components/music_trackpage'),
     MusicTrackpageLatestTracks = require('./components/music_trackpage/latest_tracks'),
     MusicTrackpageMostDownloaded = require('./components/music_trackpage/most_downloaded'),
-    MusicTrackpageTabLink = require('./components/music_trackpage/tab_link'),
 
     // To be deleted
     TempAdmin = require('./components/admin'),
