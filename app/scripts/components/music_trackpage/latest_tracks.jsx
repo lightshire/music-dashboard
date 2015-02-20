@@ -27,7 +27,8 @@ var React = require('react/addons'),
         	        id={item.id}
         	        image={item.image}
         	        title={item.title}
-        	        artist={item.artist} />);
+        	        artist={item.artist}
+        	        price={item.price} />);
         	});
             return (
             	<div className='row'>

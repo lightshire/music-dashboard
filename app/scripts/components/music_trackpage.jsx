@@ -8,7 +8,6 @@ var React = require('react/addons'),
         render: function() {
         	var latest_tracks,
         		most_downloaded,
-        		tab_link,
         		music_trackpage_list;
 
         		latest_tracks = (
@@ -31,27 +30,11 @@ var React = require('react/addons'),
                     </li>
         		);
 
-				tab_link= (
-					<li className='tab col s3'>
-		                <Link
-		                    to='music.trackpage.link'
-		                    className='waves-effect waves-white btn-flat white-text c_tabs'>
-		                    Tab Link
-		                </Link>
-		            </li>
-				);
-
 				music_trackpage_list = (
-				    <div className="col s12">
-				        <ul className='tabs default-tab'>
+				    <div className='col s6'>
+				        <ul className='tabs default-tab row-aligned-tab'>
 				            {latest_tracks}
 				            {most_downloaded}
-				            {tab_link}
-				        </ul>
-				        <ul className='tabs mobile-tab'>
-				            {latest_tracks}
-				            {most_downloaded}
-				            {tab_link}
 				        </ul>
 				    </div>
 				);
