@@ -34,7 +34,7 @@ var React = require('react'),
 							<ul id='nav-more' className='dropdown-content'>
 								<li>
 									<a className='blue-text' href='#!'>
-										<i className='tiny mdi-action-shopping-cart'></i>
+										<i className='tiny mdi-action-shopping-cart shopping-cart'></i>
 										Add to Cart
 									</a>
 								</li>

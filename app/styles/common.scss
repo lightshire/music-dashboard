@@ -202,3 +202,8 @@
         padding: 0;
     }
 }
+
+.player, .shopping-cart-top, .login {
+    display: inline-block;
+    vertical-align: top;
+}

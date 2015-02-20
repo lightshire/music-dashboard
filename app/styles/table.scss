@@ -1,22 +1,26 @@
 .table {
     padding-top: 15px;
+    thead {
+        border-bottom: none;
+        line-height: 0;
+        text-transform: uppercase;
+    }
+    tbody {
+        line-height: 0;
+        tr {
+            td {
+                text-transform: capitalize;
+                div {
+                    display: inline-block;
+                    cursor: pointer;
+                    i {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
 }
-.table thead {
-    border-bottom: none;
-    line-height: 0;
-    text-transform: uppercase;
-}
-.table tbody {
-    line-height: 0;
-}
-.songs div {
-    display: inline-block;
-    cursor: pointer;
-}
-.songs i {
-    font-size: 18px;
-}
-
 .songs img {
 	width: 50px;
 }
@@ -39,6 +43,7 @@
             }
             td {
                 display: block;
+                text-transform: capitalize;
                 &:before {
                     content: attr(data-column-title);
                     display: block;

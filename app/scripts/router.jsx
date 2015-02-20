@@ -39,6 +39,10 @@ var React = require('react'),
     MusicTrackpage = require('./components/music_trackpage'),
     MusicTrackpageLatestTracks = require('./components/music_trackpage/latest_tracks'),
     MusicTrackpageMostDownloaded = require('./components/music_trackpage/most_downloaded'),
+    MusicTrackpageArtist = require('./components/music_trackpage_artist'),
+    MusicTrackpageArtistTracks = require('./components/music_trackpage/tracks'),
+    MusicTrackpageArtistAlbums = require('./components/music_trackpage/album'),
+    MusicTrackpageArtistBio = require('./components/music_trackpage/bio'),
 
     // To be deleted
     TempAdmin = require('./components/admin'),
@@ -83,6 +87,12 @@ var React = require('react'),
                     <Route name='music.trackpage.tracks' path='latest_tracks' handler={MusicTrackpageLatestTracks} />
                     <Route name='music.trackpage.downloaded' path='most_downloaded' handler={MusicTrackpageMostDownloaded} />
                 </Route>
+                <Route name='music.trackpage.artist' path='/music_trackpage/artist' handler={MusicTrackpageArtist}>
+                    <Route name='music.trackpage.artist.tracks' path='tracks' handler={MusicTrackpageArtistTracks} />
+                    <Route name='music.trackpage.artist.albums' path='albums' handler={MusicTrackpageArtistAlbums} />
+                    <Route name='music.trackpage.artist.bio' path='bio' handler={MusicTrackpageArtistBio} />
+                </Route>
+
 
             </Route>
 
