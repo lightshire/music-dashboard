@@ -162,3 +162,15 @@ nav a.button-collapse {
 .side-bar ul li.no-hover:hover {
     background-color: transparent;
 }
+
+.block {
+    display: block;
+}
+
+.sidebar-no-login {
+    display: none;
+}
+
+.sidebar-login {
+    display: block;
+}

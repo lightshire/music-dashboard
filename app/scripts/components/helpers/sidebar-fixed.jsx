@@ -6,10 +6,24 @@ var React = require('react/addons'),
     LayoutStore = require('../../stores/layout_stores'),
     TopBar = require('../helpers/topbar'),
     SideBar = require('../helpers/sidebar-fixed'),
+    CategoryData = require('./category'),
+    ArtistData = require('./artist'),
+    CategoryItems = require('../../stores/category'),
+    ArtistItems = require('../../stores/artist_stores'),
     Link = Router.Link,
+    _ = require('lodash'),
     Constrainable = require('../mixins/constrainable'),
+    getStateFromStore = function() {
+        return {
+            category: CategoryItems.getAll(),
+            artist: ArtistItems.getAll()
+        };
+    },
     SideBar = React.createClass({
         mixins: [Constrainable],
+        getInitialState: function() {
+            return getStateFromStore();
+        },
         componentDidMount : function () {
             $('.side-bar .collapsible').collapsible({
               accordion : false
@@ -50,7 +64,7 @@ var React = require('react/addons'),
             }
         },
         render: function() {
-
+            console.log(this.state);
             var my_account_settings = (<li><Link to='my.account.settings' className='waves-effect waves-blue collapsed-link'>Account Settings</Link></li>),
                 my_account_security = (<li><Link to='my.account.security' className='waves-effect waves-blue collapsed-link'>Security</Link></li>),
                 my_account_upgrade = (<li><Link to='my.account.upgrade' className='waves-effect waves-blue collapsed-link'>Upgrade</Link></li>),
@@ -65,14 +79,66 @@ var React = require('react/addons'),
                 my_earnings_artists = (<li><Link to='my.earnings.artists' className='waves-effect waves-blue collapsed-link'>Artists</Link></li>),
                 my_earnings_labels = (<li><Link to='my.earnings.labels' className='waves-effect waves-blue collapsed-link'>Record Labels</Link></li>),
 
-                music_trackpage = (<li><Link to='music.trackpage' className='waves-effect waves-blue collapsed-link'>Music Trackpage</Link></li>);
+                music_trackpage_tracks = (<li><Link to='music.trackpage.tracks' className='waves-effect waves-blue collapsed-link'>Latest Tracks</Link></li>),
+                music_trackpage_downloaded = (<li><Link to='music.trackpage.downloaded' className='waves-effect waves-blue collapsed-link'>Most Downloaded</Link></li>),
+
+                data = this.state.category,
+                dataArtist = this.state.artist,
+                items,
+                artist_items;
+
+                items = _.map(data, function(item) {
+                    return (<CategoryData
+                        id={item.id}
+                        key={item.id}
+                        title={item.title} />);
+                });
+
+                artist_items = _.map(dataArtist, function(item_artist) {
+                    return (<ArtistData
+                        id={item_artist.id}
+                        key={item_artist.id}
+                        artist={item_artist.artist} />);
+                });
 
             if (!this.hasAccess(['admin', 'artist', 'general_user', 'record_label'])) {
                 return (
                     <div className='side-bar zindex-supertop'>
                         <ul id='nav-mobile' className='side-nav fixed'>
-                            <li className='sidebar-li'>
+                            <li className='no-hover'>
+                                <div className='logo-container col sl2'>
+                                    <img src='images/def-logo.svg'/>
+                                </div>
+                            </li>
+                             <li className='sidebar-li'>
                                 <Link to='signin' className='waves-effect waves-blue collapsible-header collapse-link' onClick={this.activeSidebarHome}>Sign in</Link>
+                            </li>
+                            <li className='sidebar-li'>
+                                <Link to='my.account.settings' className='sidebarHome waves-effect waves-blue collapsible-header collapse-link'>My Accounts</Link>
+                            </li>
+                            <li className='sidebar-li'>
+                                <ul className='collapsible collapsible-accordion'>
+                                    <li className='sidebar-li'>
+                                        <a className='waves-effect waves-blue collapsible-header collapse-link'>Category</a>
+                                        <div className='collapsible-body block'>
+                                            <ul>
+                                                {items}
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li className='sidebar-li'>
+                                <ul className='collapsible collapsible-accordion'>
+                                    <li className='sidebar-li'>
+                                        <a className='waves-effect waves-blue collapsible-header collapse-link'>Artists</a>
+                                        <div className='collapsible-body block'>
+                                            <ul>
+                                                {artist_items}
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
                     </div>
@@ -100,7 +166,7 @@ var React = require('react/addons'),
             }
 
             return (
-                <div className='side-bar zindex-supertop'>
+                <div className='side-bar zindex-supertop'>                    
                     <ul id='nav-mobile' className='side-nav fixed'>
                         <li className='no-hover'>
                             <div className='logo-container col l2'>
@@ -145,9 +211,16 @@ var React = require('react/addons'),
                                     </div>
                                 </li>
                                 <li className='sidebar-li'>
-                                    {music_trackpage}
+                                    <a className='waves-effect waves-blue collapsible-header collapse-link' onClick={this.revoidLink}>Music Trackpage</a>
+                                    <div className='collapsible-body'>
+                                        <ul>
+                                            {music_trackpage_tracks}
+                                            {music_trackpage_downloaded}
+                                        </ul>
+                                    </div>
                                 </li>
                             </ul>
+
                         </li>
                     </ul>
                     <a id='burger-button' href='#' data-activates="nav-mobile" className="button-collapse"><i className='mdi-navigation-menu'></i></a>
