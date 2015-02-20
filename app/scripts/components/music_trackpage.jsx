@@ -11,20 +11,20 @@ var React = require('react/addons'),
         		music_trackpage_list;
 
         		latest_tracks = (
-        			<li className='tab col s3'>
+        			<li className='tab col s6'>
                         <Link
                             to='music.trackpage.tracks'
-                            className='waves-effect waves-white btn-flat white-text c_tabs'>
+                            className='waves-effect waves-white btn-flat white-text c-tabs'>
                             Latest Tracks
                         </Link>
                     </li>
         		);
 
         		most_downloaded = (
-        			<li className='tab col s3'>
+        			<li className='tab col s6'>
                         <Link
                             to='music.trackpage.downloaded'
-                            className='waves-effect waves-white btn-flat white-text c_tabs'>
+                            className='waves-effect waves-white btn-flat white-text c-tabs'>
                             Most Downloaded
                         </Link>
                     </li>
@@ -40,11 +40,11 @@ var React = require('react/addons'),
 				);
 
             return (
-            	<div className='c_body'>
-            	    <div className='c_header z-depth-1'>
+            	<div className='c-body'>
+            	    <div className='c-header z-depth-1'>
             	        <div className='container'>
             	            <h4 className='white-text'>Browse</h4>
-            	            <div className='c_links'>
+            	            <div className='c-links'>
             	                <div className='row'>
             	                    {music_trackpage_list}
             	                </div>
