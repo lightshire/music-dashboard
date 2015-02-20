@@ -2,6 +2,8 @@
 var React = require('react/addons'),
     LayoutActions = require('../../actions/layout_actions'),
     Player = require('../player'),
+    ShoppingCart = require('../shopping_cart'),
+    Login = require('../login'),
     TopBar = React.createClass({
         toggleSidebar: function() {
             LayoutActions.toggleSidebar();
@@ -12,9 +14,11 @@ var React = require('react/addons'),
                     <div className='navbar-fixed'>
                         <nav className='top-nav'>
                             <div className='nav-wrapper row'>
-                                <div className='col l10'>
+                                <div className='col l12'>
                                     <div className='right'>
                                         <Player />
+                                        <ShoppingCart />
+                                        <Login />
                                     </div>
                                 </div>
                             </div>
