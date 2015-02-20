@@ -31,8 +31,8 @@ var React = require('react/addons'),
         		);
 
 				music_trackpage_list = (
-				    <div className="col s12">
-				        <ul className='tabs default-tab'>
+				    <div className='col s6'>
+				        <ul className='tabs default-tab row-aligned-tab'>
 				            {latest_tracks}
 				            {most_downloaded}
 				        </ul>

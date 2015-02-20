@@ -83,7 +83,6 @@ var React = require('react'),
                 <Route name='music.trackpage' path='/music_trackpage' handler={MusicTrackpage}>
                     <Route name='music.trackpage.tracks' path='latest_tracks' handler={MusicTrackpageLatestTracks} />
                     <Route name='music.trackpage.downloaded' path='most_downloaded' handler={MusicTrackpageMostDownloaded} />
-                    <Route name='music.trackpage.link' path='tab_link' handler={MusicTrackpageTabLink} />
                 </Route>
 
             </Route>
