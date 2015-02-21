@@ -207,3 +207,24 @@
     display: inline-block;
     vertical-align: top;
 }
+.title-div {
+     p {
+        margin: 0;
+     }
+     p.title-album {
+        font-weight: 500;
+        font-size: 20px;
+     }
+     p.title-album-year {
+        margin-bottom: 10px;
+     }
+}
+.text-teal-accent-3 {
+    color: #1de9b6;
+}
+.added-cart {
+    display: none !important;
+}
+.bio-img {
+    padding-top: 20px;
+}

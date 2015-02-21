@@ -1,19 +1,19 @@
 'use strict';
 var React = require('react'),
-    ArtistTracks = require('./items/artist_tracks'),
+    ArtistTracks = require('./items/bio'),
     _ = require('lodash'),
-    MusicTracksActions = require('../../stores/music_tracks_stores'),
+    MusicTracksBio = require('../../stores/album_trackspage_stores'),
     getStateFromStore = function() {
         return {
-            albumtracks: MusicTracksActions.getAll()
+            albumtracks: MusicTracksBio.getAll()
         };
     },
-    MusicTrackpageArtistTracks = React.createClass({
+    MusicTrackpageBio = React.createClass({
         getInitialState: function() {
             return getStateFromStore();
         },
         componentDidMount: function() {
-            this.unsubscribe = MusicTracksActions.listen(this._onChange);
+            this.unsubscribe = MusicTracksBio.listen(this._onChange);
         },
         componentWillUnmount: function() {
             this.unsubscribe();
@@ -27,24 +27,17 @@ var React = require('react'),
                     id={item.id}
                     title={item.title}
                     time={item.time}
-                    album={item.album} />);
+                    album={item.album}
+                    state='false' />);
             });
             return (
-                <div className='table'>
-                    <table className='c_responsive_table'>
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th className='grey-text text-lighten-1'>Track</th>
-                                <th className='grey-text text-lighten-1'>Time</th>
-                                <th className='grey-text text-lighten-1'>Album</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {items}
-                        </tbody>
-                    </table>
+                <div className='row'>
+                    <div className='col s3' >
+                        <img src='http://placehold.it/350x150' className='responsive-img bio-img' />
+                    </div>
+                    <div className='col s9'>
+                        <p><b>Rage Against the Machine</b> was an American rock band from Los Angeles, California. Formed in 1987, the group consisted of rapper/vocalist Zack de la Rocha, bassist and backing vocalist Tim Commerford, guitarist Tom Morello and drummer Brad Wilk. They draw inspiration from early heavy metal instrumentation, as well as hip hop acts such as Afrika Bambaataa, Public Enemy, the Beastie Boys and Dutch crossover band Urban Dance Squad. Rage Against the Machine is well known for its leftist political views, which are expressed in many of its songs. As of 2010, they have sold over 16 million records worldwide.</p>
+                    </div>
                 </div>
             );
         },
@@ -53,4 +46,4 @@ var React = require('react'),
         }
     });
 
-module.exports =  MusicTrackpageArtistTracks;
+module.exports =  MusicTrackpageBio;

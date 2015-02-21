@@ -64,7 +64,6 @@ var React = require('react/addons'),
             }
         },
         render: function() {
-            console.log(this.state);
             var my_account_settings = (<li><Link to='my.account.settings' className='waves-effect waves-blue collapsed-link'>Account Settings</Link></li>),
                 my_account_security = (<li><Link to='my.account.security' className='waves-effect waves-blue collapsed-link'>Security</Link></li>),
                 my_account_upgrade = (<li><Link to='my.account.upgrade' className='waves-effect waves-blue collapsed-link'>Upgrade</Link></li>),
