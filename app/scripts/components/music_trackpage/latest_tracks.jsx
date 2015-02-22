@@ -2,10 +2,10 @@
 var React = require('react/addons'),
     _ = require('lodash'),
     Tracks = require('./items/tracks'),
-    AlbumTracksStore = require('../../stores/album_tracks_stores'),
+    MusicTracksActions = require('../../stores/music_tracks_stores'),
     getStateFromStore = function() {
         return {
-            albumtracks: AlbumTracksStore.getAll()
+            musictracks: MusicTracksActions.getAll()
         };
     },
     LatestTracks = React.createClass({
@@ -13,13 +13,13 @@ var React = require('react/addons'),
             return getStateFromStore();
         },
         componentDidMount: function() {
-            this.unsubscribe = AlbumTracksStore.listen(this._onChange);
+            this.unsubscribe = MusicTracksActions.listen(this._onChange);
         },
         componentWillUnmount: function() {
             this.unsubscribe();
         },
         render: function() {
-        	var data = this.state.albumtracks,
+        	var data = this.state.musictracks,
         	    items;
 
         	items = _.map(data, function(item) {
