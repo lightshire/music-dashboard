@@ -1,6 +1,5 @@
 'use strict';
 var React = require('react'),
-    MusicTracksActions = require('../../../actions/music_tracks_actions'),
     ArtistTracks = React.createClass({
         render: function() {
             

@@ -1,5 +1,6 @@
 'use strict';
 var React = require('react'),
+    MusicTracksActions = require('../../../actions/music_tracks_actions'),
     Tracks = React.createClass({
     	componentDidMount: function() {
     		$('.mdi-navigation-more-vert').dropdown({
@@ -12,6 +13,8 @@ var React = require('react'),
     		      belowOrigin: false // Displays dropdown below the button
     		    }
     		  );
+    	},
+    	handleAddToCart: function() {
     	},
     	render: function() {
     		var price_class='price';
@@ -33,7 +36,7 @@ var React = require('react'),
 							<i className='mdi-navigation-more-vert right' data-activates='nav-more' data-beloworigin='true'></i>
 							<ul id='nav-more' className='dropdown-content'>
 								<li>
-									<a className='blue-text' href='#!'>
+									<a onClick={this.handleAddToCart} className='blue-text' href='#!'>
 										<i className='tiny mdi-action-shopping-cart shopping-cart'></i>
 										Add to Cart
 									</a>
@@ -69,7 +72,7 @@ var React = require('react'),
 							<i className='tiny mdi-action-grade grey-text text-lighten-2'></i>
 						</p>
 						<p className={price_class}>
-							{this.props.price}
+							$ {this.props.price}
 						</p>
 					</div>
 				</div>

@@ -109,9 +109,6 @@ var React = require('react/addons'),
                                     <img src='images/def-logo.svg'/>
                                 </div>
                             </li>
-                             <li className='sidebar-li'>
-                                <Link to='signin' className='waves-effect waves-blue collapsible-header collapse-link' onClick={this.activeSidebarHome}>Sign in</Link>
-                            </li>
                             <li className='sidebar-li'>
                                 <Link to='my.account.settings' className='sidebarHome waves-effect waves-blue collapsible-header collapse-link'>My Accounts</Link>
                             </li>

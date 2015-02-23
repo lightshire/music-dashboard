@@ -3,6 +3,7 @@ var React = require('react'),
     Router = require('react-router'),
     Route = Router.Route,
     DefaultRoute = Router.DefaultRoute,
+    Redirect = Router.Redirect,
     HistoryLocation = Router.HistoryLocation,
     AppWrapper = require('./components/app_wrapper'),
     Layout = require('./components/layouts/layout'),
@@ -84,15 +85,15 @@ var React = require('react'),
                 </Route>
 
                 <Route name='music.trackpage' path='/music_trackpage' handler={MusicTrackpage}>
-                    <Route name='music.trackpage.tracks' path='latest_tracks' handler={MusicTrackpageLatestTracks} />
+                    <DefaultRoute name='music.trackpage.tracks' path='latest_tracks' handler={MusicTrackpageLatestTracks} />
                     <Route name='music.trackpage.downloaded' path='most_downloaded' handler={MusicTrackpageMostDownloaded} />
+                    <Redirect path='/' to='music.trackpage.tracks' />
                 </Route>
                 <Route name='music.trackpage.artist' path='/music_trackpage/artist' handler={MusicTrackpageArtist}>
                     <Route name='music.trackpage.artist.tracks' path='tracks' handler={MusicTrackpageArtistTracks} />
                     <Route name='music.trackpage.artist.albums' path='albums' handler={MusicTrackpageArtistAlbums} />
                     <Route name='music.trackpage.artist.bio' path='bio' handler={MusicTrackpageArtistBio} />
                 </Route>
-
 
             </Route>
 
