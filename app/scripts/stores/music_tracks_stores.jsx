@@ -83,11 +83,7 @@ var Reflux = require('reflux'),
         emitChange: function() {
             this.trigger();
         },
-        onAddToCart: function(id) {
-            var cart=0;
-            if (typeof _musictracks[id] !== 'undefined') {
-                cart++;
-            }
+        onAddToCart: function() {
         },
         getAll: function() {
             return _musictracks;
