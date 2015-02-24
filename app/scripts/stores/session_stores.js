@@ -7,6 +7,7 @@ var Reflux = require('reflux'),
     },
     SessionStore = Reflux.createStore({
         listenables: [SessionActions],
+        
         emitChange: function() {
             this.trigger();
         },
@@ -20,7 +21,11 @@ var Reflux = require('reflux'),
             _session = {
                 user_logged_in: false,
                 user_type: ''
-            }
+            };
+
+            callback();
+
+            this.emitChange();
         },
         onAttemptLogin: function(username, password, callback) {
             /*
@@ -41,10 +46,10 @@ var Reflux = require('reflux'),
             }
 
             callback();
+            
+            this.emitChange();
         },
         hasAccess: function(user_types) {
-            console.log(_session);
-            console.log(!!~user_types.indexOf(_session.user_type));
             return !!~user_types.indexOf(_session.user_type);
         }
     });

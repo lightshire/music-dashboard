@@ -1,23 +1,41 @@
 'use strict';
 var React = require('react'),
-    MusicTracksActions = require('../../../actions/music_tracks_actions'),
+    CartActions = require('../../../actions/cart_actions'),
     Tracks = React.createClass({
-    	componentDidMount: function() {
-    		$('.mdi-navigation-more-vert').dropdown({
-    		      inDuration: 300,
-    		      outDuration: 225,
-    		      constrain_width: false, // Does not change width of dropdown to that of the activator
-    		      hover: false, // Activate on click
-    		      alignment: 'left', // Aligns dropdown to left or right edge (works with constrain_width)
-    		      gutter: 0, // Spacing from edge
-    		      belowOrigin: false // Displays dropdown below the button
-    		    }
-    		  );
-    	},
-    	handleAddToCart: function() {
-    	},
+    	getInitialState: function() {
+            return {
+            	addToCart : false
+            };
+        },
+		handleAddToCart: function() {
+			CartActions.addToCart(this.props.id);
+			this.setState({
+	            addToCart : true
+	        });
+		},
     	render: function() {
-    		var price_class='price';
+    		var price_class = 'price',
+    			add_to_cart = '';
+
+    		if (this.state.addToCart === true) {
+	    		add_to_cart = (
+	    			<li>
+						<a className='teal-text' href='#!'>
+							<i className='tiny mdi-action-done shopping-cart teal-text'></i>
+							Added to Cart
+						</a>
+					</li>
+	    		);
+    		} else {
+    			add_to_cart = (
+    				<li>
+						<a onClick={this.handleAddToCart} className='teal-text' href='#!'>
+							<i className='tiny mdi-action-shopping-cart shopping-cart teal-text'></i>
+							Add to Cart
+						</a>
+					</li>
+    			);
+    		}
 
     		if (this.props.price === 'free') {
     			price_class+= ' teal-text text-lighten-2';
@@ -33,31 +51,30 @@ var React = require('react'),
 					<div className='card-content white'>
 						<span className='card-title grey-text text-darken-4'>
 							{this.props.title}
-							<i className='mdi-navigation-more-vert right' data-activates='nav-more' data-beloworigin='true'></i>
-							<ul id='nav-more' className='dropdown-content'>
-								<li>
-									<a onClick={this.handleAddToCart} className='blue-text' href='#!'>
-										<i className='tiny mdi-action-shopping-cart shopping-cart'></i>
-										Add to Cart
-									</a>
-								</li>
-								<li className='divider'></li>
-								<li>
-									<a className='black-text' href='#!'>
-										Play
-									</a>
-								</li>
-								<li>
-									<a className='black-text' href='#!'>
-										Add to Playlist
-									</a>
-								</li>
-								<li>
-									<a className='black-text' href='#!'>
-										Share
-									</a>
-								</li>
-							</ul>
+							<span className='dropdown nav-more'>
+								<a href='#'>
+									<i className='mdi-navigation-more-vert right nav-icon'></i>
+								</a>
+								<ul>
+									{add_to_cart}
+									<li className='divider'></li>
+									<li>
+										<a className='black-text' href='#!'>
+											Play
+										</a>
+									</li>
+									<li>
+										<a className='black-text' href='#!'>
+											Add to Playlist
+										</a>
+									</li>
+									<li>
+										<a className='black-text' href='#!'>
+											Share
+										</a>
+									</li>
+								</ul>
+							</span>
 						</span>
 						<p>
 							<a href='#'>

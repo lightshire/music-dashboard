@@ -7,6 +7,7 @@ var React = require('react/addons'),
     TopBar = require('../helpers/topbar'),
     SideBar = require('../helpers/sidebar-fixed'),
     ModalWrapper = require('../helpers/modal_wrapper'),
+    Constrainable = require('../mixins/constrainable'),
     GlobalFloatingButton = require('../helpers/global_floating_button'),
     getStateFromStore = function() {
         return {
@@ -23,7 +24,14 @@ var React = require('react/addons'),
         componentWillUnmount: function() {
             this.unsubscribe();
         },
+        mixins: [Constrainable, Router.State, Router.Navigation],
         render: function() {
+            var global_floating_button='';
+
+            if (this.hasAccess(['admin', 'general_user', 'artist', 'record_label'])) {
+                global_floating_button=(<GlobalFloatingButton />);
+            }
+
             return (
                 <div className='App '>
                     <TopBar />
@@ -37,7 +45,7 @@ var React = require('react/addons'),
                             <RouteHandler />
                         </div>
                     </div>
-                    <GlobalFloatingButton />
+                    {global_floating_button}
                     <ModalWrapper />
                 </div>
             );
