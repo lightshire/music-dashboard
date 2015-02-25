@@ -81,6 +81,10 @@ var React = require('react/addons'),
                 music_trackpage_tracks = (<li><Link to='music.trackpage.tracks' className='waves-effect waves-blue collapsed-link'>Latest Tracks</Link></li>),
                 music_trackpage_downloaded = (<li><Link to='music.trackpage.downloaded' className='waves-effect waves-blue collapsed-link'>Most Downloaded</Link></li>),
 
+                music_trackpage_artist_tracks = (<li><Link to='music.trackpage.artist.tracks' className='waves-effect waves-blue collapsed-link'>Tracks</Link></li>),
+                music_trackpage_artist_album = (<li><Link to='music.trackpage.artist.albums' className='waves-effect waves-blue collapsed-link'>Album</Link></li>),
+                music_trackpage_artist_bio = (<li><Link to='music.trackpage.artist.bio' className='waves-effect waves-blue collapsed-link'>Bio</Link></li>),
+
                 data = this.state.category,
                 dataArtist = this.state.artist,
                 items,
@@ -212,6 +216,16 @@ var React = require('react/addons'),
                                         <ul>
                                             {music_trackpage_tracks}
                                             {music_trackpage_downloaded}
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li className='sidebar-li'>
+                                    <a className='waves-effect waves-blue collapsible-header collapse-link' onClick={this.revoidLink}>Music Trackpage Artists</a>
+                                    <div className='collapsible-body'>
+                                        <ul>
+                                            {music_trackpage_artist_tracks}
+                                            {music_trackpage_artist_album}
+                                            {music_trackpage_artist_bio}
                                         </ul>
                                     </div>
                                 </li>

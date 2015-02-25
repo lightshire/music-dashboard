@@ -41,19 +41,17 @@ var React = require('react'),
     MusicTrackpageLatestTracks = require('./components/music_trackpage/latest_tracks'),
     MusicTrackpageMostDownloaded = require('./components/music_trackpage/most_downloaded'),
     MusicTrackpageArtist = require('./components/music_trackpage_artist'),
-    MusicTrackpageArtistTracks = require('./components/music_trackpage/tracks'),
-    MusicTrackpageArtistAlbums = require('./components/music_trackpage/album'),
-    MusicTrackpageArtistBio = require('./components/music_trackpage/bio'),
+    MusicTrackpageArtistTracks = require('./components/music_trackpage/artist/tracks'),
+    MusicTrackpageArtistAlbums = require('./components/music_trackpage/artist/album'),
+    MusicTrackpageArtistBio = require('./components/music_trackpage/artist/bio'),
 
-    // To be deleted
-    TempAdmin = require('./components/admin'),
+    CheckOut = require('./components/checkout'),
 
     routes = (
         <Route path='/' handler={AppWrapper}>
             <Route path='/' handler={Layout}>
                 <DefaultRoute name='home' handler={Home} />
 
-                    <Route name='temp.admin' path='tempadmin' handler={TempAdmin} />
                 <Route name='my.account' path='/my_account' handler={MyAccount}>
                     <DefaultRoute name='my.account.settings' handler={MyAccountSettings} />
                     <Route name='my.account.upgrade' path='upgrade' handler={MyAccountUpgrade} />
@@ -90,12 +88,14 @@ var React = require('react'),
                     <Redirect path='/' to='music.trackpage.tracks' />
                 </Route>
                 <Route name='music.trackpage.artist' path='/music_trackpage/artist' handler={MusicTrackpageArtist}>
-                    <Route name='music.trackpage.artist.tracks' path='tracks' handler={MusicTrackpageArtistTracks} />
+                    <DefaultRoute name='music.trackpage.artist.tracks' path='tracks' handler={MusicTrackpageArtistTracks} />
                     <Route name='music.trackpage.artist.albums' path='albums' handler={MusicTrackpageArtistAlbums} />
                     <Route name='music.trackpage.artist.bio' path='bio' handler={MusicTrackpageArtistBio} />
                 </Route>
-
+                
             </Route>
+
+            <Route name='checkout' path='/checkout' handler={CheckOut} />
 
             <Route name='signup' path='/signup' handler={Signup} />
             <Route name='signin' path='/signin' handler={Signin} />

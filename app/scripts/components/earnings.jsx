@@ -11,14 +11,36 @@ var React = require('react'),
             required_login: true,
             user_types: ['admin', 'general_user', 'artist', 'record_label']
         },
+         getInitialState : function() {
+            return { 
+                dropdown: false
+            };   
+        },
+        showList: function() {
+            
+
+            if(this.state.dropdown) {
+                this.setState({dropdown: false});
+            }
+            if(!this.state.dropdown) {
+                this.setState({dropdown: true});
+            }
+        },
         render: function() {
             var earnings_list,
                 more_tab,
                 my_earnings_songs,
                 my_earnings_albums,
                 my_earnings_artists,
-                my_earnings_labels;
-
+                my_earnings_labels,
+                showlist;
+                console.log('SHOWLIST'+ this.state.dropdown);
+                if(this.state.dropdown) {
+                    showlist = 'show';
+                }
+                else if(!this.state.dropdown) {
+                    showlist = 'hide';
+                }
                 my_earnings_songs = (
                         <li className='tab col s3'>
                             <Link to='my.earnings.songs' className='waves-effect waves-white btn-flat white-text c-tabs'>Tracks</Link>
@@ -53,7 +75,7 @@ var React = require('react'),
                 );
 
                 more_tab = (
-                    <li className='tab col s4 more'><a href='#' className='white-text c-tabs'>MORE<i className="mdi-navigation-arrow-drop-down right"></i></a>
+                    <li onClick={this.showList} className='tab col s4 more' tabIndex='0'><a href='#' className='white-text c-tabs'>MORE<i className="mdi-navigation-arrow-drop-down right"></i></a>
                         <ul>
                             {my_earnings_artists}
                             {my_earnings_labels}

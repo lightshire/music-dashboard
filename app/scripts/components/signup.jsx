@@ -16,7 +16,7 @@ var React = require('react'),
                                 </div>
                             </div>
                             <div className='col s2 m2 l2'>&nbsp;</div>
-                            <div className='col s8 m8 l8'>
+                            <div className='col s12 m8 l8'>
                                 <div className='card'>
                                     <div className='c-sign-up-inner'>
                                         <h5 className='c-signin-header'>Create Account</h5>
