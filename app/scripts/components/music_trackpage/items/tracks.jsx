@@ -89,7 +89,7 @@ var React = require('react'),
 							<i className='tiny mdi-action-grade grey-text text-lighten-2'></i>
 						</p>
 						<p className={price_class}>
-							$ {this.props.price}
+							$ {this.props.price.toFixed(2)}
 						</p>
 					</div>
 				</div>

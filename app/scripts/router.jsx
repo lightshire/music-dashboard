@@ -45,7 +45,7 @@ var React = require('react'),
     MusicTrackpageArtistAlbums = require('./components/music_trackpage/album'),
     MusicTrackpageArtistBio = require('./components/music_trackpage/bio'),
 
-    Checkout = require('./components/checkout'),
+    InCart = require('./components/in_cart'),
 
     // To be deleted
     TempAdmin = require('./components/admin'),
@@ -97,7 +97,7 @@ var React = require('react'),
                     <Route name='music.trackpage.artist.bio' path='bio' handler={MusicTrackpageArtistBio} />
                 </Route>
 
-                <Route name='checkout' path='/checkout' handler={Checkout} />
+                <Route name='cart' path='/cart' handler={InCart} />
 
             </Route>
 
