@@ -50,6 +50,8 @@ var React = require('react'),
 =======
     InCart = require('./components/in_cart'),
 
+    InCart = require('./components/in_cart'),
+
     // To be deleted
     TempAdmin = require('./components/admin'),
 >>>>>>> f716a3a99411b257ab058e0ac38e48b974d16626
@@ -99,16 +101,9 @@ var React = require('react'),
                     <Route name='music.trackpage.artist.albums' path='albums' handler={MusicTrackpageArtistAlbums} />
                     <Route name='music.trackpage.artist.bio' path='bio' handler={MusicTrackpageArtistBio} />
                 </Route>
-<<<<<<< HEAD
-                
-=======
 
                 <Route name='cart' path='/cart' handler={InCart} />
-
->>>>>>> f716a3a99411b257ab058e0ac38e48b974d16626
-            </Route>
-
-            <Route name='checkout' path='/checkout' handler={CheckOut} />
+                <Route name='checkout' path='/checkout' handler={CheckOut} />
 
             <Route name='signup' path='/signup' handler={Signup} />
             <Route name='signin' path='/signin' handler={Signin} />
