@@ -61,7 +61,11 @@ var React = require('react'),
                 );
                 
                 more_tab = (
-                    <li className='tab col s4 more'><a href='#' className='white-text c-tabs'>MORE<i className="mdi-navigation-arrow-drop-down right"></i></a>
+                    <li className='tab col s4 dropdown more'>
+                        <a href='#' className='white-text c-tabs'>
+                            MORE
+                            <i className="mdi-navigation-arrow-drop-down right"></i>
+                        </a>
                         <ul>
                             {music_manager_artists}
                             {music_manager_labels}

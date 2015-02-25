@@ -1,26 +1,27 @@
 'use strict';
 var React = require('react'),
-    CartActions = require('../../../actions/cart_actions'),
-    Cart = React.createClass({
-        handleDeleteTracks: function() {
-            CartActions.deleteItem(this.props.id);
-        },
+    ArtistTracks = React.createClass({
         render: function() {
-
+            
             return (
                 <tr className='songs'>
                     <td data-column-title=''>
-                        <div className="right-align">
-                            <i onClick={this.handleDeleteTracks} className='mdi-content-clear'></i>
+                        <div>
+                            <i className="mdi-av-play-arrow"></i>
+                            <i className="mdi-content-add"></i>
                         </div>
                     </td>
                     <td data-column-title='Track'>{this.props.title}</td>
                     <td data-column-title='Time'>{this.props.time}</td>
                     <td data-column-title='Album'>{this.props.album}</td>
-                    <td className='red-text' data-column-title='Price'>${this.props.price}</td>
+                    <td data-column-title=''>
+                        <div className="right-align">
+                            <i className='small mdi-action-shopping-cart grey-text text-lighten-1'></i>
+                        </div>
+                    </td>
                 </tr>
             );
         }
     });
 
-module.exports = Cart;
+module.exports = ArtistTracks;

@@ -45,7 +45,14 @@ var React = require('react'),
     MusicTrackpageArtistAlbums = require('./components/music_trackpage/artist/album'),
     MusicTrackpageArtistBio = require('./components/music_trackpage/artist/bio'),
 
+<<<<<<< HEAD
     CheckOut = require('./components/checkout'),
+=======
+    InCart = require('./components/in_cart'),
+
+    // To be deleted
+    TempAdmin = require('./components/admin'),
+>>>>>>> f716a3a99411b257ab058e0ac38e48b974d16626
 
     routes = (
         <Route path='/' handler={AppWrapper}>
@@ -92,7 +99,13 @@ var React = require('react'),
                     <Route name='music.trackpage.artist.albums' path='albums' handler={MusicTrackpageArtistAlbums} />
                     <Route name='music.trackpage.artist.bio' path='bio' handler={MusicTrackpageArtistBio} />
                 </Route>
+<<<<<<< HEAD
                 
+=======
+
+                <Route name='cart' path='/cart' handler={InCart} />
+
+>>>>>>> f716a3a99411b257ab058e0ac38e48b974d16626
             </Route>
 
             <Route name='checkout' path='/checkout' handler={CheckOut} />

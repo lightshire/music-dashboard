@@ -2,7 +2,7 @@
 var React = require('react/addons'),
     Router = require('react-router'),
     SessionStore = require('../../stores/session_stores'),
-    SessionActions = require('./../../actions/session_actions'),
+    SessionActions = require('../../actions/session_actions'),
     Link = Router.Link,
     getStateFromStore = function() {
         return {
