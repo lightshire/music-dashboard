@@ -87,27 +87,18 @@
         height: 40px;
     }
 }
-.more {
+.dropdown {
     background: none;
     display: block;
     border:none;
     color: #fff;
     text-transform: uppercase;
-    margin-top: -6px !important;
-    span {
-        color: #fff;
-    }
-    i {
-        color: #fff;
-    }
     &:hover{
         cursor: pointer;
     }
     ul {
         padding: 0;
         position: relative;
-        top: -40px;
-        left: 0;
         width: 150px;
         height: 92px;
         opacity: 0;
@@ -132,22 +123,67 @@
         background: #fff !important; 
         display: block; 
         color: #fff;
-        width: 150px !important;
-        text-align: left !important;
-
         border-bottom: 1px solid #fff;
     }
     ul li:hover {
         
     }
     ul li a {
-        color: #26A69A !important;        
-        width: 150px;
-        padding: 5px 10px;
         opacity: 1 !important;
         filter: Alpha(opacity=100) !important;
         &:hover {
             background: rgba(0, 0, 0, 0.06) !important;
+        }
+    }
+}
+.more {
+    margin-top: -6px !important;
+    span {
+        color: #fff;
+    }
+    i {
+        color: #fff;
+    }
+    ul {
+        top: -40px;
+        left: 0;
+        li {
+            width: 150px !important;
+            text-align: left !important;
+            a {
+                color: #26A69A !important;        
+                width: 150px;
+                padding: 5px 10px;
+            }
+        }
+    }
+}
+.nav-more {
+    display: inline;
+    font-size: .8rem;
+    line-height: 1.8;
+    a {
+        i {
+            font-size: 1.1rem;
+        }
+        .nav-icon {
+            position: relative;
+            top: 7px;
+        }
+    }
+    ul {
+        position: absolute;
+        bottom: -17px;
+        right: -110px;
+        li {
+            width: 140px !important;
+            text-align: left !important;
+            a {       
+                padding: 5px 10px;
+            }
+        }
+        .divider {
+            background-color: #e0e0e0 !important;
         }
     }
 }
@@ -206,4 +242,8 @@
 .player, .shopping-cart-top, .login {
     display: inline-block;
     vertical-align: top;
+}
+.user {
+    font-weight: bold;
+    padding: 0 20px;
 }
