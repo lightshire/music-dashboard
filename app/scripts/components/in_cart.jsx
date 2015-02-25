@@ -5,6 +5,7 @@ var React = require('react'),
     _ = require('lodash'),
     Cart = require('./music_trackpage/items/cart'),
     CartStore = require('../stores/cart_stores'),
+    CartActions = require('../actions/cart_actions'),
     Constrainable = require('./mixins/constrainable'),
     getStateFromStore = function() {
         return {
@@ -28,6 +29,9 @@ var React = require('react'),
         },
         componentWillUnmount: function() {
             this.unsubscribe();
+        },
+        deleteAll: function() {
+            CartActions.deleteAll();
         },
         render: function() {
             var data = this.state.cart,
@@ -67,11 +71,25 @@ var React = require('react'),
                                 </thead>
                                 <tbody>
                                     {items}
-                                    <tr>
-                                        <td className='total-price'>Total: ${this.state.total}</td>
-                                    </tr>
                                 </tbody>
                             </table>
+                            <div className='cart-btn'>
+                                <div>
+                                    <span className='total-price'>
+                                        <span>Total:</span> ${this.state.total}
+                                    </span>
+                                </div>
+                                <div>
+                                    <a className='waves-effect waves-light btn-flat blue-text'
+                                       onClick={this.deleteAll}>
+                                       Clear Cart
+                                    </a>
+                                    <a className='waves-effect waves-light btn'
+                                       onClick=''>
+                                       Checkout
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

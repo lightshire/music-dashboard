@@ -2,7 +2,8 @@
 var Reflux = require('reflux'),
     CartActions = Reflux.createActions([
     	'addToCart',
-        'deleteItem'
+        'deleteItem',
+        'deleteAll'
     ]);
 
 module.exports = CartActions;
