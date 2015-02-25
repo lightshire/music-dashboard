@@ -2,7 +2,7 @@
 var React = require('react'),
     ArtistTracks = require('./items/artist_tracks'),
     _ = require('lodash'),
-    MusicTracksActions = require('../../stores/music_tracks_stores'),
+    MusicTracksActions = require('../../../stores/music_tracks_stores'),
     getStateFromStore = function() {
         return {
             musictracks: MusicTracksActions.getAll()
@@ -31,7 +31,7 @@ var React = require('react'),
             });
             return (
                 <div className='table'>
-                    <table className='c_responsive_table'>
+                    <table className='c-responsive-table'>
                         <thead>
                             <tr>
                                 <th></th>

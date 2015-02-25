@@ -115,7 +115,7 @@
         -moz-box-shadow: 0 5px 6px 2px rgba(0, 0, 0, 0.16);
         box-shadow: 0 5px 6px 2px rgba(0, 0, 0, 0.16);
     }
-    &:hover ul,&:active ul {
+    &:focus ul,&:active ul,&:hover ul {
         opacity: 1;
         background: #90CAF9;
     }
@@ -124,9 +124,6 @@
         display: block; 
         color: #fff;
         border-bottom: 1px solid #fff;
-    }
-    ul li:hover {
-        
     }
     ul li a {
         opacity: 1 !important;
@@ -242,6 +239,38 @@
 .player, .shopping-cart-top, .login {
     display: inline-block;
     vertical-align: top;
+}
+.title-div {
+     p {
+        margin: 0;
+     }
+     p.title-album {
+        font-weight: 500;
+        font-size: 20px;
+     }
+     p.title-album-year {
+        margin-bottom: 10px;
+     }
+}
+.text-teal-accent-3 {
+    color: #1de9b6;
+}
+.bio-img {
+    padding-top: 20px;
+}
+.icon-height {
+    height: 20px;
+    width: 100%;
+    line-height: 20px;
+    &:hover i {
+        color: #fff;
+    }
+}
+.hide {
+    opacity: 0 !important;
+}
+.show {
+    opacity: 1 !important;
 }
 .user {
     font-weight: bold;

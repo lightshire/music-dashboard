@@ -41,21 +41,18 @@ var React = require('react'),
     MusicTrackpageLatestTracks = require('./components/music_trackpage/latest_tracks'),
     MusicTrackpageMostDownloaded = require('./components/music_trackpage/most_downloaded'),
     MusicTrackpageArtist = require('./components/music_trackpage_artist'),
-    MusicTrackpageArtistTracks = require('./components/music_trackpage/tracks'),
-    MusicTrackpageArtistAlbums = require('./components/music_trackpage/album'),
-    MusicTrackpageArtistBio = require('./components/music_trackpage/bio'),
+    MusicTrackpageArtistTracks = require('./components/music_trackpage/artist/tracks'),
+    MusicTrackpageArtistAlbums = require('./components/music_trackpage/artist/album'),
+    MusicTrackpageArtistBio = require('./components/music_trackpage/artist/bio'),
 
     InCart = require('./components/in_cart'),
-
-    // To be deleted
-    TempAdmin = require('./components/admin'),
+    CheckOut = require('./components/checkout'),
 
     routes = (
         <Route path='/' handler={AppWrapper}>
             <Route path='/' handler={Layout}>
                 <DefaultRoute name='home' handler={Home} />
 
-                    <Route name='temp.admin' path='tempadmin' handler={TempAdmin} />
                 <Route name='my.account' path='/my_account' handler={MyAccount}>
                     <DefaultRoute name='my.account.settings' handler={MyAccountSettings} />
                     <Route name='my.account.upgrade' path='upgrade' handler={MyAccountUpgrade} />
@@ -98,6 +95,7 @@ var React = require('react'),
                 </Route>
 
                 <Route name='cart' path='/cart' handler={InCart} />
+                <Route name='checkout' path='/checkout' handler={CheckOut} />
 
             </Route>
 
