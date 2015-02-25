@@ -45,16 +45,8 @@ var React = require('react'),
     MusicTrackpageArtistAlbums = require('./components/music_trackpage/artist/album'),
     MusicTrackpageArtistBio = require('./components/music_trackpage/artist/bio'),
 
-<<<<<<< HEAD
+    InCart = require('./components/in_cart'),
     CheckOut = require('./components/checkout'),
-=======
-    InCart = require('./components/in_cart'),
-
-    InCart = require('./components/in_cart'),
-
-    // To be deleted
-    TempAdmin = require('./components/admin'),
->>>>>>> f716a3a99411b257ab058e0ac38e48b974d16626
 
     routes = (
         <Route path='/' handler={AppWrapper}>
@@ -97,13 +89,15 @@ var React = require('react'),
                     <Redirect path='/' to='music.trackpage.tracks' />
                 </Route>
                 <Route name='music.trackpage.artist' path='/music_trackpage/artist' handler={MusicTrackpageArtist}>
-                    <DefaultRoute name='music.trackpage.artist.tracks' path='tracks' handler={MusicTrackpageArtistTracks} />
+                    <Route name='music.trackpage.artist.tracks' path='tracks' handler={MusicTrackpageArtistTracks} />
                     <Route name='music.trackpage.artist.albums' path='albums' handler={MusicTrackpageArtistAlbums} />
                     <Route name='music.trackpage.artist.bio' path='bio' handler={MusicTrackpageArtistBio} />
                 </Route>
 
                 <Route name='cart' path='/cart' handler={InCart} />
                 <Route name='checkout' path='/checkout' handler={CheckOut} />
+
+            </Route>
 
             <Route name='signup' path='/signup' handler={Signup} />
             <Route name='signin' path='/signin' handler={Signin} />

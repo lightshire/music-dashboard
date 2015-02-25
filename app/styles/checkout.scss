@@ -2,6 +2,16 @@
     padding-top: 20px;
 }
 .paypal-logo {
-    width: 150px;
-    height: 50px;
+    width: 240px;
+    height: 175px;
 }
+.no-bg {
+    background: none;
+}
+.waves-effect.waves-blue .waves-ripple {
+  background-color: rgba(41, 182, 246, 0.65);
+}
+.waves-blue:hover {
+    background: none;
+}
+      
