@@ -247,3 +247,20 @@
     font-weight: bold;
     padding: 0 20px;
 }
+
+.total-price {
+    font-weight: bold;
+    text-align: right;
+    text-transform: uppercase;
+    padding: 0px 48px;
+    span:nth-child(1) {
+        padding: 0 20px;
+    }
+}
+.cart-btn {
+    text-align: right;
+    padding: 0 40px;
+    div {
+        padding: 10px 0;
+    }
+}

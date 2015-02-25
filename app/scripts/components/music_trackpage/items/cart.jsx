@@ -17,7 +17,7 @@ var React = require('react'),
                     <td data-column-title='Track'>{this.props.title}</td>
                     <td data-column-title='Time'>{this.props.time}</td>
                     <td data-column-title='Album'>{this.props.album}</td>
-                    <td className='red-text' data-column-title='Price'>${this.props.price}</td>
+                    <td className='red-text' data-column-title='Price'>${this.props.price.toFixed(2)}</td>
                 </tr>
             );
         }

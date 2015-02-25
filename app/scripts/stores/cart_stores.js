@@ -22,6 +22,16 @@ var Reflux = require('reflux'),
 
             this.emitChange();
         },
+        deleteItem: function() {
+            if(typeof _cart[id] !== 'undefined') {
+                delete _cart[id];
+            }
+            this.emitChange();
+        },
+        deleteAll: function() {
+            _cart = {};
+            this.emitChange();
+        },
         count: function() {
             return Object.keys(_cart).length;
         },
