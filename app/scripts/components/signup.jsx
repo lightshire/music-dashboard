@@ -17,7 +17,7 @@ var React = require('react'),
                             </div>
                             <div className='col s2 m2 l2'>&nbsp;</div>
                             <div className='col s12 m8 l8'>
-                                <div className='card'>
+                                <div className='card-sign'>
                                     <div className='c-sign-up-inner'>
                                         <h5 className='c-signin-header'>Create Account</h5>
                                         <InputField
@@ -44,13 +44,13 @@ var React = require('react'),
                                             outerdiv_size='col s12 m12 l12'
                                             textfield_label='Email'
                                             textfield_label_for='email_field' />
-                                        <div className='c-checkbox-terms s12 m12 l12'>
+                                        <div className='c-checkbox-terms col s12 m12 l12'>
                                             <p>
                                                 <input type='checkbox' id='terms' />
                                                 <label htmlFor='terms'><small>I have read and agreed to the Terms of Use and Privacy Policy</small></label>
                                             </p>
                                         </div>
-                                        <div className='c-create-account-button-div s12 m12 l12'>
+                                        <div className='c-create-account-button-div col s12 m12 l12'>
                                             <a className='c-create-account-button white-text waves-effect waves-light btn green lighten-2'>Create Account</a>
                                             <div className='center-align'><small>or</small></div>
                                             <a className='c-sign-in-with-google white-text waves-effect waves-light btn red lighten-2'>Sign in with Google+</a>

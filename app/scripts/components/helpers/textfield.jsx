@@ -6,7 +6,7 @@ var React = require('react'),
                 c_class = 'materialize-textarea ' + this.props.textfield_state,
                 input = '',
                 icon = '';
-
+                console.log(this.props.textfield_state);
             switch (this.props.textfield_type) {
                 case 'textarea':
                     input = (<textarea ref='input' className={c_class}>{this.props.textfield_value}</textarea>);

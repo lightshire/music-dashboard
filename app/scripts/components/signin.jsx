@@ -27,11 +27,11 @@ var React = require('react'),
                             <div className='col s12 m12 l12'>
                                 <div className='center-align'>
                                     <h5>Freedom! Music Dashboard</h5>
-                                </div>
+                                </div>                                
                             </div>
-                            <div className='col s2 m2 l2'>&nbsp;</div>
-                            <div className='col s12 m8 l8'>
-                                <div className='card'>
+                            <div className='col s2 m2 l2'>&nbsp;</div>                            
+                            <div className='col s12 m8 l8'>                                
+                                <div className='card-sign'>
                                     <div className='c-sign-in-inner'>
                                         <h5 className='c-signin-header'>Sign in</h5>
                                         <InputField
