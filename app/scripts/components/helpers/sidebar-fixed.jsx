@@ -1,10 +1,6 @@
 'use strict';
 var React = require('react/addons'),
     Router = require('react-router'),
-    RouteHandler = Router.RouteHandler,
-    ReactCSSTransitionGroup = React.addons.CSSTransitionGroup,
-    LayoutStore = require('../../stores/layout_stores'),
-    TopBar = require('../helpers/topbar'),
     SideBar = require('../helpers/sidebar-fixed'),
     CategoryData = require('./category'),
     ArtistData = require('./artist'),

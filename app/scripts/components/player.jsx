@@ -91,10 +91,14 @@ var React = require('react/addons'),
             return moment(seconds*1000).format('mm:ss');
         },
         render: function() {
-            var tracks, playlist, volume_control, audio, track_title;
+            var tracks, playlist, volume_control, audio, track_title, track_artist;
             if(this.state.status.modal === 'playlist') {
                 tracks = _.map(this.state.tracks, function(item) {
-                    return (<TrackItem id={item.id} title={item.title} artist={item.artist} thumbnail={item.thumbnail} />);
+                    return (<TrackItem id={item.id} 
+                                    title={item.title} 
+                                    artist={item.artist} 
+                                    thumbnail={item.thumbnail} />
+                            );
                 });
                 track_title = typeof this.state.tracks[this.state.status.current_track] !== 'undefined' 
                     ? this.state.tracks[this.state.status.current_track].title
@@ -112,9 +116,21 @@ var React = require('react/addons'),
                         <div className='c-panel-inner hide-on-med-and-up'>
                             <div className='row'>
                                 <div className='col s2 m2 l2'>&nbsp;</div>
-                                <div className='col s2 m3 l2'><a className='grey-text' href='#' onClick={this.handlePreviousTrack}><i className='mdi-av-skip-previous' /></a></div>
-                                <div className='col s2 m3 l2'><a className='grey-text' href='#' onClick={this.handleTogglePlay}><i className={this.state.status.play ? 'mdi-av-pause' : 'mdi-av-play-arrow'} /></a></div>
-                                <div className='col s2 m3 l2'><a className='grey-text' href='#' onClick={this.handleNextTrack}><i className='mdi-av-skip-next' /></a></div>
+                                <div className='col s2 m3 l2'>
+                                    <a className='grey-text' href='#' onClick={this.handlePreviousTrack}>
+                                        <i className='mdi-av-skip-previous' />
+                                    </a>
+                                </div>
+                                <div className='col s2 m3 l2'>
+                                    <a className='grey-text' href='#' onClick={this.handleTogglePlay}>
+                                        <i className={this.state.status.play ? 'mdi-av-pause' : 'mdi-av-play-arrow'} />
+                                    </a>
+                                </div>
+                                <div className='col s2 m3 l2'>
+                                    <a className='grey-text' href='#' onClick={this.handleNextTrack}>
+                                        <i className='mdi-av-skip-next' />
+                                    </a>
+                                </div>
                                 <div className='col s2 m1 l2'>&nbsp;</div>
                             </div>
                         </div>
@@ -132,8 +148,6 @@ var React = require('react/addons'),
                         <div className='track-list'>
                             <div>{tracks}</div>
                         </div>
-
-
                     </div>
                 );
             }

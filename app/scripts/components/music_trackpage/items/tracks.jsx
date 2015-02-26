@@ -1,5 +1,7 @@
 'use strict';
 var React = require('react'),
+    Router = require('react-router'),
+    Link = Router.Link,
     CartActions = require('../../../actions/cart_actions'),
     Tracks = React.createClass({
     	getInitialState: function() {
@@ -44,7 +46,7 @@ var React = require('react'),
     		}
 
     		return (
-                <div className='card col s12 m3'>
+                <div className='card col s12 m4'>
 					<div className='card-image waves-effect waves-block waves-light'>
 						<img className='activator' src={this.props.image} />
 					</div>
@@ -77,9 +79,9 @@ var React = require('react'),
 							</span>
 						</span>
 						<p>
-							<a href='#'>
+							<Link to='music.trackpage.artist.tracks'>
 								{this.props.artist}
-							</a>
+							</Link>
 						</p>
 						<p>
 							<i className='tiny mdi-action-grade grey-text text-darken-3'></i>

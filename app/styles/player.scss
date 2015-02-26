@@ -25,33 +25,40 @@
         position: absolute;
         top: 50px;
         right: 20px;
-        width: 300px;
-        .track-info {
+        width: 260px;
+        .artwork {
+            height: 260px;
             width: 100%;
-            box-sizing: border-box;
-            padding: 1em;
-            line-height: 1.2em;
-            z-index: 2000;
-            position: relative;
-            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16); 
-             .seek-container {
-                margin-top: 1em;
-                margin-bottom: 1em;
-                .time-current-container {
-                    text-align: left;
-                }
-                .time-end-container {
-                    text-align: right;
-                }
+            img {
+                width: 100%;
+                padding: 5px;
+            }
+            .track-info {
+                width: 100%;
+                min-height: 260px;
+                opacity: 0.5;
+                background-color: black;
+                box-sizing: border-box;
+                color: #fff;
+                padding: 1em;
                 line-height: 1.2em;
-                .seeker-container {
-                    text-align: center;
-                    input.seeker {
-                        margin: 0;
-                        width: 100%;
-                    }
+                z-index: 2000;
+                position: absolute;
+                top: 0;
+                box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16); 
+                h5 {
+                    position: absolute;
+                    bottom: 20px;
+                } 
+                span {
+                    position: absolute;
+                    bottom: 15px;
                 }
             }
+        }
+        .seeker {
+            padding-left: 20px;
+            padding-right: 20px;
         }
         .track-list {
             display: block;
@@ -59,6 +66,52 @@
             padding: 0;
             z-index: 1000;
             position: relative;
+            border-top: 1px solid #f1f1f1;
+            div {
+                .track {
+                    border-bottom: 1px solid #f1f1f1;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    margin-bottom: 0px !important;
+
+                    .thumb {
+                        img {
+                            width: 40px;
+                        }
+                    }
+                    .info {
+                        .title {
+                            margin: 12px 0 0 5px;
+                            line-height: 0;
+                            span {
+                                white-space: nowrap;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                            }
+                        }
+                        .artist {
+                            margin: 14px 0 0 5px;
+                            line-height: 0;
+                        }
+                    }
+                    .remove {
+                        position: relative;
+                        div {
+                            position: absolute;
+                            top: -10px;
+                            bottom: 0;
+                            right: -10px;                            
+                            .track-remove {
+                                color: $font-color;
+                            }
+                        }
+                    }
+                    &:hover {
+                        cursor: pointer;
+                        background-color: #ececec;
+                    }
+                }
+            }
             ul {
                 li {
                     height: 100%;
@@ -109,5 +162,23 @@
                 }
             }
         } 
+        .seek-container {
+            margin-top: 1em;
+            margin-bottom: 1em;
+            .time-current-container {
+                text-align: left;
+            }
+            .time-end-container {
+                text-align: right;
+            }
+                line-height: 1.2em;
+            .seeker-container {
+                text-align: center;
+                input.seeker {
+                    margin: 0;
+                    width: 100%;
+                }
+            }
+        }
     }
 }
