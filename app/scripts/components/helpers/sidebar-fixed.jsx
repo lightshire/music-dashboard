@@ -6,6 +6,7 @@ var React = require('react/addons'),
     ArtistData = require('./artist'),
     CategoryItems = require('../../stores/category'),
     ArtistItems = require('../../stores/artist_stores'),
+    Search = require('../helpers/search'),
     SessionStore = require('../../stores/session_stores'),
     SessionActions = require('../../actions/session_actions'),
     Link = Router.Link,
@@ -139,6 +140,20 @@ var React = require('react/addons'),
                                     <img src='images/def-logo.svg'/>
                                 </div>
                             </li>
+                            <div className='search-btn search-sidebar'>
+                                <form>
+                                    <label for='search'>
+                                        <i className='mdi-action-search'></i>
+                                    </label>
+                                    <div className='input-field'>
+                                        <input id='search' 
+                                            placeholder='Search' 
+                                            type='text' 
+                                            key='search-box' 
+                                            required />
+                                    </div>
+                                </form>
+                            </div>
                             <li className='sidebar-li'>
                                 <Link to='my.account.settings' className='sidebarHome waves-effect waves-blue collapsible-header collapse-link'>My Accounts</Link>
                             </li>
@@ -167,6 +182,7 @@ var React = require('react/addons'),
                                 </ul>
                             </li>
                         </ul>
+                        <a id='burger-button' href='#' data-activates="nav-mobile" className="button-collapse"><i className='mdi-navigation-menu'></i></a>
                     </div>
                 );
             }

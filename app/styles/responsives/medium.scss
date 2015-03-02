@@ -2,8 +2,13 @@
     .side-nav {
         overflow-y: scroll; 
     }
-    .c_header {
-        padding-top: 50px;
+    .c-header {
+        .container {
+            h4 {
+                padding: 10px 0 0;
+                line-height: 1.2;
+            }
+        }
     }
     .logo-container {
         .sidebar-log {
@@ -21,7 +26,8 @@
         position: absolute;
         right: -29px;
     }
-    .upload-btn, .upload-btn-earnings {
+    .upload-btn, 
+    .upload-btn-earnings {
         position: absolute;
         top: -28px;
         right: -29px;
@@ -56,7 +62,8 @@
                 .action-icons {
                     width: 50% !important;
                 }
-                .action-icons:first-child, .action-icons:last-child {
+                .action-icons:first-child, 
+                .action-icons:last-child {
                     display: none;
                 }
            } 
@@ -79,7 +86,8 @@
             h6 {
                 font-size: .8rem;
             }
-            .input-field, .selectfield {
+            .input-field, 
+            .selectfield {
                 margin-top: 0;
                 label {
                     font-size: .8rem;

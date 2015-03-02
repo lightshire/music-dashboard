@@ -12,9 +12,21 @@
 }
 .c-header {
     background: $primary-color;
+    .container {
+        position: relative;
+        padding: 0;
+        h4 {
+            margin-top: 0;
+            a {
+                i {
+                    padding: 0 5px;
+                }
+            }
+        }
+    }
 }
-.c-header .container h4 {
-    margin-top: 0;
+.search-sidebar {
+    display: none;
 }
 .c-modal-buttons {
     margin-right: 10px;
@@ -37,18 +49,8 @@
 .c-select-a-track-button {
     margin-top: 10px;
 }
-.container{
-    position: relative;
-}
 .c-links .btn-flat {
     border-radius: 0;
-} 
-.c-body {
-    .c-header {
-        .container {
-            padding: 0;
-        }
-    }
 }
 .c-links {
     .tabs {
@@ -128,7 +130,9 @@
             }
         }
     }
-    &:focus ul,&:active ul,&:hover ul {
+    &:focus ul,
+    &:active ul,
+    &:hover ul {
         opacity: 1;
         background: #90CAF9;
     }
@@ -260,7 +264,9 @@
     }
 }
 
-.player, .shopping-cart-top, .login {
+.player, 
+.shopping-cart-top, 
+.login {
     display: inline-block;
     vertical-align: middle;
     line-height: 0;

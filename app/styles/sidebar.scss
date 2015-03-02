@@ -39,7 +39,8 @@ ul.side-nav.fixed{
 .sidebar-li{
     line-height: 30px;
     padding: 0px;
-    &.active,&.active:hover { 
+    &.active,
+    &.active:hover { 
         background:#eee !important;
     }
     a {
@@ -161,7 +162,8 @@ nav a.button-collapse {
     .sidebar-log {
         display: inline-block;
         vertical-align: middle;
-        span, a {
+        span, 
+        a {
             display: inline-block !important;
             width: auto !important;
             text-transform: capitalize;

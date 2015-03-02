@@ -32,8 +32,7 @@
         }
         tbody tr {
             display: block;
-            padding-left: 130px;
-            padding: 1em 1em 1em 130px;
+            padding: 1em 1em 1em 80px;
             margin: 0 -1.5em;
             &:nth-child(even) {
                 background: rgba(0,0,0,.1);
@@ -43,12 +42,16 @@
             }
             td {
                 display: block;
-                text-transform: capitalize;
+                text-transform: capitalize;/* 
+                white-space: nowrap;
+                width: 130px;
+                text-overflow: ellipsis;
+                overflow: hidden; */
                 &:before {
                     content: attr(data-column-title);
                     display: block;
                     position: relative;
-                    margin-left: -110px;
+                    margin-left: -70px;
                     font-weight: bold;
                 }
             }

@@ -2,11 +2,36 @@
     .side-nav {
         overflow-y: scroll; 
     }
-    .c_header {
-        padding-top: 60px;
+    .c-header {
+        .container {
+            h4 {
+                padding: 10px 0 0;
+                line-height: 1.2;
+                font-size: large;
+            }
+        }
     }
     .login {
         display: none;
+    }
+    .search-main {
+        display: none;
+    }
+    .search-sidebar {
+        display: block;
+        position: relative;
+        margin: auto;
+        form {
+            label {
+                vertical-align: top;
+                i {
+                    font-size: 1rem;
+                }
+            }
+            .input-field {
+                vertical-align: text-top;
+            }
+        }
     }
     .c-my-account-upgrade {
         margin-top: 1px;
@@ -21,14 +46,15 @@
         right: -29px;
     }
 
-    .upload-btn, .upload-btn-earnings {
+    .upload-btn, 
+    .upload-btn-earnings {
         position: absolute;
         right: 41%;
         top: -28px;
     }
     
     .top-nav {
-        height: 64px;
+        height: 56px;
         .nav-wrapper {
             div{
                 div {
@@ -77,7 +103,8 @@
                 .action-icons {
                     width: 50% !important;
                 }
-                .action-icons:first-child, .action-icons:last-child {
+                .action-icons:first-child, 
+                .action-icons:last-child {
                     display: none;
                 }
            } 
@@ -100,7 +127,8 @@
             h6 {
                 font-size: .8rem;
             }
-            .input-field, .selectfield {
+            .input-field, 
+            .selectfield {
                 margin-top: 0;
                 label {
                     font-size: .8rem;
@@ -134,7 +162,8 @@
     /*Modal Responsive - end*/
 
     /*Sign-in Responsive - start*/
-    .c_sign_in_outer, .c_sign_up_outer {
+    .c_sign_in_outer, 
+    .c_sign_up_outer {
         top: 0;
         form {
             div {
