@@ -15,31 +15,32 @@ var Reflux = require('reflux'),
         },
         onAddToCart: function(id) {
             var data = MusicTrackStore.getById(id);
-
+            
             if (data) {
                 _cart[id] = data;
             }
 
             this.emitChange();
         },
-        deleteItem: function() {
+        count: function() {
+            return Object.keys(_cart).length;
+        },
+        onDeleteItem: function(id) {
             if(typeof _cart[id] !== 'undefined') {
                 delete _cart[id];
             }
             this.emitChange();
         },
-        deleteAll: function() {
+        onDeleteAll: function() {
             _cart = {};
+
             this.emitChange();
-        },
-        count: function() {
-            return Object.keys(_cart).length;
         },
         getCartTotal: function() {
             var total = 0;
-            for(Object.keys in _cart){
-                if(_cart.hasOwnProperty(Object.keys)){
-                    total += _cart[Object.keys].price;
+            for(var i in _cart){
+                if(_cart.hasOwnProperty(i)){
+                    total += _cart[i].price;
                 }
             }
             return total.toFixed(2);

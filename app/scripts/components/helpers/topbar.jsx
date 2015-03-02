@@ -23,7 +23,7 @@ var React = require('react/addons'),
                     <div className='navbar-fixed'>
                         <nav className='top-nav'>
                             <div className='nav-wrapper row'>
-                                <div className='col l12'>
+                                <div className='col s12 m12 l12'>
                                     <div className='right'>
                                         <Player />
                                         {shopping_cart}
