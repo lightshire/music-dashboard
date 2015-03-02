@@ -2,8 +2,18 @@
     .side-nav {
         overflow-y: scroll; 
     }
-    .c_header {
-        padding-top: 50px;
+    .c-header {
+        .container {
+            h4 {
+                padding: 10px 0 0;
+                line-height: 1.2;
+            }
+        }
+    }
+    .logo-container {
+        .sidebar-log {
+            display: none;
+        }
     }
     .c-my-account-upgrade {
         margin-top: 1px;
@@ -16,7 +26,8 @@
         position: absolute;
         right: -29px;
     }
-    .upload-btn, .upload-btn-earnings {
+    .upload-btn, 
+    .upload-btn-earnings {
         position: absolute;
         top: -28px;
         right: -29px;
@@ -51,7 +62,8 @@
                 .action-icons {
                     width: 50% !important;
                 }
-                .action-icons:first-child, .action-icons:last-child {
+                .action-icons:first-child, 
+                .action-icons:last-child {
                     display: none;
                 }
            } 
@@ -74,7 +86,8 @@
             h6 {
                 font-size: .8rem;
             }
-            .input-field, .selectfield {
+            .input-field, 
+            .selectfield {
                 margin-top: 0;
                 label {
                     font-size: .8rem;
@@ -114,96 +127,14 @@
 
 
     .player {
-        position: relative;
-        left: 62px;
-        line-height: 0px !important;
-        .volume-control {
-            background: #fff;
-            -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-            -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-            color: $font-color;
-            position: absolute;
-            top: 59px;
-            right: 117px;
-            width: 200px;
-            padding: 0 1em;
-            .row {
-                margin: 0;
-            }
-        }
         .playlist {
-            background: #fff;
-            -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-            -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-            color: $font-color;
-            position: absolute;
-            top: 59px;
-            right: -79px;
-            width: 370px;
+            .c-volume-ctrl {
+                display: none;
+            }
             .artwork {
-                height: 370px;
-                img {
-                    width: 100%;
-                }
-                .track-info {
-                    opacity: 0.5;
-                    height: 100%;
-                    background-color: black;
-                    top: -370px;
-                    color: white;
-                    position: relative;
-                    padding: 10px;
-                    h5, span {
-                        position: relative;
-                        top: 281px;
-                    }
-                }
+                height: 150px;
+                width: 75%;
             }
-            .seeker {
-                padding-left: 20px;
-                padding-right: 20px;
-            }
-            .track-list {
-                border-top: 1px solid #f1f1f1;
-                div {
-                    .row {
-                        border-bottom: 1px solid #f1f1f1;
-                        padding-top: 10px;
-                        padding-bottom: 10px;
-                        margin-bottom: 0px !important;
-                        .thumb {
-                            img {
-                                width: 40px;
-                            }
-                        }
-                        .s8 {
-                            .title {
-                                margin-top: 12px;
-                            }
-                            .artist {
-                                margin-top: 14px;
-                            }
-                        }
-                        .remove {
-                            div {
-                                text-align: right;
-                                position: relative;
-                                top: 11px;
-                                margin-top: -23px;
-                                .track-remove {
-                                    color: $font-color;
-                                }
-                            }
-                        }
-                    }
-                    .row:hover {
-                        cursor: pointer;
-                        background-color: #ececec;
-                    }
-                }
-            } 
         }
     }
 
@@ -213,5 +144,15 @@
     .hidden-big-button {
         display: block;
     }
+
+    /*Trackpage Responsive - start*/
+
+    .nav-more {
+        ul {
+            right: 5px;
+        }
+    }
+
+    /*Trackpage Responsive - end*/
 
 }

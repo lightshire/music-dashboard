@@ -4,7 +4,6 @@ var React = require('react/addons'),
     ModalStore = require('../../stores/modal_stores'),
     ModalActions = require('../../actions/modal_actions'),
     getStateFromStore = function() {
-        console.log(ModalStore.get());
         return ModalStore.get();
     },
     ModalWrapper = React.createClass({
