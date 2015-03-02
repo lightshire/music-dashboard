@@ -115,23 +115,23 @@ var React = require('react/addons'),
                         </div>
                         <div className='c-panel-inner hide-on-med-and-up'>
                             <div className='row'>
-                                <div className='col s2 m2 l2'>&nbsp;</div>
-                                <div className='col s2 m3 l2'>
+                                <div className='col s4 m2 l2'>&nbsp;</div>
+                                <div className='col s4 m3 l2'>
                                     <a className='grey-text' href='#' onClick={this.handlePreviousTrack}>
                                         <i className='mdi-av-skip-previous' />
                                     </a>
                                 </div>
-                                <div className='col s2 m3 l2'>
+                                <div className='col s4 m3 l2'>
                                     <a className='grey-text' href='#' onClick={this.handleTogglePlay}>
                                         <i className={this.state.status.play ? 'mdi-av-pause' : 'mdi-av-play-arrow'} />
                                     </a>
                                 </div>
-                                <div className='col s2 m3 l2'>
+                                <div className='col s4 m3 l2'>
                                     <a className='grey-text' href='#' onClick={this.handleNextTrack}>
                                         <i className='mdi-av-skip-next' />
                                     </a>
                                 </div>
-                                <div className='col s2 m1 l2'>&nbsp;</div>
+                                <div className='col s4 m1 l2'>&nbsp;</div>
                             </div>
                         </div>
 

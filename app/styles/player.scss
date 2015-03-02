@@ -29,13 +29,14 @@
         .artwork {
             height: 260px;
             width: 100%;
+            position: relative;
             img {
                 width: 100%;
                 padding: 5px;
             }
             .track-info {
                 width: 100%;
-                min-height: 260px;
+                height: 100%;
                 opacity: 0.5;
                 background-color: black;
                 box-sizing: border-box;
@@ -59,6 +60,7 @@
         .seeker {
             padding-left: 20px;
             padding-right: 20px;
+            line-height: 0;
         }
         .track-list {
             display: block;
@@ -67,14 +69,17 @@
             z-index: 1000;
             position: relative;
             border-top: 1px solid #f1f1f1;
+            max-height: 180px;
+            overflow-y: auto;
+            overflow-x: hidden;
             div {
                 .track {
                     border-bottom: 1px solid #f1f1f1;
-                    padding-top: 10px;
-                    padding-bottom: 10px;
+                    padding: 10px 0;
                     margin-bottom: 0px !important;
 
                     .thumb {
+                        line-height: 0;
                         img {
                             width: 40px;
                         }

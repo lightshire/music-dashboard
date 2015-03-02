@@ -262,7 +262,8 @@
 
 .player, .shopping-cart-top, .login {
     display: inline-block;
-    vertical-align: top;
+    vertical-align: middle;
+    line-height: 0;
 }
 .title-div {
      p {

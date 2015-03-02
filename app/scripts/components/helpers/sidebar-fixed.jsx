@@ -6,14 +6,22 @@ var React = require('react/addons'),
     ArtistData = require('./artist'),
     CategoryItems = require('../../stores/category'),
     ArtistItems = require('../../stores/artist_stores'),
+    SessionStore = require('../../stores/session_stores'),
+    SessionActions = require('../../actions/session_actions'),
     Link = Router.Link,
     _ = require('lodash'),
     Constrainable = require('../mixins/constrainable'),
     getStateFromStore = function() {
         return {
             category: CategoryItems.getAll(),
-            artist: ArtistItems.getAll()
+            artist: ArtistItems.getAll(),
+            isLoggedIn: SessionStore.isLoggedIn(),
+            user: SessionStore.getUser()
         };
+    },
+    handleLogout = function() {
+        SessionActions.logout(function(){
+        });
     },
     SideBar = React.createClass({
         mixins: [Constrainable],
@@ -21,6 +29,8 @@ var React = require('react/addons'),
             return getStateFromStore();
         },
         componentDidMount : function () {
+            this.unsubscribe = SessionStore.listen(this._onChange);
+
             $('.side-bar .collapsible').collapsible({
               accordion : false
             });
@@ -84,7 +94,8 @@ var React = require('react/addons'),
                 data = this.state.category,
                 dataArtist = this.state.artist,
                 items,
-                artist_items;
+                artist_items,
+                log;
 
                 items = _.map(data, function(item) {
                     return (<CategoryData
@@ -99,6 +110,25 @@ var React = require('react/addons'),
                         key={item_artist.id}
                         artist={item_artist.artist} />);
                 });
+
+            if (this.state.isLoggedIn) {
+                log = (
+                    <div className='sidebar-log'>
+                        <span className='user'>{this.state.user}: </span>
+                        <Link to='home' className='login-btn' onClick={handleLogout}>
+                            Log out
+                        </Link>
+                    </div>
+                );
+            } else {
+                log = (
+                    <div className='sidebar-log'>
+                        <Link to='signin' className='login-btn'>
+                            Log in
+                        </Link>
+                    </div>
+                );
+            }
 
             if (!this.hasAccess(['admin', 'artist', 'general_user', 'record_label'])) {
                 return (
@@ -167,6 +197,7 @@ var React = require('react/addons'),
                         <li className='no-hover'>
                             <div className='logo-container col l2'>
                                 <img src='images/def-logo.svg'/>
+                                {log}
                             </div>
                         </li>
                         <li className='sidebar-li'>

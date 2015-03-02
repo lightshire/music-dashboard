@@ -46,7 +46,7 @@ var React = require('react'),
     		}
 
     		return (
-                <div className='card col s12 m4'>
+                <div className='card col s12 m4 l3'>
 					<div className='card-image waves-effect waves-block waves-light'>
 						<img className='activator' src={this.props.image} />
 					</div>

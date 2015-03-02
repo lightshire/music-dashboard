@@ -5,6 +5,11 @@
     .container {
         min-width: 700px;
     }
+    .logo-container {
+        .sidebar-log {
+            display: none;
+        }
+    }
     .c-my-account-settings {
         padding-top: 50px;
         padding-bottom: 40px;

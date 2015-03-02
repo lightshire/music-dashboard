@@ -156,6 +156,17 @@ nav a.button-collapse {
     img {
         height: 64px;
         padding: 1px 5px;
+        vertical-align: middle;
+    }
+    .sidebar-log {
+        display: inline-block;
+        vertical-align: middle;
+        span, a {
+            display: inline-block !important;
+            width: auto !important;
+            text-transform: capitalize;
+            padding: 0 0;
+        }
     }
 }
 

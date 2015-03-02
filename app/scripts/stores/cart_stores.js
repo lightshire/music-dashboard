@@ -15,7 +15,7 @@ var Reflux = require('reflux'),
         },
         onAddToCart: function(id) {
             var data = MusicTrackStore.getById(id);
-
+            
             if (data) {
                 _cart[id] = data;
             }
