@@ -141,6 +141,7 @@ var React = require('react/addons'),
                                 </ul>
                             </li>
                         </ul>
+                        <a id='burger-button' href='#' data-activates="nav-mobile" className="button-collapse"><i className='mdi-navigation-menu'></i></a>
                     </div>
                 );
             }

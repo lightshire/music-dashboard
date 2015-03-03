@@ -20,6 +20,23 @@ var React = require('react'),
         getInitialState: function() {
             return getStateFromStore();
         },
+        componentDidMount : function () {
+            $('.side-bar .collapsible').collapsible({
+              accordion : false
+            });
+            $('.button-collapse').sideNav({
+                menuWidth: 240, 
+                edge: 'left', 
+                closeOnClick: true 
+                }
+            );
+            $('.collapsible-body a').click(function(){
+                $('.button-collapse').sideNav('hide');
+            });
+            $('.sidebarHome').click(function(){
+                $('.button-collapse').sideNav('hide');
+            });
+        },
         render: function() {
             var data = this.state.category,
                 dataArtist = this.state.artist,
@@ -76,6 +93,8 @@ var React = require('react'),
                                 </ul>
                             </li>
                         </ul>
+                        asd
+                        <a id='burger-button' href='#' data-activates="nav-mobile" className="button-collapse"><i className='mdi-navigation-menu'></i></a>
                     </div>
                 </div>
             );

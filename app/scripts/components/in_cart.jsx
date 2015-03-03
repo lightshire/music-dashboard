@@ -3,6 +3,7 @@ var React = require('react'),
     Router = require('react-router'),
     Search = require('./helpers/search'),
     _ = require('lodash'),
+    Link = Router.Link,
     Cart = require('./music_trackpage/items/cart'),
     CartStore = require('../stores/cart_stores'),
     CartActions = require('../actions/cart_actions'),
@@ -59,7 +60,7 @@ var React = require('react'),
                     </div>
                     <div className='container c-main-container z-depth-1'>
                         <div className='table'>
-                            <table className='c_responsive_table'>
+                            <table className='c-responsive-table'>
                                 <thead>
                                     <tr>
                                         <th></th>
@@ -84,10 +85,10 @@ var React = require('react'),
                                        onClick={this.deleteAll}>
                                        Clear Cart
                                     </a>
-                                    <a className='waves-effect waves-light btn'
+                                    <Link to ='checkout' className='waves-effect waves-light btn'
                                        onClick=''>
                                        Checkout
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

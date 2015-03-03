@@ -2,6 +2,7 @@
 var React = require('react/addons'),
 	Router = require('react-router'),
 	RouteHandler = Router.RouteHandler,
+	Link = Router.Link,
 	Search = require('./helpers/search'),
     Constrainable = require('./mixins/constrainable'),
     Checkout = React.createClass({
@@ -66,7 +67,7 @@ var React = require('react/addons'),
                     	<div className='row'>
                     		<div className='col s12'>
 	                    		<div className='right'>
-	                    			<a className="waves-effect waves-blue blue-text text-lighten-2 btn no-bg">Cancel</a>
+	                    			<Link to = 'cart' className="waves-effect waves-blue blue-text text-lighten-2 btn no-bg">Cancel</Link>
 	                    			<a className="waves-effect waves-light btn">Complete Purchase</a>
 	                    		</div>                    			
                     		</div>
