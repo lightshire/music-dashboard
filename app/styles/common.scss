@@ -1,24 +1,42 @@
 .c-main-container {
     background: $white;
 }
+
 .c_global_floating_button {
     position: fixed;
     bottom: 20px;
     right: 50px;
     z-index: 1;
 }
+
 .c-first-button {
     width: 100%;
 }
+
 .c-header {
     background: $primary-color;
+    .container {
+        position: relative;
+        padding: 0;
+        h4 {
+            margin-top: 0;
+            a {
+                i {
+                    padding: 0 5px;
+                }
+            }
+        }
+    }
 }
-.c-header .container h4 {
-    margin-top: 0;
+
+.search-sidebar {
+    display: none;
 }
+
 .c-modal-buttons {
     margin-right: 10px;
 }
+
 .c-my-account-settings {
     padding-top: 30px;
     padding-bottom: 20px;
@@ -30,26 +48,20 @@
         }
     }
 }
+
 .c-upload-music-file-modal, {
     margin-top: 110px;
     margin-bottom: 100px;
 }
+
 .c-select-a-track-button {
     margin-top: 10px;
 }
-.container{
-    position: relative;
-}
+
 .c-links .btn-flat {
     border-radius: 0;
-} 
-.c-body {
-    .c-header {
-        .container {
-            padding: 0;
-        }
-    }
 }
+
 .c-links {
     .tabs {
         background: none;
@@ -69,6 +81,7 @@
         margin-bottom: 0px;
     }
 }
+
 #moreTab {
     height: 80px;
     a {
@@ -87,6 +100,7 @@
         height: 40px;
     }
 }
+
 .dropdown {
     background: none;
     display: block;
@@ -114,14 +128,29 @@
         -webkit-box-shadow: 0 5px 6px 2px rgba(0, 0, 0, 0.16);
         -moz-box-shadow: 0 5px 6px 2px rgba(0, 0, 0, 0.16);
         box-shadow: 0 5px 6px 2px rgba(0, 0, 0, 0.16);
+        li {
+            background: #fff !important;
+            display: block;
+            color: #fff;
+            border-bottom: 1px solid #fff;
+                &:hover {
+                    background: rgba(225, 225, 225, 1) !important;
+                }
+            a {
+                opacity: 1 !important;
+                filter: Alpha(opacity=100) !important;
+            }
+        }
     }
-    &:focus ul,&:active ul,&:hover ul {
+    &:focus ul,
+    &:active ul,
+    &:hover ul {
         opacity: 1;
         background: #90CAF9;
     }
-    ul li { 
-        background: #fff !important; 
-        display: block; 
+    ul li {
+        background: #fff !important;
+        display: block;
         color: #fff;
         border-bottom: 1px solid #fff;
     }
@@ -132,7 +161,13 @@
             background: rgba(0, 0, 0, 0.06) !important;
         }
     }
+    &:hover ul,
+    &:active ul {
+        opacity: 1;
+        background: #90CAF9;
+    }
 }
+
 .more {
     margin-top: -6px !important;
     span {
@@ -148,17 +183,21 @@
             width: 150px !important;
             text-align: left !important;
             a {
-                color: #26A69A !important;        
+                color: #26A69A !important;
                 width: 150px;
                 padding: 5px 10px;
             }
         }
     }
 }
+
 .nav-more {
-    display: inline;
     font-size: .8rem;
     line-height: 1.8;
+    overflow: visible !important;
+    position: relative;
+    bottom: 45px;
+    right: -10px;
     a {
         i {
             font-size: 1.1rem;
@@ -170,40 +209,50 @@
     }
     ul {
         position: absolute;
-        bottom: -17px;
-        right: -110px;
+        bottom: -100px;
+        right: -145px;
+        width: auto;
+        height: auto;
         li {
-            width: 140px !important;
             text-align: left !important;
-            a {       
+            white-space: nowrap;
+            padding: 0 10px;
+            a {
                 padding: 5px 10px;
             }
         }
         .divider {
-            background-color: #e0e0e0 !important;
+            border-bottom: 1px inset #e0e0e0;
         }
     }
 }
+
 .c-tabs {
     margin-right: 20px;
 }
+
 .c-tabs.active {
     border-bottom: 4px solid $accent-color;
 }
+
 .c-labels-image {
     border-radius: 100%;
 }
+
 #upload {
     visibility: hidden;
     width: 1px;
     height: 1px;
 }
+
 .c-table-buttons i {
     cursor: pointer;
 }
+
 .c-track-terms {
     text-align: justify;
 }
+
 .c-i-agree {
     margin-top: 80px;
 }
@@ -236,10 +285,14 @@
     }
 }
 
-.player, .shopping-cart-top, .login {
+.player,
+.shopping-cart-top,
+.login {
     display: inline-block;
-    vertical-align: top;
+    vertical-align: middle;
+    line-height: 0;
 }
+
 .title-div {
      p {
         margin: 0;
@@ -252,12 +305,15 @@
         margin-bottom: 10px;
      }
 }
+
 .text-teal-accent-3 {
     color: #1de9b6;
 }
+
 .bio-img {
     padding-top: 20px;
 }
+
 .icon-height {
     height: 20px;
     width: 100%;
@@ -266,12 +322,19 @@
         color: #fff;
     }
 }
+
 .hide {
     opacity: 0 !important;
 }
+
 .show {
     opacity: 1 !important;
 }
+
+.title-page {
+    padding: 25px 0;
+}
+
 .user {
     font-weight: bold;
     padding: 0 20px;
@@ -286,10 +349,25 @@
         padding: 0 20px;
     }
 }
+
 .cart-btn {
     text-align: right;
     padding: 0 40px;
     div {
         padding: 10px 0;
+    }
+}
+
+.freedom-logo {
+    height: 30px;
+    width: 30px;
+}
+
+.login {
+    .login-btn {
+        border: 3px solid #fff;
+        border-radius: 50px;
+        padding: 10px 20px;
+        font-weight: bold;
     }
 }

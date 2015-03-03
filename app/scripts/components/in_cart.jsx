@@ -50,7 +50,7 @@ var React = require('react'),
                 <div className='c-body'>
                     <div className='c-header z-depth-1'>
                         <div className='container'>
-                            <h4 className='white-text'>In Cart ({this.state.count})</h4>
+                            <h4 className='white-text title-page'>In Cart ({this.state.count})</h4>
                             <div className='c-links'>
                                 <div className='row'>
                                 </div>

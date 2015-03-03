@@ -14,7 +14,7 @@ var React = require('react/addons'),
                 search = (<input id='search' placeholder='Search' onBlur={this.handleToggleSearch} type='text' key='search-box' required />);
             }
             return (
-                <div className='search-btn right-align'>
+                <div className='search-btn right-align search-main'>
                     <form>
                         <label for='search' onClick={this.handleToggleSearch}><i className='mdi-action-search'></i></label>
                         <div className='input-field'>

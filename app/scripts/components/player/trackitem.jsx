@@ -10,11 +10,11 @@ var React = require('react'),
         },
         render: function() {
             return (    
-                <div className='row'>
+                <div className='row track'>
                     <div className='col s2 thumb'>
                         <img src={this.props.thumbnail} />
                     </div>
-                    <div className='col s8'>
+                    <div className='col s8 info'>
                         <div className='title'><span>{this.props.title}</span></div>
                         <div className='artist'><small>{this.props.artist}</small></div>
                     </div>
