@@ -24,6 +24,9 @@
 .songs img {
 	width: 50px;
 }
+table.c-responsive-table tbody td,table.c-responsive-table thead th{
+    line-height: 15px;
+}
 
 @media #{$medium-and-down} {
     table.c-responsive-table {
@@ -55,6 +58,9 @@
                     font-weight: bold;
                 }
             }
+        }
+        tbody td,tbody td {
+            line-height: 0;
         }
     }
 }

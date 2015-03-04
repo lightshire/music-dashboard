@@ -75,18 +75,19 @@ var React = require('react'),
                                 </tbody>
                             </table>
                             <div className='cart-btn'>
-                                <div>
-                                    <span className='total-price'>
-                                        <span>Total:</span> ${this.state.total}
-                                    </span>
+                                <div className='row'>
+                                    <div className='col s12'>
+                                        <span className='total-price'>
+                                            <span>Total:</span> ${this.state.total}
+                                        </span>
+                                    </div>
                                 </div>
                                 <div>
                                     <a className='waves-effect waves-light btn-flat blue-text'
                                        onClick={this.deleteAll}>
                                        Clear Cart
                                     </a>
-                                    <Link to ='checkout' className='waves-effect waves-light btn'
-                                       onClick=''>
+                                    <Link to ='checkout' className='waves-effect waves-light btn'>
                                        Checkout
                                     </Link>
                                 </div>
